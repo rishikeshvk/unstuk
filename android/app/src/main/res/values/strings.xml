@@ -1,4 +1,34 @@
 <resources>
     <string name="app_name">Unstuk</string>
-    <string name="service_description">Lets Unstuk switch off settings like airplane mode and Do Not Disturb for you, then check that they are off.</string>
+    <string name="service_description">Lets Unstuk switch settings like airplane mode and Do Not Disturb for you, then check that they changed.</string>
+
+    <string name="tab_help">Help</string>
+    <string name="tab_setup">Setup</string>
+    <string name="tab_debug">Debug</string>
+
+    <string name="complaint_label">What\'s wrong with your phone?</string>
+    <string name="complaint_submit">Help me</string>
+    <string name="working">Working on it…</string>
+    <string name="decline_title">Sorry, I can\'t help with that yet.</string>
+    <string name="decline_body">I can help when:</string>
+    <string name="clarify_title">Which of these is closest?</string>
+    <string name="all_clear_title">Everything I can check looks fine.</string>
+    <string name="all_clear_body">Here are some things to try:</string>
+    <string name="guide_title">Here\'s how to %1$s:</string>
+    <string name="confirm_title">I can %1$s for you. Shall I?</string>
+    <string name="confirm_yes">Yes, do it</string>
+    <string name="confirm_no">No, thanks</string>
+    <string name="fixed_title">Done: %1$s. I checked, and it worked.</string>
+    <string name="already_fine_title">This was already set correctly: %1$s.</string>
+    <string name="needs_unlock_title">Unlock your phone, then try again.</string>
+    <string name="open_settings">Open settings</string>
+    <string name="next_title">One more thing:</string>
+
+    <string name="setup_title">Give Unstuk access</string>
+    <string name="setup_body">Each one lets Unstuk fix more by itself. Without it, Unstuk shows you the steps instead.</string>
+    <string name="setup_service">Unstuk service (taps switches for you)</string>
+    <string name="setup_policy">Do Not Disturb access</string>
+    <string name="setup_write_settings">Modify system settings (brightness, screen timeout, rotation)</string>
+    <string name="setup_granted">Allowed</string>
+    <string name="setup_grant">Allow</string>
 </resources>
