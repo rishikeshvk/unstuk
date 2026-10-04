@@ -6,6 +6,7 @@ private const val TALKBACK_PACKAGE = "com.google.android.marvin.talkback"
 
 data class DeviceState(
     val airplaneModeOn: Boolean,
+    val keyguardLocked: Boolean,
     val interruptionFilter: Int,
     val enabledAccessibilityServices: List<String>,
     /** Null below API 36, where Advanced Protection doesn't exist. */

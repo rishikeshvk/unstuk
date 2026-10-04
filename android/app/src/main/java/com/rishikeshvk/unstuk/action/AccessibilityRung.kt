@@ -1,0 +1,87 @@
+package com.rishikeshvk.unstuk.action
+
+import android.content.Context
+import android.content.Intent
+import android.view.accessibility.AccessibilityNodeInfo
+import com.rishikeshvk.unstuk.a11y.NodeFinder
+import com.rishikeshvk.unstuk.a11y.QuickSettings
+import com.rishikeshvk.unstuk.a11y.SettingsScreen
+import com.rishikeshvk.unstuk.a11y.UnstukService
+import com.rishikeshvk.unstuk.selector.Selectors
+import com.rishikeshvk.unstuk.selector.SettingTarget
+import com.rishikeshvk.unstuk.state.DeviceState
+import com.rishikeshvk.unstuk.state.DeviceStateReader
+import com.rishikeshvk.unstuk.state.awaitState
+import com.rishikeshvk.unstuk.trace.Tracer
+import kotlin.time.Duration.Companion.seconds
+
+private val STATE_TIMEOUT = 5.seconds
+
+/**
+ * Switches a setting off by having the service tap: the Quick Settings tile first, else the Settings screen.
+ * The caller has already checked that the setting is on and the device is unlocked.
+ */
+class AccessibilityRung(
+    private val context: Context,
+    private val reader: DeviceStateReader,
+    private val selectors: Selectors
+) {
+    suspend fun switchOff(
+        target: SettingTarget,
+        settingsScreen: Intent,
+        isOn: (DeviceState) -> Boolean,
+        tracer: Tracer
+    ): ActionOutcome {
+        if (reader.read().advancedProtectionOn == true) {
+            return ActionOutcome.NeedsGuidance(
+                "Advanced Protection blocks accessibility automation"
+            )
+        }
+        val service = UnstukService.connected.value
+            ?: return ActionOutcome.NeedsGuidance("Unstuk service is not enabled")
+        val finder = NodeFinder(service)
+
+        val quickSettings = QuickSettings(service, selectors.quickSettings, finder)
+        val tile = quickSettings.findTile(target)
+        if (tile != null) {
+            tracer.step("find_tile", "found", tile.strategy)
+            val outcome = clickAndWait(tile.node, isOn, tracer)
+            quickSettings.close()
+            tracer.step("close_shade", "done")
+            return outcome
+        }
+        tracer.step("find_tile", "not_found")
+        quickSettings.close()
+
+        val tapped = SettingsScreen(
+            service,
+            selectors.settings,
+            finder
+        ).tapPath(target, settingsScreen, tracer)
+        if (!tapped) return ActionOutcome.NeedsGuidance("No tile or Settings switch found")
+        return waitForOff(isOn, tracer)
+    }
+
+    private suspend fun clickAndWait(
+        node: AccessibilityNodeInfo,
+        isOn: (DeviceState) -> Boolean,
+        tracer: Tracer
+    ): ActionOutcome {
+        val clicked = node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+        tracer.step("click_tile", if (clicked) "clicked" else "click_rejected")
+        if (!clicked) return ActionOutcome.Failed("Tile rejected the click")
+        return waitForOff(isOn, tracer)
+    }
+
+    private suspend fun waitForOff(isOn: (DeviceState) -> Boolean, tracer: Tracer): ActionOutcome {
+        val changed = awaitState(context, reader, STATE_TIMEOUT) { !isOn(it) }
+        tracer.step("wait_state", if (changed != null) "changed" else "timeout")
+        return if (changed !=
+            null
+        ) {
+            ActionOutcome.Verified
+        } else {
+            ActionOutcome.Failed("State did not change in time")
+        }
+    }
+}

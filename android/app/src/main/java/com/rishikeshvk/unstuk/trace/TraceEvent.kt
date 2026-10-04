@@ -2,7 +2,10 @@ package com.rishikeshvk.unstuk.trace
 
 import kotlinx.serialization.Serializable
 
-/** One executor step. `strategy` names how a node was found (resource-id, label, ...) when the step looked for one. */
+/**
+ * One executor step. `strategy` names how a node was found (resource-id, label) when the step looked for one;
+ * `detail` carries the reason behind a failure or guidance outcome.
+ */
 @Serializable
 data class TraceEvent(
     val ts: Long,
@@ -10,5 +13,6 @@ data class TraceEvent(
     val action: String,
     val step: String,
     val outcome: String,
-    val strategy: String? = null
+    val strategy: String? = null,
+    val detail: String? = null
 )

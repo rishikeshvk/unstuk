@@ -1,5 +1,6 @@
 package com.rishikeshvk.unstuk.state
 
+import android.app.KeyguardManager
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
@@ -13,6 +14,7 @@ class DeviceStateReader(private val context: Context) {
         airplaneModeOn =
         Settings.Global.getInt(context.contentResolver, Settings.Global.AIRPLANE_MODE_ON, 0) ==
             1,
+        keyguardLocked = context.getSystemService(KeyguardManager::class.java).isKeyguardLocked,
         interruptionFilter = context.getSystemService(
             NotificationManager::class.java
         ).currentInterruptionFilter,
