@@ -225,6 +225,8 @@ Eight recent developments shaped the plan above; the biggest change is copying t
 - *Answered (2026-10-03):* test targets are a Pixel emulator and a Moto Edge 30 (Android 14); see the M1 spec.
 - *Answered (2026-10-04):* a low-risk fix below the confidence threshold is confirmed with the user, not run
   automatically. The threshold value is set in the M2 spec and tuned in M6.
+- *Answered (2026-10-04):* the app's look and UX are set before M3: the "calm core, expressive surface" design
+  in [design-spec.md](design-spec.md), with the Unknot logo and one screen per reply.
 - *Settle in the M3 spec:* consent and storage rules for real user messages. They are first collected in M3 for the
   test set, so this can't wait for the M8 field test.
 - *Settle in the M7 spec:* how the int8 model file reaches the APK (Git LFS or a build step). Until then `*.onnx` is
