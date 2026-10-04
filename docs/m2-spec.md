@@ -29,6 +29,10 @@ complaint ─► keyword matcher ─► risk gate ─► diagnosis ─► execut
   Settings tile or a Settings switch exists. Each one is still only one rung of its fix, never the only path
   (invariant 5).
 - **The TalkBack-off spike moves from M1's stretch goal into M2.**
+- **No P rung on a fix that has an A rung** (decided 2026-10-04, while implementing). Invariant 5 tries P before A,
+  and a Settings Panel can always open, so an A rung after it would never run. A fix with automation therefore
+  lists D, A and G only, and its guide card carries an "Open settings" button for when A is blocked. P stays for
+  fixes with no automation (`private_dns_off`, `font_size_settings`). This keeps the invariant as written.
 
 ## Targets
 
@@ -52,20 +56,20 @@ Protection, the service not enabled, a tile not found).
 
 | Intent | Example complaint | Cause checked → fix (rungs, risk) |
 | --- | --- | --- |
-| `no_internet` | "Internet not working" | airplane mode on → `airplane_off` (A, low) · Wi-Fi and mobile data both off → `mobile_data_on` (A, P Internet panel, low), then `wifi_on` (P Internet panel, A, low) · data saver on → `data_saver_off` (P, A, low) |
-| `wifi_no_load` | "Wi-Fi connected but nothing loads" | automatic time off → `auto_time_on` (P, A, low) · Private DNS set to a hostname → `private_dns_off` (P, medium) · otherwise G: forget and rejoin the network (medium) |
+| `no_internet` | "Internet not working" | airplane mode on → `airplane_off` (A, low) · offline with mobile data off → `mobile_data_on` (A, low) · offline with Wi-Fi off → `wifi_on` (A, low) · data saver on → `data_saver_off` (A, low) |
+| `wifi_no_load` | "Wi-Fi connected but nothing loads" | automatic time off → `auto_time_on` (A, low) · Private DNS set to a hostname → `private_dns_off` (P, medium) · otherwise G: forget and rejoin the network (medium) |
 | `phone_not_ringing` | "Phone doesn't ring" | DND on → `dnd_off` (D on API ≤ 34, A, low) · ringer silent or vibrate → `ringer_normal` (D, low) · ring volume 0 → `ring_volume_up` (D, low) |
 | `cant_hear_call` | "Can't hear the person on the call" | call volume low → `call_volume_up` (D, low) · Bluetooth audio connected → G: switch the audio output |
 | `notifications_missing` | "WhatsApp messages come late" | DND on → `dnd_off` · data saver on → `data_saver_off` · otherwise G: battery optimisation for the app |
 | `talkback_on` | "Phone is talking to me, I have to tap twice" | TalkBack on → `talkback_off` (A in Settings, **spike**; G: volume-key shortcut; medium) |
-| `colours_wrong` | "Screen went black and white" | colour inversion on → `inversion_off` (A, P accessibility settings, low) · greyscale on → G |
+| `colours_wrong` | "Screen went black and white" | colour inversion on → `inversion_off` (A, low) · greyscale on → G |
 | `screen_too_dim` | "Screen is too dark" | brightness low → `brightness_up` (D, low) |
 | `screen_turns_off_fast` | "Screen goes off too quickly" | timeout under 30 s → `timeout_longer` (D, low) |
 | `screen_wont_rotate` | "Screen won't turn sideways" | rotation locked → `rotation_unlock` (D, A, low) |
 | `text_too_small` | "Letters are too small" | font scale at or below default → `font_size_settings` (P display settings, low; verified when the scale goes up) |
-| `bluetooth_earphones` | "Earphones won't connect" | Bluetooth off → `bluetooth_on` (P system enable prompt, A, low) · otherwise G: re-pair (medium) |
+| `bluetooth_earphones` | "Earphones won't connect" | Bluetooth off → `bluetooth_on` (A, low) · otherwise G: re-pair (medium) |
 | `app_permission` | "Camera doesn't work in an app" | G only. Fixing this needs to know which app, which is a Noul question for the model, not a keyword rule |
-| `wrong_time` | "Apps say there's a time error" | automatic time off → `auto_time_on` (P Date & time, A, low) |
+| `wrong_time` | "Apps say there's a time error" | automatic time off → `auto_time_on` (A, low) |
 | `reset_network` | "Nothing works, reset the network" | `reset_network` (G only, **high**). Destructive fixes are never automated (invariant 3); this intent exists so the gate's high-risk branch is exercised |
 
 If no cause holds, the result is the intent's guide card: "Everything Unstuk can check looks fine. Try …".
@@ -106,13 +110,15 @@ and M3's Python code reads the same files with the standard library.
 enabled, validated internet, data saver, automatic time, Private DNS mode, brightness, screen timeout, rotation
 lock, font scale, colour inversion, greyscale and Bluetooth enabled. Everything is still read fresh on every call.
 
-`awaitState` currently hard-codes the airplane-mode URI and the DND broadcast. It is generalised to observe the
-settings URIs and broadcasts that a given predicate depends on, and keeps M1's rule of subscribing first and
-reading second.
+`awaitState` currently hard-codes the airplane-mode URI and the DND broadcast. It now observes the whole Global,
+System and Secure settings tables, the system broadcasts for DND, ringer, Wi-Fi and data saver, and a 500 ms poll for
+state with no signal (mobile data, validated internet). An extra wake-up costs one read; a missed one costs a false
+timeout. It keeps M1's rule of subscribing first and reading second.
 
 ### Executor
 
-- `AccessibilityRung.switchOff` becomes `switchTo(target, wantOn)`, because several new fixes turn a setting *on*.
+- `AccessibilityRung.switchOff` becomes `toggle(target)`, because several new fixes turn a setting *on*. Tiles and
+  switches toggle, and the runner only taps when the fix hasn't taken effect, so no desired value is needed.
 - New rungs: `DirectRung` (system APIs, skipped when a grant is missing), `PanelRung` and `GuidedRung`. A
   `FixRunner` walks a fix's rungs in catalog order. `verifyOff` becomes a check against the *desired* state, and
   remains the final word on success.
@@ -154,10 +160,10 @@ they never mix with real user messages or seed phrasings (invariant 9).
 - **Complaint screen:** a text field, then one result card: the fix is done, a confirmation dialog, a guide card,
   a clarifying choice or a decline.
 - **Setup screen:** the grants each rung needs (the accessibility service, notification-policy access,
-  `WRITE_SETTINGS`, `BLUETOOTH_CONNECT`), each with a button to the right Settings screen. A missing grant only
+  `WRITE_SETTINGS`), each with a button to the right Settings screen. A missing grant only
   skips the rungs that need it.
 - The M1 debug screen stays.
-- New manifest permissions: `ACCESS_NETWORK_STATE`, `WRITE_SETTINGS` and `BLUETOOTH_CONNECT`. There is still no
+- New manifest permissions: `ACCESS_NETWORK_STATE`, `ACCESS_WIFI_STATE` and `WRITE_SETTINGS`. There is still no
   `INTERNET` permission (invariant 4).
 
 ### TalkBack-off spike
@@ -194,7 +200,6 @@ records the change.
 | --- | --- |
 | `TelephonyManager.isDataEnabled` works with `ACCESS_NETWORK_STATE`, without `READ_PHONE_STATE` | `no_internet` |
 | An app targeting API 37 can read `private_dns_mode`, `accessibility_display_inversion_enabled` and the daltonizer settings (hidden keys must be `@Readable` since Android 12) | `wifi_no_load`, `colours_wrong` |
-| `ACTION_REQUEST_ENABLE` still shows the system Bluetooth prompt for an app targeting API 37 | `bluetooth_on` |
 | Writing `SCREEN_BRIGHTNESS`, `SCREEN_OFF_TIMEOUT` and `ACCELEROMETER_ROTATION` with `WRITE_SETTINGS` takes effect at once on the Moto | display fixes |
 | Bedtime-mode greyscale shows up in a readable setting | `colours_wrong` |
 
@@ -228,7 +233,7 @@ One commit each, or a few where a step is large.
 1. This spec.
 2. Catalog files, loader and consistency test.
 3. Device state fields and generalised `awaitState`.
-4. Executor ladder: `switchTo`, the new rungs, `FixRunner`, and selectors for the new targets.
+4. Executor ladder: `toggle`, the new rungs, `FixRunner`, and selectors for the new targets.
 5. `Diagnoser`.
 6. Keyword matcher and risk gate.
 7. Complaint screen and setup screen.
