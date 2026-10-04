@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Unstuk</string>
+    <string name="service_description">Lets Unstuk switch off settings like airplane mode and Do Not Disturb for you, then check that they are off.</string>
 </resources>
