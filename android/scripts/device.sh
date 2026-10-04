@@ -89,6 +89,11 @@ restore_device() {
             sh_adb settings put $key "${SAVED[$key]}" || true
         fi
     done
+    # Writing the services list stops TalkBack's service but can leave its process running, still announcing
+    # volume and charging; stop it unless the device had TalkBack on to begin with.
+    if [[ "${SAVED[secure enabled_accessibility_services]}" != *talkback* ]]; then
+        sh_adb am force-stop com.google.android.marvin.talkback || true
+    fi
     set_audio --ei ringer 2 || true
     set_audio --ei stream 2 --ei index "${SAVED[ring]}" || true
     set_audio --ei stream 0 --ei index "${SAVED[call]}" || true

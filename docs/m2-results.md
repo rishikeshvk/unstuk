@@ -117,6 +117,9 @@ All of these failed safe: the reply was guided steps or `failed`, never `verifie
   now waits for the device.
 - **`am broadcast` blocks until the receiver finishes**, so a P-rung case never got its simulated tap, and the
   receiver hit the background-broadcast timeout. The e2e script now sends the broadcast in the background.
+- **TalkBack's process outlived its service.** After the TalkBack runs, the services list no longer named TalkBack,
+  yet its process kept announcing volume changes and charging on the test phone. Restore now force-stops TalkBack
+  unless it was on to begin with.
 - **The first restore switched Wi-Fi and Bluetooth on**, though both started off. Radios are now restored to how they
   were found.
 
