@@ -1,0 +1,30 @@
+{
+  "quickSettings": {
+    "packageName": "com.android.systemui",
+    "pagerIds": ["com.android.systemui:id/qs_pager"],
+    "tiles": {
+      "airplane_mode": {
+        "labelIds": ["com.android.systemui:id/tile_label"],
+        "labels": ["Aeroplane mode", "Airplane mode"]
+      },
+      "dnd": {
+        "labelIds": ["com.android.systemui:id/tile_label"],
+        "labels": ["Do Not Disturb"]
+      }
+    }
+  },
+  "settings": {
+    "packageName": "com.android.settings",
+    "paths": {
+      "airplane_mode": [
+        { "labelIds": ["android:id/title"], "labels": ["Aeroplane mode", "Airplane mode"] }
+      ],
+      "dnd": [
+        {
+          "resourceIds": ["com.android.settings:id/zen_mode_settings_turn_on_button"],
+          "labels": ["Turn off now"]
+        }
+      ]
+    }
+  }
+}
