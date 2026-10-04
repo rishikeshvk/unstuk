@@ -125,6 +125,10 @@ Setup steps:
 2. Install `android-udev` so adb can reach the phone, and turn on USB debugging on the phone.
 3. Check that `adb devices` lists the Moto, then create the AVD.
 
+Verified 2026-10-04: both targets are reachable over adb. The AVD is `unstuk_pixel8_api37` (Pixel 8,
+`system-images;android-37.0;google_apis;x86_64`, 2 GB of RAM); a cold headless boot takes about 3.5 minutes.
+`adb root` works on it, and the trial runner's airplane-mode and DND commands change state on both targets.
+
 ## Milestones after M1
 
 These follow the plan's roadmap. Each one gets its own spec when it starts.
