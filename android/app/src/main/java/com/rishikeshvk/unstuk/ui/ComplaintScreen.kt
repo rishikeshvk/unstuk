@@ -110,11 +110,7 @@ private fun ReplyCard(reply: Reply, actions: ReplyActions, enabled: Boolean) {
 @Composable
 private fun ReplyBody(reply: Reply, actions: ReplyActions, enabled: Boolean) {
     when (reply) {
-        is Reply.Decline -> {
-            Title(stringResource(R.string.decline_title))
-            Text(stringResource(R.string.decline_body))
-            reply.options.forEach { Text("• $it") }
-        }
+        Reply.Decline -> Title(stringResource(R.string.decline_title))
         is Reply.Clarify -> {
             Title(stringResource(R.string.clarify_title))
             reply.intents.forEach { intent ->

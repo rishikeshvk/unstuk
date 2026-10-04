@@ -10,4 +10,9 @@ class Diagnoser(private val catalog: Catalog) {
     fun diagnose(intentId: String, state: DeviceState): FixEntry? = catalog.intent(intentId).causes
         .firstOrNull { Checks.all.getValue(it.check)(state) }
         ?.let { catalog.fix(it.fix) }
+
+    /** Every real check of an intent on one snapshot, in catalog order; an unconditional cause checks nothing. */
+    fun scan(intentId: String, state: DeviceState): List<ScanRow> = catalog.intent(intentId).causes
+        .filter { it.check != Checks.ALWAYS }
+        .map { ScanRow(catalog.fix(it.fix), Checks.all.getValue(it.check)(state)) }
 }

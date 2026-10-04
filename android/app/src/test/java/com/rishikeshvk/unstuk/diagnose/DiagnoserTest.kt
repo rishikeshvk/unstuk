@@ -63,4 +63,13 @@ class DiagnoserTest {
     fun `reset network always applies, so the gate decides how`() {
         assertEquals("reset_network", diagnoser.diagnose("reset_network", fineDeviceState)?.id)
     }
+
+    @Test
+    fun `the scan lists real checks only`() {
+        assertEquals(emptyList<ScanRow>(), diagnoser.scan("reset_network", fineDeviceState))
+        assertEquals(
+            listOf("inversion_off", "greyscale_off"),
+            diagnoser.scan("colours_wrong", fineDeviceState).map { it.fix.id }
+        )
+    }
 }

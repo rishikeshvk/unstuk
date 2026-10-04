@@ -1,7 +1,6 @@
 package com.rishikeshvk.unstuk.flow
 
 import android.content.Context
-import com.rishikeshvk.unstuk.action.ActionOutcome
 import com.rishikeshvk.unstuk.catalog.CatalogLoader
 import com.rishikeshvk.unstuk.decide.KeywordMatcher
 import com.rishikeshvk.unstuk.fix.FixRunner
@@ -46,19 +45,19 @@ class ComplaintFlow(context: Context) {
 
     suspend fun run(intentId: String, fixId: String, confidence: Double, trialId: String): Reply {
         val tracer = tracer(trialId)
-        val fix = catalog.fix(fixId)
-        val reply = when (val outcome = runner.run(fix, tracer)) {
-            ActionOutcome.Verified -> Reply.Fixed(
-                fix,
-                triage.next(intentId, confidence, reader.read())
-            )
-            ActionOutcome.NothingToDo -> Reply.AlreadyFine(fix)
-            ActionOutcome.NeedsUnlock -> Reply.NeedsUnlock
-            is ActionOutcome.NeedsGuidance -> Reply.Guide(fix, outcome.reason)
-            is ActionOutcome.Failed -> Reply.Guide(fix, outcome.reason)
-        }
-        return traced(reply, tracer)
+        val outcome = runner.run(catalog.fix(fixId), tracer)
+        return traced(triage.afterRun(outcome, intentId, fixId, confidence, reader.read()), tracer)
     }
+
+    /** The user followed a guide and asks Unstuk to look again. */
+    fun recheck(intentId: String, fixId: String, confidence: Double, trialId: String): Reply {
+        val tracer = tracer(trialId)
+        tracer.step("recheck", fixId)
+        return traced(triage.recheck(intentId, fixId, confidence, reader.read()), tracer)
+    }
+
+    /** The ladder steps of the last fix run in this conversation, from its trace. */
+    fun howFixed(trialId: String): List<FixStep> = HowFixed.from(traces.read(trialId))
 
     private fun tracer(trialId: String) = Tracer(traces, trialId, TRACE_ACTION)
 
@@ -70,12 +69,13 @@ class ComplaintFlow(context: Context) {
     private fun Reply.subject(): String? = when (this) {
         is Reply.Clarify -> intents.joinToString { it.id }
         is Reply.AllClear -> intent.id
-        is Reply.Guide -> listOfNotNull(fix.id, reason).joinToString(": ")
+        is Reply.Guide ->
+            listOfNotNull(fix.id, reason, "still_found".takeIf { stillFound }).joinToString(": ")
         is Reply.Confirm -> "${intent.id}/${fix.id}"
         is Reply.Run -> "${intent.id}/${fix.id}"
         is Reply.Fixed -> fix.id + (next?.let { " next=${it.traceName}" } ?: "")
         is Reply.AlreadyFine -> fix.id
-        Reply.NeedsUnlock, is Reply.Decline -> null
+        Reply.NeedsUnlock, Reply.Decline -> null
     }
 
     companion object {

@@ -11,14 +11,14 @@ import org.junit.Test
 class RiskGateTest {
     private val gate = RiskGate(autoThreshold = 0.8, clarifyBelow = 0.5)
 
-    private fun fix(risk: Risk) = FixEntry(
+    private fun fix(risk: Risk, rungs: List<Rung> = listOf(Rung.DIRECT, Rung.GUIDED)) = FixEntry(
         id = "f",
         label = "Fix",
         subject = "Setting",
         finding = "Setting is wrong.",
         done = "Setting is right.",
         risk = risk,
-        rungs = listOf(Rung.GUIDED),
+        rungs = rungs,
         guide = listOf("step")
     )
 
@@ -35,6 +35,14 @@ class RiskGateTest {
         for ((risk, confidence, expected) in cases) {
             assertEquals("$risk @ $confidence", expected, gate.execution(fix(risk), confidence))
         }
+    }
+
+    @Test
+    fun `a fix with nothing to run is guided, however sure and low risk`() {
+        assertEquals(
+            Execution.GUIDED_ONLY,
+            gate.execution(fix(Risk.LOW, rungs = listOf(Rung.GUIDED)), 1.0)
+        )
     }
 
     @Test

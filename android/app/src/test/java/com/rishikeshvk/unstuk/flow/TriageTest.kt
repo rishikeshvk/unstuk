@@ -1,5 +1,7 @@
 package com.rishikeshvk.unstuk.flow
 
+import android.app.NotificationManager
+import com.rishikeshvk.unstuk.action.ActionOutcome
 import com.rishikeshvk.unstuk.catalog.CatalogTestFiles
 import com.rishikeshvk.unstuk.decide.IntentChoice
 import com.rishikeshvk.unstuk.state.fineDeviceState
@@ -83,5 +85,71 @@ class TriageTest {
         val next = triage.next("no_internet", 1.0, state)
         assertEquals("mobile_data_on", (next as Reply.Confirm).fix.id)
         assertNull(triage.next("no_internet", 1.0, fineDeviceState))
+    }
+
+    @Test
+    fun `a low-risk fix with nothing to run goes straight to guided steps`() {
+        val reply = triage.triage(
+            IntentChoice(mapOf("colours_wrong" to 1.0)),
+            fineDeviceState.copy(greyscaleOn = true)
+        )
+        assertEquals("greyscale_off", (reply as Reply.Guide).fix.id)
+    }
+
+    @Test
+    fun `a diagnosed reply shows every real check, found or fine`() {
+        val reply = triage.triage(
+            IntentChoice(mapOf("phone_not_ringing" to 0.6, "cant_hear_call" to 0.4)),
+            fineDeviceState.copy(
+                interruptionFilter = NotificationManager.INTERRUPTION_FILTER_PRIORITY
+            )
+        )
+        assertEquals(
+            listOf("dnd_off" to true, "ringer_normal" to false, "ring_volume_up" to false),
+            (reply as Reply.Confirm).scan.map { it.fix.id to it.holds }
+        )
+    }
+
+    @Test
+    fun `a verified run reports from the fresh read and offers what still holds`() {
+        val state = fineDeviceState.copy(online = false, wifiOn = false, mobileDataOn = false)
+        val reply = triage.afterRun(
+            ActionOutcome.Verified,
+            "no_internet",
+            "airplane_off",
+            1.0,
+            state
+        )
+        reply as Reply.Fixed
+        assertEquals("airplane_off", reply.fix.id)
+        assertEquals("mobile_data_on", (reply.next as Reply.Confirm).fix.id)
+        assertEquals(false, reply.scan.first { it.fix.id == "airplane_off" }.holds)
+    }
+
+    @Test
+    fun `a run that could not finish falls back to the fix's guide`() {
+        val reply = triage.afterRun(
+            ActionOutcome.Failed("tile not found"),
+            "no_internet",
+            "airplane_off",
+            1.0,
+            fineDeviceState.copy(airplaneModeOn = true)
+        )
+        assertEquals("tile not found", (reply as Reply.Guide).reason)
+        assertTrue(reply.scan.first().holds)
+    }
+
+    @Test
+    fun `a recheck counts as fixed only when a fresh read no longer finds the cause`() {
+        val fixed = triage.recheck("colours_wrong", "greyscale_off", 1.0, fineDeviceState)
+        assertEquals("greyscale_off", (fixed as Reply.Fixed).fix.id)
+
+        val still = triage.recheck(
+            "colours_wrong",
+            "greyscale_off",
+            1.0,
+            fineDeviceState.copy(greyscaleOn = true)
+        )
+        assertTrue((still as Reply.Guide).stillFound)
     }
 }

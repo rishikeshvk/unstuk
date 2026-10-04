@@ -9,8 +9,11 @@ const val TIMEOUT_SHORT_MS = 30_000
 
 /** The causes the catalog can name, by check id. Each one reads only the snapshot it is given. */
 object Checks {
+    /** A cause that always applies, such as an explicit request; it is decided by the gate, not by state. */
+    const val ALWAYS = "always"
+
     val all: Map<String, (DeviceState) -> Boolean> = mapOf(
-        "always" to { _ -> true },
+        ALWAYS to { _ -> true },
         "airplane_on" to { s -> s.airplaneModeOn },
         "offline_mobile_data_off" to
             { s -> !s.online && !s.airplaneModeOn && s.mobileDataOn == false },
