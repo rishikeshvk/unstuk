@@ -1,7 +1,7 @@
 # M1 spec: Executor spike
 
 2026-10-03 · Status: **Moto target met; Pixel emulator target not measured** (2026-10-04). Results:
-[m1-results.md](m1-results.md)
+[m1-results.md](m1-results.md). Plain-language summary: [m1-summary.md](m1-summary.md)
 
 M1 answers one question: **can a normal third-party app reliably undo an accidental phone state, and prove that it
 did?** It is done when a host-side trial runner switches airplane mode and Do Not Disturb off through the app on
