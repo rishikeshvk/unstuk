@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The Unknot in a 200 box: a lead-in, one round loop, then the tick. The single source of the logo's
+         shape for the launcher icon, the splash and the in-app animations. -->
+    <string name="unknot_path" translatable="false">M 28 136 C 60 136 96 114 96 84 C 96 70 84 58 70 58 C 56 58 44 70 44 84 C 44 112 84 128 112 140 L 176 68</string>
+</resources>

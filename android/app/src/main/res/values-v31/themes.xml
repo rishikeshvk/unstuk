@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Unstuk" parent="android:Theme.DeviceDefault.DayNight">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/ground</item>
+        <item name="android:windowSplashScreenBackground">@color/ground</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/tangerine</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/avd_unknot_splash</item>
+        <item name="android:windowSplashScreenAnimationDuration">600</item>
+    </style>
+</resources>

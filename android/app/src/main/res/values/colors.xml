@@ -2,4 +2,5 @@
 <resources>
     <!-- The window shows before Compose draws; matching the theme's ground avoids a flash. -->
     <color name="ground">#F6F1EA</color>
+    <color name="tangerine">#E8693A</color>
 </resources>
