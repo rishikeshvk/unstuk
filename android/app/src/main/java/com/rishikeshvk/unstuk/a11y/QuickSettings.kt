@@ -5,12 +5,15 @@ import android.os.Build
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
 import com.rishikeshvk.unstuk.selector.QuickSettingsSelectors
 import com.rishikeshvk.unstuk.selector.SettingTarget
+import com.rishikeshvk.unstuk.trace.Tracer
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 import kotlinx.coroutines.delay
 
-private val OPEN_TIMEOUT = 2.seconds
+// The first shade open after SystemUI rebuilds its tiles took over 2 s on the emulator; found pagers return early.
+private val OPEN_TIMEOUT = 5.seconds
 private val PAGE_SETTLE = 600.milliseconds
+
 private const val MAX_PAGES = 8
 
 class QuickSettings(
@@ -18,20 +21,29 @@ class QuickSettings(
     private val selectors: QuickSettingsSelectors,
     private val finder: NodeFinder
 ) {
-    suspend fun findTile(target: SettingTarget): NodeMatch? {
+    /** Opens the shade and pages through it; traces whether a pager appeared and how many pages were scanned. */
+    suspend fun findTile(target: SettingTarget, tracer: Tracer): NodeMatch? {
         val tile = selectors.tiles.getValue(target)
         val pkg = selectors.packageName
         service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS)
         if (finder.await(OPEN_TIMEOUT) { findScrollable(pkg, selectors.pagerIds) } == null) {
+            tracer.step("open_shade", "no_pager")
             return finder.await(PAGE_SETTLE) { find(pkg, tile) }
         }
+        tracer.step("open_shade", "pager")
         // The shade may have been left open on a later page; start from the first so no page is skipped.
-        repeat(MAX_PAGES) {
-            if (!scrollPager(AccessibilityAction.ACTION_SCROLL_BACKWARD)) return@repeat
+        var rewound = 0
+        while (rewound < MAX_PAGES &&
+            scrollPager(AccessibilityAction.ACTION_SCROLL_BACKWARD)
+        ) {
+            rewound++
         }
-        repeat(MAX_PAGES) {
+        for (page in 1..MAX_PAGES) {
             finder.await(PAGE_SETTLE) { find(pkg, tile) }?.let { return it }
-            if (!scrollPager(AccessibilityAction.ACTION_SCROLL_FORWARD)) return null
+            if (!scrollPager(AccessibilityAction.ACTION_SCROLL_FORWARD)) {
+                tracer.step("scan_pages", "exhausted", detail = "pages=$page rewound=$rewound")
+                return null
+            }
         }
         return null
     }

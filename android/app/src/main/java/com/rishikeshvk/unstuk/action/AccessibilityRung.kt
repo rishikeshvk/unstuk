@@ -42,7 +42,7 @@ class AccessibilityRung(
         val finder = NodeFinder(service)
 
         val quickSettings = QuickSettings(service, selectors.quickSettings, finder)
-        val tile = quickSettings.findTile(target)
+        val tile = quickSettings.findTile(target, tracer)
         if (tile != null) {
             tracer.step("find_tile", "found", tile.strategy)
             val outcome = clickAndWait(tile.node, isOn, tracer)
