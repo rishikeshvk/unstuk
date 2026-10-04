@@ -131,3 +131,6 @@ All of these failed safe: the reply was guided steps or `failed`, never `verifie
   process-lifecycle signal) was not exercised by the scripts; the hand test only covered a D fix.
 - **D rungs in repeated trials:** each D fix ran once in e2e (M1 already has 20/20 for `dnd_off`).
 - **Greyscale through Bedtime mode** (above).
+- **Does `talkback_off` leave TalkBack's process speaking?** The leftover process (see the testing lessons) may come
+  only from the scripts writing the services list, or also from the app's Settings path. Check by turning TalkBack
+  on in Settings, fixing it through Unstuk, and looking for the process afterwards.
