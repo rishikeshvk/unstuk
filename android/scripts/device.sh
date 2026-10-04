@@ -63,7 +63,8 @@ save_device() {
     SAVED[stay_on]=$(sh_adb settings get global stay_on_while_plugged_in)
     SAVED[wifi]=$(sh_adb settings get global wifi_on)
     SAVED[bluetooth]=$(sh_adb settings get global bluetooth_on)
-    SAVED[data]=$(sh_adb settings get global mobile_data)
+    # Mobile data is stored per SIM, keyed by the default data subscription.
+    SAVED[data]=$(sh_adb settings get global "mobile_data$(sh_adb settings get global multi_sim_data_call)")
 }
 
 # Airplane mode and mobile data first: the Moto is this machine's internet connection. Radios go back to how
@@ -123,7 +124,7 @@ is_fixed() {
     case $1 in
         airplane_off) [ "$(sh_adb settings get global airplane_mode_on)" = "0" ] ;;
         dnd_off) [ "$(sh_adb settings get global zen_mode)" = "0" ] ;;
-        mobile_data_on) [ "$(sh_adb settings get global mobile_data)" = "1" ] ;;
+        mobile_data_on) [ "$(sh_adb settings get global "mobile_data$(sh_adb settings get global multi_sim_data_call)")" = "1" ] ;;
         wifi_on) [ "$(sh_adb settings get global wifi_on)" != "0" ] ;;
         data_saver_off) sh_adb cmd netpolicy get restrict-background | grep -q disabled ;;
         auto_time_on) [ "$(sh_adb settings get global auto_time)" = "1" ] ;;

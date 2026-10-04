@@ -50,6 +50,10 @@ class QuickSettings(
         return null
     }
 
+    /** Looks the tile up again on the current page, for when the node first found has gone stale. */
+    fun refind(target: SettingTarget): NodeMatch? =
+        selectors.tiles[target]?.let { finder.find(selectors.packageName, it) }
+
     /** Taps the dialog a tile opened, if this target's tile opens one. False when a node is missing or refuses. */
     suspend fun tapDialog(target: SettingTarget, tracer: Tracer): Boolean {
         for ((index, selector) in selectors.tileDialogs[target].orEmpty().withIndex()) {

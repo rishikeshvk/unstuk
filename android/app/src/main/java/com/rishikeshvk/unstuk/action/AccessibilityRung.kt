@@ -13,9 +13,13 @@ import com.rishikeshvk.unstuk.state.DeviceState
 import com.rishikeshvk.unstuk.state.DeviceStateReader
 import com.rishikeshvk.unstuk.state.awaitState
 import com.rishikeshvk.unstuk.trace.Tracer
+import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
+import kotlinx.coroutines.delay
 
 private val STATE_TIMEOUT = 5.seconds
+private val CLICK_RETRY_DELAY = 300.milliseconds
+private const val CLICK_ATTEMPTS = 3
 
 /**
  * Toggles a setting by having the service tap: the Quick Settings tile first, else the Settings screen.
@@ -78,9 +82,9 @@ class AccessibilityRung(
         reached: (DeviceState) -> Boolean,
         tracer: Tracer
     ): ActionOutcome {
-        val clicked = node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-        tracer.step("click_tile", if (clicked) "clicked" else "click_rejected")
-        if (!clicked) return ActionOutcome.Failed("Tile rejected the click")
+        if (!clickTile(node, { quickSettings.refind(target)?.node }, tracer)) {
+            return ActionOutcome.Failed("Tile rejected the click")
+        }
         if (!quickSettings.tapDialog(
                 target,
                 tracer
@@ -89,6 +93,29 @@ class AccessibilityRung(
             return ActionOutcome.Failed("Tile dialog not completed")
         }
         return waitFor(reached, tracer)
+    }
+
+    // A tile found while the shade is still expanding can be the collapsed header's copy, which goes stale and
+    // rejects clicks. A rejected click changed nothing, so looking the tile up again and retrying is safe.
+    private suspend fun clickTile(
+        first: AccessibilityNodeInfo,
+        refind: () -> AccessibilityNodeInfo?,
+        tracer: Tracer
+    ): Boolean {
+        repeat(CLICK_ATTEMPTS) { attempt ->
+            val node = if (attempt == 0) {
+                first
+            } else {
+                delay(CLICK_RETRY_DELAY)
+                refind() ?: return@repeat
+            }
+            if (node.performAction(AccessibilityNodeInfo.ACTION_CLICK)) {
+                tracer.step("click_tile", "clicked", detail = "attempt=${attempt + 1}")
+                return true
+            }
+        }
+        tracer.step("click_tile", "click_rejected", detail = "attempts=$CLICK_ATTEMPTS")
+        return false
     }
 
     private suspend fun waitFor(reached: (DeviceState) -> Boolean, tracer: Tracer): ActionOutcome {
