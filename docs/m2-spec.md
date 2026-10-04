@@ -1,6 +1,7 @@
 # M2 spec: Catalog + rules
 
-2026-10-04 · Status: **draft, awaiting review.**
+2026-10-04 · Status: **Moto target met** (2026-10-04). Results: [m2-results.md](m2-results.md). Plain-language
+summary: [m2-summary.md](m2-summary.md)
 
 M2 answers one question: **can the whole pipeline, from a typed complaint to a verified fix, run end to end with
 plain rules in place of the model?** It is done when, on the Moto Edge 30, a scripted complaint for each of the 15
