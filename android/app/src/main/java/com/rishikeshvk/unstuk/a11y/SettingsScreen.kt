@@ -17,15 +17,16 @@ class SettingsScreen(
     private val selectors: SettingsSelectors,
     private val finder: NodeFinder
 ) {
-    /** Returns true when every node on the path was found and accepted the click. */
+    /** Returns true when every node on the path was found and accepted the click; false when there is no path. */
     suspend fun tapPath(target: SettingTarget, screen: Intent, tracer: Tracer): Boolean {
+        val path = selectors.paths[target] ?: return false
         service.startActivity(
             screen.addFlags(
                 Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             )
         )
         tracer.step("open_settings", "started")
-        for ((index, selector) in selectors.paths.getValue(target).withIndex()) {
+        for ((index, selector) in path.withIndex()) {
             val match = finder.await(SCREEN_TIMEOUT) { find(selectors.packageName, selector) }
             if (match == null) {
                 tracer.step("find_settings_node_$index", "not_found")

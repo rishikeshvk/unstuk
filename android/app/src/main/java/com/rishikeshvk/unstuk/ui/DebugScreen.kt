@@ -2,6 +2,7 @@ package com.rishikeshvk.unstuk.ui
 
 import android.app.NotificationManager
 import android.content.Intent
+import android.media.AudioManager
 import android.provider.Settings
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,17 +26,26 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rishikeshvk.unstuk.a11y.UnstukService
-import com.rishikeshvk.unstuk.action.ActionRunner
-import com.rishikeshvk.unstuk.action.UnstukAction
+import com.rishikeshvk.unstuk.catalog.Catalog
+import com.rishikeshvk.unstuk.catalog.Rung
+import com.rishikeshvk.unstuk.fix.FixRunner
 import com.rishikeshvk.unstuk.state.DeviceState
 import com.rishikeshvk.unstuk.state.DeviceStateReader
 import com.rishikeshvk.unstuk.trace.TraceEvent
+import com.rishikeshvk.unstuk.trace.TraceWriter
+import com.rishikeshvk.unstuk.trace.Tracer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @Composable
-fun DebugScreen(reader: DeviceStateReader, runner: ActionRunner, modifier: Modifier = Modifier) {
+fun DebugScreen(
+    reader: DeviceStateReader,
+    catalog: Catalog,
+    runner: FixRunner,
+    traces: TraceWriter,
+    modifier: Modifier = Modifier
+) {
     var state by remember { mutableStateOf(reader.read()) }
     val service by UnstukService.connected.collectAsStateWithLifecycle()
     var running by remember { mutableStateOf(false) }
@@ -68,8 +78,8 @@ fun DebugScreen(reader: DeviceStateReader, runner: ActionRunner, modifier: Modif
             Text("Grant DND access")
         }
 
-        Text("Actions", style = MaterialTheme.typography.titleLarge)
-        for (action in UnstukAction.entries) {
+        Text("Fixes", style = MaterialTheme.typography.titleLarge)
+        for (fix in catalog.fixes.filter { it.rungs != listOf(Rung.GUIDED) }) {
             Button(
                 enabled = !running,
                 onClick = {
@@ -77,14 +87,16 @@ fun DebugScreen(reader: DeviceStateReader, runner: ActionRunner, modifier: Modif
                     scope.launch {
                         val trialId = "ui-${System.currentTimeMillis()}"
                         lastTrace = withContext(Dispatchers.Default) {
-                            runner.run(action, trialId)
-                            runner.trace(trialId)
+                            val tracer = Tracer(traces, trialId, fix.id)
+                            val outcome = runner.run(fix, tracer)
+                            tracer.step("result", outcome.traceName, detail = outcome.reason)
+                            traces.read(trialId)
                         }
                         state = reader.read()
                         running = false
                     }
                 }
-            ) { Text(action.traceName) }
+            ) { Text(fix.id) }
         }
 
         Text("Last trace", style = MaterialTheme.typography.titleLarge)
@@ -122,6 +134,23 @@ private fun DeviceStateTable(state: DeviceState) {
             "none"
         }
     )
+    StateRow("Ringer", ringerName(state.ringerMode))
+    StateRow("Ring volume", "${state.ringVolume.level}/${state.ringVolume.max}")
+    StateRow("Call volume", "${state.callVolume.level}/${state.callVolume.max}")
+    StateRow("Wi-Fi", onOff(state.wifiOn))
+    StateRow("Mobile data", state.mobileDataOn?.let(::onOff) ?: "unknown")
+    StateRow("Online (validated)", if (state.online) "yes" else "no")
+    StateRow("Data Saver", onOff(state.dataSaverOn))
+    StateRow("Automatic time", onOff(state.autoTimeOn))
+    StateRow("Private DNS", state.privateDnsMode ?: "unknown")
+    StateRow("Brightness", "${state.brightness}/255")
+    StateRow("Screen timeout", "${state.screenTimeoutMs / 1000} s")
+    StateRow("Auto-rotate", onOff(state.autoRotateOn))
+    StateRow("Font scale", state.fontScale.toString())
+    StateRow("Colour inversion", state.inversionOn?.let(::onOff) ?: "unknown")
+    StateRow("Greyscale", state.greyscaleOn?.let(::onOff) ?: "unknown")
+    StateRow("Bluetooth", onOff(state.bluetoothOn))
+    StateRow("Bluetooth audio", if (state.bluetoothAudioConnected) "connected" else "none")
     StateRow("Device", "${state.device.make} ${state.device.model}")
     StateRow("SDK", state.device.sdk.toString())
     StateRow("Build", state.device.build)
@@ -136,6 +165,13 @@ private fun StateRow(label: String, value: String) {
 }
 
 private fun onOff(on: Boolean) = if (on) "on" else "off"
+
+private fun ringerName(mode: Int) = when (mode) {
+    AudioManager.RINGER_MODE_NORMAL -> "ring"
+    AudioManager.RINGER_MODE_VIBRATE -> "vibrate"
+    AudioManager.RINGER_MODE_SILENT -> "silent"
+    else -> "unknown"
+}
 
 private fun filterName(filter: Int) = when (filter) {
     NotificationManager.INTERRUPTION_FILTER_ALL -> "all"

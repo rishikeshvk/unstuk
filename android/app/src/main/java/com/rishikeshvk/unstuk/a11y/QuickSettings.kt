@@ -2,6 +2,7 @@ package com.rishikeshvk.unstuk.a11y
 
 import android.accessibilityservice.AccessibilityService
 import android.os.Build
+import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction
 import com.rishikeshvk.unstuk.selector.QuickSettingsSelectors
 import com.rishikeshvk.unstuk.selector.SettingTarget
@@ -13,6 +14,7 @@ import kotlinx.coroutines.delay
 // The first shade open after SystemUI rebuilds its tiles took over 2 s on the emulator; found pagers return early.
 private val OPEN_TIMEOUT = 5.seconds
 private val PAGE_SETTLE = 600.milliseconds
+private val DIALOG_TIMEOUT = 3.seconds
 
 private const val MAX_PAGES = 8
 
@@ -23,7 +25,7 @@ class QuickSettings(
 ) {
     /** Opens the shade and pages through it; traces whether a pager appeared and how many pages were scanned. */
     suspend fun findTile(target: SettingTarget, tracer: Tracer): NodeMatch? {
-        val tile = selectors.tiles.getValue(target)
+        val tile = selectors.tiles[target] ?: return null
         val pkg = selectors.packageName
         service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS)
         if (finder.await(OPEN_TIMEOUT) { findScrollable(pkg, selectors.pagerIds) } == null) {
@@ -46,6 +48,27 @@ class QuickSettings(
             }
         }
         return null
+    }
+
+    /** Taps the dialog a tile opened, if this target's tile opens one. False when a node is missing or refuses. */
+    suspend fun tapDialog(target: SettingTarget, tracer: Tracer): Boolean {
+        for ((index, selector) in selectors.tileDialogs[target].orEmpty().withIndex()) {
+            val match = finder.await(DIALOG_TIMEOUT) { find(selectors.packageName, selector) }
+            val clicked = match?.node?.performAction(AccessibilityNodeInfo.ACTION_CLICK) == true
+            tracer.step(
+                "tile_dialog_$index",
+                if (match == null) {
+                    "not_found"
+                } else if (clicked) {
+                    "clicked"
+                } else {
+                    "click_rejected"
+                },
+                match?.strategy
+            )
+            if (!clicked) return false
+        }
+        return true
     }
 
     fun close() {

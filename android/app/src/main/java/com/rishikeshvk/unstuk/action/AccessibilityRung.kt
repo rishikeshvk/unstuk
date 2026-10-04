@@ -18,18 +18,18 @@ import kotlin.time.Duration.Companion.seconds
 private val STATE_TIMEOUT = 5.seconds
 
 /**
- * Switches a setting off by having the service tap: the Quick Settings tile first, else the Settings screen.
- * The caller has already checked that the setting is on and the device is unlocked.
+ * Toggles a setting by having the service tap: the Quick Settings tile first, else the Settings screen.
+ * The caller has already checked that the setting needs changing and the device is unlocked.
  */
 class AccessibilityRung(
     private val context: Context,
     private val reader: DeviceStateReader,
     private val selectors: Selectors
 ) {
-    suspend fun switchOff(
+    suspend fun toggle(
         target: SettingTarget,
-        settingsScreen: Intent,
-        isOn: (DeviceState) -> Boolean,
+        settingsScreen: Intent?,
+        reached: (DeviceState) -> Boolean,
         tracer: Tracer
     ): ActionOutcome {
         if (reader.read().advancedProtectionOn == true) {
@@ -41,40 +41,58 @@ class AccessibilityRung(
             ?: return ActionOutcome.NeedsGuidance("Unstuk service is not enabled")
         val finder = NodeFinder(service)
 
-        val quickSettings = QuickSettings(service, selectors.quickSettings, finder)
-        val tile = quickSettings.findTile(target, tracer)
-        if (tile != null) {
-            tracer.step("find_tile", "found", tile.strategy)
-            val outcome = clickAndWait(tile.node, isOn, tracer)
+        if (target in selectors.quickSettings.tiles) {
+            val quickSettings = QuickSettings(service, selectors.quickSettings, finder)
+            val tile = quickSettings.findTile(target, tracer)
+            if (tile != null) {
+                tracer.step("find_tile", "found", tile.strategy)
+                val outcome = clickAndWait(tile.node, target, quickSettings, reached, tracer)
+                quickSettings.close()
+                tracer.step("close_shade", "done")
+                return outcome
+            }
+            tracer.step("find_tile", "not_found")
             quickSettings.close()
-            tracer.step("close_shade", "done")
-            return outcome
+        } else {
+            tracer.step("find_tile", "no_tile")
         }
-        tracer.step("find_tile", "not_found")
-        quickSettings.close()
 
+        if (settingsScreen ==
+            null
+        ) {
+            return ActionOutcome.NeedsGuidance("No tile found and no Settings screen")
+        }
         val tapped = SettingsScreen(
             service,
             selectors.settings,
             finder
         ).tapPath(target, settingsScreen, tracer)
         if (!tapped) return ActionOutcome.NeedsGuidance("No tile or Settings switch found")
-        return waitForOff(isOn, tracer)
+        return waitFor(reached, tracer)
     }
 
     private suspend fun clickAndWait(
         node: AccessibilityNodeInfo,
-        isOn: (DeviceState) -> Boolean,
+        target: SettingTarget,
+        quickSettings: QuickSettings,
+        reached: (DeviceState) -> Boolean,
         tracer: Tracer
     ): ActionOutcome {
         val clicked = node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
         tracer.step("click_tile", if (clicked) "clicked" else "click_rejected")
         if (!clicked) return ActionOutcome.Failed("Tile rejected the click")
-        return waitForOff(isOn, tracer)
+        if (!quickSettings.tapDialog(
+                target,
+                tracer
+            )
+        ) {
+            return ActionOutcome.Failed("Tile dialog not completed")
+        }
+        return waitFor(reached, tracer)
     }
 
-    private suspend fun waitForOff(isOn: (DeviceState) -> Boolean, tracer: Tracer): ActionOutcome {
-        val changed = awaitState(context, reader, STATE_TIMEOUT) { !isOn(it) }
+    private suspend fun waitFor(reached: (DeviceState) -> Boolean, tracer: Tracer): ActionOutcome {
+        val changed = awaitState(context, reader, STATE_TIMEOUT, reached)
         tracer.step("wait_state", if (changed != null) "changed" else "timeout")
         return if (changed !=
             null
