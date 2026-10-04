@@ -27,7 +27,7 @@
     <target android:name="unknot">
         <aapt:attr name="android:animation">
             <objectAnimator
-                android:duration="600"
+                android:duration="@integer/splash_draw_ms"
                 android:interpolator="@android:interpolator/fast_out_slow_in"
                 android:propertyName="trimPathEnd"
                 android:valueFrom="0"

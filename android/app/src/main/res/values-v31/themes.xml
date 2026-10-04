@@ -8,6 +8,6 @@
         <item name="android:windowSplashScreenBackground">@color/ground</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/tangerine</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/avd_unknot_splash</item>
-        <item name="android:windowSplashScreenAnimationDuration">600</item>
+        <item name="android:windowSplashScreenAnimationDuration">@integer/splash_draw_ms</item>
     </style>
 </resources>

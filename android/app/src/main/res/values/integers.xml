@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- How long the splash takes to draw the Unknot; the app holds the splash until it has finished. -->
+    <integer name="splash_draw_ms">1000</integer>
+</resources>
