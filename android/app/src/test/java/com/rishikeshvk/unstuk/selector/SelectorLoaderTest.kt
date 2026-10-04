@@ -16,7 +16,7 @@ class SelectorLoaderTest {
     }
 
     @Test
-    fun `every selector file covers every target in Quick Settings and Settings`() {
+    fun `every selector file reaches every target through a tile or a Settings path`() {
         val files = selectorDir.listFiles { f -> f.extension == "json" }.orEmpty()
         assertTrue("no selector files found", files.isNotEmpty())
 
@@ -24,11 +24,24 @@ class SelectorLoaderTest {
             val selectors = SelectorLoader.parse(file.readText())
             for (target in SettingTarget.entries) {
                 val tile = selectors.quickSettings.tiles[target]
-                assertTrue("${file.name}: no tile for $target", tile != null && tile.isUsable())
                 val path = selectors.settings.paths[target].orEmpty()
                 assertTrue(
-                    "${file.name}: no Settings path for $target",
-                    path.isNotEmpty() && path.all { it.isUsable() }
+                    "${file.name}: no tile or Settings path for $target",
+                    tile != null || path.isNotEmpty()
+                )
+                assertTrue("${file.name}: unusable tile for $target", tile?.isUsable() != false)
+                assertTrue(
+                    "${file.name}: unusable Settings path for $target",
+                    path.all {
+                        it.isUsable()
+                    }
+                )
+                val dialog = selectors.quickSettings.tileDialogs[target].orEmpty()
+                assertTrue(
+                    "${file.name}: unusable tile dialog for $target",
+                    dialog.all {
+                        it.isUsable()
+                    }
                 )
             }
         }

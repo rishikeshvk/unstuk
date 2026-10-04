@@ -1,0 +1,200 @@
+[
+  {
+    "id": "airplane_off",
+    "label": "Turn off airplane mode",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen.",
+      "Tap Airplane mode so that it turns grey."
+    ]
+  },
+  {
+    "id": "dnd_off",
+    "label": "Turn off Do Not Disturb",
+    "risk": "low",
+    "rungs": ["direct", "accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen.",
+      "Tap Do Not Disturb so that it turns grey."
+    ]
+  },
+  {
+    "id": "mobile_data_on",
+    "label": "Turn on mobile data",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen and tap Internet (or Mobile data).",
+      "Turn on Mobile data."
+    ]
+  },
+  {
+    "id": "wifi_on",
+    "label": "Turn on Wi-Fi",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen and tap Internet (or Wi-Fi).",
+      "Turn on Wi-Fi and choose your network."
+    ]
+  },
+  {
+    "id": "data_saver_off",
+    "label": "Turn off Data Saver",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Open Settings, then Network & internet, then Data Saver.",
+      "Turn off Use Data Saver."
+    ]
+  },
+  {
+    "id": "auto_time_on",
+    "label": "Set the time automatically",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Open Settings, then System, then Date & time.",
+      "Turn on Set time automatically."
+    ]
+  },
+  {
+    "id": "private_dns_off",
+    "label": "Turn off Private DNS",
+    "risk": "medium",
+    "rungs": ["panel", "guided"],
+    "guide": [
+      "Open Settings, then Network & internet, then Private DNS.",
+      "Choose Automatic or Off, then tap Save."
+    ]
+  },
+  {
+    "id": "ringer_normal",
+    "label": "Switch the ringer from silent or vibrate to ring",
+    "risk": "low",
+    "rungs": ["direct", "guided"],
+    "guide": [
+      "Press a volume button, then tap the bell icon above the slider until it shows a ringing bell."
+    ]
+  },
+  {
+    "id": "ring_volume_up",
+    "label": "Turn up the ring volume",
+    "risk": "low",
+    "rungs": ["direct", "guided"],
+    "guide": [
+      "Open Settings, then Sound & vibration.",
+      "Drag Ring volume to the right."
+    ]
+  },
+  {
+    "id": "call_volume_up",
+    "label": "Turn up the call volume",
+    "risk": "low",
+    "rungs": ["direct", "guided"],
+    "guide": [
+      "During a call, press the volume-up button until the sound is loud enough."
+    ]
+  },
+  {
+    "id": "audio_output_switch",
+    "label": "Move call sound from Bluetooth to the phone",
+    "risk": "low",
+    "rungs": ["guided"],
+    "guide": [
+      "During a call, tap the audio or Bluetooth button on the call screen.",
+      "Choose Phone (or Earpiece)."
+    ]
+  },
+  {
+    "id": "talkback_off",
+    "label": "Turn off TalkBack",
+    "risk": "medium",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Press and hold both volume buttons together for three seconds.",
+      "If that doesn't work, open Settings, then Accessibility, then TalkBack, and turn off Use TalkBack. With TalkBack on, tap once to select and twice to press."
+    ]
+  },
+  {
+    "id": "inversion_off",
+    "label": "Turn off colour inversion",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Open Settings, then Accessibility, then Colour and motion.",
+      "Turn off Colour inversion."
+    ]
+  },
+  {
+    "id": "greyscale_off",
+    "label": "Turn off greyscale",
+    "risk": "low",
+    "rungs": ["guided"],
+    "guide": [
+      "Open Settings, then Accessibility, then Colour correction.",
+      "Turn off Use colour correction."
+    ]
+  },
+  {
+    "id": "brightness_up",
+    "label": "Make the screen brighter",
+    "risk": "low",
+    "rungs": ["direct", "guided"],
+    "guide": [
+      "Swipe down from the top of the screen and drag the brightness slider to the right."
+    ]
+  },
+  {
+    "id": "timeout_longer",
+    "label": "Keep the screen on for one minute",
+    "risk": "low",
+    "rungs": ["direct", "guided"],
+    "guide": [
+      "Open Settings, then Display, then Screen timeout.",
+      "Choose 1 minute or longer."
+    ]
+  },
+  {
+    "id": "rotation_unlock",
+    "label": "Turn on auto-rotate",
+    "risk": "low",
+    "rungs": ["direct", "accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen.",
+      "Tap Auto-rotate so that it turns on."
+    ]
+  },
+  {
+    "id": "font_size_settings",
+    "label": "Make the text bigger",
+    "risk": "low",
+    "rungs": ["panel", "guided"],
+    "guide": [
+      "Open Settings, then Display, then Display size and text.",
+      "Drag Font size to the right."
+    ]
+  },
+  {
+    "id": "bluetooth_on",
+    "label": "Turn on Bluetooth",
+    "risk": "low",
+    "rungs": ["accessibility", "guided"],
+    "guide": [
+      "Swipe down twice from the top of the screen.",
+      "Tap Bluetooth so that it turns on."
+    ]
+  },
+  {
+    "id": "reset_network",
+    "label": "Reset network settings",
+    "risk": "high",
+    "rungs": ["guided"],
+    "guide": [
+      "This removes all saved Wi-Fi passwords and Bluetooth pairings. Write down your Wi-Fi password first.",
+      "Open Settings, then System, then Reset options.",
+      "Tap Reset Wi-Fi, mobile & Bluetooth, then Reset settings."
+    ]
+  }
+]

@@ -4,7 +4,23 @@
     "pagerIds": ["com.android.systemui:id/qs_pager"],
     "tiles": {
       "airplane_mode": { "labels": ["Airplane mode", "Aeroplane mode"] },
-      "dnd": { "labels": ["Do Not Disturb"] }
+      "dnd": { "labels": ["Do Not Disturb"] },
+      "mobile_data": { "labels": ["Internet", "Mobile data"] },
+      "wifi": { "labels": ["Internet", "Wi-Fi"] },
+      "data_saver": { "labels": ["Data Saver", "Data saver"] },
+      "inversion": { "labels": ["Color inversion", "Colour inversion", "Invert colors", "Invert colours"] },
+      "auto_rotate": { "labels": ["Auto-rotate", "Auto rotate", "Rotate"] },
+      "bluetooth": { "labels": ["Bluetooth"] }
+    },
+    "tileDialogs": {
+      "mobile_data": [
+        { "resourceIds": ["com.android.systemui:id/mobile_toggle"] },
+        { "resourceIds": ["com.android.systemui:id/done_button"], "labels": ["Done"] }
+      ],
+      "wifi": [
+        { "resourceIds": ["com.android.systemui:id/wifi_toggle"] },
+        { "resourceIds": ["com.android.systemui:id/done_button"], "labels": ["Done"] }
+      ]
     }
   },
   "settings": {
@@ -16,6 +32,14 @@
       "dnd": [
         { "labelIds": ["android:id/title"], "labels": ["Do Not Disturb"] },
         { "labelIds": ["com.android.settings:id/settingslib_button"], "labels": ["Turn off"] }
+      ],
+      "auto_time": [
+        { "labelIds": ["android:id/title"], "labels": ["Set time automatically", "Automatic date & time", "Use network-provided time"] }
+      ],
+      "talkback": [
+        { "labelIds": ["android:id/title"], "labels": ["TalkBack"] },
+        { "labelIds": ["android:id/title"], "labels": ["Use TalkBack"] },
+        { "labelIds": ["android:id/button1"], "labels": ["Turn off", "Stop", "OK"] }
       ]
     }
   }

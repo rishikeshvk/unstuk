@@ -36,6 +36,10 @@ android {
     buildFeatures {
         compose = true
     }
+    sourceSets {
+        // The catalog's single source of truth sits at the repo root, where training code reads it too.
+        getByName("main").assets.srcDir(rootProject.file("../catalog"))
+    }
 }
 
 dependencies {

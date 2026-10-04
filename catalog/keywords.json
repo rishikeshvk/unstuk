@@ -1,0 +1,17 @@
+{
+  "no_internet": ["internet", "no data", "mobile data", "data not working", "net not working", "net is not", "no network", "offline", "airplane", "aeroplane", "flight mode", "4g", "5g"],
+  "wifi_no_load": ["wifi connected", "wi fi connected", "connected but", "wifi but", "pages don t load", "not loading", "won t load", "doesn t load", "websites"],
+  "phone_not_ringing": ["ring", "ringing", "rings", "missed call", "missed calls", "no sound when", "silent", "don t hear calls", "doesn t ring"],
+  "cant_hear_call": ["can t hear", "cannot hear", "can not hear", "hear the person", "hear them", "voice is low", "call volume", "during a call", "on the call"],
+  "notifications_missing": ["notification", "notifications", "whatsapp", "messages late", "message late", "messages come late", "not getting messages", "no alerts"],
+  "talkback_on": ["talking to me", "talks to me", "speaks", "speaking", "voice reads", "reads everything", "tap twice", "double tap", "talkback", "green box"],
+  "colours_wrong": ["colour", "colours", "color", "colors", "black and white", "inverted", "negative", "grey", "gray", "greyscale", "grayscale"],
+  "screen_too_dim": ["dim", "dark", "too dark", "brightness", "can t see the screen", "not bright"],
+  "screen_turns_off_fast": ["turns off", "goes off", "goes black", "switches off", "screen off", "timeout", "time out", "keeps locking"],
+  "screen_wont_rotate": ["rotate", "rotation", "sideways", "landscape", "turn the phone", "doesn t turn", "won t turn"],
+  "text_too_small": ["small", "tiny", "letters", "font", "text size", "can t read", "bigger text", "too small"],
+  "bluetooth_earphones": ["bluetooth", "earphones", "earbuds", "headphones", "headset", "speaker won t", "airpods", "buds", "pair"],
+  "app_permission": ["camera", "microphone", "mic", "location", "gps", "permission", "permissions"],
+  "wrong_time": ["time is wrong", "wrong time", "wrong date", "date is wrong", "clock", "certificate", "time error"],
+  "reset_network": ["reset network", "network reset", "reset the network", "reset wifi", "reset all network"]
+}

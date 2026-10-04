@@ -1,0 +1,179 @@
+[
+  {
+    "id": "no_internet",
+    "option": "The internet or mobile data is not working",
+    "causes": [
+      { "check": "airplane_on", "fix": "airplane_off" },
+      { "check": "offline_mobile_data_off", "fix": "mobile_data_on" },
+      { "check": "offline_wifi_off", "fix": "wifi_on" },
+      { "check": "data_saver_on", "fix": "data_saver_off" }
+    ],
+    "fallback": [
+      "Turn airplane mode on, wait ten seconds, then turn it off again.",
+      "If you use Wi-Fi, check that the router's lights are on, then restart the router.",
+      "If you use mobile data, check that your recharge or data pack is still active."
+    ]
+  },
+  {
+    "id": "wifi_no_load",
+    "option": "Wi-Fi is connected but websites and apps don't load",
+    "causes": [
+      { "check": "auto_time_off", "fix": "auto_time_on" },
+      { "check": "private_dns_hostname", "fix": "private_dns_off" }
+    ],
+    "fallback": [
+      "Open Settings, then Network & internet, then Internet.",
+      "Tap the Wi-Fi network you are connected to, then tap Forget.",
+      "Tap the network again and enter its password to join it fresh.",
+      "If a sign-in page appears (in hotels, stations and cafés), complete it."
+    ]
+  },
+  {
+    "id": "phone_not_ringing",
+    "option": "The phone does not ring when someone calls",
+    "causes": [
+      { "check": "dnd_on", "fix": "dnd_off" },
+      { "check": "ringer_not_normal", "fix": "ringer_normal" },
+      { "check": "ring_volume_zero", "fix": "ring_volume_up" }
+    ],
+    "fallback": [
+      "Ask someone to call you, and press the volume-up button while it rings.",
+      "Open Settings, then Sound & vibration, and check that a ringtone is chosen.",
+      "If only one person's calls are silent, check whether their number is blocked in the Phone app."
+    ]
+  },
+  {
+    "id": "cant_hear_call",
+    "option": "I can't hear the other person during a call",
+    "causes": [
+      { "check": "call_volume_low", "fix": "call_volume_up" },
+      { "check": "bluetooth_audio_connected", "fix": "audio_output_switch" }
+    ],
+    "fallback": [
+      "During a call, press the volume-up button a few times.",
+      "Try the speaker button on the call screen.",
+      "Wipe the earpiece at the top of the phone; dust can block the sound."
+    ]
+  },
+  {
+    "id": "notifications_missing",
+    "option": "Messages or notifications arrive late or not at all",
+    "causes": [
+      { "check": "dnd_on", "fix": "dnd_off" },
+      { "check": "data_saver_on", "fix": "data_saver_off" }
+    ],
+    "fallback": [
+      "Open Settings, then Apps, and tap the app whose messages are late.",
+      "Tap Notifications and check that they are allowed.",
+      "Go back, tap App battery usage, and choose Unrestricted."
+    ]
+  },
+  {
+    "id": "talkback_on",
+    "option": "The phone talks to me and I have to tap twice",
+    "causes": [
+      { "check": "talkback_on", "fix": "talkback_off" }
+    ],
+    "fallback": [
+      "Press and hold both volume buttons together for three seconds.",
+      "If the phone still talks, open Settings, then Accessibility, then TalkBack, and turn it off. With TalkBack on, tap once to select and twice to press."
+    ]
+  },
+  {
+    "id": "colours_wrong",
+    "option": "The screen colours look wrong, inverted or black and white",
+    "causes": [
+      { "check": "inversion_on", "fix": "inversion_off" },
+      { "check": "greyscale_on", "fix": "greyscale_off" }
+    ],
+    "fallback": [
+      "Open Settings, then Digital Wellbeing, then Bedtime mode, and turn off greyscale.",
+      "Open Settings, then Display, and check Night Light and Dark theme."
+    ]
+  },
+  {
+    "id": "screen_too_dim",
+    "option": "The screen is too dark",
+    "causes": [
+      { "check": "brightness_low", "fix": "brightness_up" }
+    ],
+    "fallback": [
+      "Swipe down from the top of the screen and drag the brightness slider to the right.",
+      "If the screen dims by itself, open Settings, then Display, and turn off Adaptive brightness."
+    ]
+  },
+  {
+    "id": "screen_turns_off_fast",
+    "option": "The screen turns off too quickly",
+    "causes": [
+      { "check": "timeout_short", "fix": "timeout_longer" }
+    ],
+    "fallback": [
+      "Open Settings, then Display, then Screen timeout, and choose a longer time.",
+      "If Battery Saver is on, it can shorten the timeout; turn it off in Settings, then Battery."
+    ]
+  },
+  {
+    "id": "screen_wont_rotate",
+    "option": "The screen does not turn sideways when I turn the phone",
+    "causes": [
+      { "check": "rotation_locked", "fix": "rotation_unlock" }
+    ],
+    "fallback": [
+      "Some apps and the home screen never turn sideways; try a video or photo.",
+      "Restart the phone if rotation still doesn't work."
+    ]
+  },
+  {
+    "id": "text_too_small",
+    "option": "The letters and text on the screen are too small",
+    "causes": [
+      { "check": "text_not_enlarged", "fix": "font_size_settings" }
+    ],
+    "fallback": [
+      "Open Settings, then Display, then Display size and text.",
+      "Drag Font size and Display size to the right until the text is easy to read."
+    ]
+  },
+  {
+    "id": "bluetooth_earphones",
+    "option": "My Bluetooth earphones or speaker won't connect",
+    "causes": [
+      { "check": "bluetooth_off", "fix": "bluetooth_on" }
+    ],
+    "fallback": [
+      "Open Settings, then Connected devices, and tap the gear next to your earphones.",
+      "Tap Forget, then put the earphones in pairing mode (see their box or manual).",
+      "Tap Pair new device and choose your earphones."
+    ]
+  },
+  {
+    "id": "app_permission",
+    "option": "The camera, microphone or location doesn't work in an app",
+    "causes": [],
+    "fallback": [
+      "Open Settings, then Apps, and tap the app that isn't working.",
+      "Tap Permissions.",
+      "Tap Camera, Microphone or Location and choose Allow."
+    ]
+  },
+  {
+    "id": "wrong_time",
+    "option": "The time or date is wrong, or apps show a time or certificate error",
+    "causes": [
+      { "check": "auto_time_off", "fix": "auto_time_on" }
+    ],
+    "fallback": [
+      "Open Settings, then System, then Date & time.",
+      "Check that the time zone matches where you are."
+    ]
+  },
+  {
+    "id": "reset_network",
+    "option": "Nothing on the network works and I want to reset the network settings",
+    "causes": [
+      { "check": "always", "fix": "reset_network" }
+    ],
+    "fallback": []
+  }
+]
