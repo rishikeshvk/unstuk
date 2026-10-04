@@ -50,6 +50,7 @@ fun UnstukApp(vm: HelpViewModel, debugScreen: (@Composable () -> Unit)?) {
                             onSubmit = vm::submit,
                             onTopic = vm::openTopic,
                             onAccess = vm::openAccess,
+                            onSettings = vm::openSettings,
                             showBanner = !access.complete && !state.bannerDismissed,
                             accessMissing = !access.complete,
                             onDismissBanner = vm::dismissBanner,
@@ -85,8 +86,12 @@ fun UnstukApp(vm: HelpViewModel, debugScreen: (@Composable () -> Unit)?) {
                             state.fixed,
                             actions
                         )
-                        Screen.Access -> AccessScreen(
-                            status = access,
+                        is Screen.Access -> AccessScreen(status = access, onBack = { vm.back() })
+                        Screen.Settings -> SettingsScreen(
+                            theme = state.theme,
+                            onTheme = vm::setTheme,
+                            access = access,
+                            onAccess = vm::openAccess,
                             onBack = { vm.back() },
                             onDebug = debugScreen?.let { { vm.openDebug() } }
                         )

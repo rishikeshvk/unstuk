@@ -13,6 +13,8 @@ import com.rishikeshvk.unstuk.catalog.IntentEntry
 import com.rishikeshvk.unstuk.flow.ComplaintFlow
 import com.rishikeshvk.unstuk.flow.FixStep
 import com.rishikeshvk.unstuk.flow.Reply
+import com.rishikeshvk.unstuk.ui.theme.ThemeChoice
+import com.rishikeshvk.unstuk.ui.theme.ThemeStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -32,7 +34,10 @@ sealed interface Screen {
     /** The intent's own tips, after "Still not working?". */
     data class Tips(val intent: IntentEntry) : Screen
 
-    data object Access : Screen
+    /** [back] is where the user came from: Home's shield or the Settings row. */
+    data class Access(val back: Screen) : Screen
+
+    data object Settings : Screen
 
     data object Debug : Screen
 }
@@ -46,7 +51,8 @@ data class HelpState(
     val complaint: String = "",
     val fixed: Set<String> = emptySet(),
     val howFixed: List<FixStep> = emptyList(),
-    val bannerDismissed: Boolean = false
+    val bannerDismissed: Boolean = false,
+    val theme: ThemeChoice = ThemeChoice.SYSTEM
 )
 
 private data class RunRequest(val intentId: String, val fix: FixEntry, val confidence: Double)
@@ -61,8 +67,9 @@ class HelpViewModel(app: Application) : AndroidViewModel(app) {
     private var trialId = newTrialId()
     private var lastRun: RunRequest? = null
     private var job: Job? = null
+    private val themes = ThemeStore(app)
 
-    var state by mutableStateOf(HelpState())
+    var state by mutableStateOf(HelpState(theme = themes.load()))
         private set
 
     fun intentsIn(area: Area): List<IntentEntry> = catalog.intents.filter { it.area == area }
@@ -99,19 +106,27 @@ class HelpViewModel(app: Application) : AndroidViewModel(app) {
     /** A reply the screen already holds, such as a guide offered as the next step after a fix. */
     fun showReply(reply: Reply) = go(Screen.Answer(reply))
 
-    fun openAccess() = go(Screen.Access)
+    fun openAccess() = go(Screen.Access(back = state.screen))
+
+    fun openSettings() = go(Screen.Settings)
 
     fun openDebug() = go(Screen.Debug)
+
+    fun setTheme(choice: ThemeChoice) {
+        themes.save(choice)
+        state = state.copy(theme = choice)
+    }
 
     fun dismissBanner() {
         state = state.copy(bannerDismissed = true)
     }
 
     /** System back: one level up. Returns false when there is nowhere to go, so the app closes. */
-    fun back(): Boolean = when (state.screen) {
+    fun back(): Boolean = when (val screen = state.screen) {
         Screen.Home -> false
         is Screen.Working -> true
-        Screen.Debug -> true.also { go(Screen.Access) }
+        is Screen.Access -> true.also { go(screen.back) }
+        Screen.Debug -> true.also { go(Screen.Settings) }
         else -> true.also { go(Screen.Home) }
     }
 
@@ -119,7 +134,7 @@ class HelpViewModel(app: Application) : AndroidViewModel(app) {
     fun finish() {
         trialId = newTrialId()
         lastRun = null
-        state = HelpState(bannerDismissed = state.bannerDismissed)
+        state = HelpState(bannerDismissed = state.bannerDismissed, theme = state.theme)
     }
 
     private fun go(screen: Screen) {

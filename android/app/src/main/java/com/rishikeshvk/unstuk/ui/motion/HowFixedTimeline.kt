@@ -29,11 +29,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.geometry.CornerRadius
-import androidx.compose.ui.graphics.PathEffect
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -41,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import com.rishikeshvk.unstuk.R
 import com.rishikeshvk.unstuk.catalog.Rung
 import com.rishikeshvk.unstuk.flow.FixStep
+import com.rishikeshvk.unstuk.ui.components.dashedBorder
 
 /**
  * "How I fixed it": the executor ladder of the last run, read back from its on-device trace. Collapsed by
@@ -55,16 +52,7 @@ fun HowFixedTimeline(steps: List<FixStep>, modifier: Modifier = Modifier) {
     Column(
         modifier
             .fillMaxWidth()
-            .drawBehind {
-                drawRoundRect(
-                    color = dash,
-                    cornerRadius = CornerRadius(24.dp.toPx()),
-                    style = Stroke(
-                        width = 2.dp.toPx(),
-                        pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f))
-                    )
-                )
-            }
+            .dashedBorder(dash)
             .padding(horizontal = 18.dp, vertical = 6.dp)
     ) {
         Row(

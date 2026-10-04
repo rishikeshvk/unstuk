@@ -32,11 +32,10 @@ import com.rishikeshvk.unstuk.R
 import com.rishikeshvk.unstuk.ui.components.BackTopBar
 import com.rishikeshvk.unstuk.ui.components.HintRow
 import com.rishikeshvk.unstuk.ui.components.ScreenScaffold
-import com.rishikeshvk.unstuk.ui.components.TextLinkButton
 
 /** The special accesses the rungs use, each with a plain reason and a way to Settings to grant it. */
 @Composable
-fun AccessScreen(status: AccessStatus, onBack: () -> Unit, onDebug: (() -> Unit)?) {
+fun AccessScreen(status: AccessStatus, onBack: () -> Unit) {
     val context = LocalContext.current
     fun open(intent: Intent) = context.startActivity(intent)
     ScreenScaffold(
@@ -47,7 +46,6 @@ fun AccessScreen(status: AccessStatus, onBack: () -> Unit, onDebug: (() -> Unit)
                 stringResource(R.string.access_offline),
                 iconTint = MaterialTheme.colorScheme.onSurfaceVariant
             )
-            onDebug?.let { TextLinkButton(stringResource(R.string.access_debug), onClick = it) }
         }
     ) {
         Text(

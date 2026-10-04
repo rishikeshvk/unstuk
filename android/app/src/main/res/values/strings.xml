@@ -3,7 +3,7 @@
     <string name="service_description">Lets Unstuk switch settings like airplane mode and Do Not Disturb for you, then check that they changed.</string>
 
     <string name="back">Back</string>
-    <string name="open_access">Access</string>
+    <string name="open_access">Permissions</string>
 
     <string name="home_title">What’s wrong with your phone?</string>
     <string name="home_subtitle">Say it in your own words.</string>
@@ -102,5 +102,19 @@
     <string name="access_on">On</string>
     <string name="access_allow">Allow</string>
     <string name="access_offline">Works offline. Nothing leaves your phone.</string>
-    <string name="access_debug">Debug tools</string>
+
+    <string name="open_settings_screen">Settings</string>
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_capabilities">What Unstuk can do</string>
+    <string name="settings_access">Permissions</string>
+    <string name="settings_access_summary">Allowed: %1$d of %2$d · fixes more by itself</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_developers">For developers</string>
+    <string name="settings_debug_badge">Debug build</string>
+    <string name="settings_debug">Debug tools</string>
 </resources>

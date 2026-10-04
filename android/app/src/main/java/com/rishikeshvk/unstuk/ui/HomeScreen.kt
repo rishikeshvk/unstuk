@@ -59,6 +59,7 @@ fun HomeScreen(
     onSubmit: () -> Unit,
     onTopic: (Area) -> Unit,
     onAccess: () -> Unit,
+    onSettings: () -> Unit,
     showBanner: Boolean,
     accessMissing: Boolean,
     onDismissBanner: () -> Unit,
@@ -68,7 +69,7 @@ fun HomeScreen(
     Box(modifier.fillMaxSize()) {
         Blob(Modifier.align(Alignment.TopEnd))
         Column(Modifier.verticalScroll(rememberScrollState())) {
-            HomeTopBar(onAccess, accessMissing)
+            HomeTopBar(onAccess, onSettings, accessMissing)
             AnimatedVisibility(showBanner) {
                 AccessBanner(onSetUp = onAccess, onDismiss = onDismissBanner)
             }

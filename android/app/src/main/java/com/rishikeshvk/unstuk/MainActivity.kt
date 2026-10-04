@@ -1,14 +1,17 @@
 package com.rishikeshvk.unstuk
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import android.view.ViewTreeObserver
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.rishikeshvk.unstuk.catalog.CatalogLoader
 import com.rishikeshvk.unstuk.fix.FixRunner
@@ -35,8 +38,15 @@ class MainActivity : ComponentActivity() {
         // The engineering screen ships in debug builds only; R8 drops it from release with the constant branch.
         val debugScreen: (@Composable () -> Unit)? = if (BuildConfig.DEBUG) debugScreen() else null
         setContent {
-            UnstukTheme {
-                UnstukApp(viewModel<HelpViewModel>(), debugScreen)
+            val vm = viewModel<HelpViewModel>()
+            val dark = vm.state.theme.isDark()
+            // The Appearance setting can differ from the system's, so the bar icons follow the app's theme.
+            LaunchedEffect(dark) {
+                val bars = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT) { dark }
+                enableEdgeToEdge(statusBarStyle = bars, navigationBarStyle = bars)
+            }
+            UnstukTheme(darkTheme = dark) {
+                UnstukApp(vm, debugScreen)
             }
         }
     }

@@ -14,9 +14,12 @@ import com.rishikeshvk.unstuk.catalog.Rung
 import com.rishikeshvk.unstuk.diagnose.ScanRow
 import com.rishikeshvk.unstuk.flow.FixStep
 import com.rishikeshvk.unstuk.flow.Reply
+import com.rishikeshvk.unstuk.ui.AccessStatus
 import com.rishikeshvk.unstuk.ui.HomeScreen
+import com.rishikeshvk.unstuk.ui.SettingsScreen
 import com.rishikeshvk.unstuk.ui.reply.ReplyActions
 import com.rishikeshvk.unstuk.ui.reply.ReplyScreen
+import com.rishikeshvk.unstuk.ui.theme.ThemeChoice
 import com.rishikeshvk.unstuk.ui.theme.UnstukTheme
 
 @Preview(name = "Light", showBackground = true, widthDp = 390, heightDp = 844)
@@ -97,6 +100,7 @@ private fun HomePreview() = Framed {
         onSubmit = {},
         onTopic = {},
         onAccess = {},
+        onSettings = {},
         showBanner = true,
         accessMissing = true,
         onDismissBanner = {}
@@ -141,4 +145,17 @@ private fun GuidePreview() = Framed {
         scan = listOf(ScanRow(dnd, holds = true))
     )
     ReplyScreen(reply, "", emptySet(), emptyList(), noActions)
+}
+
+@ScreenPreviews
+@Composable
+private fun SettingsPreview() = Framed {
+    SettingsScreen(
+        theme = ThemeChoice.SYSTEM,
+        onTheme = {},
+        access = AccessStatus(service = true, policy = false, writeSettings = false),
+        onAccess = {},
+        onBack = {},
+        onDebug = {}
+    )
 }

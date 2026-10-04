@@ -6,11 +6,13 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -27,9 +29,12 @@ import com.rishikeshvk.unstuk.R
 import com.rishikeshvk.unstuk.ui.motion.UnknotMark
 import com.rishikeshvk.unstuk.ui.motion.UnknotMotion
 
-/** Home's bar: the mark and wordmark, and the Access button with a dot while something is not granted. */
+/**
+ * Home's bar: the mark and wordmark, Access (with a dot while something is not granted) and Settings, the one
+ * used more often, at the end where the thumb reaches it.
+ */
 @Composable
-fun HomeTopBar(onAccess: () -> Unit, accessMissing: Boolean) {
+fun HomeTopBar(onAccess: () -> Unit, onSettings: () -> Unit, accessMissing: Boolean) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -63,6 +68,12 @@ fun HomeTopBar(onAccess: () -> Unit, accessMissing: Boolean) {
                 )
             }
         }
+        Spacer(Modifier.width(8.dp))
+        RoundIconButton(
+            R.drawable.ic_gear,
+            stringResource(R.string.open_settings_screen),
+            onSettings
+        )
     }
 }
 
