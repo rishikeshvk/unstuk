@@ -55,6 +55,11 @@ class CatalogConsistencyTest {
     }
 
     @Test
+    fun `every topic lists at least one intent`() {
+        assertEquals(Area.entries.toSet(), catalog.intents.map { it.area }.toSet())
+    }
+
+    @Test
     fun `keyword rules cover exactly the catalog's intents`() {
         assertEquals(catalog.intents.map { it.id }.toSet(), CatalogTestFiles.keywords.keys)
     }

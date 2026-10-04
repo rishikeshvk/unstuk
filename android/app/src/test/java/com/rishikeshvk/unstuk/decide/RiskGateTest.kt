@@ -11,7 +11,16 @@ import org.junit.Test
 class RiskGateTest {
     private val gate = RiskGate(autoThreshold = 0.8, clarifyBelow = 0.5)
 
-    private fun fix(risk: Risk) = FixEntry("f", "Fix", risk, listOf(Rung.GUIDED), listOf("step"))
+    private fun fix(risk: Risk) = FixEntry(
+        id = "f",
+        label = "Fix",
+        subject = "Setting",
+        finding = "Setting is wrong.",
+        done = "Setting is right.",
+        risk = risk,
+        rungs = listOf(Rung.GUIDED),
+        guide = listOf("step")
+    )
 
     @Test
     fun `routes each risk and confidence to the right execution`() {

@@ -2,6 +2,7 @@
   {
     "id": "no_internet",
     "option": "The internet or mobile data is not working",
+    "area": "internet",
     "causes": [
       { "check": "airplane_on", "fix": "airplane_off" },
       { "check": "offline_mobile_data_off", "fix": "mobile_data_on" },
@@ -17,6 +18,7 @@
   {
     "id": "wifi_no_load",
     "option": "Wi-Fi is connected but websites and apps don't load",
+    "area": "internet",
     "causes": [
       { "check": "auto_time_off", "fix": "auto_time_on" },
       { "check": "private_dns_hostname", "fix": "private_dns_off" }
@@ -31,6 +33,7 @@
   {
     "id": "phone_not_ringing",
     "option": "The phone does not ring when someone calls",
+    "area": "calls",
     "causes": [
       { "check": "dnd_on", "fix": "dnd_off" },
       { "check": "ringer_not_normal", "fix": "ringer_normal" },
@@ -45,6 +48,7 @@
   {
     "id": "cant_hear_call",
     "option": "I can't hear the other person during a call",
+    "area": "calls",
     "causes": [
       { "check": "call_volume_low", "fix": "call_volume_up" },
       { "check": "bluetooth_audio_connected", "fix": "audio_output_switch" }
@@ -58,6 +62,7 @@
   {
     "id": "notifications_missing",
     "option": "Messages or notifications arrive late or not at all",
+    "area": "messages",
     "causes": [
       { "check": "dnd_on", "fix": "dnd_off" },
       { "check": "data_saver_on", "fix": "data_saver_off" }
@@ -71,6 +76,7 @@
   {
     "id": "talkback_on",
     "option": "The phone talks to me and I have to tap twice",
+    "area": "screen",
     "causes": [
       { "check": "talkback_on", "fix": "talkback_off" }
     ],
@@ -82,6 +88,7 @@
   {
     "id": "colours_wrong",
     "option": "The screen colours look wrong, inverted or black and white",
+    "area": "screen",
     "causes": [
       { "check": "inversion_on", "fix": "inversion_off" },
       { "check": "greyscale_on", "fix": "greyscale_off" }
@@ -94,6 +101,7 @@
   {
     "id": "screen_too_dim",
     "option": "The screen is too dark",
+    "area": "screen",
     "causes": [
       { "check": "brightness_low", "fix": "brightness_up" }
     ],
@@ -105,6 +113,7 @@
   {
     "id": "screen_turns_off_fast",
     "option": "The screen turns off too quickly",
+    "area": "screen",
     "causes": [
       { "check": "timeout_short", "fix": "timeout_longer" }
     ],
@@ -116,6 +125,7 @@
   {
     "id": "screen_wont_rotate",
     "option": "The screen does not turn sideways when I turn the phone",
+    "area": "screen",
     "causes": [
       { "check": "rotation_locked", "fix": "rotation_unlock" }
     ],
@@ -127,6 +137,7 @@
   {
     "id": "text_too_small",
     "option": "The letters and text on the screen are too small",
+    "area": "screen",
     "causes": [
       { "check": "text_not_enlarged", "fix": "font_size_settings" }
     ],
@@ -138,6 +149,7 @@
   {
     "id": "bluetooth_earphones",
     "option": "My Bluetooth earphones or speaker won't connect",
+    "area": "bluetooth",
     "causes": [
       { "check": "bluetooth_off", "fix": "bluetooth_on" }
     ],
@@ -150,6 +162,7 @@
   {
     "id": "app_permission",
     "option": "The camera, microphone or location doesn't work in an app",
+    "area": "apps",
     "causes": [],
     "fallback": [
       "Open Settings, then Apps, and tap the app that isn't working.",
@@ -160,6 +173,7 @@
   {
     "id": "wrong_time",
     "option": "The time or date is wrong, or apps show a time or certificate error",
+    "area": "apps",
     "causes": [
       { "check": "auto_time_off", "fix": "auto_time_on" }
     ],
@@ -171,6 +185,7 @@
   {
     "id": "reset_network",
     "option": "Nothing on the network works and I want to reset the network settings",
+    "area": "internet",
     "causes": [
       { "check": "always", "fix": "reset_network" }
     ],

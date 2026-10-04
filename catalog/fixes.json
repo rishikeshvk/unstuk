@@ -2,6 +2,10 @@
   {
     "id": "airplane_off",
     "label": "Turn off airplane mode",
+    "subject": "Airplane mode",
+    "finding": "Airplane mode is on.",
+    "why": "It turns off mobile data, calls and Wi-Fi.",
+    "done": "Airplane mode is off.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -12,6 +16,10 @@
   {
     "id": "dnd_off",
     "label": "Turn off Do Not Disturb",
+    "subject": "Do Not Disturb",
+    "finding": "Do Not Disturb is on.",
+    "why": "It silences calls and notifications.",
+    "done": "Do Not Disturb is off.",
     "risk": "low",
     "rungs": ["direct", "accessibility", "guided"],
     "guide": [
@@ -22,6 +30,10 @@
   {
     "id": "mobile_data_on",
     "label": "Turn on mobile data",
+    "subject": "Mobile data",
+    "finding": "Mobile data is off.",
+    "why": "Without Wi-Fi, apps can't reach the internet.",
+    "done": "Mobile data is on.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -32,6 +44,10 @@
   {
     "id": "wifi_on",
     "label": "Turn on Wi-Fi",
+    "subject": "Wi-Fi",
+    "finding": "Wi-Fi is off.",
+    "why": "The phone has no other way to reach the internet.",
+    "done": "Wi-Fi is on.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -42,6 +58,10 @@
   {
     "id": "data_saver_off",
     "label": "Turn off Data Saver",
+    "subject": "Data Saver",
+    "finding": "Data Saver is on.",
+    "why": "It stops apps from using data in the background.",
+    "done": "Data Saver is off.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -52,6 +72,10 @@
   {
     "id": "auto_time_on",
     "label": "Set the time automatically",
+    "subject": "Automatic time",
+    "finding": "The time isn't set automatically.",
+    "why": "A wrong clock makes secure websites and apps fail.",
+    "done": "The time is set automatically.",
     "risk": "low",
     "rungs": ["panel", "guided"],
     "guide": [
@@ -62,6 +86,10 @@
   {
     "id": "private_dns_off",
     "label": "Turn off Private DNS",
+    "subject": "Private DNS",
+    "finding": "Private DNS is set to a custom server.",
+    "why": "It can stop websites and apps from loading.",
+    "done": "Private DNS no longer uses a custom server.",
     "risk": "medium",
     "rungs": ["panel", "guided"],
     "guide": [
@@ -72,6 +100,10 @@
   {
     "id": "ringer_normal",
     "label": "Switch the ringer from silent or vibrate to ring",
+    "subject": "Ringer",
+    "finding": "The ringer is on silent or vibrate.",
+    "why": "Calls buzz or stay quiet instead of ringing.",
+    "done": "The ringer is set to ring.",
     "risk": "low",
     "rungs": ["direct", "guided"],
     "guide": [
@@ -81,6 +113,9 @@
   {
     "id": "ring_volume_up",
     "label": "Turn up the ring volume",
+    "subject": "Ring volume",
+    "finding": "The ring volume is at zero.",
+    "done": "The ring volume is turned up.",
     "risk": "low",
     "rungs": ["direct", "guided"],
     "guide": [
@@ -91,6 +126,10 @@
   {
     "id": "call_volume_up",
     "label": "Turn up the call volume",
+    "subject": "Call volume",
+    "finding": "The call volume is low.",
+    "why": "It makes the other person hard to hear.",
+    "done": "The call volume is turned up.",
     "risk": "low",
     "rungs": ["direct", "guided"],
     "guide": [
@@ -100,6 +139,10 @@
   {
     "id": "audio_output_switch",
     "label": "Move call sound from Bluetooth to the phone",
+    "subject": "Bluetooth audio",
+    "finding": "Call sound is going to a Bluetooth device.",
+    "why": "Earbuds or a car may be playing the call.",
+    "done": "Call sound is no longer going to Bluetooth.",
     "risk": "low",
     "rungs": ["guided"],
     "guide": [
@@ -110,6 +153,10 @@
   {
     "id": "talkback_off",
     "label": "Turn off TalkBack",
+    "subject": "TalkBack",
+    "finding": "TalkBack is on.",
+    "why": "It reads the screen aloud and makes you tap twice.",
+    "done": "TalkBack is off.",
     "risk": "medium",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -120,6 +167,9 @@
   {
     "id": "inversion_off",
     "label": "Turn off colour inversion",
+    "subject": "Colour inversion",
+    "finding": "Colour inversion is on.",
+    "done": "Colour inversion is off.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -130,6 +180,10 @@
   {
     "id": "greyscale_off",
     "label": "Turn off greyscale",
+    "subject": "Greyscale",
+    "finding": "Greyscale is on.",
+    "why": "It takes the colour out of the screen.",
+    "done": "Greyscale is off.",
     "risk": "low",
     "rungs": ["guided"],
     "guide": [
@@ -140,6 +194,9 @@
   {
     "id": "brightness_up",
     "label": "Make the screen brighter",
+    "subject": "Brightness",
+    "finding": "The screen brightness is very low.",
+    "done": "The screen is brighter.",
     "risk": "low",
     "rungs": ["direct", "guided"],
     "guide": [
@@ -149,6 +206,9 @@
   {
     "id": "timeout_longer",
     "label": "Keep the screen on for one minute",
+    "subject": "Screen timeout",
+    "finding": "The screen turns off after a few seconds.",
+    "done": "The screen now stays on for one minute.",
     "risk": "low",
     "rungs": ["direct", "guided"],
     "guide": [
@@ -159,6 +219,9 @@
   {
     "id": "rotation_unlock",
     "label": "Turn on auto-rotate",
+    "subject": "Auto-rotate",
+    "finding": "Auto-rotate is off.",
+    "done": "Auto-rotate is on.",
     "risk": "low",
     "rungs": ["direct", "accessibility", "guided"],
     "guide": [
@@ -169,6 +232,10 @@
   {
     "id": "font_size_settings",
     "label": "Make the text bigger",
+    "subject": "Text size",
+    "finding": "The text is at its standard size.",
+    "why": "It can be made bigger.",
+    "done": "The text is bigger.",
     "risk": "low",
     "rungs": ["panel", "guided"],
     "guide": [
@@ -179,6 +246,9 @@
   {
     "id": "bluetooth_on",
     "label": "Turn on Bluetooth",
+    "subject": "Bluetooth",
+    "finding": "Bluetooth is off.",
+    "done": "Bluetooth is on.",
     "risk": "low",
     "rungs": ["accessibility", "guided"],
     "guide": [
@@ -189,6 +259,9 @@
   {
     "id": "reset_network",
     "label": "Reset network settings",
+    "subject": "Network settings",
+    "finding": "A network reset may help.",
+    "done": "Network settings are reset.",
     "risk": "high",
     "rungs": ["guided"],
     "guide": [
