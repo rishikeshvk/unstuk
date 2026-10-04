@@ -49,7 +49,7 @@ One lead-in, one round loop, then a tick: the snag, then the fix. Its path lives
 
 | Moment | Screen |
 | --- | --- |
-| App open | Home: the question, a field that types example complaints, Help me, and six topics. A dot on Access and a dismissible banner while a grant is missing |
+| App open | The splash draws the Unknot (1 s, held until complete), then Home: the question, a field that types example complaints, Help me, and six topics. A dot on Permissions and a dismissible banner while a grant is missing |
 | Topic | The tile grows into the topic screen (container transform); its 1–5 problems as option cards |
 | No match | "I didn't quite catch that": the words kept in the field, an example, and topics. Never the full list |
 | Unsure | "Which sounds most like it?": the user's words quoted, up to three options, "None of these" |
@@ -59,6 +59,7 @@ One lead-in, one round loop, then a tick: the snag, then the fix. Its path lives
 | Already fine / All clear / Still not working? | Calm states with the intent's tips |
 | Guide | Steps with the reason they are steps (risky, couldn't do it, still the same), Open settings, and "I've done it, check for me", which counts as fixed only after a fresh read |
 | Locked phone | "Unlock your phone first", then Try again for the same fix |
+| Settings | From the gear (right of the Permissions shield on Home): Appearance (System / Light / Dark), Permissions, About, and Debug tools in debug builds only. New settings join as new sections |
 
 Copy rule: success text states only what was verified ("The ringer is set to ring", never "Your phone will ring
 again"). The fix copy (`subject`, `finding`, `why`, `done`) and each intent's `area` live in the catalog.
