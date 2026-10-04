@@ -48,9 +48,10 @@ object FixSpecs {
             accessibility = SettingTarget.DATA_SAVER,
             settingsAction = Settings.ACTION_WIRELESS_SETTINGS
         ),
+        // Settings hides this switch from services that aren't accessibility tools, so the user taps it.
         "auto_time_on" to FixSpec(
             reached = { _, s -> s.autoTimeOn },
-            accessibility = SettingTarget.AUTO_TIME,
+            panelAction = Settings.ACTION_DATE_SETTINGS,
             settingsAction = Settings.ACTION_DATE_SETTINGS
         ),
         // Null means unreadable, which must never count as fixed.

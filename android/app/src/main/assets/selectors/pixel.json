@@ -33,13 +33,10 @@
         { "labelIds": ["android:id/title"], "labels": ["Do Not Disturb"] },
         { "labelIds": ["com.android.settings:id/settingslib_button"], "labels": ["Turn off"] }
       ],
-      "auto_time": [
-        { "labelIds": ["android:id/title"], "labels": ["Set time automatically", "Automatic date & time", "Use network-provided time"] }
-      ],
       "talkback": [
         { "labelIds": ["android:id/title"], "labels": ["TalkBack"] },
-        { "labelIds": ["android:id/title"], "labels": ["Use TalkBack"] },
-        { "labelIds": ["android:id/button1"], "labels": ["Turn off", "Stop", "OK"] }
+        { "labelIds": ["com.android.settings:id/switch_text", "android:id/title"], "labels": ["Use TalkBack"] },
+        { "labelIds": ["android:id/button1"], "labels": ["Stop", "Turn off"] }
       ]
     }
   }

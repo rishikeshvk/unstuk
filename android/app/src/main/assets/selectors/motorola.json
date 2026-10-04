@@ -5,22 +5,12 @@
     "tiles": {
       "airplane_mode": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Aeroplane mode", "Airplane mode"] },
       "dnd": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Do Not Disturb"] },
-      "mobile_data": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Internet", "Mobile data"] },
-      "wifi": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Internet", "Wi-Fi"] },
-      "data_saver": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Data Saver", "Data saver"] },
-      "inversion": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Color inversion", "Colour inversion", "Invert colors", "Invert colours"] },
-      "auto_rotate": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Auto-rotate", "Auto rotate", "Rotate"] },
+      "mobile_data": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Mobile data"] },
+      "wifi": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Wi-Fi"] },
+      "data_saver": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Data Saver"] },
+      "inversion": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Colour inversion", "Color inversion"] },
+      "auto_rotate": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Auto-rotate"] },
       "bluetooth": { "labelIds": ["com.android.systemui:id/tile_label"], "labels": ["Bluetooth"] }
-    },
-    "tileDialogs": {
-      "mobile_data": [
-        { "resourceIds": ["com.android.systemui:id/mobile_toggle"] },
-        { "resourceIds": ["com.android.systemui:id/done_button"], "labels": ["Done"] }
-      ],
-      "wifi": [
-        { "resourceIds": ["com.android.systemui:id/wifi_toggle"] },
-        { "resourceIds": ["com.android.systemui:id/done_button"], "labels": ["Done"] }
-      ]
     }
   },
   "settings": {
@@ -32,13 +22,10 @@
       "dnd": [
         { "resourceIds": ["com.android.settings:id/zen_mode_settings_turn_on_button"], "labels": ["Turn off now"] }
       ],
-      "auto_time": [
-        { "labelIds": ["android:id/title"], "labels": ["Set time automatically", "Automatic date & time", "Use network-provided time"] }
-      ],
       "talkback": [
         { "labelIds": ["android:id/title"], "labels": ["TalkBack"] },
-        { "labelIds": ["android:id/title"], "labels": ["Use TalkBack"] },
-        { "labelIds": ["android:id/button1"], "labels": ["Turn off", "Stop", "OK"] }
+        { "labelIds": ["com.android.settings:id/switch_text", "android:id/title"], "labels": ["Use TalkBack"] },
+        { "labelIds": ["android:id/button1"], "labels": ["Stop", "Turn off"] }
       ]
     }
   }

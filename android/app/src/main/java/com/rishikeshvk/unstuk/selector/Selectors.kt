@@ -21,9 +21,6 @@ enum class SettingTarget {
     @SerialName("data_saver")
     DATA_SAVER,
 
-    @SerialName("auto_time")
-    AUTO_TIME,
-
     @SerialName("talkback")
     TALKBACK,
 

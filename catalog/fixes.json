@@ -53,7 +53,7 @@
     "id": "auto_time_on",
     "label": "Set the time automatically",
     "risk": "low",
-    "rungs": ["accessibility", "guided"],
+    "rungs": ["panel", "guided"],
     "guide": [
       "Open Settings, then System, then Date & time.",
       "Turn on Set time automatically."
