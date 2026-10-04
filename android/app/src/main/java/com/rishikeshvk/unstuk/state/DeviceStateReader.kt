@@ -21,6 +21,9 @@ private const val TAG = "DeviceStateReader"
 
 // Not in the public SDK; readable only where the platform marks them @Readable (Android 12+).
 private const val PRIVATE_DNS_MODE = "private_dns_mode"
+
+// An unset mode means the platform default, so null is left to mean "not readable".
+private const val PRIVATE_DNS_DEFAULT = "opportunistic"
 private const val INVERSION_ENABLED = "accessibility_display_inversion_enabled"
 private const val DALTONIZER_ENABLED = "accessibility_display_daltonizer_enabled"
 private const val DALTONIZER_MODE = "accessibility_display_daltonizer"
@@ -59,7 +62,9 @@ class DeviceStateReader(private val context: Context) {
         dataSaverOn = connectivity.restrictBackgroundStatus !=
             ConnectivityManager.RESTRICT_BACKGROUND_STATUS_DISABLED,
         autoTimeOn = Settings.Global.getInt(resolver, Settings.Global.AUTO_TIME, 1) == 1,
-        privateDnsMode = readIfAllowed { Settings.Global.getString(resolver, PRIVATE_DNS_MODE) },
+        privateDnsMode = readIfAllowed {
+            Settings.Global.getString(resolver, PRIVATE_DNS_MODE) ?: PRIVATE_DNS_DEFAULT
+        },
         brightness = Settings.System.getInt(resolver, Settings.System.SCREEN_BRIGHTNESS, 0),
         screenTimeoutMs = Settings.System.getInt(resolver, Settings.System.SCREEN_OFF_TIMEOUT, 0),
         autoRotateOn =
