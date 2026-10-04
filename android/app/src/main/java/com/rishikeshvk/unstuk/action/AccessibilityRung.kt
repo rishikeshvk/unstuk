@@ -15,10 +15,9 @@ import com.rishikeshvk.unstuk.state.awaitState
 import com.rishikeshvk.unstuk.trace.Tracer
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
-import kotlinx.coroutines.delay
 
 private val STATE_TIMEOUT = 5.seconds
-private val CLICK_RETRY_DELAY = 300.milliseconds
+private val REJECTED_CLICK_SETTLE = 1500.milliseconds
 private const val CLICK_ATTEMPTS = 3
 
 /**
@@ -59,6 +58,8 @@ class AccessibilityRung(
             quickSettings.close()
         } else {
             tracer.step("find_tile", "no_tile")
+            // The shade may already be open, and it would cover the Settings screen.
+            QuickSettings(service, selectors.quickSettings, finder).close()
         }
 
         if (settingsScreen ==
@@ -82,7 +83,7 @@ class AccessibilityRung(
         reached: (DeviceState) -> Boolean,
         tracer: Tracer
     ): ActionOutcome {
-        if (!clickTile(node, { quickSettings.refind(target)?.node }, tracer)) {
+        if (!clickTile(node, { quickSettings.refind(target)?.node }, reached, tracer)) {
             return ActionOutcome.Failed("Tile rejected the click")
         }
         if (!quickSettings.tapDialog(
@@ -96,17 +97,22 @@ class AccessibilityRung(
     }
 
     // A tile found while the shade is still expanding can be the collapsed header's copy, which goes stale and
-    // rejects clicks. A rejected click changed nothing, so looking the tile up again and retrying is safe.
+    // rejects clicks. A rejected click may still have landed, so the state gets time to change before a retry;
+    // tapping again blindly could toggle the setting back.
     private suspend fun clickTile(
         first: AccessibilityNodeInfo,
         refind: () -> AccessibilityNodeInfo?,
+        reached: (DeviceState) -> Boolean,
         tracer: Tracer
     ): Boolean {
         repeat(CLICK_ATTEMPTS) { attempt ->
             val node = if (attempt == 0) {
                 first
             } else {
-                delay(CLICK_RETRY_DELAY)
+                if (awaitState(context, reader, REJECTED_CLICK_SETTLE, reached) != null) {
+                    tracer.step("click_tile", "landed_after_rejection", detail = "attempt=$attempt")
+                    return true
+                }
                 refind() ?: return@repeat
             }
             if (node.performAction(AccessibilityNodeInfo.ACTION_CLICK)) {
