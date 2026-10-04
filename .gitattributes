@@ -1,0 +1,7 @@
+* text=auto eol=lf
+
+*.onnx binary
+*.tflite binary
+*.png binary
+*.jpg binary
+*.jar binary

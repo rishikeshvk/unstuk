@@ -1,0 +1,34 @@
+# Real user messages: private, never committed
+data/real/
+
+# Editors and local tool settings
+.idea/
+.claude/settings.local.json
+
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/.kotlin/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Python
+.venv/
+__pycache__/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Models and training outputs
+*.onnx
+*.tflite
+ml/runs/
+ml/checkpoints/
+
+# Device traces pulled over adb
+traces/
