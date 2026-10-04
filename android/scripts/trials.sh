@@ -50,7 +50,7 @@ run_trial() {
     sh_adb am broadcast -n "$RECEIVER" -a "$PKG.debug.RUN_ACTION" --es action "$fix" --es trialId "$id" >/dev/null
     read -r outcome ms < <(await_result "$id" "$out_dir")
     local host_fixed=0
-    is_fixed "$fix" && host_fixed=1
+    host_confirms "$fix" && host_fixed=1
     if [ "$outcome" = "verified" ] && [ $host_fixed -eq 0 ]; then outcome=FALSE_SUCCESS; fi
     echo "$fix,$n,$condition,$outcome,$host_fixed,$ms" >>"$csv"
     printf '  %-18s #%-2d %-10s %-14s %5s ms\n' "$fix" "$n" "$condition" "$outcome" "$ms"

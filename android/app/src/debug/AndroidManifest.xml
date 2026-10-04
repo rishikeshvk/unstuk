@@ -19,6 +19,14 @@
                 <action android:name="com.rishikeshvk.unstuk.debug.RUN_COMPLAINT" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".debug.AudioSetupReceiver"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="com.rishikeshvk.unstuk.debug.SET_AUDIO" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

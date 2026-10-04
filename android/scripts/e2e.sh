@@ -40,6 +40,7 @@ CASES=(
 user_taps() {
     case $1 in
         font_size_settings) sleep 3 && sh_adb settings put system font_scale 1.15 ;;
+        auto_time_on) sleep 3 && sh_adb settings put global auto_time 1 ;;
     esac
 }
 
@@ -61,15 +62,18 @@ run_case() {
     sleep 1
     # adb shell re-parses its arguments on the device, so the complaint is single-quoted for that shell.
     local quoted=${complaint//\'/\'\\\'\'}
+    # am broadcast blocks until the receiver finishes, and a panel case waits for the user's tap, so send it in
+    # the background. The receiver must finish within the 60 s background-broadcast limit.
     # shellcheck disable=SC2086 # extras are separate adb arguments
     sh_adb am broadcast -n "$RECEIVER" -a "$PKG.debug.RUN_COMPLAINT" \
-        --es complaint "'$quoted'" --es trialId "$id" $extras >/dev/null
+        --es complaint "'$quoted'" --es trialId "$id" $extras >/dev/null &
     user_taps "$checked"
     read -r reply ms < <(await_result "$id" "$out_dir")
+    wait
     local host_fixed=-
     if [ "$checked" != "-" ]; then
         host_fixed=0
-        is_fixed "$checked" && host_fixed=1
+        host_confirms "$checked" && host_fixed=1
     fi
     local verdict=pass
     if [ "$reply" != "$expected" ]; then verdict=FAIL; fi

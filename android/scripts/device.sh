@@ -6,7 +6,14 @@ SERVICE=$PKG/.a11y.UnstukService
 TALKBACK=com.google.android.marvin.talkback/com.google.android.marvin.talkback.TalkBackService
 RESULT_TIMEOUT_S=40
 
-sh_adb() { adb shell "$@" | tr -d '\r'; }
+# Waits first: toggling Data Saver or tethering re-enumerates USB, and adb is gone for a second or two.
+sh_adb() {
+    adb wait-for-device
+    adb shell "$@" | tr -d '\r'
+}
+
+# The shell's volume command is ignored on the Moto, so the app's debug receiver sets audio state instead.
+set_audio() { sh_adb am broadcast -n "$PKG/.debug.AudioSetupReceiver" -a "$PKG.debug.SET_AUDIO" "$@" >/dev/null; }
 
 # Captures before grepping: with pipefail, grep -q closing the pipe early would fail the whole pipeline.
 service_bound() {
@@ -54,16 +61,25 @@ save_device() {
     SAVED[ring]=$(stream_volume 2)
     SAVED[call]=$(stream_volume 0)
     SAVED[stay_on]=$(sh_adb settings get global stay_on_while_plugged_in)
+    SAVED[wifi]=$(sh_adb settings get global wifi_on)
+    SAVED[bluetooth]=$(sh_adb settings get global bluetooth_on)
+    SAVED[data]=$(sh_adb settings get global mobile_data)
 }
 
-# Airplane mode and mobile data first: the Moto is this machine's internet connection.
+# Airplane mode and mobile data first: the Moto is this machine's internet connection. Radios go back to how
+# save_device found them, not to "on".
 restore_device() {
     sh_adb cmd connectivity airplane-mode disable || true
     sh_adb svc data enable || true
-    sh_adb svc wifi enable || true
+    [ "${SAVED[data]}" = "1" ] || sh_adb svc data disable || true
+    if [ "${SAVED[wifi]}" = "0" ]; then sh_adb svc wifi disable || true; else sh_adb svc wifi enable || true; fi
+    if [ "${SAVED[bluetooth]}" = "1" ]; then
+        sh_adb cmd bluetooth_manager enable >/dev/null || true
+    else
+        sh_adb cmd bluetooth_manager disable >/dev/null || true
+    fi
     sh_adb cmd notification set_dnd off || true
-    sh_adb cmd netpolicy set restrict-background false || true
-    sh_adb cmd bluetooth_manager enable || true
+    sh_adb cmd netpolicy set restrict-background false >/dev/null || true
     local key
     for key in "${SAVED_KEYS[@]}"; do
         if [ "${SAVED[$key]}" = "null" ]; then
@@ -72,8 +88,9 @@ restore_device() {
             sh_adb settings put $key "${SAVED[$key]}" || true
         fi
     done
-    sh_adb cmd media_session volume --stream 2 --set "${SAVED[ring]}" >/dev/null || true
-    sh_adb cmd media_session volume --stream 0 --set "${SAVED[call]}" >/dev/null || true
+    set_audio --ei ringer 2 || true
+    set_audio --ei stream 2 --ei index "${SAVED[ring]}" || true
+    set_audio --ei stream 0 --ei index "${SAVED[call]}" || true
     sh_adb settings put global stay_on_while_plugged_in "${SAVED[stay_on]}" || true
     sh_adb cmd statusbar collapse || true
 }
@@ -87,9 +104,9 @@ break_setting() {
         wifi_on) sh_adb svc wifi disable ;;
         data_saver_off) sh_adb cmd netpolicy set restrict-background true ;;
         auto_time_on) sh_adb settings put global auto_time 0 ;;
-        ringer_normal) sh_adb cmd media_session volume --stream 2 --set 0 ;;
-        ring_volume_up) sh_adb cmd media_session volume --stream 2 --set 0 ;;
-        call_volume_up) sh_adb cmd media_session volume --stream 0 --set 1 ;;
+        ringer_normal) set_audio --ei ringer 1 ;;
+        ring_volume_up) set_audio --ei stream 2 --ei index 0 ;;
+        call_volume_up) set_audio --ei stream 0 --ei index 1 ;;
         talkback_off) sh_adb settings put secure enabled_accessibility_services "$SERVICE:$TALKBACK" ;;
         inversion_off) sh_adb settings put secure accessibility_display_inversion_enabled 1 ;;
         brightness_up) sh_adb settings put system screen_brightness_mode 0 && sh_adb settings put system screen_brightness 5 ;;
@@ -122,6 +139,16 @@ is_fixed() {
         bluetooth_on) [ "$(sh_adb settings get global bluetooth_on)" = "1" ] ;;
         *) return 1 ;;
     esac
+}
+
+# The host's read after an app-verified change: some settings (mode_ringer) are persisted about a second after
+# the system applies them, so allow 3 s for the record to catch up.
+host_confirms() {
+    for _ in $(seq 1 12); do
+        is_fixed "$1" && return 0
+        sleep 0.25
+    done
+    return 1
 }
 
 # Prints "<outcome> <elapsed ms>" from trace <id>, copying it to <out dir>, or "no_result 0" if none arrived.
