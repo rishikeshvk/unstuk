@@ -45,20 +45,24 @@ class NodeFinder(private val service: AccessibilityService) {
             .firstNotNullOfOrNull { clickableSelfOrAncestor(it) }
             ?.let { NodeMatch(it, "resource-id") }
 
-    private fun byLabel(root: AccessibilityNodeInfo, selector: NodeSelector) = descendants(root)
-        .filter { it.isVisibleToUser && hasLabel(it, selector) }
-        .firstNotNullOfOrNull { clickableSelfOrAncestor(it) }
-        ?.let { NodeMatch(it, "label") }
+    private fun byLabel(root: AccessibilityNodeInfo, selector: NodeSelector) =
+        labelCandidates(root, selector)
+            .filter { it.isVisibleToUser && hasLabel(it, selector) }
+            .firstNotNullOfOrNull { clickableSelfOrAncestor(it) }
+            ?.let { NodeMatch(it, "label") }
 
-    private fun hasLabel(node: AccessibilityNodeInfo, selector: NodeSelector): Boolean {
-        if (selector.labelIds.isNotEmpty() &&
-            node.viewIdResourceName !in selector.labelIds
-        ) {
-            return false
+    // A tile can merge its children's text into itself, dropping the label view from the child tree; a view-id
+    // lookup still reaches it.
+    private fun labelCandidates(root: AccessibilityNodeInfo, selector: NodeSelector) =
+        if (selector.labelIds.isEmpty()) {
+            descendants(root)
+        } else {
+            selector.labelIds.asSequence().flatMap { root.findAccessibilityNodeInfosByViewId(it) }
         }
-        return matchesLabel(node.text, selector.labels) ||
+
+    private fun hasLabel(node: AccessibilityNodeInfo, selector: NodeSelector) =
+        matchesLabel(node.text, selector.labels) ||
             matchesLabel(node.contentDescription, selector.labels)
-    }
 
     private fun descendants(root: AccessibilityNodeInfo): Sequence<AccessibilityNodeInfo> =
         sequence {
