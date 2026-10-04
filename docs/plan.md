@@ -111,7 +111,7 @@ Pick by accuracy on the real user test set.
 
 ## Size budget
 
-Target about 40–60 MB for the arm64 APK, inside the 50–100 MB budget, with headroom kept for v2 voice and Hinglish. Figures are approximate and must be measured.
+Target about 40–60 MB for the arm64 APK, inside the 50–100 MB budget, with headroom kept for v2 voice. Figures are approximate and must be measured.
 
 | Component | Plan | Approx. size |
 | --- | --- | --- |
@@ -162,7 +162,7 @@ The MVP answers one question: do real users' typed complaints map to the right f
 
 **In scope.** Typed English only; about 15 intents from the catalog (connectivity, ringer/DND, notifications, accidental modes, display, permissions, date/time); two targets (Pixel emulator plus a Moto Edge 30 on Android 14, chosen in the M1 spec); risk-tiered execution (auto for low-risk + high confidence, confirm otherwise, guide-only for high risk).
 
-**Out of scope.** Voice (v2, via Android's on-device recognizer at \~0 MB), Hindi/Hinglish (v2, fits the budget), more OEMs, Play Store release, destructive fixes.
+**Out of scope.** Voice (v2, via Android's on-device recognizer at \~0 MB), more OEMs, Play Store release, destructive fixes.
 
 **Success metrics.**
 
