@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     sourceSets {
         // The catalog's single source of truth sits at the repo root, where training code reads it too.
@@ -52,6 +53,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.process)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)

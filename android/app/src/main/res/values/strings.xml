@@ -2,33 +2,105 @@
     <string name="app_name">Unstuk</string>
     <string name="service_description">Lets Unstuk switch settings like airplane mode and Do Not Disturb for you, then check that they changed.</string>
 
-    <string name="tab_help">Help</string>
-    <string name="tab_setup">Setup</string>
-    <string name="tab_debug">Debug</string>
+    <string name="back">Back</string>
+    <string name="open_access">Access</string>
 
-    <string name="complaint_label">What\'s wrong with your phone?</string>
-    <string name="complaint_submit">Help me</string>
-    <string name="working">Working on it…</string>
-    <string name="decline_title">Sorry, I can\'t help with that yet.</string>
-    <string name="decline_body">I can help when:</string>
-    <string name="clarify_title">Which of these is closest?</string>
+    <string name="home_title">What’s wrong with your phone?</string>
+    <string name="home_subtitle">Say it in your own words.</string>
+    <string name="complaint_label">Describe the problem</string>
+    <string name="home_submit">Help me</string>
+    <string name="home_topics">Or pick a topic</string>
+    <!-- Invented examples for the typing hint, never real user messages (AGENTS.md invariant 9). -->
+    <string-array name="complaint_examples">
+        <item>my phone doesn’t ring</item>
+        <item>the screen is too dark</item>
+        <item>the internet isn’t working</item>
+        <item>my phone keeps talking to me</item>
+        <item>the letters are too small</item>
+        <item>my earbuds won’t connect</item>
+    </string-array>
+
+    <string name="banner_title">Let me fix more by myself</string>
+    <string name="banner_body">A few quick permissions. Without them I’ll show you the steps instead.</string>
+    <string name="banner_action">Set up</string>
+    <string name="banner_dismiss">Dismiss</string>
+
+    <string name="area_internet">Internet &amp; Wi‑Fi</string>
+    <string name="area_calls">Calls &amp; sound</string>
+    <string name="area_screen">Screen</string>
+    <string name="area_messages">Messages</string>
+    <string name="area_bluetooth">Bluetooth</string>
+    <string name="area_apps">Apps &amp; time</string>
+    <string name="topic_question">Which one is it?</string>
+    <string name="topic_footer">Not here? Go back and describe it in your own words.</string>
+
+    <string name="decline_title">I didn’t quite catch that.</string>
+    <string name="decline_body">Try describing what you notice, like “the screen is too dark”.</string>
+    <string name="decline_retry">Try again</string>
+
+    <string name="clarify_said">You said “%1$s”</string>
+    <string name="clarify_title">Which sounds most like it?</string>
+    <string name="clarify_none">None of these</string>
+
+    <string name="scan_title">What I checked</string>
+    <string name="scan_found">found</string>
+    <string name="scan_fine">fine</string>
+    <string name="scan_fixed">fixed</string>
+    <string name="scan_row">%1$s: %2$s</string>
+
+    <string name="found_badge">Found it</string>
+    <string name="not_now">Not now</string>
+    <string name="hint_accessibility">Your screen will move by itself for a moment. Please don’t touch it.</string>
+    <string name="hint_panel_open">I’ll open the right screen.</string>
+    <string name="hint_panel_tap">You make the change, then come back.</string>
+    <string name="hint_panel_check">I check that it worked.</string>
+
+    <string name="working_title">Working on %1$s…</string>
+
+    <string name="fixed_subtitle">I checked, and it worked.</string>
+    <string name="how_fixed">How I fixed it</string>
+    <string name="step_direct_ok">Changed the setting directly</string>
+    <string name="step_direct_no">Change it directly · not possible here</string>
+    <string name="step_panel_ok">Opened the right screen for you</string>
+    <string name="step_panel_no">Open the right screen · not finished</string>
+    <string name="step_accessibility_ok">Tapped the switch for you</string>
+    <string name="step_accessibility_no">Tap the switch · didn’t work</string>
+    <string name="step_verify_ok">Read the phone again · confirmed</string>
+    <string name="step_verify_no">Read the phone again · not confirmed</string>
+    <string name="step_millis">%1$d ms</string>
+    <string name="next_title">One more thing</string>
+    <string name="done">Done</string>
+    <string name="done_secondary">I’m done</string>
+    <string name="still_not_working">Still not working?</string>
+    <string name="show_me_how">Show me how</string>
+
+    <string name="already_fine_body">Nothing needed changing. It may have changed a moment ago.</string>
     <string name="all_clear_title">Everything I can check looks fine.</string>
-    <string name="all_clear_body">Here are some things to try:</string>
-    <string name="guide_title">Here\'s how to %1$s:</string>
-    <string name="confirm_title">I can %1$s for you. Shall I?</string>
-    <string name="confirm_yes">Yes, do it</string>
-    <string name="confirm_no">No, thanks</string>
-    <string name="fixed_title">Done: %1$s. I checked, and it worked.</string>
-    <string name="already_fine_title">This was already set correctly: %1$s.</string>
-    <string name="needs_unlock_title">Unlock your phone, then try again.</string>
-    <string name="open_settings">Open settings</string>
-    <string name="next_title">One more thing:</string>
+    <string name="tips_title">A few things you can try</string>
 
-    <string name="setup_title">Give Unstuk access</string>
-    <string name="setup_body">Each one lets Unstuk fix more by itself. Without it, Unstuk shows you the steps instead.</string>
-    <string name="setup_service">Unstuk service (taps switches for you)</string>
-    <string name="setup_policy">Do Not Disturb access</string>
-    <string name="setup_write_settings">Modify system settings (brightness, screen timeout, rotation)</string>
-    <string name="setup_granted">Allowed</string>
-    <string name="setup_grant">Allow</string>
+    <string name="guide_together_title">Let’s do this one together.</string>
+    <string name="guide_together_body">I couldn’t do this one myself, but it only takes a moment.</string>
+    <string name="guide_risky_body">This one resets things, so I’ll show you how rather than do it myself.</string>
+    <string name="guide_still_title">It still looks the same.</string>
+    <string name="guide_still_body">Try the steps again, then ask me to check.</string>
+    <string name="open_settings">Open settings</string>
+    <string name="check_for_me">I’ve done it, check for me</string>
+
+    <string name="unlock_title">Unlock your phone first.</string>
+    <string name="unlock_body">I need it unlocked to do this. Nothing has been changed yet.</string>
+    <string name="try_again">Try again</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="access_title">Let me fix more by myself</string>
+    <string name="access_body">Each one lets me switch something for you. Without it, I show you the steps instead.</string>
+    <string name="access_service_title">Tap switches for you</string>
+    <string name="access_service_body">Airplane mode, Wi‑Fi, Bluetooth, TalkBack</string>
+    <string name="access_policy_title">Do Not Disturb</string>
+    <string name="access_policy_body">Turn it off when calls are silent</string>
+    <string name="access_write_title">Screen settings</string>
+    <string name="access_write_body">Brightness, screen timeout, rotation</string>
+    <string name="access_on">On</string>
+    <string name="access_allow">Allow</string>
+    <string name="access_offline">Works offline. Nothing leaves your phone.</string>
+    <string name="access_debug">Debug tools</string>
 </resources>
