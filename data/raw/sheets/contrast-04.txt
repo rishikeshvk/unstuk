@@ -1,0 +1,224 @@
+## no_internet
+my phone no internet i think my brother touch something and the wifi turn off now no wifi sign on top and you tube not open
+## wifi_no_load
+my phone no internet i think my brother touch something the wifi sign is on top it say connected but you tube not open
+## no_internet
+at school i cannot open anything there is a small airplane picture on the top of my phone and no internet
+## wifi_no_load
+at school i cannot open anything it say connected to school wifi on the top of my phone but no internet
+## no_internet
+in my home the internet not working on my phone the wifi button is off and i can't find how it come back
+## wifi_no_load
+in my home the internet not working on my phone the wifi button is on and say connected but nothing come just loading circle
+## no_internet
+i want to send message on what's app but it is waiting with clock my mobile data is off i think
+## wifi_no_load
+i want to send message on what's app but it is waiting with clock my wifi is connected i see the name but still waiting
+## phone_not_ringing
+my friend call me three times and my phone make no sound i only see missed call later
+## notifications_missing
+my friend message me three times and my phone make no sound i only see the messages later when i open
+## phone_not_ringing
+my mom is angry because when she call me the phone not ring at all it just show on screen quiet
+## notifications_missing
+my mom is angry because when she text me on what's app it come one hour late and no sound
+## phone_not_ringing
+since yesterday nobody call is ringing my phone the screen light up but no ring tone
+## notifications_missing
+since yesterday no instant gram notification is coming on my phone i open the app and then i see them
+## phone_not_ringing
+the phone is in my pocket and calls come but i don't hear any ring the volume i think is up
+## notifications_missing
+the phone is in my pocket and messages come but i don't hear any ding the volume i think is up
+## screen_too_dim
+my screen is very dark i can't see nothing even inside the room it is like night
+## colours_wrong
+my screen is all grey no colour i can't see the pictures good it is like old tv
+## screen_too_dim
+after i play with the settings my phone screen become so dark i need to go near the window to read
+## colours_wrong
+after i play with the settings my phone screen become black and white like old photo everything no colour
+## screen_too_dim
+the screen go dark suddenly and the pictures look like shadow i can't see my games
+## colours_wrong
+the screen go strange suddenly the white is black and black is white like negative i can't see my games
+## screen_too_dim
+my sister give me back my phone and the light of the screen is very low everything dim
+## colours_wrong
+my sister give me back my phone and the colours of the screen is all wrong everything grey
+## screen_too_dim
+my phone screen is too dark at night i cannot read my messages
+## out_of_scope
+my phone screen is too bright at night it hurt my eyes when i read my messages
+## screen_too_dim
+i want the screen more light because outside in sun i can't see anything it is too dark
+## out_of_scope
+i want the screen less light because in my bed it is too strong and shining my face
+## screen_too_dim
+the screen is so dim i can't see the home page please help make it brighter
+## out_of_scope
+i want the black background everywhere like my friend phone how you call it the dark mode please help
+## screen_too_dim
+everything on my screen is dark and hard to see even when the light is on
+## out_of_scope
+everything on my screen is white and hard to see i want it all black colour like night mode
+## screen_turns_off_fast
+when i read my book on the phone the screen go black after few seconds i have to touch every time
+## out_of_scope
+when i read my book on the phone the whole phone turn off by itself and i have to press the button long to start again
+## screen_turns_off_fast
+i am watching the recipe and the screen go dark very fast i didn't touch anything
+## out_of_scope
+i am watching the recipe and the phone restart by itself very fast i see the logo again
+## screen_turns_off_fast
+my screen is sleeping too quick when i reading the long message from teacher
+## out_of_scope
+my phone is shutting down completely when i reading the long message from teacher and battery still have
+## screen_turns_off_fast
+the screen turn black so fast when i look at the map i need to wake it again and again
+## out_of_scope
+the phone switch off fully when i look at the map and it take long time to come back on
+## text_too_small
+the letters in my messages are too small i can't read them without go very close
+## out_of_scope
+everything in my screen is too big like zoom in i can only see part of my messages
+## text_too_small
+the words on my phone are so tiny my eyes hurt i want them bigger
+## out_of_scope
+the whole screen is so big like magnifying glass i have to move with three fingers i want it normal
+## text_too_small
+in the settings and the what's app the writing is very small can you make the letters big
+## out_of_scope
+in the settings and the what's app everything is very zoomed i see only big pieces can you make it normal
+## text_too_small
+my grandmother phone text is too little and she ask me but i also can't fix it
+## out_of_scope
+my grandmother phone screen is too zoomed and she ask me but i also can't fix it there is a box that move
+## talkback_on
+my phone is talking when i touch something it say the name and i need to touch two times to open
+## out_of_scope
+my phone is talking in the car it read my messages loud from the car speaker and i want it stop
+## talkback_on
+there is a green box on everything and a lady voice read what i touch and one tap not working
+## out_of_scope
+there is a lady voice read my messages when i say hey google and i don't want her to read
+## talkback_on
+my little cousin play with my phone and now it read out loud every button and i can't swipe normal
+## out_of_scope
+my little cousin play with my phone and now the assistant read out loud every new message when headphones in
+## talkback_on
+when i press the app the phone speak the name and only open when i double tap it is so slow
+## out_of_scope
+when i drive with my uncle the car screen speak my text messages and everyone hear it
+## bluetooth_earphones
+my wireless earbuds is not connecting to my phone it keep searching
+## out_of_scope
+my earphones with the wire is not working on my phone no sound come in the ears
+## bluetooth_earphones
+my new earbuds from birthday will not connect to the phone the phone can't find them
+## out_of_scope
+my new earbuds from birthday are dead the case have no light even after charging long time
+## bluetooth_earphones
+my air pods was working yesterday but today they don't connect with my phone
+## out_of_scope
+my air pods was working yesterday but today the battery is finish and they don't turn on at all
+## bluetooth_earphones
+i want to listen music with the speaker by blue tooth but the phone say failed to connect
+## out_of_scope
+i want to listen music with the cable earphones but when i put in the hole nothing come sound only from phone
+## app_permission
+on instant gram the camera not open it say need permission but in normal camera app it work
+## out_of_scope
+on instant gram the camera not open and in normal camera app also black the camera is broken i drop it
+## app_permission
+when i take photo in snapchat it say camera not allowed but other apps the camera is fine
+## out_of_scope
+when i take photo in snapchat it is all blurry and lines and in every app the same because the camera glass is cracked
+## app_permission
+on the video call with my teacher the camera not show me it say the app need permission for camera
+## out_of_scope
+on the video call with my teacher the camera not show me and the camera app also not work it say camera failed i think it broken
+## app_permission
+in tiktok i want to record with my voice but it say tiktok can't use microphone other apps fine
+## out_of_scope
+in tiktok i want to record but the camera show only black and in every other app black too and the glass have crack
+## reset_network
+the internet in my phone is not working please reset the network settings for me
+## no_internet
+the internet in my phone is not working please help me i don't know what to do
+## reset_network
+my teacher say to do the network reset because my wifi and data not working how i do it
+## no_internet
+my teacher say my wifi and data not working in my phone and i need to fix how i do it
+## reset_network
+i want to reset network on my phone the shop man tell me it fix the internet
+## no_internet
+no internet on my phone the shop man tell me to check but i don't understand
+## reset_network
+can you do the reset of the wifi and mobile network settings my internet is gone since morning
+## no_internet
+can you help my internet is gone since morning the wifi and mobile data both not open nothing
+## reset_network
+i want to reset only the network settings not my photos just the wifi and blue tooth things
+## out_of_scope
+i want to reset all the phone like new from factory delete everything
+## reset_network
+how i reset the network settings my brother say it help with the wifi
+## out_of_scope
+how i do factory reset my brother say it help the phone become fast
+## reset_network
+please reset the network part of my phone i will put the wifi password again no problem
+## out_of_scope
+please reset my whole phone to factory i already save my photos no problem
+## reset_network
+i want to clean the network settings only the wifi names and passwords go away
+## out_of_scope
+i want to clean the whole phone everything go away like the first day i buy it
+## notifications_missing
+my messages from friends coming very late like one hour after they send
+## out_of_scope
+the code message from the bank not coming when i try to login it say we send sms but nothing
+## notifications_missing
+when i order food the app notification come late after the food is already here
+## out_of_scope
+when i order food the app send me the code by sms but the sms never come so i can't sign in
+## notifications_missing
+the school app alert don't come on time i see them only when i open the app
+## out_of_scope
+the school app say they send one time password to my number but the message never come
+## notifications_missing
+my what's app messages arrive late and no notification until i open what's app
+## out_of_scope
+my what's app verification code by text message is not arrive so i can't set up what's app in new phone
+## phone_not_ringing
+when someone call me my phone don't make any sound i miss all calls
+## out_of_scope
+when someone call me my phone make very loud sound everyone in class look at me
+## phone_not_ringing
+my ringtone is not playing when my dad call only vibrate nothing
+## out_of_scope
+i want to change my ringtone when my dad call i want a song not this boring one
+## phone_not_ringing
+the phone is silent for calls i don't hear it ring even the volume is up
+## out_of_scope
+the phone is too loud for calls it ring so strong it scare me can i make it less
+## phone_not_ringing
+my phone not ringing anymore for the calls i only see missed calls after
+## out_of_scope
+my phone ringing with the old sound i want new ringtone from my music can you put
+## no_internet
+my internet stop because i think i switch off the mobile data by mistake
+## out_of_scope
+my internet stop because i think my data pack is finish this month
+## no_internet
+no internet on my phone the wifi is turned off and i don't know where to turn on
+## out_of_scope
+no internet on my phone the message say your recharge is expired please recharge
+## no_internet
+i am in bus and no internet the mobile data button is off on my phone
+## out_of_scope
+i am in bus and no internet the company send message my daily data limit is over
+## no_internet
+my phone not open anything the airplane mode is on and i can't find how to remove
+## out_of_scope
+my phone not open anything my mom not pay the recharge this month so the balance is zero

@@ -1,0 +1,124 @@
+## out_of_scope | plain
+Why is my phone battery finishing so fast even when I am not using it much?
+My phone back cover is lifting up a little, is the battery swelling or what?
+Why does my phone charge so slowly with my brother's charger, should I buy a new one?
+My charger works only if I hold the wire at an angle, is the charging port spoilt?
+Why is my phone getting so hot while playing games, is it dangerous?
+Phone is showing storage full and I can't even click photos, what should I delete?
+Why has my phone become so slow and laggy after one year?
+My phone got hung on the logo and is not starting, what do I do?
+Instagram keeps closing by itself whenever I open reels, why is it happening?
+Why is the Play Store saying it can't install this game on my phone?
+Is it okay to install the new software update or will my phone become slow?
+The update is stuck at 37 percent and not moving, what should I do?
+I dropped my phone and the screen has cracked, can I still use it or will it get worse?
+Half my display is showing green lines after it fell, can that be repaired?
+My phone speaker is making a cracking noise when I play songs, is it broken?
+Why is my back camera giving blurry photos even after I wipe the lens?
+My wired earphones are working only on one side, is it the earphones or the phone?
+I forgot my phone pattern and now it is locked, how do I open it?
+I forgot my Gmail password and can't log in on my new phone, how do I get it back?
+Why is my phone saying no SIM card even though the SIM is inside?
+How do I put a second SIM in my phone, which slot does it go in?
+Why do I get no signal for calls in my room but outside it is fine?
+Why is the OTP not coming on my phone when I try to log in to my bank app?
+Everything on my screen suddenly became zoomed in and I can't move around properly, how do I make it normal?
+My screen is too bright even on the lowest setting and it hurts my eyes, how do I make it less bright?
+How do I turn on dark mode so that everything becomes black?
+My screen has a yellow tint like some night mode, how do I remove it?
+How can I set a song from my playlist as my ringtone?
+How do I change the ringtone for only my mom's number?
+My ringtone is so loud it embarrasses me in class, how do I make it softer?
+All my contacts suddenly disappeared from my phone, how do I get them back?
+I deleted my trip photos by mistake, is there any way to recover them?
+I lost my phone in the bus, how can I find where it is?
+My phone got stolen at the market, how do I block it so nobody can use it?
+How do I factory reset my whole phone before giving it to my cousin?
+Why is my prepaid balance getting cut even though I didn't use anything?
+How do I recharge my number for the monthly pack from the phone itself?
+Why is my postpaid bill so high this month, did someone use my data?
+My phone fell in water, will keeping it in rice actually help it dry?
+Why is my phone's fingerprint sensor not taking my finger anymore?
+## out_of_scope | collision
+My nose ring is giving me a rash, should I change it to a silver one?
+Is dark chocolate actually good for health or is that a myth?
+Which colour kurta should I wear for my cousin's wedding, maroon or green?
+How do I connect with my seniors at college without looking desperate?
+My father says I should build a network with people in his field, how do I even start?
+My voice is cracking a lot these days, is that normal for boys my age?
+Who should we complain to if the traffic signal near our school is not working?
+I have to be the main speaker at our school assembly, how do I stop being nervous?
+My school shoes have become small, can they be stretched at home?
+Why does the pressure cooker make such a loud sound, is it going to burst?
+Can I reset my diet after eating so many sweets at Diwali?
+Do I need permission from my parents to go on the school trip to Ooty if I am seventeen?
+Is the school notification about the uniform change real or fake?
+My cousin calls me Bluetooth because I follow him everywhere, is that a compliment?
+Is it true that sleeping near the Wi-Fi router is bad for health?
+Why is the sky so dark today, will it rain heavily in Chennai?
+My bike is making a strange sound while changing gear, what could it be?
+Why did the colour of my white shirt change after washing it with the red dupatta?
+Is a small SIP of five hundred rupees worth starting as a student?
+Can I connect the two pipes of the water purifier myself or should I call a plumber?
+My dadi's finger is swollen and her ring is stuck, how do we take it off?
+Is it bad if my dog is very silent and not making any sound since yesterday?
+I have dark circles from studying so much, which home remedy actually works?
+My bike indicator signal is not blinking on the left side, can I fix it myself?
+Which is a better small car for a family of five, Swift or i20?
+Will my tuition sir give permission to skip class for the cricket match?
+Why does my mother's voice become so loud when relatives come over?
+How do I reset my mind after failing the unit test?
+Is it okay to wear dark lipstick to college or will the teachers say something?
+Is the network marketing business my neighbour is doing a scam?
+## out_of_scope | oos_near
+Can you put my phone on airplane mode during the exam?
+Can you please switch on do not disturb, I am studying?
+Can you turn off my Wi-Fi so I stop scrolling?
+Will you switch off Bluetooth for me?
+Can you turn on the torch, the power has gone?
+Can you call my mummy?
+Can you send a message to Rahul that I will be late?
+Can you set an alarm so I wake up for my exam?
+Can you remind me to submit my project?
+Can you take a selfie of me?
+Can you open YouTube for me?
+Can you play some Arijit Singh songs?
+Can you mute my phone completely while I am in class?
+Can you open WhatsApp and check if Priya replied?
+Can you make my phone silent so it doesn't ring in tuition?
+Can you turn off my mobile data so my brother can't use my hotspot?
+Can you click a photo of my notes?
+Can you open Google Maps and show me the way to the stadium?
+Can you play the Hanuman Chalisa?
+Can you block this unknown number that keeps calling me?
+Can you turn off location so my parents can't track me?
+Can you lock Instagram with a password so my sister can't open it?
+Can you video call my best friend?
+Can you uninstall Free Fire from my phone?
+Can you remind me to drink water?
+## out_of_scope | plain
+Hi, how are you doing?
+Thank you so much, you helped a lot yaar, how can I repay you?
+What is your name, are you a robot?
+What is the weather like in Delhi?
+Who won the India versus Australia match?
+What is the latest news about the board exam pattern?
+How do I make Maggi more tasty with masala?
+What is the recipe for paneer butter masala?
+How much does a PS5 cost in India?
+What is the price of gold in Kerala?
+How do I get to Charminar from Secunderabad station?
+Which is the nearest metro station to Connaught Place?
+Why do we break a coconut before starting something new?
+What is the meaning of Om Namah Shivaya?
+Is it good to drink haldi doodh when I have a cold?
+How do I get rid of pimples before my cousin's wedding?
+Who is the captain of the Indian football team?
+Can you tell me a joke?
+Good morning, did you have breakfast?
+Which is better for engineering, IIT coaching in Kota or online classes?
+What are the best places to visit in Goa with friends?
+How many calories are there in one samosa?
+Is Virat Kohli playing in the next series?
+What should I gift my sister for Raksha Bandhan?
+How do I stop feeling stressed before exams?
