@@ -26,7 +26,7 @@ from unstuk_ml.validate import DEFAULT_DATA_DIR
 
 ClassWeight = Literal["balanced"] | None
 GRID: list[tuple[float, ClassWeight]] = [
-    (c, weight) for c in (0.3, 1.0, 3.0, 10.0) for weight in (None, "balanced")
+    (c, weight) for c in (0.3, 1.0, 3.0, 10.0, 30.0, 100.0) for weight in (None, "balanced")
 ]
 SETTINGS = DEFAULT_DATA_DIR.parent / "ml" / "settings" / "tfidf.json"
 CLEAN_DIR = DEFAULT_DATA_DIR / "clean"

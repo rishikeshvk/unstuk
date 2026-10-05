@@ -48,7 +48,10 @@ intents (`screen_wont_rotate`, `wrong_time`, `cant_hear_call`) never appear in t
 ### TF-IDF + logistic regression
 
 scikit-learn, already a dependency. Features: word 1–2-grams and `char_wb` 2–5-grams, joined. Grid: regularisation
-`C` ∈ {0.3, 1, 3, 10}, class weights none or balanced. Eight fits, seconds each.
+`C` ∈ {0.3, 1, 3, 10, 30, 100}, class weights none or balanced. Twelve fits, about 20 seconds each.
+
+*Changed before any test score (2026-10-05):* the approved grid stopped at `C` = 10, and that was the dev winner, with
+macro-F1 still rising. So the grid was extended to 30 and 100 on dev alone, before the settings were frozen.
 
 ### Frozen encoder + logistic regression
 
