@@ -1,6 +1,6 @@
 # M3 spec: Data
 
-2026-10-05 · Status: **data built; phone run pending.** Results: [m3-results.md](m3-results.md). Plain-language
+2026-10-05 · Status: **done.** Results: [m3-results.md](m3-results.md). Plain-language
 summary: [m3-summary.md](m3-summary.md). Labelling guide: [m3-labelling-guide.md](m3-labelling-guide.md)
 
 M3 answers one question: **can we build data that teaches a small model to map plain complaints to the right fix,
@@ -346,6 +346,8 @@ messages.
 | 2026-10-05 | Mobile Actions gives 300 out-of-scope commands from five tools; Wi-Fi settings and calendar requests are left out | None of its tools is a symptom we fix; Wi-Fi is too close to our intents, and calendar dates would bias the held-out `wrong_time` |
 | 2026-10-05 | Every training batch is written by a fresh agent with no project context | This session read the test set while reviewing it; isolation keeps test phrasing out of training |
 | 2026-10-05 | The label review and the 200-line audit use a blind, context-free agent as the second labeller | Chosen in planning; it makes agreement a measurement between two independent labellers |
+| 2026-10-05 | Node-label test: one option per item on screen, answers found by the app's label rule | Two options for one item marked a right pick wrong; whole-string matching missed tiles that show their state ("Auto-rotate, Off") |
+| 2026-10-05 | The DND screen is dumped with DND on | The Moto selector's step, "Turn off now", only shows then |
 
 ## Decisions (2026-10-05)
 

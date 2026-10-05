@@ -17,7 +17,7 @@ To teach a small on-device model to map a non-technical person's phone complaint
 | `clean/` | The cleaned pool, split by batch: `train.jsonl`, `dev.jsonl`; plus review decisions, blind labels and the audit sample | 5,833 train, 1,095 dev |
 | `test/` | The frozen proxy test set (`test.lock`) | 602 |
 | `state/` | Complaints the words can't settle, paired with device states | 117 train, 47 test records |
-| `nodes/` | "Which item on the screen is the {target}?" questions | 828 train, 132 dev; Moto test pending |
+| `nodes/` | "Which item on the screen is the {target}?" questions | 828 train, 132 dev; 10 test from the Moto's screens |
 | `real/` | Real user messages: gitignored, never committed, empty in M3 | 0 |
 
 Each complaint is one JSON line: `id`, `text`, `labels` (intent IDs from `catalog/intents.json` or `out_of_scope`),
@@ -36,7 +36,9 @@ per trained intent and 1,717 out of scope.
 - **The test set** was written before any training data, by ChatGPT (237 lines), Gemini (265) and a context-free
   Claude agent (100), reviewed against the guide, deduplicated and frozen by hash.
 - **Node labels** come from AOSP strings, the Pixel selector file and an agent's knowledge of five makers' wording;
-  the Moto selector file is kept out, because the Moto's screens are the test.
+  the Moto selector file is kept out, because the Moto's screens are the test. Those screens were dumped from a Moto
+  Edge 30 (Android 14) by the debug-only dumper; the dumps show the carrier, build number and time zone, but no
+  network, device or phone names.
 
 ## Cleaning and checks
 
@@ -67,6 +69,8 @@ random training lines agreed on all 200 (Cohen's kappa 1.00). Reports: `ml/repor
 - **The vague slice has 28 lines**, two short of the 30 target; its scores are rough.
 - **Guide §5 settles some complaints by default** ("Wi-Fi not working" without "connected" is `no_internet`), while
   the device could show the other cause. See [state/README.md](state/README.md).
+- **The node-label test is small and easy:** 10 questions on one phone whose wording is close to stock Android.
+  String matching gets 8 of 10.
 - **Label mix is our choice**, not real traffic, so calibration measured here is not calibration on real users.
 
 ## Not for

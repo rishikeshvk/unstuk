@@ -29,5 +29,21 @@ the makers' sheet.
 
 The Moto's real screens, dumped by the debug-only label dumper (`android/scripts/dump-labels.sh`), become the test:
 the options are the labels actually on each screen, and the answer is the label `motorola.json` names for the
-target. The baseline to beat is `node_labels.match`: exact, normalised, then fuzzy matching against the labels
-known before meeting the Moto (AOSP and Pixel only).
+target. Each item on a screen gives one option, its text or else its description, and the answer is the option the
+app's own rule (`LabelMatch.kt`: the text before the first ',' or '.') matches to the selector label. The baseline to
+beat is `node_labels.match`: exact, normalised, then fuzzy matching against the labels known before meeting the Moto
+(AOSP and Pixel only).
+
+On a Moto Edge 30 (Android 14), with the phone unlocked and Unstuk's service on:
+
+```sh
+ANDROID_SERIAL=<serial> android/scripts/dump-labels.sh moto     # from the repo root; writes moto/<screen>.json
+uv run unstuk-node-labels test ../data/nodes/aosp-map.json ../data/nodes/aosp-labels.json \
+  ../android/app/src/main/assets/selectors/pixel.json ../android/app/src/main/assets/selectors/motorola.json \
+  ../data/nodes/moto ../data/nodes/test.jsonl                   # from ml/
+```
+
+**8 screens, 10 test questions** in [`test.jsonl`](test.jsonl): eight Quick Settings tiles, the DND screen's "Turn off
+now" button (dumped with DND on, the state the executor meets it in) and TalkBack in Accessibility. **The baseline
+gets 8/10**; see [m3-results.md](../../docs/m3-results.md). The Settings airplane-mode row has no question: the Moto
+hides it from Unstuk's accessibility service.
