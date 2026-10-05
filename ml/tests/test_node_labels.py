@@ -1,4 +1,7 @@
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -48,6 +51,28 @@ def test_only_targets_get_questions_and_the_build_is_repeatable() -> None:
 
     assert {q.target for q in questions} == set(DESCRIPTIONS)
     assert questions == build(LABELS, DESCRIPTIONS)
+
+
+def test_the_build_does_not_depend_on_string_hashing() -> None:
+    # Python salts str hashes per process, so only separate processes expose set-order effects.
+    script = (
+        "from unstuk_ml.node_labels import Label, build\n"
+        "texts = ['Do Not Disturb', 'Do not disturb', 'Wi-Fi', 'WiFi', 'Wi Fi', 'Torch', 'TORCH']\n"
+        "labels = [Label(f'n{i}', t, 's', 'o') for i, t in enumerate(texts)]\n"
+        "print([q.options for q in build(labels, {'n0': 'dnd'})])\n"
+    )
+    outputs = {
+        subprocess.run(
+            [sys.executable, "-c", script],
+            env={**os.environ, "PYTHONHASHSEED": str(seed)},
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout
+        for seed in range(8)
+    }
+
+    assert len(outputs) == 1
 
 
 def test_one_maker_is_held_out_for_dev() -> None:

@@ -113,7 +113,8 @@ def build(
     own: dict[str, set[str]] = defaultdict(set)
     for label in labels:
         own[label.item].add(_key(label.text))
-    pool = sorted({label.text for label in labels}, key=_key)
+    # The text breaks ties between same-key labels, so set order (salted per process) can't leak in.
+    pool = sorted({label.text for label in labels}, key=lambda text: (_key(text), text))
     questions = []
     for label in labels:
         if label.item not in descriptions:
