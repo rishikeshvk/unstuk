@@ -1,0 +1,8 @@
+{
+  "test-chatgpt-a.jsonl": "5a278c1ddb310737411845133e3f6955b30fc8bd759b7debd7e3b7a7a1d4ce96",
+  "test-chatgpt-b.jsonl": "ca2bb76ede6e7eb6d4e4537adc3e9eaac19bcc708b022d1b785d9bf6c6c7d12c",
+  "test-claude-blind.jsonl": "d37aebe394caa7f323b7fafef9bd84ab0c70b31b66c66d5e0e426d5ed11f14fe",
+  "test-gemini-a.jsonl": "dcca22b1d16dc083664277ca6f6b9acfdee8f3139ed85d59daa21d48657e6cb0",
+  "test-gemini-b.jsonl": "8b7655d5b08dc92e6db6f8531cf1686c8b74adbe5697165ced5d5e0ab1a3707b",
+  "test-gemini-topup.jsonl": "fd68d68de62dfe4f008fafb2be431fe1e98ef98f9e34584c4c207668e65e7a64"
+}
