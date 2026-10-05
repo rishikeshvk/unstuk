@@ -1,0 +1,124 @@
+## out_of_scope | plain
+Battery finish very fast
+Battery is fat now
+Phone not charging
+Charger not working my phone
+Phone becoming very hot
+Phone memory is full
+No space for photos
+Phone very slow now
+Phone stuck, nothing moving
+WhatsApp closing by itself
+App not installing
+Cannot download new app
+Update not finishing
+Phone asking update always
+Glass is broken
+Screen cracked, I dropped
+Speaker broken, no music
+Camera not taking photo
+Wire earphone not working
+Forgot my pattern
+Forgot phone password
+Google password I forgot
+SIM card not showing
+New SIM not working
+No signal for calling
+Bank code not coming
+OTP not coming
+Screen zoomed, everything big
+Screen too bright, eyes pain
+How get dark mode
+Want yellow light night
+Change my ringtone please
+Ringtone very loud
+My contacts all gone
+Photos disappeared from phone
+Phone lost in bus
+Somebody stole my phone
+How reset full phone
+Phone bill too high
+Recharge not done
+## out_of_scope | collision
+My ring too tight
+Lost gold ring yesterday
+Wedding ring need polish
+Room very dark, bulb gone
+Dark chocolate good for heart?
+Which colour hair dye
+Shirt colour faded in wash
+Car signal light broken
+Knee making sound walking
+My voice gone, cold
+Doctor reset my medicine
+School permission letter for grandson
+Bank notification letter came
+Temple speaker too loud
+Want connect with old friends
+Son not connecting with me
+Shoes too small now
+Daughter joining network company
+Bus going dark road
+Sky dark, rain coming
+Ring road traffic very bad
+My ears ringing whole day
+Traffic signal at crossing broken
+My tooth turning blue
+Dog making sound all night
+Reset button on washing machine
+Curry too dark, burnt
+Small money for grocery
+Colour pencils for granddaughter
+Notification from pension office
+## out_of_scope | oos_near
+Put airplane mode on
+Switch off Wi-Fi
+Turn off Bluetooth please
+Put do not disturb
+Torch on please
+Call my son
+Message my daughter hello
+Set alarm please
+Remind me take medicine
+Take my photo
+Open WhatsApp
+Play old songs
+Play bhajan music
+Call doctor now
+Send photo to grandson
+Open YouTube for me
+Torch off please
+No calls tonight please
+Mobile data switch off
+Lock my phone
+Open camera
+Video call my sister
+Turn on flashlight
+Remind doctor appointment
+Play radio news
+## out_of_scope | plain
+Hello, how are you
+Thank you very much
+God bless you
+Will rain today?
+Who won cricket match
+What is news today
+How make sambar
+Onion price now
+Way to train station
+Where is nearest temple
+Prayer for good health
+Knee pain, what do
+Sugar level high, help
+My name is Mary
+You are very kind
+Is it cold outside
+Recipe for chicken curry
+Gold price going up?
+How to pray rosary
+Football score please
+Bus to hospital where
+Good night, bye
+My grandson getting married
+Tea or coffee better
+Headache since yesterday
