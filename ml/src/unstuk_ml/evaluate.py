@@ -6,7 +6,7 @@ thresholds (`decide/RiskGate.kt`) turn it into what the app would do: the safety
 
 import random
 from collections import Counter
-from collections.abc import Callable, Iterable, Sequence
+from collections.abc import Callable, Iterable, Iterator, Sequence
 from dataclasses import dataclass
 
 from sklearn.metrics import f1_score
@@ -119,13 +119,43 @@ def expected_calibration_error(items: Sequence[Scored]) -> float:
 
 def bootstrap(items: Sequence[Scored], metric: Metric, seed: int = SEED) -> tuple[float, float]:
     """A 95% interval: the metric on 1,000 resamples of the lines, with replacement."""
-    rng = random.Random(seed)
-    values = sorted(
-        v
-        for v in (metric(rng.choices(items, k=len(items))) for _ in range(RESAMPLES))
-        if v == v  # drops the NaN of a resample with no line of the kind
+    values = (metric([items[i] for i in drawn]) for drawn in _resamples(len(items), seed))
+    return _interval(values)
+
+
+def paired_bootstrap(
+    base: Sequence[Scored], challenger: Sequence[Scored], metric: Metric, seed: int = SEED
+) -> tuple[float, float]:
+    """A 95% interval on challenger minus base, both scored on the same resampled lines."""
+    if [s.record.id for s in base] != [s.record.id for s in challenger]:
+        raise ValueError("a paired comparison needs the same lines in the same order")
+    differences = (
+        metric([challenger[i] for i in drawn]) - metric([base[i] for i in drawn])
+        for drawn in _resamples(len(base), seed)
     )
-    return values[int(0.025 * len(values))], values[int(0.975 * len(values)) - 1]
+    return _interval(differences)
+
+
+def beats(base: Sequence[Scored], challenger: Sequence[Scored]) -> bool:
+    """M4 spec section 3: surely more accurate on both measures, and not surely less safe."""
+    return (
+        paired_bootstrap(base, challenger, in_scope_accuracy)[0] > 0
+        and paired_bootstrap(base, challenger, macro_f1)[0] > 0
+        and paired_bootstrap(base, challenger, confident_and_wrong)[0] <= 0
+    )
+
+
+def _resamples(n: int, seed: int) -> Iterator[list[int]]:
+    # Drawing indices uses the same random numbers as drawing the items themselves did.
+    rng = random.Random(seed)
+    for _ in range(RESAMPLES):
+        yield rng.choices(range(n), k=n)
+
+
+def _interval(values: Iterable[float]) -> tuple[float, float]:
+    # Drops the NaN of a resample with no line of the kind.
+    kept = sorted(v for v in values if v == v)
+    return kept[int(0.025 * len(kept))], kept[int(0.975 * len(kept)) - 1]
 
 
 def confusions(items: Sequence[Scored], top: int = 10) -> list[tuple[str, str, list[Scored]]]:

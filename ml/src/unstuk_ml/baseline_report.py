@@ -1,7 +1,8 @@
-"""The keyword baseline's report (M3 step 11): the bar every later model has to clear."""
+"""A decider's report on the frozen proxy test set: the same tables for every rung (M4 spec 4)."""
 
 from collections import Counter, defaultdict
 from collections.abc import Sequence
+from dataclasses import dataclass
 from pathlib import Path
 
 from unstuk_ml.evaluate import (
@@ -19,11 +20,13 @@ from unstuk_ml.evaluate import (
     out_of_scope_recall,
     vague_handled,
 )
+from unstuk_ml.freeze import LOCK, frozen_changes
 from unstuk_ml.keyword_matcher import load_matcher
 from unstuk_ml.record import Record
 from unstuk_ml.validate import DEFAULT_DATA_DIR
 
-REPORT = DEFAULT_DATA_DIR.parent / "ml" / "reports" / "keyword-baseline.md"
+REPORTS = DEFAULT_DATA_DIR.parent / "ml" / "reports"
+TEST_DIR = DEFAULT_DATA_DIR / "test"
 HEADLINE: list[tuple[str, Metric]] = [
     ("Top-1 accuracy, in scope", in_scope_accuracy),
     ("Top-1 accuracy, all clear lines", accuracy),
@@ -33,21 +36,39 @@ HEADLINE: list[tuple[str, Metric]] = [
     ("**Confident and wrong**", confident_and_wrong),
     ("Vague lines answered with a question or decline", vague_handled),
     ("Expected calibration error", expected_calibration_error),
-    ("Held-out intents (not zero-shot: the matcher has rules for them)", held_out_accuracy),
 ]
 
 
-def render(items: Sequence[Scored]) -> str:
-    lines = ["# Keyword baseline on the proxy test set", ""]
+@dataclass(frozen=True)
+class Decider:
+    title: str
+    command: str
+    about: str
+    held_out_note: str
+    """Why the held-out score is what it is: each rung reaches those intents differently."""
+    report: Path
+
+
+KEYWORDS = Decider(
+    title="Keyword baseline",
+    command="unstuk-evaluate-keywords",
+    about="M2's keyword matcher, ported to Python",
+    held_out_note="not zero-shot: the matcher has rules for them",
+    report=REPORTS / "keyword-baseline.md",
+)
+
+
+def render(decider: Decider, items: Sequence[Scored]) -> str:
+    lines = [f"# {decider.title} on the proxy test set", ""]
     lines += [
-        "Written by `uv run unstuk-evaluate-keywords`; do not edit by hand. M2's keyword matcher, "
-        f"ported to Python, scored on all {len(items)} frozen test lines. Intervals are 95% "
-        "bootstrap intervals.",
+        f"Written by `uv run {decider.command}`; do not edit by hand. {decider.about}, "
+        f"scored on all {len(items)} frozen test lines. Intervals are 95% bootstrap intervals.",
         "",
         "| Metric | Value | 95% interval |",
         "| --- | --- | --- |",
     ]
-    for name, metric in HEADLINE:
+    headline = [*HEADLINE, (f"Held-out intents ({decider.held_out_note})", held_out_accuracy)]
+    for name, metric in headline:
         low, high = bootstrap(items, metric)
         lines.append(f"| {name} | {_pct(metric(items))} | {_pct(low)} to {_pct(high)} |")
     lines += [
@@ -108,16 +129,27 @@ def _pct(value: float) -> str:
     return "n/a" if value != value else f"{value:.1%}"
 
 
-def main() -> None:
-    paths = sorted((DEFAULT_DATA_DIR / "test").glob("*.jsonl"))
-    records = [
+def load_test(test_dir: Path = TEST_DIR) -> list[Record]:
+    """The frozen test lines; refuses to read them unless they still match the lock."""
+    if not (test_dir / LOCK).exists():
+        raise FileNotFoundError(f"{test_dir / LOCK} is missing; the test set isn't frozen")
+    changes = frozen_changes(test_dir)
+    if changes:
+        raise ValueError("the test set differs from its lock: " + "; ".join(changes))
+    return [
         Record.model_validate_json(line)
-        for path in paths
-        for line in Path(path).read_text(encoding="utf-8").splitlines()
+        for path in sorted(test_dir.glob("*.jsonl"))
+        for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
+
+
+def write(decider: Decider, items: Sequence[Scored]) -> None:
+    decider.report.parent.mkdir(parents=True, exist_ok=True)
+    decider.report.write_text(render(decider, items), encoding="utf-8")
+    print(f"scored {len(items)} test lines; see {decider.report}")
+
+
+def main() -> None:
     matcher = load_matcher()
-    items = [Scored(r, matcher.choose(r.text)) for r in records]
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    REPORT.write_text(render(items), encoding="utf-8")
-    print(f"scored {len(items)} test lines; see {REPORT}")
+    write(KEYWORDS, [Scored(r, matcher.choose(r.text)) for r in load_test()])
