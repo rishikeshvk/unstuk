@@ -1,0 +1,37 @@
+{
+  "run": "fixed-head-lr5e-05",
+  "epoch": 2,
+  "temperature": 1.1377,
+  "checkpoint_sha256": "2d25b699837488c20df8f0b1fbd3eb0f136391882adfa3f37a8c081210618b1c",
+  "commit": "9e928172882559958efe7ee6307e4af8e930f912",
+  "grid": [
+    {
+      "run": "fixed-head-lr2e-05",
+      "epoch": 2,
+      "dev_macro_f1": 0.9762350710046316,
+      "dev_log_loss": 0.10803176227277393,
+      "dev_in_scope_accuracy": 0.9844760672703752
+    },
+    {
+      "run": "fixed-head-lr2e-05-typos",
+      "epoch": 5,
+      "dev_macro_f1": 0.9759804715583845,
+      "dev_log_loss": 0.10409473638519604,
+      "dev_in_scope_accuracy": 0.981888745148771
+    },
+    {
+      "run": "fixed-head-lr5e-05",
+      "epoch": 2,
+      "dev_macro_f1": 0.9844995153394257,
+      "dev_log_loss": 0.07898724685073402,
+      "dev_in_scope_accuracy": 0.9883570504527813
+    },
+    {
+      "run": "fixed-head-lr5e-05-typos",
+      "epoch": 3,
+      "dev_macro_f1": 0.9818816576489178,
+      "dev_log_loss": 0.08425070530923356,
+      "dev_in_scope_accuracy": 0.981888745148771
+    }
+  ]
+}
