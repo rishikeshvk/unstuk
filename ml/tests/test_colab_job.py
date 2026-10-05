@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from unstuk_ml.colab_job import bundle, run_code, setup_code, shipped_files
+from unstuk_ml.colab_job import bundle, decision_run, run_code, setup_code, shipped_files
 from unstuk_ml.decision_training import RunConfig, run_arguments
 
 FILES = {
@@ -67,6 +67,9 @@ def test_the_bundle_carries_the_commit_and_never_the_test_set(repo: Path, tmp_pa
 def test_the_remote_code_is_python_that_runs_the_configs_command() -> None:
     config = RunConfig(head="attention", learning_rate=5e-5, typos=False, state=True, fold=1)
 
+    code = run_code(decision_run(config))
+
     compile(setup_code(), "setup", "exec")
-    compile(run_code(config), "run", "exec")
-    assert repr(["unstuk-train-decision", *run_arguments(config)])[:-1] in run_code(config)
+    compile(code, "run", "exec")
+    assert repr(["unstuk-train-decision", *run_arguments(config)])[:-1] in code
+    assert decision_run(config).name == config.name

@@ -13,7 +13,7 @@ uv run unstuk-validate ../data                   # check every data file
 
 ```sh
 uv run unstuk-train-decision --head attention --learning-rate 5e-5 --state --limit 64 --epochs 1  # CPU smoke run
-uv run unstuk-colab-train --head attention --learning-rate 5e-5 --state                          # one run on a Colab T4
+uv run unstuk-colab-train decision --head attention --learning-rate 5e-5 --state                 # one run on a Colab T4
 ```
 
 `unstuk-colab-train` needs the `colab` CLI signed in (`colab sessions` should answer). It ships only committed

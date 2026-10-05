@@ -9,10 +9,12 @@ import io
 import subprocess
 import tarfile
 import tempfile
+from collections.abc import Sequence
+from dataclasses import dataclass
 from pathlib import Path
 
 from unstuk_ml.decision_training import RunConfig, add_run_arguments, config_from, run_arguments
-from unstuk_ml.fine_tuning import COMMIT_FILE, REPO_ROOT, RUNS_DIR
+from unstuk_ml.fine_tuning import CHECKPOINT, COMMIT_FILE, REPO_ROOT, RESULT, RUNS_DIR
 
 SESSION = "unstuk-m5"
 GPU = "T4"
@@ -23,7 +25,7 @@ REMOTE_BUNDLE = "/content/unstuk.tar.gz"
 # The CLI gives up after 30 seconds by default; a full run takes most of an hour.
 SETUP_TIMEOUT = 15 * 60
 RUN_TIMEOUT = 4 * 60 * 60
-OUTPUTS = ("result.json", "model.pt")
+OUTPUTS = (RESULT, CHECKPOINT)
 
 
 def shipped_files(repo: Path = REPO_ROOT) -> list[str]:
@@ -62,9 +64,22 @@ def setup_code() -> str:
     )
 
 
-def run_code(config: RunConfig) -> str:
-    """Trains one config on the VM, echoing its output line by line as it comes."""
-    command = ["unstuk-train-decision", *run_arguments(config), "--out", _remote_runs()]
+@dataclass(frozen=True)
+class ColabRun:
+    command: str
+    """A console script the package installs on the VM."""
+    arguments: tuple[str, ...]
+    name: str
+    """The run's directory under `ml/runs`, where the command writes its outputs."""
+
+
+def decision_run(config: RunConfig) -> ColabRun:
+    return ColabRun("unstuk-train-decision", tuple(run_arguments(config)), config.name)
+
+
+def run_code(run: ColabRun) -> str:
+    """Runs one training command on the VM, echoing its output line by line as it comes."""
+    command = [run.command, *run.arguments, "--out", _remote_runs()]
     return (
         "import subprocess\n"
         f"process = subprocess.Popen({command!r}, stdout=subprocess.PIPE,\n"
@@ -76,22 +91,27 @@ def run_code(config: RunConfig) -> str:
     )
 
 
-def train_on_colab(config: RunConfig) -> Path:
-    local = RUNS_DIR / config.name
+def train_on_colab(runs: Sequence[ColabRun]) -> None:
+    """One session for all the runs; each run's outputs come back as soon as it finishes."""
     with tempfile.TemporaryDirectory() as scratch:
         archive = bundle(Path(scratch) / "unstuk.tar.gz")
         _colab("new", "-s", SESSION, "--gpu", GPU)
         try:
             _colab("upload", "-s", SESSION, str(archive), REMOTE_BUNDLE)
             _exec(setup_code(), SETUP_TIMEOUT)
-            _exec(run_code(config), RUN_TIMEOUT)
-            local.mkdir(parents=True, exist_ok=True)
-            for name in OUTPUTS:
-                remote = f"{_remote_runs()}/{config.name}/{name}"
-                _colab("download", "-s", SESSION, remote, str(local / name))
+            for run in runs:
+                _exec(run_code(run), RUN_TIMEOUT)
+                _download(run)
         finally:
             _colab("stop", "-s", SESSION)
-    return local
+
+
+def _download(run: ColabRun) -> None:
+    local = RUNS_DIR / run.name
+    local.mkdir(parents=True, exist_ok=True)
+    for name in OUTPUTS:
+        _colab("download", "-s", SESSION, f"{_remote_runs()}/{run.name}/{name}", str(local / name))
+    print(f"{run.name}: written to {local}", flush=True)
 
 
 def _remote_runs() -> str:
@@ -115,6 +135,8 @@ def _git(repo: Path, *arguments: str) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    add_run_arguments(parser)
-    config = config_from(parser.parse_args())
-    print(f"{config.name}: written to {train_on_colab(config)}")
+    jobs = parser.add_subparsers(dest="job", required=True)
+    add_run_arguments(jobs.add_parser("decision", help="one decision-model run"))
+    args = parser.parse_args()
+
+    train_on_colab([decision_run(config_from(args))])
