@@ -67,6 +67,25 @@ held-out intents (93.8%, zero-shot) and expected calibration error (6.1%, zero-s
 - **Fixed-head rung:** the same backbone with a 13-way linear head; grid of learning rate × typo noise, the same
   epoch rule.
 
+### Round 1 failed the guard; round 2 (decided 2026-10-05, before any decision-model test score)
+
+The zero-shot rung scores 78.7% on the folds (87.5%, 85.6%, 62.9%). No round-1 config came near it: the best
+mean fold accuracy at the kept epoch was 62.0% (attention, 2e-5, typos), and the best at any single epoch was
+63.5%, reached after the first epoch. Fold accuracy then falls every epoch while dev macro-F1 rises, and 5e-5
+falls faster than 2e-5. Fine-tuning forgets how to name unseen options from the start.
+
+Round 2 aims at that forgetting. Each config runs on all the data and on the three folds, as before:
+
+| Config | Head | Learning rate | Typos | Frozen |
+| --- | --- | --- | --- | --- |
+| 1, 2 | cosine, attention | 1e-5 | on | none |
+| 3, 4 | cosine, attention | 5e-6 | on | none |
+| 5 | attention | 2e-5 | on | embeddings and the lower 8 of 12 layers |
+
+Typo noise stays on because it gave the higher fold accuracy for both heads in round 1. The guard, the selection
+rule and the heads' 1e-3 rate are unchanged, and the pool is both rounds' configs. If nothing qualifies after
+round 2, M5 records that fine-tuning costs zero-shot naming and asks how to go on; the test is still untouched.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
