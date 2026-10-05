@@ -1,0 +1,37 @@
+{"id": "contrast-03-066", "action": "keep", "rule": "§4 app_permission, not in; blind labeller agrees"}
+{"id": "contrast-03-070", "action": "keep", "rule": "§4 app_permission, not in; blind labeller agrees"}
+{"id": "contrast-03-098", "action": "keep", "rule": "§4 phone_not_ringing, not in; blind labeller agrees"}
+{"id": "contrast-03-101", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "contrast-04-047", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "contrast-04-070", "action": "keep", "rule": "§4 app_permission, not in; blind labeller agrees"}
+{"id": "contrast-05-106", "action": "keep", "rule": "§4 no_internet, not in; blind labeller agrees"}
+{"id": "contrast-05-108", "action": "keep", "rule": "§4 no_internet, not in; blind labeller agrees"}
+{"id": "contrast-06-028", "action": "keep", "rule": "§4 screen_too_dim, not in; blind labeller agrees"}
+{"id": "contrast-06-066", "action": "keep", "rule": "§4 app_permission, not in; blind labeller agrees"}
+{"id": "contrast-06-110", "action": "keep", "rule": "§4 no_internet, not in; blind labeller agrees"}
+{"id": "oos-01-018", "action": "keep", "rule": "§4 app_permission, not in; blind labeller agrees"}
+{"id": "oos-01-044", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "oos-01-057", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "oos-01-089", "action": "keep", "rule": "§6 opposite; blind labeller agrees"}
+{"id": "oos-02-074", "action": "keep", "rule": "§6 opposite; blind labeller agrees"}
+{"id": "oos-03-087", "action": "keep", "rule": "§4 text_too_small, not in; blind labeller agrees"}
+{"id": "oos-07-060", "action": "keep", "rule": "§7 not a phone problem; blind labeller agrees"}
+{"id": "oos-07-087", "action": "keep", "rule": "§4 text_too_small, not in; blind labeller agrees"}
+{"id": "oos-08-062", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "oos-08-063", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "oos-08-091", "action": "keep", "rule": "§6 opposite; blind labeller agrees"}
+{"id": "oos-09-059", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "oos-09-084", "action": "keep", "rule": "§6 opposite; blind labeller agrees"}
+{"id": "oos-09-090", "action": "keep", "rule": "§6 opposite; blind labeller agrees"}
+{"id": "seed-out_of_scope-15", "action": "keep", "rule": "§7 another meaning; blind labeller agrees"}
+{"id": "seed-phone_not_ringing-08", "action": "keep", "rule": "§6 owner; blind labeller agrees"}
+{"id": "seed-wifi_no_load-07", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "seed-wifi_no_load-08", "action": "keep", "rule": "§6 command; blind labeller agrees"}
+{"id": "train-04-007", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "train-06-086", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "train-08-069", "action": "relabel", "labels": ["screen_turns_off_fast"], "rule": "§4 screen_turns_off_fast: it dims just before locking and tapping keeps it on, which is the timeout; blind labeller and model agree"}
+{"id": "train-21-058", "action": "keep", "rule": "§5; blind labeller agrees"}
+{"id": "train-25-020", "action": "keep", "rule": "§5 connected; blind labeller agrees"}
+{"id": "train-36-059", "action": "keep", "rule": "§4; blind labeller agrees"}
+{"id": "train-38-068", "action": "keep", "rule": "§3 how-to; blind labeller agrees"}
+{"id": "train-39-007", "action": "keep", "rule": "§6 command; blind labeller agrees"}

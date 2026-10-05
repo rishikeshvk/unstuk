@@ -44,21 +44,10 @@ Closest pairs (training line, test line, similarity):
 
 ## Flagged labels
 
-34 lines go to `data/clean/review.jsonl`.
+0 lines go to `data/clean/review.jsonl`.
 
 | Given | Model says | Lines |
 | --- | --- | --- |
-| out_of_scope | screen_too_dim | 5 |
-| out_of_scope | app_permission | 5 |
-| out_of_scope | no_internet | 5 |
-| out_of_scope | text_too_small | 5 |
-| out_of_scope | bluetooth_earphones | 3 |
-| phone_not_ringing | out_of_scope | 2 |
-| wifi_no_load | out_of_scope | 2 |
-| screen_too_dim | screen_turns_off_fast | 2 |
-| no_internet | out_of_scope | 2 |
-| text_too_small | out_of_scope | 2 |
-| out_of_scope | phone_not_ringing | 1 |
 
 ## Shortcut check
 
@@ -72,8 +61,8 @@ Closest pairs (training line, test line, similarity):
 | out_of_scope | 1717 | 15.6 | my 15%, i 12%, can 8%, the 6%, how 6% |
 | phone_not_ringing | 451 | 17.9 | my 18%, i 12%, phone 8%, how 7%, the 6% |
 | reset_network | 439 | 16.5 | i 15%, how 13%, my 13%, can 12%, please 8% |
-| screen_too_dim | 443 | 15.4 | my 13%, i 12%, the 12%, screen 9%, why 9% |
-| screen_turns_off_fast | 414 | 15.9 | screen 11%, the 11%, i 11%, my 10%, why 9% |
+| screen_too_dim | 442 | 15.4 | my 13%, i 12%, the 11%, screen 9%, why 9% |
+| screen_turns_off_fast | 415 | 15.9 | screen 11%, the 11%, i 11%, my 10%, why 9% |
 | talkback_on | 420 | 17.5 | i 19%, my 13%, why 8%, phone 8%, how 8% |
 | text_too_small | 409 | 14.2 | the 18%, my 12%, i 11%, how 9%, why 7% |
 | wifi_no_load | 431 | 18.6 | wifi 11%, the 10%, my 9%, why 7%, how 7% |
@@ -108,8 +97,8 @@ Tokens in 15+ lines with 90%+ of them under one label:
 | out_of_scope | 1395 | 322 |
 | phone_not_ringing | 386 | 65 |
 | reset_network | 373 | 66 |
-| screen_too_dim | 377 | 66 |
-| screen_turns_off_fast | 353 | 61 |
+| screen_too_dim | 376 | 66 |
+| screen_turns_off_fast | 354 | 61 |
 | talkback_on | 358 | 62 |
 | text_too_small | 349 | 60 |
 | wifi_no_load | 367 | 64 |

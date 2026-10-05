@@ -32,7 +32,8 @@ def run(data: Path = DEFAULT_DATA_DIR) -> Cleaning:
     test = _read(sorted((data / "test").glob("*.jsonl")))
     stages = [("raw pool", len(pool))]
 
-    pool, dropped = decisions.apply(pool, decisions.load(out / "decisions.jsonl"))
+    decided = decisions.load(out / "decisions.jsonl")
+    pool, dropped = decisions.apply(pool, decided)
     stages.append(("after review decisions", len(pool)))
     pool = [r.model_copy(update={"text": normalize(r.text)}) for r in pool]
     pool, more = duplicates.exact_duplicates(pool)
@@ -52,7 +53,8 @@ def run(data: Path = DEFAULT_DATA_DIR) -> Cleaning:
     pool = [r for r in pool if r.id not in leaked and r.text.lower() not in guide]
     stages.append((f"after test leakage ({LEAKAGE}) and guide examples", len(pool)))
 
-    flags = label_issues.flag(pool, SEED)
+    # A line someone already decided on doesn't go back to the review queue.
+    flags = [f for f in label_issues.flag(pool, SEED) if f.record.id not in decided]
     train, dev = split.split(pool, SEED)
     return Cleaning(
         stages,
