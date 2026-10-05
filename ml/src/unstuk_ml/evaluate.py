@@ -123,6 +123,11 @@ def bootstrap(items: Sequence[Scored], metric: Metric, seed: int = SEED) -> tupl
     return _interval(values)
 
 
+def share_interval(flags: Sequence[bool], seed: int = SEED) -> tuple[float, float]:
+    """A 95% bootstrap interval for the share of true flags, for results that aren't `Scored`."""
+    return _interval(_share(flags[i] for i in drawn) for drawn in _resamples(len(flags), seed))
+
+
 def paired_bootstrap(
     base: Sequence[Scored], challenger: Sequence[Scored], metric: Metric, seed: int = SEED
 ) -> tuple[float, float]:

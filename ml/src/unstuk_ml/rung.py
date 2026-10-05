@@ -8,7 +8,7 @@ import argparse
 from collections.abc import Callable, Sequence
 from dataclasses import dataclass, replace
 from pathlib import Path
-from typing import Literal
+from typing import Literal, Protocol
 
 import numpy as np
 from numpy.typing import NDArray
@@ -35,6 +35,14 @@ class Rung:
     settings: Path
     extensions: tuple[float, ...] = ()
     """Larger C values tried in turn while dev's winner sits at the top of the grid."""
+
+
+class DevScored(Protocol):
+    @property
+    def dev_macro_f1(self) -> float: ...
+
+    @property
+    def dev_log_loss(self) -> float: ...
 
 
 class Trial(BaseModel):
@@ -96,7 +104,7 @@ def tune(rung: Rung, train_records: Sequence[Record], dev: Sequence[Record]) -> 
     )
 
 
-def best(trials: Sequence[Trial]) -> Trial:
+def best[T: DevScored](trials: Sequence[T]) -> T:
     """Highest dev macro-F1; ties go to the lower log-loss, then to the earlier grid point."""
     return trials[
         min(range(len(trials)), key=lambda i: (-trials[i].dev_macro_f1, trials[i].dev_log_loss, i))

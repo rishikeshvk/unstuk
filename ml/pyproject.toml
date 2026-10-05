@@ -31,6 +31,8 @@ unstuk-node-labels = "unstuk_ml.node_labels:main"
 unstuk-evaluate-keywords = "unstuk_ml.baseline_report:main"
 unstuk-tfidf = "unstuk_ml.tfidf_rung:main"
 unstuk-encoder = "unstuk_ml.encoder_rung:main"
+unstuk-zero-shot = "unstuk_ml.zero_shot:main"
+unstuk-node-similarity = "unstuk_ml.node_similarity:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
