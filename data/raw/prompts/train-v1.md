@@ -2,8 +2,8 @@
 
 Each training batch is written by a fresh agent with no project context, so nothing it writes can echo the
 proxy test set (M3 spec section 5). The prompt below is filled in for the batch's grid cell from
-[`plan.json`](../plan.json), using the phrase table, and the reply is saved as returned to
-`data/raw/sheets/<batch>.txt`. It shows no example sentences: example lines get copied, and the guide's examples
+[`plan.json`](../plan.json), using the phrase table, and the agent saves its messages itself to
+`data/raw/sheets/<batch>.txt`, so nothing is retyped in between. It shows no example sentences: example lines get copied, and the guide's examples
 must never become data.
 
 ## Phrase table
@@ -32,7 +32,8 @@ must never become data.
 ## Template
 
 ```text
-Do not use any tools and do not read any files. Answer only from your own imagination, in a single reply.
+Do not read any files or run any commands. Use only your own imagination. Use exactly one tool, once: when
+you have written all the messages, save them with the Write tool to {path}, then reply only "done".
 
 Context: a phone help app for people who are not comfortable with technology. They type their phone trouble
 into a box in their own words. I need realistic messages to train the app. They are invented, not from real
@@ -81,7 +82,7 @@ Problems (id: what it is. Not: what belongs elsewhere):
 - reset_network: the person explicitly asks to reset the phone's network settings (Wi-Fi, mobile and Bluetooth
   settings). Not: the network not working without asking for a reset; factory resetting the whole phone.
 
-Output only this plain-text format, with nothing before or after it and no code fences:
+Write the file in only this plain-text format, with nothing before or after it and no code fences:
 
 ## problem_id
 first message
