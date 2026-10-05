@@ -255,8 +255,7 @@ def _chunks(examples: Sequence[Example], size: int) -> list[Sequence[Example]]:
     return [examples[start : start + size] for start in range(0, len(examples), size)]
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
+def add_run_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--head", choices=["cosine", "attention"], required=True)
     parser.add_argument("--learning-rate", type=float, required=True)
     parser.add_argument("--typos", action="store_true")
@@ -264,10 +263,10 @@ def main() -> None:
     parser.add_argument("--fold", type=int)
     parser.add_argument("--epochs", type=int, default=RunConfig.model_fields["epochs"].default)
     parser.add_argument("--limit", type=int, help="first N lines and questions, for a smoke run")
-    parser.add_argument("--out", type=Path, default=RUNS_DIR)
-    args = parser.parse_args()
 
-    config = RunConfig(
+
+def config_from(args: argparse.Namespace) -> RunConfig:
+    return RunConfig(
         head=args.head,
         learning_rate=args.learning_rate,
         typos=args.typos,
@@ -276,6 +275,25 @@ def main() -> None:
         epochs=args.epochs,
         limit=args.limit,
     )
+
+
+def run_arguments(config: RunConfig) -> list[str]:
+    """The command-line options that `config_from` turns back into this config."""
+    arguments = ["--head", config.head, "--learning-rate", repr(config.learning_rate)]
+    arguments += ["--typos"] * config.typos + ["--state"] * config.state
+    arguments += ["--epochs", str(config.epochs)]
+    arguments += ["--fold", str(config.fold)] if config.fold is not None else []
+    arguments += ["--limit", str(config.limit)] if config.limit is not None else []
+    return arguments
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_run_arguments(parser)
+    parser.add_argument("--out", type=Path, default=RUNS_DIR)
+    args = parser.parse_args()
+
+    config = config_from(args)
     result = run(config, args.out)
     chosen = result.epochs[result.chosen_epoch]
     print(

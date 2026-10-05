@@ -34,6 +34,7 @@ unstuk-encoder = "unstuk_ml.encoder_rung:main"
 unstuk-zero-shot = "unstuk_ml.zero_shot:main"
 unstuk-node-similarity = "unstuk_ml.node_similarity:main"
 unstuk-train-decision = "unstuk_ml.decision_training:main"
+unstuk-colab-train = "unstuk_ml.colab_job:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]

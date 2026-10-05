@@ -1,3 +1,5 @@
+import argparse
+
 import pytest
 import torch
 from records import make
@@ -10,9 +12,12 @@ from unstuk_ml.decision_training import (
     HEAD_LEARNING_RATE,
     Data,
     RunConfig,
+    add_run_arguments,
+    config_from,
     learning_rate_factor,
     parameter_groups,
     removed_intents,
+    run_arguments,
     train,
 )
 from unstuk_ml.encoder import download, downloaded
@@ -111,3 +116,17 @@ def test_the_same_config_trains_the_same_on_cpu(tokenizer: Tokenizer) -> None:
     ]
 
     assert runs[0][0].train_loss == runs[1][0].train_loss
+
+
+@pytest.mark.parametrize(
+    "run",
+    [
+        RunConfig(head="attention", learning_rate=5e-5, typos=False, state=True),
+        RunConfig(head="cosine", learning_rate=2e-5, typos=True, state=False, fold=2, limit=64),
+    ],
+)
+def test_a_config_survives_the_command_line(run: RunConfig) -> None:
+    parser = argparse.ArgumentParser()
+    add_run_arguments(parser)
+
+    assert config_from(parser.parse_args(run_arguments(run))) == run
