@@ -54,7 +54,7 @@ plugins = ["pydantic.mypy"]
 
 [[tool.mypy.overrides]]
 # These ship without type information.
-module = ["sklearn.*", "cleanlab.*", "scipy.*"]
+module = ["sklearn.*", "cleanlab.*", "scipy.*", "onnxruntime.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
