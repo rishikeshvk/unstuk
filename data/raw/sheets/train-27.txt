@@ -1,0 +1,143 @@
+## no_internet
+Why is nothing opening on my phone since morning, not even Instagram?
+I was on the metro and now no app is loading at all, what to do?
+Why is my phone showing no net even though I have full signal bars?
+After I came out of the flight I switched on my phone and nothing is working online, why so?
+How do I get my net back? Yesterday I pressed some button in the top panel and since then nothing loads.
+Why are WhatsApp messages not going, they are just showing the clock sign only?
+My data was working fine in college, now at home nothing opens, not even Google, what happened?
+Is the aeroplane symbol on top the reason my YouTube is not playing anything?
+Why does every app say no connection when my friend's phone is working in the same place?
+I turned on some data saver thing to save battery and now apps don't load, how do I fix it?
+
+## wifi_no_load
+My phone shows connected to home Wi-Fi with full bars but YouTube is not loading, why?
+Why is Chrome saying no internet when the Wi-Fi name is showing connected only?
+At my cousin's house the Wi-Fi is connected with tick mark but Instagram reels are not coming, what to do?
+The Wi-Fi symbol is full but nothing is opening, is something wrong with my phone?
+Why does it say connected, no internet under the Wi-Fi name in college?
+I joined the cafe Wi-Fi and it is showing connected but Google Maps is just stuck loading, why?
+How do I make the pages load when my phone is already connected to Wi-Fi?
+Why are my WhatsApp photos not downloading even though Wi-Fi is on and connected properly?
+My laptop is working on the same Wi-Fi but my phone shows connected and still nothing loads, why yaar?
+Wi-Fi is connected, bars are full, but my online class app keeps saying check your connection, what is the issue?
+
+## phone_not_ringing
+Why is my phone not ringing when someone calls? I only see missed calls later.
+My mummy called me five times and my phone didn't make any sound at all, why is it like this?
+Why do calls only vibrate now and not ring?
+How do I make my phone ring again? I think I put it on silent in class and now it doesn't ring.
+WhatsApp calls are coming but there is no sound, I see missed call only after, what to do?
+Why is my phone quiet when calls come, the screen lights up but no ringtone plays?
+Since yesterday I am missing all calls because the phone is not ringing, how to fix it?
+There is a moon sign on top and my calls are not ringing, is that the reason?
+Why does my ringtone not play anymore? I checked and the ringer volume is at zero and I can't understand how.
+My friend said she called me but my phone never rang, only a missed call came, why?
+
+## notifications_missing
+Why are my WhatsApp messages coming only when I open the app?
+I don't get any notification sound for Instagram messages anymore, why?
+Why do my messages come late, like after one hour?
+My friends say they messaged me on Snapchat but I don't see anything until I open it, what is the problem?
+How do I get alerts for my messages again? They just stopped coming on top.
+Why is my phone not showing any notifications from my college group?
+Messages are reaching but there is no sound or popup, how do I fix this?
+After I cleared the battery stuff my WhatsApp notifications stopped coming, why so?
+Why does the YouTube notification for my favourite channel come the next day only?
+My mother's messages come silently and I don't even know until I check, what should I do?
+
+## talkback_on
+Why is my phone speaking out everything I touch?
+There is a green box coming around whatever I tap and one tap is not working, what happened?
+How do I stop my phone from reading everything loudly? My little brother was playing with it.
+Why do I have to tap two times to open any app now?
+My phone is talking in a robot voice and I can't even scroll properly, what to do?
+Why is scrolling not working with one finger and it's saying every word on screen?
+I pressed both volume buttons together by mistake and now the phone is speaking everything, why?
+Why is TalkBack on my phone, how do I switch it off?
+When I open WhatsApp the phone reads each chat name out loud and I can't open them with one tap, why?
+Why is my phone describing every button I touch and not opening anything?
+
+## colours_wrong
+Why has my whole screen become black and white?
+My phone screen colours are looking opposite, like white is black, why is it like this?
+Why is everything grey on my phone suddenly, even photos?
+I was changing something in settings and now the screen has a weird pink colour, how do I fix it?
+Why are my Instagram photos looking like old photo negatives?
+How do I get the colours back on my phone? Everything turned grey at night and stayed like that.
+Why does my screen look greenish all the time?
+After I updated the phone the colours look strange and washed out, what happened?
+Why is colour inversion on my phone, I don't remember turning it on?
+My YouTube videos are showing in black and white only, is my screen damaged?
+
+## screen_too_dim
+Why is my screen so dark even when I put brightness full?
+I can't see anything on my phone when I go outside in the sun, what to do?
+Why does my screen keep becoming dim by itself?
+How do I make my screen brighter? The slider is not going up.
+While watching YouTube the screen suddenly becomes dark, why does it do that?
+Why is my phone screen so dull that I can barely read the messages?
+After I put battery saver the screen became very dark, is that why?
+Why is adaptive brightness making my screen dim all the time?
+In the bus I can hardly see Google Maps because the screen is too dark, how to fix?
+My screen was bright till yesterday, now it is very dim, what happened?
+
+## screen_turns_off_fast
+Why does my screen go black after a few seconds when I am reading?
+While reading notes for my exam the phone keeps locking again and again, why?
+How do I stop my screen from turning off so quickly?
+Why does my phone lock itself so fast? I have to keep touching it.
+When I'm reading a long WhatsApp message the screen goes off in between, what to do?
+Why does my screen switch off in like 15 seconds?
+I am following a recipe on my phone and the screen keeps going dark, how do I keep it on longer?
+Why is my screen timeout so short, it's very irritating?
+Even when I'm looking at a PDF the screen becomes black quickly, why?
+My phone screen keeps turning off while I'm reading comics, how to make it stay on?
+
+## text_too_small
+Why is the writing on my phone so small? I can't read it properly.
+How do I make the letters bigger on my phone?
+My WhatsApp messages look very tiny, can I increase the size?
+Why are the app names under the icons so small after the update?
+I want a bigger font on my phone, how do I do that?
+The words in settings are so small, why is it like that?
+Why is the text on my phone small even though I have good eyesight?
+My nani is using my phone and she can't read anything, how to make the text big?
+Why do the icons look so tiny on my home screen?
+After my brother changed something the font became very small, how do I fix it?
+
+## bluetooth_earphones
+Why are my earbuds not connecting to my phone?
+My new Bluetooth earphones are not showing in the list, what to do?
+Why does my phone not connect to my smartwatch anymore?
+How do I connect my wireless earbuds? They were working yesterday.
+My Bluetooth speaker is not pairing with my phone, why?
+Why does my car not connect to my phone when I sit in my dad's car?
+I tried playing a song on Spotify but it's coming from the phone and not my earbuds, why are they not connecting?
+Why is Bluetooth switching off by itself on my phone?
+My friend's earbuds connected easily but mine are not pairing, what is wrong?
+Why does my phone say couldn't pair when I try to connect my headphones?
+
+## app_permission
+Why is my camera not opening in Snapchat but working in the normal camera?
+My mic is not working in Instagram when I record a story, why?
+Why does Google Maps not show where I am?
+How do I let WhatsApp use the camera? It is asking for permission and I said no by mistake.
+Why is Zomato not finding my location even though location is on?
+The camera shows black screen only in my bank app when I try to scan the QR, why?
+Why can't I send voice notes in WhatsApp? It says something about the microphone.
+My online class app is not taking my video, but camera works everywhere else, what to do?
+Why does Uber keep asking to allow location access every time?
+Why is the mic not working in BGMI voice chat but working in calls?
+
+## reset_network
+How do I reset the network settings on my phone?
+Can I reset all the Wi-Fi and Bluetooth settings on my phone without deleting my photos?
+My friend told me to reset network settings, how do I do that?
+How do I clear all Wi-Fi, mobile data and Bluetooth settings and start fresh?
+Is there a way to reset only the network stuff and not the whole phone?
+Can you please reset my phone's network settings?
+How do I make all my Wi-Fi and Bluetooth settings go back to how they were when the phone was new?
+The shopkeeper said to reset network, how to do it?
+I want to reset all my network settings, Wi-Fi, SIM and Bluetooth, how?
+Can I reset network settings? I don't want to factory reset the whole phone.

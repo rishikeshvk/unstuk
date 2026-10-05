@@ -1,0 +1,200 @@
+{"key": "a001", "id": "train-19-095", "text": "bluetooth is off how i make it on", "labels": ["bluetooth_earphones"]}
+{"key": "a002", "id": "train-28-020", "text": "Connected, it is saying, under our Wi-Fi name, but no photos are downloading in WhatsApp.", "labels": ["wifi_no_load"]}
+{"key": "a003", "id": "train-20-084", "text": "I got new specs but still I can't read the text on phone properly, it's that small. My friend's phone shows bigger letters. How to make mine like that?", "labels": ["text_too_small"]}
+{"key": "a004", "id": "train-19-091", "text": "my new ear buds not connect to the phone", "labels": ["bluetooth_earphones"]}
+{"key": "a005", "id": "train-24-073", "text": "how do i make the screen stay on longer. it goes dark like after 15 seconds of not touching it", "labels": ["screen_turns_off_fast"]}
+{"key": "a006", "id": "train-30-007", "text": "Data is off, how open", "labels": ["no_internet"]}
+{"key": "a007", "id": "oos-07-056", "text": "what does a sound engineer actually do, is it a good job?", "labels": ["out_of_scope"]}
+{"key": "a008", "id": "oos-07-013", "text": "half my screen has got green lines going down it since i dropped it, any ideas?", "labels": ["out_of_scope"]}
+{"key": "a009", "id": "train-24-106", "text": "uber cant find where i am, keeps saying turn on location for this app. other stuff knows where i am", "labels": ["app_permission"]}
+{"key": "a010", "id": "train-22-047", "text": "i think ive switched on the talk back thing my phone reads everything and i cant open anything with one tap", "labels": ["talkback_on"]}
+{"key": "a011", "id": "train-33-025", "text": "i think phone is stuck in silent, the bell icon have line across it", "labels": ["phone_not_ringing"]}
+{"key": "a012", "id": "train-32-002", "text": "whatsapp not going pls", "labels": ["no_internet"]}
+{"key": "a013", "id": "oos-07-026", "text": "how do i change my ringtone to a song i like?", "labels": ["out_of_scope"]}
+{"key": "a014", "id": "mobile-actions-train-152", "text": "Can you show me the location of the Grand View Cafe at 98 Queen Street, Toronto, Canada on the map?", "labels": ["out_of_scope"]}
+{"key": "a015", "id": "train-19-046", "text": "phone reading all my whatsapp words aloud when i touch and the square box come", "labels": ["talkback_on"]}
+{"key": "a016", "id": "train-06-046", "text": "I was trying to make the writing bigger and went into some menu. Now the phone reads everything out loud and I can't scroll down pages. Every tap just puts a box round something.", "labels": ["talkback_on"]}
+{"key": "a017", "id": "oos-03-020", "text": "I can't remember my Google password and it keeps asking me for it over and over.", "labels": ["out_of_scope"]}
+{"key": "a018", "id": "mobile-actions-train-123", "text": "Send an email to Mateo Vasquez at mateo.vasquez@innovatech.com with the subject \"Proposal Review Meeting\" and the body \"I've updated the slide deck with your feedback. Can we meet tomorrow at 10 AM to go over the final version?\"", "labels": ["out_of_scope"]}
+{"key": "a019", "id": "train-26-085", "text": "My eyes aren't what they used to be and the print on this phone is impossible to read.", "labels": ["text_too_small"]}
+{"key": "a020", "id": "train-39-083", "text": "the font size is very small, how to make it big?", "labels": ["text_too_small"]}
+{"key": "a021", "id": "train-33-063", "text": "phone screen keep getting darker by itself while i am watching tiktok", "labels": ["screen_too_dim"]}
+{"key": "a022", "id": "contrast-04-008", "text": "i want to send message on what's app but it is waiting with clock my wifi is connected i see the name but still waiting", "labels": ["wifi_no_load"]}
+{"key": "a023", "id": "train-30-081", "text": "Letters too small", "labels": ["text_too_small"]}
+{"key": "a024", "id": "train-15-109", "text": "google pay scanner black screen only but phone camera works fine", "labels": ["app_permission"]}
+{"key": "a025", "id": "train-19-100", "text": "after phone update the bluetooth not pairing with my earbuds", "labels": ["bluetooth_earphones"]}
+{"key": "a026", "id": "train-34-106", "text": "how i give permission to the app for camera i deny it by mistake", "labels": ["app_permission"]}
+{"key": "a027", "id": "train-32-015", "text": "wifi show but page blank", "labels": ["wifi_no_load"]}
+{"key": "a028", "id": "train-34-073", "text": "the screen turn off too quick i have to keep touching it", "labels": ["screen_turns_off_fast"]}
+{"key": "a029", "id": "oos-04-029", "text": "I was clearing out some apps to make room and now my photos from our holiday in Cornwall are gone. I didn't delete them on purpose. Can I get them back?", "labels": ["out_of_scope"]}
+{"key": "a030", "id": "train-32-087", "text": "small small text help", "labels": ["text_too_small"]}
+{"key": "a031", "id": "contrast-01-011", "text": "when someone phones me it just lights up quiet, no ring, i miss all my calls from the surgery", "labels": ["phone_not_ringing"]}
+{"key": "a032", "id": "train-26-001", "text": "Nothing on my phone will go online anymore. Emails won't come in, the news app just spins, and I didn't touch anything. What is going on?", "labels": ["no_internet"]}
+{"key": "a033", "id": "contrast-05-071", "text": "doctors app cant see me", "labels": ["app_permission"]}
+{"key": "a034", "id": "contrast-05-041", "text": "letters far too small", "labels": ["text_too_small"]}
+{"key": "a035", "id": "contrast-02-069", "text": "i am trying to scan the qr code in phonepe at shop. the scaner is not opening, it says camera permision needed. in other apps camera is fine", "labels": ["app_permission"]}
+{"key": "a036", "id": "oos-07-059", "text": "is dark chocolate actually healthier than milk chocolate?", "labels": ["out_of_scope"]}
+{"key": "a037", "id": "train-02-013", "text": "wifi sign is there at the top with full signal but whatsapp wont send and youtube wont play", "labels": ["wifi_no_load"]}
+{"key": "a038", "id": "train-31-001", "text": "Why has nothing on my phone gone online since I got off the plane this morning? WhatsApp just sits there spinning.", "labels": ["no_internet"]}
+{"key": "a039", "id": "contrast-02-023", "text": "i installed one new app for reading books. since then my phone screen has gone dull and dark, i keep pressing my face near to see. pls tell what to do", "labels": ["screen_too_dim"]}
+{"key": "a040", "id": "train-20-070", "text": "The screen looks very dark like someone dimmed it. I cant see properly even in my room with light on. How do I make the screen brighter?", "labels": ["screen_too_dim"]}
+{"key": "a041", "id": "train-08-115", "text": "Please reset the internet and Bluetooth settings on my phone. I've tried everything else.", "labels": ["reset_network"]}
+{"key": "a042", "id": "train-18-113", "text": "internet and bluetooth both problem. i want to reset the network only, not whole phone", "labels": ["reset_network"]}
+{"key": "a043", "id": "train-30-039", "text": "Discord alerts never come", "labels": ["notifications_missing"]}
+{"key": "a044", "id": "oos-07-103", "text": "how much is a pint of milk in tesco?", "labels": ["out_of_scope"]}
+{"key": "a045", "id": "train-25-045", "text": "I cant use my phone, every time I touch WhatsApp a lady voice say WhatsApp and it dont open. I must double tap. Help pls.", "labels": ["talkback_on"]}
+{"key": "a046", "id": "train-01-066", "text": "after the battery saver thing turned on my screen got really dim, how do i fix it?", "labels": ["screen_too_dim"]}
+{"key": "a047", "id": "train-33-112", "text": "my uncle said i should reset all the wifi and bluetooth and mobile stuff, how i do it", "labels": ["reset_network"]}
+{"key": "a048", "id": "train-05-090", "text": "The names in my contacts list are too small to read. I have to hold the phone up to my nose.", "labels": ["text_too_small"]}
+{"key": "a049", "id": "train-24-007", "text": "a popup told me to turn on data saver so i did. now my bank app wont load and instagram is stuck. only some stuff works when im on the home internet", "labels": ["no_internet"]}
+{"key": "a050", "id": "seed-talkback_on-06", "text": "my grandson did something and now the phone speaks every button", "labels": ["talkback_on"]}
+{"key": "a051", "id": "train-36-057", "text": "The screen looks washed out and gray. My daughter says there's a grayscale thing turned on but she couldn't find it.", "labels": ["colours_wrong"]}
+{"key": "a052", "id": "mobile-actions-train-077", "text": "Please save a new contact for my colleague, Alejandro Vargas, whose phone number is +52 55 1234 5678 and his email address is alejandro.vargas@ejemplo.com.", "labels": ["out_of_scope"]}
+{"key": "a053", "id": "train-20-016", "text": "Phone says connected to Sharma_Home but websites are not loading at all. My laptop is working on same wifi only. Only my phone has this problem.", "labels": ["wifi_no_load"]}
+{"key": "a054", "id": "train-34-115", "text": "can i reset wifi and mobile network stuff to start fresh", "labels": ["reset_network"]}
+{"key": "a055", "id": "train-04-079", "text": "Within fifteen seconds itself the display is becoming black. I am a slow reader, please help.", "labels": ["screen_turns_off_fast"]}
+{"key": "a056", "id": "train-16-076", "text": "the phone goes to sleep while im still looking at it, very annoying", "labels": ["screen_turns_off_fast"]}
+{"key": "a057", "id": "train-27-069", "text": "In the bus I can hardly see Google Maps because the screen is too dark, how to fix?", "labels": ["screen_too_dim"]}
+{"key": "a058", "id": "mobile-actions-train-061", "text": "Please add a new contact named Aisha Khan to my phone. Her number is +44 7700 900012 and her email is aisha.khan@example.com.", "labels": ["out_of_scope"]}
+{"key": "a059", "id": "train-40-085", "text": "the app names under icons so small like ants", "labels": ["text_too_small"]}
+{"key": "a060", "id": "train-02-114", "text": "can you reset my connection settings back to how they were when i got it", "labels": ["reset_network"]}
+{"key": "a061", "id": "train-08-023", "text": "When people call me on WhatsApp, I don't hear anything. I just see the missed call later.", "labels": ["phone_not_ringing"]}
+{"key": "a062", "id": "train-01-033", "text": "why dont i get the little pop ups for messages anymore? i only see them when i go in the app", "labels": ["notifications_missing"]}
+{"key": "a063", "id": "train-24-114", "text": "i messed around with a bunch of connection stuff trying to fix my car audio. now i just want to wipe those connections clean and start over, not everything else", "labels": ["reset_network"]}
+{"key": "a064", "id": "train-05-048", "text": "Something called TalkBack came on and I don't know how to get rid of it.", "labels": ["talkback_on"]}
+{"key": "a065", "id": "contrast-02-020", "text": "i was trying to set some night mode for sleeping. now screen colours are all oposite, white became black and faces looking like negetive of photo. pls help to get the colours back", "labels": ["colours_wrong"]}
+{"key": "a066", "id": "contrast-06-018", "text": "my screen has become black and white, i cannot see any colours even inside the house. pls tell how to fix", "labels": ["colours_wrong"]}
+{"key": "a067", "id": "train-28-048", "text": "How do I switch off TalkBack? My granddaughter said that is the name.", "labels": ["talkback_on"]}
+{"key": "a068", "id": "mobile-actions-train-272", "text": "I need to use my phone's flashlight. Could you turn it on for me?", "labels": ["out_of_scope"]}
+{"key": "a069", "id": "train-16-024", "text": "people say they call me on whatsapp but i dont hear nothing, just the missed call after", "labels": ["phone_not_ringing"]}
+{"key": "a070", "id": "mobile-actions-train-271", "text": "I need to turn on my flashlight. It's really dark and I'm trying to find my lost keys.", "labels": ["out_of_scope"]}
+{"key": "a071", "id": "train-05-064", "text": "How do I make the screen brighter? Its awful dim.", "labels": ["screen_too_dim"]}
+{"key": "a072", "id": "train-15-029", "text": "how to increase the ring volume it is fully down i think thats why calls are not making noise", "labels": ["phone_not_ringing"]}
+{"key": "a073", "id": "contrast-05-102", "text": "want a nicer ring", "labels": ["out_of_scope"]}
+{"key": "a074", "id": "contrast-01-027", "text": "the phone is so dim in the day i cant see a thing on it, want it lighter", "labels": ["screen_too_dim"]}
+{"key": "a075", "id": "train-39-013", "text": "in settings it shows our home wifi with tick mark but google page is blank only, how to fix?", "labels": ["wifi_no_load"]}
+{"key": "a076", "id": "seed-no_internet-05", "text": "how do i switch off flight mode, there is a plane sign on top", "labels": ["no_internet"]}
+{"key": "a077", "id": "oos-09-020", "text": "my son put a new sim card in and now it says no sim", "labels": ["out_of_scope"]}
+{"key": "a078", "id": "oos-08-108", "text": "ok thanks", "labels": ["out_of_scope"]}
+{"key": "a079", "id": "contrast-04-093", "text": "the school app alert don't come on time i see them only when i open the app", "labels": ["notifications_missing"]}
+{"key": "a080", "id": "train-20-120", "text": "Teacher in computer class said wiping the internet and bluetooth setings back to default can fix such problems. I want to do that on my phone. Where is the option?", "labels": ["reset_network"]}
+{"key": "a081", "id": "train-13-058", "text": "how do i turn off the grey screen, my daughter says its grayscale but i cant find it", "labels": ["colours_wrong"]}
+{"key": "a082", "id": "train-40-094", "text": "the speaker in my room not connect to phone anymore it worked yesterday", "labels": ["bluetooth_earphones"]}
+{"key": "a083", "id": "train-15-119", "text": "how to reset only the wifi and sim settings without deleting my whatsapp and photos", "labels": ["reset_network"]}
+{"key": "a084", "id": "train-17-062", "text": "My phone keeps going darker by itself while I'm watching videos. I increase it and after some time it becomes dim again. It's very irritating.", "labels": ["screen_too_dim"]}
+{"key": "a085", "id": "contrast-06-041", "text": "letters in my phone are too small, I cant read messages without spects. how to make bigger", "labels": ["text_too_small"]}
+{"key": "a086", "id": "train-28-073", "text": "I am reading prayers on the phone and it keeps going dark, I have to unlock again and again.", "labels": ["screen_turns_off_fast"]}
+{"key": "a087", "id": "train-33-022", "text": "i found many missed call but i never hear anything, phone was next to me", "labels": ["phone_not_ringing"]}
+{"key": "a088", "id": "oos-08-010", "text": "cant install free fire, it says app not installed", "labels": ["out_of_scope"]}
+{"key": "a089", "id": "train-38-041", "text": "Phone reads everything out loud", "labels": ["talkback_on"]}
+{"key": "a090", "id": "train-04-011", "text": "Phone is showing connected to our home Wi-Fi, full lines also there, but YouTube is not playing anything. What is the problem?", "labels": ["wifi_no_load"]}
+{"key": "a091", "id": "train-09-082", "text": "I want bigger writing on my phone. Everything is very tiny.", "labels": ["text_too_small"]}
+{"key": "a092", "id": "mobile-actions-train-094", "text": "I need to save a new contact for my Japanese colleague, Kenji Tanaka. His phone number is +81 90-1234-5678 and his email is kenji.tanaka@kmail.jp.", "labels": ["out_of_scope"]}
+{"key": "a093", "id": "train-06-110", "text": "The delivery app keeps saying it needs location permission. I dont know where to switch it on for just that one app.", "labels": ["app_permission"]}
+{"key": "a094", "id": "train-09-047", "text": "My daughter was playing with my phone and now it reads all the WhatsApp messages aloud when I touch them, and box come around.", "labels": ["talkback_on"]}
+{"key": "a095", "id": "contrast-01-013", "text": "the phone doesnt ring anymore when people call, its not on silent i dont think, missed the plumber twice", "labels": ["phone_not_ringing"]}
+{"key": "a096", "id": "train-16-103", "text": "google maps cant find where i am, it says location is off for the app but my other things work", "labels": ["app_permission"]}
+{"key": "a097", "id": "oos-01-060", "text": "Sky dark, rain coming", "labels": ["out_of_scope"]}
+{"key": "a098", "id": "oos-02-081", "text": "i need to check my homework on google classroom. i cant find the app. open it for me", "labels": ["out_of_scope"]}
+{"key": "a099", "id": "train-02-051", "text": "my screen has gone black and white all of a sudden", "labels": ["colours_wrong"]}
+{"key": "a100", "id": "train-40-078", "text": "i need put my password again and again because screen close too quick", "labels": ["screen_turns_off_fast"]}
+{"key": "a101", "id": "mobile-actions-train-208", "text": "Please switch off my flashlight now.", "labels": ["out_of_scope"]}
+{"key": "a102", "id": "seed-reset_network-06", "text": "reset wifi mobile data and bluetooth settings", "labels": ["reset_network"]}
+{"key": "a103", "id": "contrast-05-044", "text": "messages all magnified, stuck", "labels": ["out_of_scope"]}
+{"key": "a104", "id": "train-20-078", "text": "When I'm checking directions on Google Maps while walking the screen goes black quickly. Then I lose where to go. Phone is falling asleep too fast.", "labels": ["screen_turns_off_fast"]}
+{"key": "a105", "id": "train-23-019", "text": "How do I get pages to load, the wifi is definately on and connected but the bank app just times out?", "labels": ["wifi_no_load"]}
+{"key": "a106", "id": "oos-06-074", "text": "Will you switch off Bluetooth for me?", "labels": ["out_of_scope"]}
+{"key": "a107", "id": "train-38-108", "text": "Uber doesn't know my location", "labels": ["app_permission"]}
+{"key": "a108", "id": "train-28-016", "text": "I am connected to the society Wi-Fi, I can see the name, but pages keep loading and loading.", "labels": ["wifi_no_load"]}
+{"key": "a109", "id": "oos-07-044", "text": "what colour hair dye would look good on dark hair?", "labels": ["out_of_scope"]}
+{"key": "a110", "id": "train-19-053", "text": "the colour on phone is upside down white is black black is white like the old film negative", "labels": ["colours_wrong"]}
+{"key": "a111", "id": "train-24-081", "text": "got new glasses last month but even with them the words on my phone are tiny. i want them bigger", "labels": ["text_too_small"]}
+{"key": "a112", "id": "oos-07-063", "text": "i got a notification letter from school about my attendence, will i get in trouble?", "labels": ["out_of_scope"]}
+{"key": "a113", "id": "oos-02-051", "text": "the signal at the crossing near school isnt working and the green man dosnt come on. we nearly got hit by a car. who do i report that to", "labels": ["out_of_scope"]}
+{"key": "a114", "id": "train-17-058", "text": "My phone shows everything in black and white since morning. I need to pick a dress colour from photos for my school function and I can't see any colour. What is happening?", "labels": ["colours_wrong"]}
+{"key": "a115", "id": "train-34-020", "text": "its connected on wifi i can see it in the top but spotify and netflix both not play nothing load", "labels": ["wifi_no_load"]}
+{"key": "a116", "id": "train-15-006", "text": "how do i make the net come back on my phone the two arrows on top are not showing", "labels": ["no_internet"]}
+{"key": "a117", "id": "oos-01-048", "text": "Car signal light broken", "labels": ["out_of_scope"]}
+{"key": "a118", "id": "train-15-098", "text": "i was in call on the earpods and they suddenly disconnected now not connecting again", "labels": ["bluetooth_earphones"]}
+{"key": "a119", "id": "train-17-070", "text": "I was trying to show my PhonePe payment to the shopkeeper outside school and he couldn't see my screen. Everything looks so dark when I'm outside. How can I make it more visible?", "labels": ["screen_too_dim"]}
+{"key": "a120", "id": "oos-09-014", "text": "the screen has a black spot and lines going across it", "labels": ["out_of_scope"]}
+{"key": "a121", "id": "seed-no_internet-04", "text": "my 4g is not working since yesterday even though my pack is active", "labels": ["no_internet"]}
+{"key": "a122", "id": "train-30-055", "text": "Photos look inverted colours", "labels": ["colours_wrong"]}
+{"key": "a123", "id": "train-06-052", "text": "My phone has gone all weird colours like an x-ray. White is black and black is white. It happened after I held some buttons down for too long.", "labels": ["colours_wrong"]}
+{"key": "a124", "id": "contrast-01-049", "text": "my phone keeps talking out loud whatever i touch and i have to tap twice to open anything", "labels": ["talkback_on"]}
+{"key": "a125", "id": "oos-08-117", "text": "who are you", "labels": ["out_of_scope"]}
+{"key": "a126", "id": "oos-07-035", "text": "my charger only works if i hold the cable at a weird angle, is the port broken?", "labels": ["out_of_scope"]}
+{"key": "a127", "id": "train-15-093", "text": "blue tooth is not turning on when i press it nothing happens", "labels": ["bluetooth_earphones"]}
+{"key": "a128", "id": "train-31-020", "text": "How do I get pages to load when my phone insists it's on the wifi?", "labels": ["wifi_no_load"]}
+{"key": "a129", "id": "train-34-004", "text": "how i turn on the internet again my brother turn it off and i cant find", "labels": ["no_internet"]}
+{"key": "a130", "id": "train-29-041", "text": "My phone is talking everything I touch. It reads every word out loud. How to stop this?", "labels": ["talkback_on"]}
+{"key": "a131", "id": "mobile-actions-train-202", "text": "My flashlight is on, could you please turn it off?", "labels": ["out_of_scope"]}
+{"key": "a132", "id": "contrast-04-009", "text": "my friend call me three times and my phone make no sound i only see missed call later", "labels": ["phone_not_ringing"]}
+{"key": "a133", "id": "oos-03-057", "text": "My white work shirt turned pink in the wash, can I get the color back?", "labels": ["out_of_scope"]}
+{"key": "a134", "id": "oos-09-017", "text": "the earphones with the wire dont work no more when i plug them in the hole", "labels": ["out_of_scope"]}
+{"key": "a135", "id": "train-19-003", "text": "i was in the aeroplane last week and now phone show small plane picture on top and nothing working", "labels": ["no_internet"]}
+{"key": "a136", "id": "train-03-029", "text": "how I make my phone ring again for calls?", "labels": ["phone_not_ringing"]}
+{"key": "a137", "id": "seed-app_permission-03", "text": "google maps can't find where I am", "labels": ["app_permission"]}
+{"key": "a138", "id": "train-31-091", "text": "Why won't my wireless earbuds connect to my phone any more?", "labels": ["bluetooth_earphones"]}
+{"key": "a139", "id": "train-09-017", "text": "In hotel I put the password and it say connected. After that no website open at all.", "labels": ["wifi_no_load"]}
+{"key": "a140", "id": "train-05-108", "text": "My voice messages in WhatsApp record nothing. Just silence, but phone calls work.", "labels": ["app_permission"]}
+{"key": "a141", "id": "train-15-026", "text": "i kept the phone in silent for meeting in morning now evening also its not ringing even after i pressed the side button", "labels": ["phone_not_ringing"]}
+{"key": "a142", "id": "contrast-06-044", "text": "whole screen is magnified, some big box is coming and moving when i touch. please remove it", "labels": ["out_of_scope"]}
+{"key": "a143", "id": "contrast-06-051", "text": "Some lady voice is reading whatever I touch on screen, and single touch is not working, only double tap", "labels": ["talkback_on"]}
+{"key": "a144", "id": "mobile-actions-train-119", "text": "Could you send an email for me? The recipient is akiratanaka@inovatechglobal.jp, the subject should be 'Review of Q4 Budget Draft', and the message body is 'Hi Akira, Please find the attached Q4 budget draft for your review. Let me know if you have any feedback by Thursday.'", "labels": ["out_of_scope"]}
+{"key": "a145", "id": "oos-08-099", "text": "will it rain in delhi", "labels": ["out_of_scope"]}
+{"key": "a146", "id": "train-29-089", "text": "The text in the settings and messages is tiny. I am getting headache from reading.", "labels": ["text_too_small"]}
+{"key": "a147", "id": "train-33-080", "text": "why the screen goes black so soon, i didnt even put the phone down", "labels": ["screen_turns_off_fast"]}
+{"key": "a148", "id": "train-02-022", "text": "my mum rang three times and i never heard a thing, phone was right next to me", "labels": ["phone_not_ringing"]}
+{"key": "a149", "id": "contrast-01-016", "text": "no ding when my friend messages me, the facebook ones turn up late in the evening with not a sound", "labels": ["notifications_missing"]}
+{"key": "a150", "id": "train-31-014", "text": "Why is the wifi symbol full at the top yet Google just says I'm not online?", "labels": ["wifi_no_load"]}
+{"key": "a151", "id": "train-13-003", "text": "how do i get the phone back on line, when im out at the shops nothing loads at all its just a circle going round", "labels": ["no_internet"]}
+{"key": "a152", "id": "train-13-027", "text": "i turned the sound right down at church on sunday and now calls are quiet as anything, how do i turn the ringing back up", "labels": ["phone_not_ringing"]}
+{"key": "a153", "id": "train-32-076", "text": "black too soon pls", "labels": ["screen_turns_off_fast"]}
+{"key": "a154", "id": "train-19-102", "text": "in the bank app i cannot take photo of cheque camera not working only there", "labels": ["app_permission"]}
+{"key": "a155", "id": "oos-02-021", "text": "my phone is so bright it actually hurts my eyes in bed. i tried sliding the bar down but its still really glaring. can it go even lower than the lowest", "labels": ["out_of_scope"]}
+{"key": "a156", "id": "train-30-006", "text": "After flight nothing work online", "labels": ["no_internet"]}
+{"key": "a157", "id": "train-22-113", "text": "i want to reset the internet and phone signal settings back to normal please not the whole phone", "labels": ["reset_network"]}
+{"key": "a158", "id": "train-29-021", "text": "My phone is not ringing when people call me. I only see missed calls later and everybody is angry with me.", "labels": ["phone_not_ringing"]}
+{"key": "a159", "id": "oos-02-090", "text": "my teacher wants us to scan a worksheet. scan this paper", "labels": ["out_of_scope"]}
+{"key": "a160", "id": "train-15-025", "text": "phone is only buzzing in hand when call comes no ringtone sound is there how to change", "labels": ["phone_not_ringing"]}
+{"key": "a161", "id": "oos-06-118", "text": "Is Virat Kohli playing in the next series?", "labels": ["out_of_scope"]}
+{"key": "a162", "id": "train-33-004", "text": "i think i press something wrong in the top part, now there is small plane picture and nothing work", "labels": ["no_internet"]}
+{"key": "a163", "id": "oos-04-001", "text": "My daughter got me this phone for my birthday last year and it was fine until recently. Now the battery is gone by lunch even when I barely touch it. I charge it every night so I don't understand what's eating it.", "labels": ["out_of_scope"]}
+{"key": "a164", "id": "train-06-107", "text": "Uber cant find my location so I have to type the address every time. Other apps are fine with where I am.", "labels": ["app_permission"]}
+{"key": "a165", "id": "train-01-022", "text": "how come i never hear my phone when ppl call me but i get missed calls later?", "labels": ["phone_not_ringing"]}
+{"key": "a166", "id": "train-31-092", "text": "Why can't my phone find my car when I get in?", "labels": ["bluetooth_earphones"]}
+{"key": "a167", "id": "train-02-076", "text": "trying to follow a knitting pattern online and the phone keeps going to the lock screen", "labels": ["screen_turns_off_fast"]}
+{"key": "a168", "id": "oos-07-055", "text": "how do i ask for permision to leave school early for a dentist appointment?", "labels": ["out_of_scope"]}
+{"key": "a169", "id": "oos-04-037", "text": "The phone's started getting warm in my pocket even when I'm not using it. Last week it was properly hot after a short call with my mum. I'm worried it's going to catch fire.", "labels": ["out_of_scope"]}
+{"key": "a170", "id": "train-33-018", "text": "wifi is on and connected, all bars full, but netflix say check your connection. so stupid", "labels": ["wifi_no_load"]}
+{"key": "a171", "id": "train-27-092", "text": "My new Bluetooth earphones are not showing in the list, what to do?", "labels": ["bluetooth_earphones"]}
+{"key": "a172", "id": "oos-07-113", "text": "whats the capital of australia?", "labels": ["out_of_scope"]}
+{"key": "a173", "id": "train-39-030", "text": "after temple i made the phone quiet and now ringing has not come back, what to do?", "labels": ["phone_not_ringing"]}
+{"key": "a174", "id": "train-15-044", "text": "i cant scroll the screen with one finger it is not going up down and the phone keeps talking", "labels": ["talkback_on"]}
+{"key": "a175", "id": "train-22-103", "text": "the maps cant find where i am it says it needs my location but i dont know how to give it", "labels": ["app_permission"]}
+{"key": "a176", "id": "train-31-033", "text": "Why doesn't my phone make a sound anymore when I get an email?", "labels": ["notifications_missing"]}
+{"key": "a177", "id": "contrast-06-086", "text": "how to do full phone reset, phone is very slow and hanging yaar", "labels": ["out_of_scope"]}
+{"key": "a178", "id": "train-17-076", "text": "Since I changed some battery settings my phone goes to lock so fast. I am just looking at the bus timings and it switches off. Before it used to stay on for a minute.", "labels": ["screen_turns_off_fast"]}
+{"key": "a179", "id": "contrast-04-053", "text": "my little cousin play with my phone and now it read out loud every button and i can't swipe normal", "labels": ["talkback_on"]}
+{"key": "a180", "id": "mobile-actions-train-234", "text": "Can you turn the flashlight off?", "labels": ["out_of_scope"]}
+{"key": "a181", "id": "mobile-actions-train-281", "text": "I dropped my keys in the dark parking garage. Can you please turn on my flashlight?", "labels": ["out_of_scope"]}
+{"key": "a182", "id": "contrast-02-094", "text": "my kids school sends otp sms for fees payment portal. since last week those otp msgs are not comming at all. how to fix", "labels": ["out_of_scope"]}
+{"key": "a183", "id": "train-24-110", "text": "tried scanning a code at a restaurant with their menu app and it said camera not allowed. my normal camera works", "labels": ["app_permission"]}
+{"key": "a184", "id": "train-03-004", "text": "I think I pressed something at the top, now there is small plane picture and nothing work online", "labels": ["no_internet"]}
+{"key": "a185", "id": "train-01-105", "text": "my bank app wants to use the camera to scan a check but it wont open, how do i let it?", "labels": ["app_permission"]}
+{"key": "a186", "id": "train-40-055", "text": "instagram pictures all grey no colour since yesterday", "labels": ["colours_wrong"]}
+{"key": "a187", "id": "train-15-072", "text": "phone getting locked every few seconds when i am reading news", "labels": ["screen_turns_off_fast"]}
+{"key": "a188", "id": "train-03-019", "text": "I see the wifi name with connected under it but Instagram not refresh", "labels": ["wifi_no_load"]}
+{"key": "a189", "id": "train-17-071", "text": "I'm reading a PDF of my history chapter and the screen goes black every few seconds. I have to keep touching it to keep it on. It's very annoying while studying.", "labels": ["screen_turns_off_fast"]}
+{"key": "a190", "id": "train-30-091", "text": "Earbuds not connect phone", "labels": ["bluetooth_earphones"]}
+{"key": "a191", "id": "train-23-053", "text": "Why do all the colours look back to front, like a photo negative?", "labels": ["colours_wrong"]}
+{"key": "a192", "id": "train-05-084", "text": "Can you make the font larger?", "labels": ["text_too_small"]}
+{"key": "a193", "id": "train-25-053", "text": "Screen look very weird, all colours wrong. Red look green and my face in camera look like alien. How to fix this?", "labels": ["colours_wrong"]}
+{"key": "a194", "id": "oos-06-056", "text": "Why is the sky so dark today, will it rain heavily in Chennai?", "labels": ["out_of_scope"]}
+{"key": "a195", "id": "contrast-06-006", "text": "wifi name is showing on top of my phone since morning, it says conected, but internet is not working. how to remove this problem", "labels": ["wifi_no_load"]}
+{"key": "a196", "id": "oos-02-014", "text": "found some old earphones with the wire in a drawer and plugged them in. music still comes out of the phone not the earphones. do i need diffrent ones or is the hole broken", "labels": ["out_of_scope"]}
+{"key": "a197", "id": "train-01-023", "text": "my phone just shakes a little when someone calls insted of ringing, how do i make it make noise again?", "labels": ["phone_not_ringing"]}
+{"key": "a198", "id": "train-22-076", "text": "reading a long message from my sister on whatsapp and the screen switched off half way through again", "labels": ["screen_turns_off_fast"]}
+{"key": "a199", "id": "train-28-017", "text": "Wi-Fi is on and connected, but my bank app says please check your network. What to do?", "labels": ["wifi_no_load"]}
+{"key": "a200", "id": "train-34-103", "text": "my microphone not working when i send voice message on whatsapp", "labels": ["app_permission"]}

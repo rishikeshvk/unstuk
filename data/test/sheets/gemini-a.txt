@@ -1,0 +1,183 @@
+# Gemini app, prompt external-v1 Part A, 2026-10-05. Saved as returned.
+
+## no_internet
+Can't open any websites at all. | plain
+The globe icon at the top is missing and nothing is working. | paraphrase
+My brother sent me a video but it just keeps spinning forever. | paraphrase
+evrything is stopng to load pls fix | typo
+whasapp not workng yutube dead | typo
+Sir my mobile connection is fully gone, kindly do the needful. | indian_english
+I went to the market to buy some vegetables and wanted to check my bank balance on the way. I took out my mobile and tried opening the app but it said offline. I walked to three different spots but it still says offline everywhere! | long_story
+My battery is fully charged, but pages refuse to open. | negation
+How do I get back online when everything is blocked? | plain
+
+## wifi_no_load
+It shows the fan symbol at the top but nothing works. | plain
+Router is connected with full bars but pages are blank. | plain
+Home broadband joined but zero signal is coming through. | paraphrase
+The broadband box is on but my device gets zero data from it. | paraphrase
+full bars but nothn loading y | typo
+cnnectd to home but nt wroking at all | typo
+Only showing the full symbol but practically it is not working at all. | indian_english
+My kids are doing their homework and need to watch an educational video. The router is right next to us and the lights are blinking fine. The mobile shows it is attached to the router with maximum signal, yet the video just refuses to play. | long_story
+It's not a mobile data issue, I am linked to my home router but zero pages open. | negation
+Tell me how to fix a connection that shows full strength but delivers nothing. | plain
+
+## phone_not_ringing
+People are complaining I don't pick up. | plain
+I am only seeing missed calls in my history. | plain
+My mobile stays perfectly quiet when someone tries to reach me. | paraphrase
+The handset just lights up but doesn't make any noise for incoming calls. | paraphrase
+nobdy can rch me it doesnt snd | typo
+misd cals only no volume | typo
+Simply it is keeping quiet when relatives are calling me. | indian_english
+I was waiting all morning for an important delivery from Amazon. I kept the mobile right next to me on the table while I was reading the newspaper. The delivery guy came and went away, and now I see five missed alerts without hearing a single peep. | long_story
+The speaker works for music, but I get no alerts when someone tries to reach me. | negation
+How do I make my device loud again for incoming calls? | plain
+
+## cant_hear_call
+The person speaking to me is too quiet to understand. | plain
+I have to put people on speaker just to talk to them. | plain
+People on the other end sound like they are whispering from a mile away. | paraphrase
+The earpiece is dead quiet when I hold it to my head. | paraphrase
+cnt undrstand what ppl say on mic | typo
+Sound is coming very less from the opposite side. | indian_english
+I bought this expensive handset just two months back from the local shop. Whenever my son calls from America, I try to catch up with him on his life. But when I hold it to my ear, the volume is so faint I can barely make out a word he says. | long_story
+The ringer is loud, but I get total silence from the person on the line. | negation
+Give me instructions to increase the earpiece output during a conversation. | plain
+
+## notifications_missing
+I don't know I have messages until I open the app. | plain
+My chat alerts are always delayed by hours. | plain
+Popups from my bank just stopped appearing on my lock screen. | paraphrase
+I have to manually check my inbox to see if anyone texted me. | paraphrase
+watsap only showing text whn i open it | typo
+not getng any bleeps for new sms | typo
+I am getting all the popups at one time only after opening the application. | indian_english
+I run a small grocery shop and rely on digital payments from my customers. Usually my device chimes immediately when money is received so I can let the customer go. Today a customer paid me, but the confirmation popup only appeared ten minutes later when I unlocked the screen. | long_story
+Incoming calls ring normally, but my WhatsApp texts come silently and very late. | negation
+Show me how to make chat popups appear instantly on the screen again. | plain
+
+## talkback_on
+The mobile is reading every single thing out loud. | plain
+I have to tap twice just to open anything. | plain
+A green square keeps highlighting my icons and I can't click normally. | paraphrase
+A robot lady speaks every time I touch the glass and won't let me scroll. | paraphrase
+it keep talking and has a box arund apps | typo
+nids two touches to open smthing help | typo
+My mobile has started speaking on its own, it is giving me a headache. | indian_english
+My granddaughter was playing games on my device yesterday evening. I don't know what buttons she pressed while holding it. Now every time I try to touch an icon, it just draws a box around it and a robotic lady announces the name instead of opening it! | long_story
+It's not a virus, but suddenly everything I touch gets a border and speaks out loud. | negation
+How do I disable the feature that makes me double touch everything? | plain
+
+## colours_wrong
+My whole display has turned black and white. | plain
+Everything looks like a photo negative right now. | plain
+The pictures on my glass look completely washed out and weird. | paraphrase
+It's like looking at an x-ray of my apps instead of normal graphics. | paraphrase
+scrin luks like old tv no colr | typo
+evrythng is negtive n looks scary | typo
+The display has suddenly become completely dull and without any shade. | indian_english
+I was taking photos of my garden this morning because the flowers finally bloomed. I put the device in my pocket and went inside to make some tea. When I pulled it back out to send the photos to my daughter, the entire display looked like an old grayscale newspaper. | long_story
+The glass isn't broken, but all the hues on the display are completely messed up. | negation
+How do I change the display back to normal from this x-ray look? | plain
+
+## screen_too_dim
+I can't read anything when I am outside in the sun. | plain
+The display keeps getting dark on its own. | plain
+The lighting on the glass is way too weak to see comfortably. | paraphrase
+The backlight drops to zero completely randomly. | paraphrase
+cnt see anythng its like nitetime | typo
+lit keeps going awy very hard to read | typo
+Light is very less on my mobile, I am straining my eyes. | indian_english
+I always keep my mobile on the passenger seat when I drive to work. Today I was trying to use the map for directions because of a traffic jam. But even though I wiped the glass clean, the display was so faded and shadowy that I couldn't read the street names at all. | long_story
+It isn't shutting off, but the backlight drops so low I can barely see. | negation
+Tell me how to stop the backlight from constantly lowering itself. | plain
+
+## screen_turns_off_fast
+The display goes black while I am still reading an article. | plain
+I have to keep tapping it to stop it from sleeping. | plain
+The glass shuts down way too quickly when I'm looking at it. | paraphrase
+It just goes pitch black in five seconds if I don't touch it. | paraphrase
+display gos dark 2 fast help | typo
+keeps locking wile i read news | typo
+Automatically it is going blank very fast while I am using. | indian_english
+I love reading long recipes before I start cooking in the kitchen. My hands are usually covered in flour so I can't keep touching the device. But every time I look away for just a few moments to stir the pot, the display completely dies and puts me back on the password page. | long_story
+It's not out of battery, it just goes black after a few seconds of no touching. | negation
+How do I increase the time before the display goes to sleep? | plain
+
+## screen_wont_rotate
+YouTube stays in portrait even when I hold it sideways. | plain
+I can't get my photos to fill up the whole display. | plain
+The picture doesn't flip when I tilt the device. | paraphrase
+Everything stays vertical no matter how I position the handset. | paraphrase
+vidoes stay small wen i flip fone | typo
+it wont change direction for movie | typo
+The display is getting stuck in one position only, not changing when I tilt. | indian_english
+I subscribe to a lot of movie streaming apps and watch them on my daily train commute. I bought a special stand so I can watch them horizontally without holding the device. But ever since yesterday, every time I put it on the stand, the movie refuses to go wide and just stays tall and tiny. | long_story
+The video plays fine, but it refuses to flip horizontally when I change the device angle. | negation
+How do I enable the auto flip feature for watching movies? | plain
+
+## text_too_small
+I have to squint to read my messages now. | plain
+The words on the display look like tiny ants. | plain
+The writing is completely microscopic and impossible to make out. | paraphrase
+I can't see the words clearly without my strongest reading glasses. | paraphrase
+wrds r tiny cant see them | typo
+evrything written is to tiny for me | typo
+Alphabets are showing very tiny, unable to see properly. | indian_english
+I usually check the daily news on my mobile right after waking up. Since I turned fifty, my eyesight isn't as sharp as it used to be. Yesterday an update happened and now all the articles have shrunk so much that the characters are barely visible to my naked eye. | long_story
+The display isn't blurry, but the words are shrunken down too much to see. | negation
+How do I make the writing larger on my whole system? | plain
+
+## bluetooth_earphones
+My wireless buds won't link to the handset. | plain
+The car audio system can't find my device anymore. | plain
+My cordless headset just blinks blue and refuses to pair. | paraphrase
+The smart band on my wrist says disconnected from the handset. | paraphrase
+earpods nt syncying to moble | typo
+cant get music on the wirles speker | typo
+Sir my handsfree is not catching the signal from the mobile. | indian_english
+I go for a jog every morning at 6 AM and need my music to keep me motivated. I charged my new wireless headset all night so it would be ready. But when I try to link it up, it just keeps searching endlessly and never establishes a link. | long_story
+The headset is fully charged, but it simply refuses to link with the handset. | negation
+How do I force my mobile to pair with a wireless headset? | plain
+
+## app_permission
+WhatsApp says it can't open my camera. | plain
+I try to record a voice note but it blocks the microphone. | plain
+The map software keeps complaining that it doesn't know where I am. | paraphrase
+Zoom refuses to let me use video because of some security setting. | paraphrase
+ig cant take pics says denied | typo
+mic blocked in telegram pls hlp | typo
+It is asking for access every time I try to click a photo in Instagram. | indian_english
+I wanted to book a cab to go to the hospital for my routine checkup. I opened the ride booking software but it kept putting my pickup point in another city. It gave me a popup error saying I need to grant access to my GPS coordinates but I don't know where that is. | long_story
+The lens isn't broken, but Snapchat won't let me take any pictures. | negation
+How do I allow a software to use my GPS tracking? | plain
+
+## wrong_time
+The clock on the top corner is completely incorrect. | plain
+Websites give me a security error about my date. | plain
+My calendar widget thinks it's still last Tuesday. | paraphrase
+The numbers at the top right are showing hours ahead of reality. | paraphrase
+clck is 2 hrs behnd how fix | typo
+it says im in 2015 cnt use browser | typo
+My mobile is showing the wrong day, totally confusing me. | indian_english
+I rely on my mobile alarms to wake me up for my early morning shifts at the factory. Last night the battery died completely and I had to plug it in. Now the hours shown are totally messed up and I'm scared my alarm won't ring when it should. | long_story
+My location is correct, but the hours and minutes are totally off. | negation
+How do I sync my device to show the actual current hours? | plain
+
+## reset_network
+I just want to clear all my connection settings. | plain
+I'm fed up and want to wipe my internet configurations. | plain
+How can I completely erase all the saved signal data and start fresh? | paraphrase
+I want to wipe all the memory of my home routers and mobile carriers. | paraphrase
+need to clr all signls now | typo
+Please tell me how to completely format my connectivity options. | indian_english
+I have been struggling for three days because my mobile drops calls and fails to load any pages. I watched a tutorial that said I should clear out all the wireless data and start from zero. I have tried searching everywhere in the menus but I cannot find the option to wipe everything out. | long_story
+I don't want to wipe my photos, I just want to restore all my signal data to factory defaults. | negation
+Give me the exact steps to wipe out all wireless configurations. | plain
+
+# Moved in review, 2026-10-05 (see docs/m3-labelling-guide.md)
+
+## no_internet, notifications_missing
+My whatsapp is completely dead. | vague short_vague

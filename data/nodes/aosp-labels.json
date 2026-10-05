@@ -1,0 +1,164 @@
+[
+ {
+  "item": "airplane_mode",
+  "text": "Airplane mode",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "airplane_mode",
+  "text": "Aeroplane mode",
+  "source": "aosp:values-en-rGB",
+  "oem": "aosp"
+ },
+ {
+  "item": "dnd",
+  "text": "Do Not Disturb",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "mobile_data",
+  "text": "Mobile data",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "wifi",
+  "text": "Wi-Fi",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "data_saver",
+  "text": "Data Saver",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "inversion",
+  "text": "Color inversion",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "inversion",
+  "text": "Colour inversion",
+  "source": "aosp:values-en-rGB",
+  "oem": "aosp"
+ },
+ {
+  "item": "auto_rotate",
+  "text": "Auto-rotate",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "bluetooth",
+  "text": "Bluetooth",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_hotspot_label",
+  "text": "Hotspot",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_flashlight_label",
+  "text": "Flashlight",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_flashlight_label",
+  "text": "Torch",
+  "source": "aosp:values-en-rGB",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_location_label",
+  "text": "Location",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "battery_detail_switch_title",
+  "text": "Battery Saver",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_nfc_label",
+  "text": "NFC",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_screen_record_label",
+  "text": "Screen record",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_ui_mode_night_label",
+  "text": "Dark theme",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_night_display_label",
+  "text": "Night Light",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_cast_title",
+  "text": "Cast",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_internet_label",
+  "text": "Internet",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "quick_settings_camera_label",
+  "text": "Camera access",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "qr_code_scanner_title",
+  "text": "QR code scanner",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "mic_toggle_title",
+  "text": "Microphone access",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "even_dimmer_display_title",
+  "text": "Extra dim",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "location_settings_title",
+  "text": "Location",
+  "source": "aosp:values",
+  "oem": "aosp"
+ },
+ {
+  "item": "dark_ui_mode",
+  "text": "Dark theme",
+  "source": "aosp:values",
+  "oem": "aosp"
+ }
+]

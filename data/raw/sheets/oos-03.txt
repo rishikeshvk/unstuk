@@ -1,0 +1,124 @@
+## out_of_scope | plain
+My battery goes from full to half before lunch and I barely use this thing, what is eating it?
+The back of my phone is bulging out like something is swelling inside and it honestly scares me.
+I plug the charger in and nothing happens, no little lightning bolt, nothing at all.
+It charges so slowly now, it's plugged in all night and still only at 60 percent in the morning.
+My phone gets really hot in my pocket even when I'm not doing anything on it, is it going to explode?
+It keeps telling me storage is full and I can't even save a picture of my kid.
+Everything is so slow, I tap something and wait forever for it to open.
+The whole phone froze and won't respond to anything, the screen is just stuck on one picture.
+Facebook keeps closing by itself every few seconds and it's driving me crazy.
+I'm trying to download the bank app and it just sits there saying pending and never installs.
+There's a message about a system update that won't go away and I'm scared to press it.
+The update started last night and now it's stuck at 30 percent, what am I supposed to do?
+I dropped my phone and the screen is cracked all over, can it still be used or is it done?
+Half of my screen is black with green lines after it fell off the counter.
+Music and videos come out all crackly from the speaker like something inside is broken.
+The camera only shows a black screen when I open it, front and back both.
+My photos come out blurry no matter what I do, I think the camera lens is scratched.
+I plugged in my old headphones with the cord and no sound comes through them at all.
+I forgot the pattern to unlock my phone and now it's locked me out completely.
+I can't remember my Google password and it keeps asking me for it over and over.
+It says no SIM card even though the card is sitting right there in the phone.
+The new SIM card the store gave me doesn't fit, it's way too big for the slot.
+I have no bars at all and can't make a single call from inside my house.
+The bank texts me a code to log in and it never shows up, so I can't get into my account.
+Everything on the screen suddenly got huge and zoomed in and I can't move around properly.
+The screen is so bright it hurts my eyes and I can't figure out how to tone it down.
+How do I make everything black instead of white like my coworker has hers?
+I want that yellowish screen at night that's supposed to help you sleep, how do I get it?
+I want to change my ringtone to a real song, the one it came with is awful.
+My ringtone is so loud it made me jump out of my skin in a meeting, how do I make it quieter?
+All my contacts are gone, every single phone number just disappeared.
+My photos from last summer vanished from the gallery and I need them back, please.
+I left my phone in a cab and I'm using my wife's to ask, how do I find it?
+Someone stole my phone at the mall, how do I lock it so they can't get into my stuff?
+How do I erase everything and make the phone like brand new, I'm selling it.
+My phone bill was way higher this month and nobody can explain why.
+How do I put more money on my prepaid plan, it ran out and I'm stuck.
+The power button is stuck and won't press down anymore.
+Apps keep saying not enough space when I try to update them, I already deleted stuff.
+My phone keeps restarting itself over and over for no reason and I'm losing my mind.
+## out_of_scope | collision
+My wedding ring is stuck on my finger because my hands are swollen, what should I do?
+My ears keep ringing after the concert last night and I'm worried it won't stop.
+There's a dark spot on my arm that wasn't there before and I'm nervous about it.
+The color of my dog's gums looks really pale and I don't know if that's bad.
+I can't connect with my teenage son anymore, he won't talk to me at all.
+The turn signal light on my car stays on even when I'm not turning, is that dangerous?
+My husband's company is cutting jobs across the whole network of stores and I'm scared about our money.
+The speaker at my daughter's graduation went on and on, is that normal for schools?
+My son's handwriting is so small his teacher says she can't read his homework.
+There's a weird grinding sound coming from my car when I brake.
+My voice has been hoarse for a week and I have a big presentation coming up.
+My doctor says I need to reset my whole diet after my blood test, where do I even start?
+I need my boss's permission to work from home and I'm too nervous to ask him.
+I got a notification letter from the IRS in the mail and I'm panicking.
+My flight connection got canceled and now I'm stuck in Denver with two kids.
+The cake came out too dark on the bottom again, what am I doing wrong?
+My white work shirt turned pink in the wash, can I get the color back?
+These jeans are already too small and I just bought them, can I return them?
+The weather lady says a dark storm is coming in, should I bring my plants inside?
+My daughter goes totally muted at school, the teacher says she won't speak up in class.
+The ring around the bathtub won't come off no matter what I scrub it with.
+My credit card company sent a notification that my card was used in another state and I'm freaking out.
+The speakers at church are so loud they give me a headache every Sunday.
+My husband says my voice gets too loud when I'm stressed and it's causing fights.
+My skin color looks kind of yellow lately and my mom thinks it's my liver.
+The network of roads around here is such a mess, I keep getting lost on the detours.
+My car battery is dead and I can't figure out how to connect the jumper cables right.
+My son needs a signed permission slip for his field trip and I lost the paper.
+The dark circles under my eyes keep getting worse, is it a vitamin thing?
+My wife says I need to reset my attitude toward her family and I don't know how.
+## out_of_scope | oos_near
+Turn on airplane mode for me, I'm about to get on the plane.
+Put my phone on do not disturb, I need some peace and quiet.
+Shut off the Wi-Fi, I don't want it on anymore.
+Turn Bluetooth off, I keep seeing that symbol and it worries me.
+Turn on the flashlight, I dropped my keys in a dark parking lot.
+Call my sister Linda right now please.
+Send a text to my husband saying I'm running late.
+Set an alarm for me so I don't oversleep again.
+Remind me to pick up my prescription from the pharmacy.
+Take a picture of this receipt for me.
+Open WhatsApp, I can't find it anywhere on this thing.
+Play some country music, I need to calm down.
+Turn the volume all the way down, I'm in a waiting room.
+Turn off my mobile data, I'm worried about going over on my bill.
+Turn on battery saver, I need this to last until I get home.
+Silence my phone completely, I'm walking into a funeral.
+Make the letters smaller, they're way too big now.
+Can you make the phone read everything out loud to me?
+Block this number that keeps calling me.
+Delete all my old text messages for me.
+Email my boss that I'm sick and won't make it in.
+Order me an Uber to the hospital.
+Translate this letter from my landlord into Spanish.
+Record a video of my son's recital for me.
+Disconnect my earbuds, I want the sound to come out of the phone instead.
+## out_of_scope | plain
+Hello? Is anybody there?
+Thanks, that actually helped a lot.
+Hi, how are you doing?
+Is it going to rain later? I have to walk the dog.
+What happened in the news, everyone at work is talking about something.
+Who won the Giants game last night?
+How do I make chicken noodle soup, my kid is sick.
+How much should a gallon of milk cost, the store charged me almost six dollars.
+How do I get to the nearest Walmart from here?
+Can you pray for my mother, she's in the hospital.
+My back has been killing me for a week, should I see a doctor?
+What's a good recipe for banana bread?
+Are you a real person or a robot?
+Is gas cheaper at Costco?
+I'm so stressed about everything, I just need someone to talk to.
+What's the difference between a Catholic and a Baptist church?
+Will the Lakers make the playoffs this year?
+How much Tylenol can I take for a headache?
+Ugh, never mind, this is useless.
+Good morning, hope you're doing well.
+Is there a storm coming? The sky looks awful.
+What's the best way to get rid of ants in my kitchen?
+Where's the closest pharmacy around here?
+How much does a new roof cost, ours is leaking.
+Is it safe to eat chicken that smells a little off?

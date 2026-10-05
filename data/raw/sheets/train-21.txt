@@ -1,0 +1,143 @@
+## no_internet
+my phone wont go on the internet at all nothing loads not even tiktok and i was on it on the bus this morning
+i think i pressed something at the top and now theres a little aeroplane and nothing works online
+how do i get my data back on mum says i must of turned it off by accident
+youtube just says no connection and snapchat wont send anything either and im not at home so no wifi
+i swiped down to turn the torch on and now the wifi thing is grey and nothing loads
+nothing online works since i put my phone on that battery saver data thingy my mate showed me
+the internet just stopped on my phone whatsapp messages have got the clock thing and wont send
+can someone tell me how to turn mobile data on cos its off and i dont no where it is
+none of my apps can get online its says check your connection but i havent changed anything i dont think
+was in flight mode on holiday and now im home and still cant get on anything
+
+## wifi_no_load
+it says im connected to the home wifi and its got full bars but nothing will load its just spinning
+my phone shows the tick next to our wifi name but youtube wont play anything at all
+connected to the wifi at my nans it says connected but google just says no internet which makes no sense
+the wifi symbol is right there at the top full signal but instagram wont refresh
+im on the school wifi and it says connected but every website just goes white and times out
+why does it say connected to the wifi when nothing actually loads i cant even get on spotify
+wifi is on and connected to BT hub thing but whatsapp is stuck on connecting
+my laptop works fine on the same wifi but my phone says connected and wont load netflix
+says connected no internet under the wifi name what does that even mean everything else is fine
+all the bars are full and its joined the wifi but the pages just never open how do i fix this
+
+## phone_not_ringing
+my phone didnt ring at all and i had like five missed calls from my mum and now im in trouble
+when people call me it doesnt make any noise i only see it after as a missed call
+my friend rang me on whatsapp three times and i never heard it the phone was right next to me
+i think my phone is stuck on silent it just buzzes a tiny bit when someone calls or not even that
+how do i make my phone ring again it just goes quiet when someone phones
+theres a little moon at the top and now calls dont ring is that why
+i turned the volume down in a lesson and now it doesnt ring at all even when i turn it up
+dads been calling me and it never rings i just get the missed call notification later
+the ringing has stopped completely music still plays loud but calls make no sound
+my phone wont ring its on vibrate or something and i cant work out how to get the sound back
+
+## notifications_missing
+i dont get my snapchat notifications anymore i only see them when i open the app
+whatsapp messages only come through when i actually go into whatsapp otherwise nothing
+my messages are coming in really late like an hour after people sent them
+i dont get any pop ups from instagram anymore it used to tell me when someone liked my stuff
+none of my apps make a noise when i get a message it just shows up silently later
+my group chat was going off and i didnt know cos nothing came up on my screen
+how do i get my notifications back theyve just stopped for everything
+teams from school doesnt tell me when theres new work i only find out when i open it
+i get my messages but no sound and no banner at the top so i always miss them
+since i updated my phone the notifcations dont come through until i unlock it and open the app
+
+## talkback_on
+my phone keeps talking out loud and reading everything i touch its so embarassing
+theres a green box round everything and i have to tap twice to open anything
+i cant scroll with one finger anymore and the phone keeps saying the names of things
+i was messing with settings and now a robot voice reads out everything on the screen how do i stop it
+when i press an app it just says the name instead of opening it i have to double tap
+my phone is narrating everything like i was blind or something and i dont know how to turn it off
+it started talking after i held the volume buttons down and now it wont stop
+every time i touch whatsapp it reads out whatsapp and theres a box around it and it doesnt open
+i need two fingers to scroll now and theres this voice that says everything i do
+how do i turn off the talking thing the phone keeps describing the screen to me
+
+## colours_wrong
+my screen has gone all black and white like an old film
+all the colours on my phone are backwards like a negative photo its well weird
+everything is grey now even my photos and instagram looks colourless
+the screen has gone a strange green colour and i dont know what i did
+whites are black and blacks are white on my phone now and its giving me a headache
+my phone has gone greyscale how do i get the colour back
+i was looking at youtube and suddenly all the colours went wrong like inverted
+the screen looks really purpley and weird even though the brightness is normal
+none of my pics look right the colours are all off like a filter is on the whole phone
+my phone has no colour anymore its all grey and i cant tell what apps are what
+
+## screen_too_dim
+my screen is so dark i can barely see it even inside
+i cant see anything on my phone when im outside in the sun its way too dim
+the brightness keeps going down on its own when im watching youtube
+i put the brightness all the way up and it still looks really dark
+how do i make my screen brighter i cant read my messages
+my phone screen keeps dimming by itself every few minutes its so annoying
+its like the screen is half off its so dull i have to squint
+when i try sliding the brightness up it just goes back down again
+cant see google maps at all when im walking cos the screen is too dark
+my phone is really dim since yesterday and i havent touched anything i dont think
+
+## screen_turns_off_fast
+my screen keeps going black after like a few seconds when im reading
+the phone locks itself really quick and i have to keep putting my code in
+when im reading a long message the screen just turns off before i finish
+how do i stop the screen going off so fast its doing my head in
+im trying to follow a recipe and the screen keeps going dark every few seconds
+it locks so fast i cant even read my revision notes properly
+my screen time out is way too short how do i make it longer
+the screen goes off really quickly if i dont touch it like five seconds
+reading a book on my phone and it keeps going black on me
+every time i stop touching the screen for a second it just switches off and locks
+
+## text_too_small
+the writing on my phone is way too small i cant read it
+can i make the words bigger my nan is borrowing it and she cant see anything
+all the letters are tiny now and i have to squint to read whatsapp
+how do i make the font bigger on my phone
+the app names under the icons are so small i cant tell what they say
+text messages are in really small writing since i changed something
+everything is in tiny writing and the icons are small too can it all be bigger
+i want the writing bigger everywhere not just in one app
+my eyes hurt reading my phone cos the text is so small
+the words in settings and messages are miniscule how do i make them larger
+
+## bluetooth_earphones
+my airpods wont connect to my phone anymore they just keep searching
+my wireless earbuds wont pair it doesnt show them in the list
+i cant connect to the speaker at my mates house it just doesnt find it
+how do i turn bluetooth on my earphones wont work
+my watch has stopped connecting to my phone since yesterday
+the car wont connect to my phone so i cant play music on the way to school
+my headphones say connected but then disconnect straight away
+i got new earbuds for my birthday and i cant get them to pair to my phone
+the bluetooth symbol isnt there anymore and my speaker wont work
+my buds connect to my laptop fine but my phone just wont find them
+
+## app_permission
+snapchat wont let me use the camera it just shows a black screen but the normal camera is fine
+whatsapp voice notes dont record anything its like the microphone is off just in whatsapp
+google maps cant find where i am it says location is off but it works in other apps
+instagram keeps asking me for permission for the camera and i pressed dont allow by accident
+tiktok cant use my microphone so my videos have no sound
+how do i let an app use my camera again i said no and now it wont work
+my banking app wants to scan my face but says camera access is denied
+uber cant get my location so it doesnt know where to pick me up
+discord says it needs mic permission and i dont know how to give it
+the camera in teams is black but works in every other app
+
+## reset_network
+how do i reset the network settings on my phone someone told me to do it
+can you reset all the wifi and bluetooth and mobile stuff back to how it was
+i want to reset my network stuff but not delete all my photos and things
+my brother said i should do a network reset how do i do that
+please reset the internet settings on my phone everything is messed up
+is there a way to reset just the wifi and data settings and not the whole phone
+i need to reset the network bits on my phone the shop said it might fix it
+how do i reset wifi mobile data and bluetooth all at once
+can you put my phones network settings back to normal like factory but only for the network
+reset my network settings please nothing else just that

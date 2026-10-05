@@ -1,0 +1,124 @@
+## out_of_scope | plain
+why does my battery go from 100 to like 20 by lunch??
+my phone battery looks kinda puffy and the back is lifting up, is that bad?
+why wont my phone charge when i plug it in, the little lightning thing doesnt even come up?
+is it normal that my phone gets rly hot when im playing games?
+it keeps saying storage full, how do i get more space without deleting my pics?
+why is my phone so slow lately, everything takes ages to open?
+my phone just froze on the home screen and nothing works, what do i do?
+why does snapchat keep crashing evry time i open it?
+why cant i install tiktok, it just says pending forever?
+should i do the update its asking for or will it mess up my phone?
+the update has been stuck on 30% for an hour, is it broken?
+i dropped my phone and the screen is all cracked, can you fix that?
+half my screen has got green lines going down it since i dropped it, any ideas?
+the speaker at the bottom sounds all crackly even on full volume, is it broke?
+my camera lens is cracked and all my photos come out blurry, can that be fixed?
+my wired earphones only work in one ear, is it the phone or the earphones?
+i forgot my pattern and now im locked out, how do i get back in?
+i forgot my google pasword, how do i get back into my account?
+it says no sim card but its definatly in there, why?
+why have i got no signal for calls at my nans house when everyone else does?
+my bank code text never comes thru, how am i meant to log in?
+everything on my screen is suddenly massive and zoomed in, how do i get it back to normal?
+how do i make my screen less bright, its hurting my eyes at night?
+how do i put dark mode on so everything is black?
+why has my screen gone all yellowy orange at night, can i stop that?
+how do i change my ringtone to a song i like?
+my ringtone is way too loud and its so embarassing in class, how do i turn it down?
+all my contacts have dissapeared, where did they go?
+i deleted some photos by accident, can i get them back?
+i think someone nicked my phone on the bus, how do i find it?
+how do i factory reset my whole phone before i sell it?
+how do i top up my phone credit?
+why is my phone bill so high this month, did i do something wrong?
+why does my phone just die at 15% evrey single day?
+my charger only works if i hold the cable at a weird angle, is the port broken?
+why does whatsapp keep closing on its own?
+why wont it let me record any more videos, it says not enough space?
+my mums old phone wont turn on at all even when its plugged in, is it dead?
+why does my phone get boiling when its charging overnight?
+can i unlock my phone so it works with a diffrent sim?
+## out_of_scope | collision
+my ear piercing ring has gone all green, is that an infection?
+does a silver ring go dark if i wear it in the shower?
+how do i get my nose ring out without it hurting?
+what colour hair dye would look good on dark hair?
+what colour should i wear to a funeral?
+why is my wee such a dark colour, should i be worried?
+how do i connect with people at a new school when i dont know anyone?
+im getting no signal from my crush, does he like me or not?
+my mum keeps saying networking is important for jobs, what does that even mean?
+the teacher put me in a small group for maths, does that mean im bad at it?
+why does my voice crack so much, is it just puberty?
+my nan's got a sore throat and lost her voice, what should she drink?
+how do i reset my sleep after staying up all summer?
+do i need my parents permission to get a saturday job at 15?
+how do i ask for permision to leave school early for a dentist appointment?
+what does a sound engineer actually do, is it a good job?
+why does my stomach make a weird sound after i eat?
+my uncles car keeps making a clicking sound when he turns, is that bad?
+is dark chocolate actually healthier than milk chocolate?
+why does the sky go so dark before a thunderstorm?
+my bike chain wont stay connected, how do i fix it?
+do onion rings count as one of my five a day lol?
+i got a notification letter from school about my attendence, will i get in trouble?
+my brother says bluetooth was named after a viking king, is that true?
+my front tooth has gone a bit dark after i fell over, should i see a dentist?
+the speaker at our assembly said we should all volunteer, where can i do that?
+my dog is called wifi lol, is that a weird name?
+my jumper shrunk to a small in the wash, can i stretch it back?
+why does it get dark so early in winter?
+my dads work is resetting everyones contracts, does that mean he could lose his job?
+## out_of_scope | oos_near
+can you put my phone on airplane mode?
+can you turn on do not disturb till ive finished revising?
+can you switch my wifi off so i stop scrolling?
+can you turn bluetooth off for me?
+can you turn the torch on, i cant find my keys?
+can you ring my mum for me?
+can u text my mate and say im running late?
+can you set an alarm for school tomorow?
+can you remind me to do my homework later?
+can you take a selfie of me?
+can you open youtube?
+can you play some music for me?
+can you put my phone on silent?
+can you mute my phone during lessons?
+can you turn off location so my parents cant track me?
+can you make my screen turn off quicker when i put it down?
+can you make the writing on my phone smaller?
+can you turn the brightness right down?
+can you block my ex's number?
+can you open spotify and play my liked songs?
+can you send a voice note to my sister?
+can you turn on battery saver for me?
+can you put my phone on vibrate only?
+can u take a screenshot of this?
+can you turn my hotspot on so my mate can use my data?
+## out_of_scope | plain
+hiya, how are you?
+thanks for the help earlier!
+whats the weather gonna be like this weekend?
+is it gonna rain in manchester tomorrow?
+who won the arsenal match last night?
+whats going on in the news today?
+how do i make pancakes without eggs?
+how much is a pint of milk in tesco?
+how do i get to the train station from the high street?
+whats the difference between christians and catholics?
+why do muslims fast during ramadan?
+ive got a really bad headache, should i take paracetamol?
+is it normal to feel tired all the time even after sleeping loads?
+are you a real person?
+whats your favourite football team?
+how much are tickets for the taylor swift concert?
+can you help me with my history essay?
+whats the capital of australia?
+how do i make a cheese toastie?
+good morning! hows it going?
+how do i get to wembley on the tube?
+whos top of the premier league?
+is ibuprofen ok for period cramps?
+whats a good present for my mums birthday under 20 quid?
+can you tell me a joke?

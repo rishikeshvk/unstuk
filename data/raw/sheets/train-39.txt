@@ -1,0 +1,143 @@
+## no_internet
+beta why whatsapp is not sending any msg today only, it is showing clock sign and nothing is going, what to do?
+since morning nothing is opening in phone, no news no youtube, it is saying no connection, what happend?
+my grandson was playing with phone yesterday and now there is small aeroplane picture on top and nothing is working, how to remove that?
+why google is not opening, it say you are offline, but i have not done anything na?
+the two arrows up down near battery are not coming now and internet is gone, how to get it back pls?
+paytm is saying check your connection, i am at home only, why it is saying like that?
+how do i switch on the net in this phone, my son use to do it for me but he is in bangalore now
+all the apps are saying no internet since i pressed some button from top when pulling down, what i did wrong?
+is the mobile data off? youtube video is not playing and whatsapp also stuck, please help how to on it
+my phone has gone in some saving mode it seems, apps not loading anything, why so?
+
+## wifi_no_load
+wifi name is showing and it is saying connected also but nothing is opening, why this is happening?
+the fan type symbol is full on top, all lines are there, still youtube is going round and round, what is the problem?
+in settings it shows our home wifi with tick mark but google page is blank only, how to fix?
+my daughter put the wifi password and it is connected, but whatsapp not loading photos, why so?
+it is showing connected to the router name but saying no internet below it, what does it mean?
+all bars full on wifi symbol yet bank app is saying network error, can you tell why?
+my wifi is on and connected properly but news app not refreshing since evening, what to do?
+i can see our airtel wifi name with connected written, still nothing loads, is something wrong with phone?
+connected to the wifi but maps is not showing the road, only grey, how to make it work?
+why phone says connected wifi but no page opening, my tv on same wifi is working fine?
+
+## phone_not_ringing
+why my phone is not ringing when somebody calls, i am seeing missed calls only later?
+my son called five times and i did not hear anything at all, phone was next to me only, why no sound?
+whatsapp call came from my sister in dubai but phone did not make any sound, how this is happening?
+phone is only shaking when call comes, no ring, how do i make the ring come back?
+there is a bell with line cut on top of screen, is that why calls are not ringing?
+since yesterday no ringing for calls, i see the missed call list full, what to do pls?
+i think phone is in silent, how to take it out from silent, i dont know where it is
+doctor called and i missed it because there was no ring sound, why it is quiet like this?
+there is some do not disturb thing showing it seems, my calls are not ringing, how to off it?
+after temple i made the phone quiet and now ringing has not come back, what to do?
+
+## notifications_missing
+why whatsapp messages are coming only when i open the app, before it used to come by itself?
+my messages are not making any sound when they come, i only see them later, what is the reason?
+the bank msgs and all are coming very late, sometimes one hour late, why so?
+i am not getting the small alert on top when somebody sends whatsapp, how to get it back?
+family group messages i see only when i open whatsapp, no ping sound, is something off?
+gmail is not telling me when new mail comes, i have to open and check, why like that?
+earlier phone used to beep when message comes, now it is not doing, did i change something?
+how do i make the app messages show on the screen again, they stopped coming
+facebook and youtube used to show what is new on top, now nothing comes, why?
+after cleaning phone with some app my notifications are not coming at all, what happend?
+
+## talkback_on
+why my phone is talking everything i touch, it is reading out loud everything?
+there is green box coming around whatever i touch and it is not opening, what is this?
+now i have to tap two times to open anything, earlier one time was enough, why it changed?
+phone is speaking like a lady voice for all buttons, how do i stop it talking?
+i cannot scroll down with my finger now, it just reads out the words, what happened to phone?
+i pressed both volume buttons together by mistake and now phone is talking everything, how to stop?
+whatsapp is not opening on one tap, it just says whatsapp loudly, why?
+someone told me talkback is on in my phone, how to switch it off, i cant even unlock properly
+phone is reading every message out loud and making box, very irritating, how to remove?
+why a voice is telling me everything on screen and i need two fingers to move the page?
+
+## colours_wrong
+why my phone screen has become black and white, all colour gone?
+the photos look like old negative film, white is black and black is white, what happend?
+screen is looking all grey grey, even whatsapp green is not coming, how to fix?
+all colours are looking strange like pinkish, my grandson photos look odd, why?
+after i touched something in settings my screen colours turned opposite, how to get normal?
+youtube video is coming in black and white only, is phone spoiled?
+why everything on the screen is looking like a xray, how do i get the colour back?
+my phone screen has some greenish shade on everything, how to make it normal colour?
+the colour inversion has come on my phone it seems, how to off it?
+all icons have become grey, no colour at all, did i press something wrong?
+
+## screen_too_dim
+why my phone screen is so dark, i cannot see anything properly?
+when i go outside in sun i cannot read anything on phone, it is very dull, what to do?
+screen keeps getting dark by itself after some time, why it is doing like that?
+i am trying to make the screen bright but it is not going up, how to increase?
+how do i make the phone more brighter, letters are not clear in dark screen
+since morning screen is very dim, my eyes are paining, what is the problem?
+while watching youtube the screen becomes darker on its own, why?
+the brightness is very low i think, where to make it full?
+in the garden i cant even see whatsapp messages, the screen is so dull, how to fix?
+my phone screen has become very dark after the update, how to make light?
+
+## screen_turns_off_fast
+why my phone screen goes black so quickly when i am reading?
+i am reading the news and in few seconds screen gets off, so irritating, how to stop?
+every time i read whatsapp message the screen locks very fast, how to make it stay longer?
+screen is switching off when i am watching recipe video on youtube, why?
+how do i make the screen stay on more time, it goes off before i finish reading
+while looking at the map for directions the phone goes dark quickly, what to do?
+the screen timeout is very small i think, how to make it more?
+my screen becomes black in 15 seconds, i have to again unlock, how to change?
+why phone is locking itself so fast when i am reading bhagavad gita in app?
+screen keeps going dark while i read bank statement, can you make it stay?
+
+## text_too_small
+why the letters on my phone are so small, i cannot read even with specs?
+how do i make the writing bigger on phone, whatsapp messages are very tiny
+the font size is very small, how to make it big?
+all the names under the icons are too small, i cant read them, what to do?
+my eyes are weak, can the words on phone become larger?
+the message text is so small i have to ask my wife to read, how to increase it?
+icons and letters both are very small on this new phone, how to make big?
+in contacts list names are very small writing, can it be made bigger?
+the news app letters are so tiny, how to make whole phone writing big?
+why everything written on phone is so small, is there a way to enlarge the font?
+
+## bluetooth_earphones
+my wireless earphones are not connecting to phone, why?
+i bought new earbuds and they are not pairing with phone, how to do?
+the bluetooth speaker my son gave is not getting connected, what to do?
+my watch is not connecting to phone since yesterday, how to connect again?
+car is not showing my phone when i try to play songs, why it is not connecting?
+how do i on the bluetooth, my earphones are not working without it it seems
+my earpods were working yesterday but today not joining with phone, what happend?
+i cannot listen to youtube in my wireless earphones, phone is not finding them, why?
+the small blue symbol is not there on top, earbuds not connecting, is it off?
+my hearing ear buds are not pairing with phone, how to make them connect?
+
+## app_permission
+why whatsapp camera is not opening, it is saying allow access?
+google maps is not finding where i am, it keeps asking location, what to do?
+in whatsapp when i try to send voice message it is not recording, why?
+zoom app is not showing my face to others, camera not working only in zoom, how to fix?
+bank app is asking permission for camera to scan, i pressed deny, now how to allow?
+phonepe is not scanning qr code, it says camera access needed, what to do?
+why the microphone is not working in google search, it says permission?
+ola app is not taking my location, it says turn on permission, how do i do it?
+video call on whatsapp shows black screen for my side, but normal camera is working, why?
+how do i give the app permission for mic, my grandson said it is blocked
+
+## reset_network
+how do i reset all the network settings in my phone, the shop man told me to do it?
+can you reset the wifi and mobile settings in my phone to start fresh?
+my son said reset network settings will fix the problem, how to do that?
+i want to clear all wifi bluetooth and sim network settings, how to do pls?
+how to make network settings back to original like new phone, not full phone reset?
+please reset the network part of my phone, nothing else to delete
+service centre told me to do network reset, where is that option?
+can i reset only wifi and bluetooth and mobile network without losing photos?
+how do i do the network reset, the internet is giving problem since many days?
+is there a way to reset all connection settings to default, my nephew asked me to do it?

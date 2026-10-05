@@ -1,0 +1,143 @@
+## no_internet
+Internet not coming on phone
+Nothing open, no internet
+YouTube not loading anything
+Airplane on, how off?
+WhatsApp not sending, no net
+After flight nothing work online
+Data is off, how open
+Instagram stuck, nothing loads
+Phone no internet since morning
+Google not open anywhere
+
+## wifi_no_load
+Wifi connected but nothing open
+Wifi full bars, pages not load
+Home wifi tick, YouTube not work
+Connected wifi, internet not come
+Wifi show connected, Chrome blank
+Wifi name there, nothing loading
+School wifi connected, no pages
+Full wifi but Instagram stuck
+Wifi okay but apps not load
+Wifi connected no internet, fix?
+
+## phone_not_ringing
+Calls come, no sound
+Phone not ring, missed calls
+Mom call, I not hear
+Missed many calls, no ringing
+WhatsApp call no sound coming
+Phone only shake when call
+Ring volume zero, how up?
+Friend calling, phone stay quiet
+Phone silent, calls not ringing
+After movie, phone not ringing
+
+## notifications_missing
+Messages come late, no sound
+WhatsApp messages only when open
+Instagram alerts not coming
+No message alerts anymore
+Snapchat messages come very late
+Notifications not showing, why?
+Telegram silent until I open
+App messages come hours later
+Discord alerts never come
+How get message alerts back?
+
+## talkback_on
+Phone talking everything I touch
+Green box on everything
+One tap not open anything
+Need two tap now
+Phone reading screen loud
+Scroll need two fingers, why
+Voice says everything, stop it
+After settings, phone talking
+TalkBack on, how off?
+YouTube not open, phone talking
+
+## colours_wrong
+Screen black and white now
+Colours look like negative
+Everything grey suddenly
+Screen colour very weird
+Photos look inverted colours
+Instagram photos all grey
+Screen all green colour
+After update, no colours
+Colours all opposite now
+How get colours back?
+
+## screen_too_dim
+Screen too dark
+Cannot see screen outside
+Brightness not going up
+Screen dark by itself
+Phone very dim, help
+Sun outside, screen invisible
+Screen get darker alone
+Watching YouTube, screen so dark
+Make screen more bright how
+Screen dim, I slide, nothing
+
+## screen_turns_off_fast
+Screen go black fast
+Phone lock too quick
+Reading, screen turn off
+Reading Kindle, screen go black
+Screen off after seconds
+Reading WhatsApp, screen sleep fast
+Screen timeout very short
+Make screen stay on longer
+Reading recipe, phone lock
+Screen black every few seconds
+
+## text_too_small
+Letters too small
+Cannot read words, tiny
+Want bigger letters please
+Icons very small now
+WhatsApp text too tiny
+Font size how bigger
+Words small, eyes hurt
+After update, text small
+Make writing more big
+Messages tiny, cannot read
+
+## bluetooth_earphones
+Earbuds not connect phone
+Wireless earphones not connecting
+Speaker not connect
+Watch not connect phone
+Car not find phone
+Bluetooth off, how on?
+Earbuds not showing on phone
+Spotify, earbuds no connect
+New earbuds not pair
+Car music not connect
+
+## app_permission
+Camera not work in Instagram
+WhatsApp voice note not record
+Maps not find my location
+Snapchat camera black, others okay
+App ask permission, what do
+Uber cannot see location
+TikTok cannot use camera
+Instagram no microphone
+Google Maps location not work
+How allow camera Snapchat
+
+## reset_network
+Reset network settings please
+How reset wifi settings
+Want reset all network
+Reset wifi and bluetooth
+Network reset how do
+Reset internet, bluetooth, mobile settings
+Shop said reset network
+Reset mobile data settings please
+Start network fresh, how?
+Reset connections, not whole phone

@@ -1,0 +1,162 @@
+{"id": "train-03-103", "text": "Google Maps can't find where I am", "reason": "exact duplicate of seed-app_permission-03"}
+{"id": "oos-05-076", "text": "call my wife", "reason": "exact duplicate of seed-out_of_scope-09"}
+{"id": "train-12-041", "text": "phone talks when i touch", "reason": "exact duplicate of contrast-05-049"}
+{"id": "oos-05-081", "text": "open youtube for me", "reason": "exact duplicate of oos-01-086"}
+{"id": "oos-08-090", "text": "lock my phone", "reason": "exact duplicate of oos-01-090"}
+{"id": "oos-06-096", "text": "Hi, how are you doing?", "reason": "exact duplicate of oos-03-098"}
+{"id": "oos-08-071", "text": "turn on airplane mode", "reason": "exact duplicate of oos-05-071"}
+{"id": "oos-07-080", "text": "can you take a selfie of me?", "reason": "exact duplicate of oos-06-080"}
+{"id": "oos-07-120", "text": "can you tell me a joke?", "reason": "exact duplicate of oos-06-113"}
+{"id": "train-23-081", "text": "Why is all the writing on my phone so tiny?", "reason": "exact duplicate of train-01-081"}
+{"id": "train-21-042", "text": "theres a green box round everything and i have to tap twice to open anything", "reason": "exact duplicate of train-02-042"}
+{"id": "train-37-061", "text": "my screen is so dark I can barely see it", "reason": "exact duplicate of train-02-061"}
+{"id": "train-08-082", "text": "How do I make the letters bigger on my phone?", "reason": "exact duplicate of train-07-082"}
+{"id": "train-27-082", "text": "How do I make the letters bigger on my phone?", "reason": "exact duplicate of train-07-082"}
+{"id": "train-31-082", "text": "How do I make the letters bigger on my phone?", "reason": "exact duplicate of train-07-082"}
+{"id": "train-12-021", "text": "phone dont ring anymore", "reason": "exact duplicate of train-11-021"}
+{"id": "train-12-026", "text": "only buzzes when ppl call", "reason": "exact duplicate of train-11-024"}
+{"id": "train-38-025", "text": "WhatsApp calls make no sound", "reason": "exact duplicate of train-11-025"}
+{"id": "train-12-043", "text": "have to tap twice now", "reason": "exact duplicate of train-11-043"}
+{"id": "train-38-043", "text": "Have to tap twice now", "reason": "exact duplicate of train-11-043"}
+{"id": "train-30-052", "text": "Colours look like negative", "reason": "exact duplicate of train-11-053"}
+{"id": "train-14-060", "text": "how get colours back", "reason": "exact duplicate of train-11-059"}
+{"id": "train-12-062", "text": "cant see screen outside", "reason": "exact duplicate of train-11-062"}
+{"id": "train-12-064", "text": "brightness wont go up", "reason": "exact duplicate of train-11-063"}
+{"id": "train-12-069", "text": "how make screen brighter", "reason": "exact duplicate of train-11-067"}
+{"id": "train-32-080", "text": "screen timeout too short", "reason": "exact duplicate of train-11-075"}
+{"id": "train-12-078", "text": "how keep screen on longer", "reason": "exact duplicate of train-11-077"}
+{"id": "train-38-089", "text": "Font size too small", "reason": "exact duplicate of train-11-086"}
+{"id": "train-38-090", "text": "Squinting at tiny letters", "reason": "exact duplicate of train-11-089"}
+{"id": "train-12-092", "text": "airpods not pairing", "reason": "exact duplicate of train-11-092"}
+{"id": "train-14-102", "text": "whatsapp mic not working", "reason": "exact duplicate of train-11-102"}
+{"id": "train-12-108", "text": "how let app use camera", "reason": "exact duplicate of train-11-109"}
+{"id": "train-30-111", "text": "Reset network settings please", "reason": "exact duplicate of train-11-111"}
+{"id": "train-38-111", "text": "Reset network settings please", "reason": "exact duplicate of train-11-111"}
+{"id": "train-12-119", "text": "clear all saved wifi stuff", "reason": "exact duplicate of train-11-118"}
+{"id": "train-38-051", "text": "Screen gone black and white", "reason": "exact duplicate of train-12-051"}
+{"id": "train-32-052", "text": "colours gone all grey", "reason": "exact duplicate of train-14-052"}
+{"id": "train-30-063", "text": "Brightness not going up", "reason": "exact duplicate of train-14-062"}
+{"id": "train-30-084", "text": "Icons very small now", "reason": "exact duplicate of train-14-085"}
+{"id": "train-30-115", "text": "Network reset how do", "reason": "exact duplicate of train-14-114"}
+{"id": "train-40-074", "text": "how i make the screen stay on longer", "reason": "exact duplicate of train-19-075"}
+{"id": "train-37-084", "text": "how do I make the font bigger on my phone", "reason": "exact duplicate of train-21-084"}
+{"id": "train-31-071", "text": "Why does my screen go black after a few seconds when I'm reading a recipe?", "reason": "exact duplicate of train-23-071"}
+{"id": "train-31-111", "text": "How do I reset the network settings on my phone?", "reason": "exact duplicate of train-27-111"}
+{"id": "train-32-043", "text": "green box on everything", "reason": "exact duplicate of train-30-042"}
+{"id": "train-32-061", "text": "screen too dark", "reason": "exact duplicate of train-30-061"}
+{"id": "train-32-071", "text": "screen go black fast", "reason": "exact duplicate of train-30-071"}
+{"id": "train-32-081", "text": "letters too small", "reason": "exact duplicate of train-30-081"}
+{"id": "train-40-111", "text": "how i reset the network settings on my phone", "reason": "exact duplicate of train-34-111"}
+{"id": "train-14-025", "text": "whatsapp call no ring", "reason": "near duplicate of train-12-025"}
+{"id": "train-14-030", "text": "how make phone ring again", "reason": "near duplicate of train-12-028"}
+{"id": "train-30-041", "text": "Phone talking everything I touch", "reason": "near duplicate of train-03-041"}
+{"id": "train-38-044", "text": "Phone keeps talking to me", "reason": "near duplicate of train-11-041"}
+{"id": "train-31-051", "text": "Why has my screen gone all grey, like an old telly?", "reason": "near duplicate of train-23-051"}
+{"id": "train-32-051", "text": "screen black and white", "reason": "near duplicate of train-30-051"}
+{"id": "train-23-063", "text": "Why does my screen keep going darker by itself while I'm looking at it?", "reason": "near duplicate of train-07-063"}
+{"id": "train-32-062", "text": "outside cant see screen", "reason": "near duplicate of train-11-062"}
+{"id": "train-40-062", "text": "when i go outside i cant see the screen at all too dark in the sun", "reason": "near duplicate of train-18-062"}
+{"id": "train-40-065", "text": "how do i make the screen more bright", "reason": "near duplicate of train-30-069"}
+{"id": "train-11-075", "text": "screen timeout too short", "reason": "near duplicate of seed-screen_turns_off_fast-05"}
+{"id": "train-11-077", "text": "how keep screen on longer", "reason": "near duplicate of seed-screen_turns_off_fast-04"}
+{"id": "train-12-072", "text": "keeps locking while im reading", "reason": "near duplicate of train-11-072"}
+{"id": "train-12-077", "text": "locks every few seconds", "reason": "near duplicate of train-11-074"}
+{"id": "train-30-077", "text": "Screen timeout very short", "reason": "near duplicate of train-12-080"}
+{"id": "train-30-078", "text": "Make screen stay on longer", "reason": "near duplicate of train-19-075"}
+{"id": "train-32-073", "text": "youtube watching screen black", "reason": "near duplicate of train-12-074"}
+{"id": "train-32-077", "text": "how keep screen longer", "reason": "near duplicate of seed-screen_turns_off_fast-04"}
+{"id": "train-37-074", "text": "how do I make the screen stay on longer", "reason": "near duplicate of train-19-075"}
+{"id": "train-03-081", "text": "the writing on my phone is too small", "reason": "near duplicate of train-02-081"}
+{"id": "train-07-084", "text": "Why are the little pictures for the apps so small? I keep pressing the wrong one.", "reason": "near duplicate of train-05-085"}
+{"id": "train-12-086", "text": "how make font bigger", "reason": "near duplicate of seed-text_too_small-02"}
+{"id": "train-18-089", "text": "font size increase how to do", "reason": "near duplicate of train-14-088"}
+{"id": "train-19-082", "text": "how i make the writing bigger on my phone", "reason": "near duplicate of train-16-082"}
+{"id": "train-22-087", "text": "the little pictures for the apps are so small i keep pressing the wrong one", "reason": "near duplicate of train-05-085"}
+{"id": "train-29-081", "text": "The letters on my phone are too small, I cannot read my messages without glasses.", "reason": "near duplicate of train-09-081"}
+{"id": "train-34-091", "text": "my wireless earbuds not connect to phone anymore", "reason": "near duplicate of train-02-091"}
+{"id": "train-37-091", "text": "my wireless earbuds won't connect to my phone anymore", "reason": "near duplicate of train-02-091"}
+{"id": "train-38-091", "text": "Earbuds won't connect", "reason": "near duplicate of seed-bluetooth_earphones-01"}
+{"id": "train-12-103", "text": "maps cant find my location", "reason": "near duplicate of train-11-103"}
+{"id": "train-26-105", "text": "The bank app wants to scan my check but says it can't use the camera.", "reason": "near duplicate of train-08-104"}
+{"id": "train-32-106", "text": "whatsapp voice note no record", "reason": "near duplicate of train-30-102"}
+{"id": "train-03-111", "text": "I want to reset the network settings on my phone", "reason": "near duplicate of seed-reset_network-03"}
+{"id": "train-12-111", "text": "reset network settings how", "reason": "near duplicate of seed-reset_network-01"}
+{"id": "train-14-111", "text": "how reset network settings", "reason": "near duplicate of seed-reset_network-01"}
+{"id": "train-18-119", "text": "reset wifi mobile data and bluetooth settings how", "reason": "near duplicate of seed-reset_network-06"}
+{"id": "train-30-114", "text": "Reset wifi and bluetooth", "reason": "near duplicate of train-11-112"}
+{"id": "train-32-118", "text": "how do network reset", "reason": "near duplicate of train-14-114"}
+{"id": "train-32-120", "text": "reset internet setting how", "reason": "near duplicate of train-12-113"}
+{"id": "train-33-111", "text": "how to reset network settings on my phone", "reason": "near duplicate of train-02-111"}
+{"id": "train-34-111", "text": "how i reset the network settings on my phone", "reason": "near duplicate of train-02-111"}
+{"id": "train-38-116", "text": "Shop said reset network settings", "reason": "near duplicate of train-30-117"}
+{"id": "mobile-actions-train-063", "text": "Please create a new contact named Kenji Tanaka. His phone number is +81 90-1234-5678 and his email is kenji.tanaka@kmail.jp.", "reason": "near duplicate of mobile-actions-train-056"}
+{"id": "mobile-actions-train-219", "text": "My phone's flashlight is currently on. Can you please turn it off?", "reason": "near duplicate of mobile-actions-train-203"}
+{"id": "mobile-actions-train-220", "text": "I need to turn off my flashlight now.", "reason": "near duplicate of mobile-actions-train-201"}
+{"id": "mobile-actions-train-222", "text": "I need you to turn off the flashlight now.", "reason": "near duplicate of mobile-actions-train-201"}
+{"id": "mobile-actions-train-240", "text": "I need to turn the flashlight off now.", "reason": "near duplicate of mobile-actions-train-201"}
+{"id": "mobile-actions-train-245", "text": "Can you turn the flashlight off now?", "reason": "near duplicate of mobile-actions-train-210"}
+{"id": "mobile-actions-train-249", "text": "I accidentally left the flashlight on, can you turn it off for me?", "reason": "near duplicate of mobile-actions-train-212"}
+{"id": "mobile-actions-train-259", "text": "It's really dark in here. Can you please turn on my flashlight?", "reason": "near duplicate of mobile-actions-eval-041"}
+{"id": "mobile-actions-train-296", "text": "I dropped my keys under the sofa and it's too dark to see. Can you turn on the flashlight?", "reason": "near duplicate of mobile-actions-train-263"}
+{"id": "oos-01-087", "text": "Torch off please", "reason": "near duplicate of oos-01-075"}
+{"id": "oos-05-071", "text": "turn on airplane mode", "reason": "near duplicate of oos-01-071"}
+{"id": "oos-05-092", "text": "block this number it keeps calling me", "reason": "near duplicate of oos-03-089"}
+{"id": "oos-07-085", "text": "can you turn off location so my parents cant track me?", "reason": "near duplicate of oos-06-091"}
+{"id": "oos-08-081", "text": "open youtube", "reason": "near duplicate of oos-01-086"}
+{"id": "oos-08-083", "text": "switch off mobile data", "reason": "near duplicate of oos-01-089"}
+{"id": "oos-10-081", "text": "open whatsapp for me", "reason": "near duplicate of oos-01-081"}
+{"id": "seed-colours_wrong-01", "text": "my screen is black and white suddenly", "reason": "close to test test-chatgpt-a-065 (0.81)"}
+{"id": "seed-text_too_small-02", "text": "how do i make the font bigger", "reason": "close to test test-claude-blind-052 (0.83)"}
+{"id": "seed-text_too_small-04", "text": "the writing on my phone is very small", "reason": "close to test test-chatgpt-a-101 (0.87)"}
+{"id": "seed-bluetooth_earphones-07", "text": "how to connect wireless earphones", "reason": "close to test test-chatgpt-a-111 (0.90)"}
+{"id": "seed-out_of_scope-08", "text": "what's the weather today", "reason": "close to test test-chatgpt-b-046 (0.82)"}
+{"id": "seed-vague-04", "text": "no sound", "reason": "close to test test-chatgpt-b-059 (1.00)"}
+{"id": "contrast-05-036", "text": "phone keeps restarting itself", "reason": "close to test test-chatgpt-b-031 (0.97)"}
+{"id": "contrast-05-074", "text": "internet not working please", "reason": "close to test test-chatgpt-a-001 (0.81)"}
+{"id": "oos-01-001", "text": "Battery finish very fast", "reason": "close to test test-chatgpt-b-023 (0.83)"}
+{"id": "oos-01-021", "text": "Forgot phone password", "reason": "close to test test-chatgpt-b-027 (0.87)"}
+{"id": "oos-01-022", "text": "Google password I forgot", "reason": "close to test test-chatgpt-b-032 (0.81)"}
+{"id": "oos-01-096", "text": "Hello, how are you", "reason": "close to test test-chatgpt-b-043 (1.00)"}
+{"id": "oos-01-097", "text": "Thank you very much", "reason": "close to test test-chatgpt-b-045 (1.00)"}
+{"id": "oos-01-100", "text": "Who won cricket match", "reason": "close to test test-chatgpt-b-047 (0.86)"}
+{"id": "oos-05-101", "text": "who won the cricket match yesterday", "reason": "close to test test-chatgpt-b-047 (1.00)"}
+{"id": "oos-05-112", "text": "tell me a joke please", "reason": "close to test test-chatgpt-b-056 (0.86)"}
+{"id": "oos-06-103", "text": "What is the recipe for paneer butter masala?", "reason": "close to test test-claude-blind-089 (0.80)"}
+{"id": "oos-08-036", "text": "recharge done but balance is not showing", "reason": "close to test test-claude-blind-081 (0.93)"}
+{"id": "oos-08-098", "text": "thank you so much", "reason": "close to test test-chatgpt-b-045 (0.90)"}
+{"id": "oos-08-113", "text": "can you tell me a joke", "reason": "close to test test-chatgpt-b-056 (0.91)"}
+{"id": "oos-10-096", "text": "good morning, how are you", "reason": "close to test test-chatgpt-b-044 (0.80)"}
+{"id": "train-02-031", "text": "my whatsapp messages only turn up when i open the app", "reason": "close to test test-claude-blind-021 (0.82)"}
+{"id": "train-02-081", "text": "the writing on my phone is too small to read", "reason": "close to test test-chatgpt-a-101 (0.92)"}
+{"id": "train-03-041", "text": "my phone is talking everything I touch", "reason": "close to test test-claude-blind-025 (0.87)"}
+{"id": "train-03-066", "text": "how I make my screen brighter?", "reason": "close to test test-chatgpt-a-080 (0.94)"}
+{"id": "train-03-075", "text": "how to make screen stay on longer?", "reason": "close to test test-chatgpt-a-090 (0.94)"}
+{"id": "train-03-091", "text": "my wireless earbuds won't connect to the phone", "reason": "close to test test-claude-blind-055 (0.81)"}
+{"id": "train-08-071", "text": "My screen goes black after just a few seconds if I don't touch it.", "reason": "close to test test-claude-blind-040 (0.80)"}
+{"id": "train-09-091", "text": "My wireless earbuds not connecting to the phone anymore.", "reason": "close to test test-claude-blind-055 (0.85)"}
+{"id": "train-11-023", "text": "calls come in silent", "reason": "close to test test-gemini-b-066 (0.84)"}
+{"id": "train-11-081", "text": "writing too small to read", "reason": "close to test test-chatgpt-a-101 (0.84)"}
+{"id": "train-12-054", "text": "looks like photo negative", "reason": "close to test test-chatgpt-a-063 (0.83)"}
+{"id": "train-12-061", "text": "screen to dark cant see", "reason": "close to test test-chatgpt-b-063 (0.82)"}
+{"id": "train-12-081", "text": "letters to small cant read", "reason": "close to test test-chatgpt-a-105 (0.84)"}
+{"id": "train-14-068", "text": "cant see screen in day", "reason": "close to test test-chatgpt-b-063 (0.82)"}
+{"id": "train-15-041", "text": "my phone is talking everything i touch it is reading out loud and i cant open anything", "reason": "close to test test-claude-blind-025 (0.81)"}
+{"id": "train-19-031", "text": "whatsapp messages come only when i open whatsapp before it was making sound", "reason": "close to test test-claude-blind-021 (0.82)"}
+{"id": "train-19-041", "text": "phone talking talking everything i touch it say out loud make it stop", "reason": "close to test test-claude-blind-025 (0.86)"}
+{"id": "train-19-075", "text": "how i make the screen stay on longer", "reason": "close to test test-chatgpt-a-090 (0.83)"}
+{"id": "train-21-081", "text": "the writing on my phone is way too small i cant read it", "reason": "close to test test-chatgpt-a-101 (0.82)"}
+{"id": "train-30-011", "text": "Wifi connected but nothing open", "reason": "close to test test-chatgpt-a-011 (0.83)"}
+{"id": "train-30-032", "text": "WhatsApp messages only when open", "reason": "close to test test-claude-blind-021 (0.91)"}
+{"id": "train-30-061", "text": "Screen too dark", "reason": "close to test test-chatgpt-a-071 (0.86)"}
+{"id": "train-30-092", "text": "Wireless earphones not connecting", "reason": "close to test test-chatgpt-a-111 (0.84)"}
+{"id": "train-34-031", "text": "whatsapp messages only come when i open whatsapp before that nothing", "reason": "close to test test-claude-blind-021 (0.87)"}
+{"id": "train-34-081", "text": "the letters on my phone are so small i cant read", "reason": "close to test test-chatgpt-a-105 (0.82)"}
+{"id": "train-37-041", "text": "my phone keeps talking out loud everything I touch", "reason": "close to test test-claude-blind-025 (0.92)"}
+{"id": "train-37-111", "text": "how do I reset my network settings", "reason": "close to test test-chatgpt-a-141 (0.82)"}
+{"id": "train-38-034", "text": "Not getting app notifications", "reason": "close to test test-chatgpt-a-041 (0.86)"}
+{"id": "train-38-052", "text": "Everything looks like a negative", "reason": "close to test test-gemini-a-060 (0.82)"}
+{"id": "train-38-071", "text": "Screen goes off too quickly", "reason": "close to test test-chatgpt-a-081 (1.00)"}
+{"id": "train-40-041", "text": "my phone is talking everything i touch it say the name loud", "reason": "close to test test-claude-blind-025 (0.86)"}
+{"id": "oos-01-027", "text": "OTP not coming", "reason": "a labelling-guide example"}
+{"id": "oos-01-076", "text": "Call my son", "reason": "a labelling-guide example"}
+{"id": "oos-09-096", "text": "hello", "reason": "a labelling-guide example"}

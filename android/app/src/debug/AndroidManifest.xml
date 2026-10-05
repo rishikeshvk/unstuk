@@ -27,6 +27,14 @@
                 <action android:name="com.rishikeshvk.unstuk.debug.SET_AUDIO" />
             </intent-filter>
         </receiver>
+        <receiver
+            android:name=".debug.LabelDumpReceiver"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="com.rishikeshvk.unstuk.debug.DUMP_LABELS" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

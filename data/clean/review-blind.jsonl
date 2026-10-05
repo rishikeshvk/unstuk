@@ -1,0 +1,37 @@
+{"key": "q01", "labels": ["out_of_scope"], "vague": false, "rule": "§4 text_too_small, not in", "reason": "Wanting text smaller means the text is too big, which text_too_small excludes."}
+{"key": "q02", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "Small print on a medicine bottle is not a phone problem."}
+{"key": "q03", "labels": ["out_of_scope"], "vague": false, "rule": "§6 opposite", "reason": "Turning the internet off is the opposite of a no_internet fix."}
+{"key": "q04", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "A dim bike headlight is not a phone screen problem."}
+{"key": "q05", "labels": ["out_of_scope"], "vague": false, "rule": "§4 screen_too_dim, not in", "reason": "A screen that is too bright is excluded because the fix only brightens."}
+{"key": "q06", "labels": ["text_too_small"], "vague": false, "rule": "§4", "reason": "The phone's text is too small to read."}
+{"key": "q07", "labels": ["wifi_no_load"], "vague": false, "rule": "§5 connected", "reason": "Wi-Fi is connected with full bars yet the website does not load."}
+{"key": "q08", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "Shoes being too small is not a phone problem."}
+{"key": "q09", "labels": ["no_internet"], "vague": false, "rule": "§6 command", "reason": "Asking how to switch on the net is a command for a no_internet fix (mobile data on)."}
+{"key": "q10", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "A dark room with a dead bulb is not a phone problem."}
+{"key": "q11", "labels": ["out_of_scope"], "vague": false, "rule": "§6 opposite", "reason": "Lowering brightness is the opposite of the brightness_up fix."}
+{"key": "q12", "labels": ["out_of_scope"], "vague": false, "rule": "§4 app_permission, not in", "reason": "The camera is black in every app including the camera app, so it is a broken camera, not a permission."}
+{"key": "q13", "labels": ["out_of_scope"], "vague": false, "rule": "§4 app_permission, not in", "reason": "The camera is black in the regular camera app too, so it is broken in every app."}
+{"key": "q14", "labels": ["text_too_small"], "vague": false, "rule": "§4", "reason": "Their writing is tiny and they want it bigger like their mum's."}
+{"key": "q15", "labels": ["screen_too_dim"], "vague": false, "rule": "§3 how-to", "reason": "A how-to question for brightening the screen belongs to screen_too_dim."}
+{"key": "q16", "labels": ["phone_not_ringing"], "vague": false, "rule": "§6 owner", "reason": "Turning off do not disturb is a command owned by phone_not_ringing."}
+{"key": "q17", "labels": ["out_of_scope"], "vague": false, "rule": "§4 text_too_small, not in", "reason": "Text that is too big is excluded from text_too_small."}
+{"key": "q18", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4", "reason": "The phone makes no sound for incoming calls."}
+{"key": "q19", "labels": ["out_of_scope"], "vague": false, "rule": "§6 opposite", "reason": "Read as a command, switching mobile data off is the opposite of the mobile_data_on fix."}
+{"key": "q20", "labels": ["out_of_scope"], "vague": false, "rule": "§4 app_permission, not in", "reason": "The camera itself won't take photos with no other app named, which points to a camera fault rather than an app permission."}
+{"key": "q21", "labels": ["out_of_scope"], "vague": false, "rule": "§4 app_permission, not in", "reason": "The camera fails in the video call and in the camera app itself, so it is broken in every app."}
+{"key": "q22", "labels": ["no_internet"], "vague": false, "rule": "§4", "reason": "Every app says offline, which is no internet with no mention of connected Wi-Fi."}
+{"key": "q23", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "Small font in a textbook is not about the phone's text."}
+{"key": "q24", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4", "reason": "The screen dims toward timeout while reading and needs tapping to stay on, which is the screen timeout problem."}
+{"key": "q25", "labels": ["out_of_scope"], "vague": false, "rule": "§4 no_internet, not in", "reason": "The data pack has run out, which is a recharge matter, not a setting Unstuk can fix."}
+{"key": "q26", "labels": ["out_of_scope"], "vague": false, "rule": "§4 no_internet, not in", "reason": "The daily data quota is used up, which is a recharge matter."}
+{"key": "q27", "labels": ["out_of_scope"], "vague": false, "rule": "§7 another meaning", "reason": "A Bluetooth speaker that won't charge is a battery problem, not a connection one."}
+{"key": "q28", "labels": ["out_of_scope"], "vague": false, "rule": "§4 no_internet, not in", "reason": "A used-up data allowance is a recharge matter."}
+{"key": "q29", "labels": ["out_of_scope"], "vague": false, "rule": "§7 not a phone problem", "reason": "A question about the sky is not a phone problem."}
+{"key": "q30", "labels": ["out_of_scope"], "vague": false, "rule": "§6 opposite", "reason": "Turning Bluetooth off is the opposite of the bluetooth_on fix."}
+{"key": "q31", "labels": ["out_of_scope"], "vague": false, "rule": "§6 opposite", "reason": "The request is to turn Bluetooth off, the opposite of the bluetooth_on fix."}
+{"key": "q32", "labels": ["wifi_no_load"], "vague": false, "rule": "§6 command", "reason": "Turning off private DNS is a command owned by wifi_no_load."}
+{"key": "q33", "labels": ["out_of_scope"], "vague": false, "rule": "§4 phone_not_ringing, not in", "reason": "A ringtone that is too loud is excluded from phone_not_ringing."}
+{"key": "q34", "labels": ["out_of_scope"], "vague": false, "rule": "§4 app_permission, not in", "reason": "The camera shows black in every app including the normal camera, so it is a broken camera."}
+{"key": "p01", "labels": ["colours_wrong"], "vague": false, "rule": "§5", "reason": "A purple tint with normal brightness is a strange tint, which §5 assigns to colours_wrong rather than overall darkness, and it is not the warm yellow Night Light case."}
+{"key": "p02", "labels": ["wifi_no_load"], "vague": false, "rule": "§4", "reason": "§4 lists Private DNS questions under wifi_no_load, and websites failing on Wi-Fi after a Private DNS change matches it."}
+{"key": "p03", "labels": ["colours_wrong"], "vague": false, "rule": "§4", "reason": "An inverted screen with light and dark switched is listed as colours_wrong in §4."}

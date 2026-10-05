@@ -1,0 +1,92 @@
+{
+  "_note": "Test fixtures we wrote, not real user messages or training data (invariant 9). Both the Kotlin and Python matchers must return these probabilities.",
+  "cases": [
+    {
+      "complaint": "My internet is not working",
+      "probabilities": {
+        "no_internet": 1.0
+      }
+    },
+    {
+      "complaint": "my ring finger hurts",
+      "probabilities": {
+        "phone_not_ringing": 1.0
+      }
+    },
+    {
+      "complaint": "bring me tea",
+      "probabilities": {}
+    },
+    {
+      "complaint": "Screen is too dark and grey",
+      "probabilities": {
+        "colours_wrong": 0.3333333333333333,
+        "screen_too_dim": 0.6666666666666666
+      }
+    },
+    {
+      "complaint": "WhatsApp messages come late",
+      "probabilities": {
+        "notifications_missing": 1.0
+      }
+    },
+    {
+      "complaint": "phone talks to me and I have to tap twice",
+      "probabilities": {
+        "talkback_on": 1.0
+      }
+    },
+    {
+      "complaint": "can't hear the person on the call",
+      "probabilities": {
+        "cant_hear_call": 1.0
+      }
+    },
+    {
+      "complaint": "wifi connected but pages don't load",
+      "probabilities": {
+        "wifi_no_load": 1.0
+      }
+    },
+    {
+      "complaint": "my internet bill is too high",
+      "probabilities": {
+        "no_internet": 1.0
+      }
+    },
+    {
+      "complaint": "how do I turn on dark mode",
+      "probabilities": {
+        "screen_too_dim": 1.0
+      }
+    },
+    {
+      "complaint": "Letters are tiny",
+      "probabilities": {
+        "text_too_small": 1.0
+      }
+    },
+    {
+      "complaint": "the time is wrong",
+      "probabilities": {
+        "wrong_time": 1.0
+      }
+    },
+    {
+      "complaint": "reset network settings please",
+      "probabilities": {
+        "reset_network": 1.0
+      }
+    },
+    {
+      "complaint": "earbuds won't pair",
+      "probabilities": {
+        "bluetooth_earphones": 1.0
+      }
+    },
+    {
+      "complaint": "nothing works at all",
+      "probabilities": {}
+    }
+  ]
+}

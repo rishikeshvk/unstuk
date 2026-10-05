@@ -1,0 +1,143 @@
+## no_internet
+I was coming back from tuition in the auto and showing my friend a reel. Suddenly it stopped and now nothing is opening, Instagram, YouTube, nothing. There is a small aeroplane picture on top of the screen, what is that?
+Yesterday my cousin took my phone to play some game and gave it back. From then no app is loading at all, everything says no conection. Please tell how to make it come back.
+Me and my friends were at the mall and I wanted to send photos on WhatsApp. It is just showing clock sign on every message and not going. Even Google is not opening, my net is totally gone it seems.
+I was pulling down the top thing to see notifications and maybe I pressed some button by mistake. Now internet is not coming at all in my phone. The two arrows near the battery also disapeared.
+Mummy kept my phone on charging and when I took it back nothing online was working. Chrome says you are offline. How do I switch on the net again?
+At home we have WiFi but I came to my nani's house so I am using the phone's own net. But it is not working, the 4G letters are not even showing on top. Insta and Snapchat both not loading.
+I turned on some data saver thing because my friend said it saves net. After that apps are not loading, YouTube is just spinning and spinning. Can you undo it pls?
+Bro my phone is not connecting to internet anywhere. At home the wifi symbol is gone and outside also no net. I didnt change anything i swear.
+Last week we went in flight and uncle told me to put phone in flight mode. Now we are back home and still no internet is coming. Google Maps also says offline.
+I wanted to pay the canteen uncle with GPay but it said no internet connection. My friend's phone was working fine in the same place. Now in my phone no website is opening also.
+
+## wifi_no_load
+Our home wifi is showing connected, full lines also there. But YouTube is just showing the round loading thing forever. Papa's phone is also on same wifi and his is working.
+I came to my friend's house and she gave me her wifi password, it got conected and showing her network name. But nothing is opening, Instagram says couldn't refresh feed. What to do?
+In coaching centre there is free wifi and my phone joined it, there is tick mark also. But Google search is not opening, just blank white page comes. Earlier it was working fine.
+Yesterday light went off and came back, after that wifi is connected in phone but no internet. The symbol has a small exclamation mark near it. How do I fix this?
+I was doing online class on Google Meet and it suddenly froze. Wifi is still showing connected with full signal. Now no app is loading anything at all.
+Phone says connected to Sharma_Home but websites are not loading at all. My laptop is working on same wifi only. Only my phone has this problem.
+We went on a trip and I joined the hotel wifi, it says connected. Then when I open Chrome nothing comes, page cant be reached it says. Mummy is asking me to book the cab but I cant.
+Wifi bars are full and its showing connected but WhatsApp messages are not going. Single tick only. I restarted the router also by switching off the plug.
+Our new wifi got installed today and phone connected to it easily. But Netflix and YouTube both say no internet. How to make the internet actually come when wifi is conected?
+Its showing connected, no internet under the wifi name. I tried opening Flipkart and Amazon but nothing loads. Please help.
+
+## phone_not_ringing
+Mummy called me 5 times when I was in my room and I didn't hear anything. Later I saw all the missed calls. Phone is not making any sound when someone is calling.
+I had put my phone quiet during exam hall yesterday. Now when friends call it is not ringing at all, only I see missed call after. How to make the ring come back?
+My friend was calling me on WhatsApp for group project and I never heard it. The screen just lights up and no sound comes. Earlier ringtone used to come properly.
+Since morning I got 4 missed calls and not even one rang. I was sitting next to the phone only. Is my phone speaker gone?
+Last night I put some moon thing on so phone doesnt disturb me while sleeping. Now its afternoon and calls are still not ringing. How to remove it?
+Phone just vibrates a little when somebody calls, no ringtone sound. I was in temple so I pressed the volume button down full. Now the ring is not coming back.
+When papa calls me there is no sound at all, he is getting very angry with me. Songs on YouTube are playing loud only. Only calls are not ringing.
+I have do not disturb on i think because there is a minus sign on top. Calls are not ringing because of that. Please tell me how to switch it of.
+My tution sir called and I missed it because phone didn't ring. The call list shows missed call at 4 pm. Why is my phone not giving any sound when call comes?
+My phone is stuck in silent mode it seems, the bell picture has a line through it. Nobody's calls are ringing. How do I put ring back?
+
+## notifications_missing
+My friends were planning a birthday surprise on WhatsApp group and I didnt know anything. Messages are coming only when I open WhatsApp. No sound, no popup on top.
+Instagram DMs are coming like 2 hours late. My friend sent me message and I saw it only in evening when I opened the app. Before it used to show on top immediately.
+I installed some cleaner app to make phone fast. After that I am not getting any alerts from any app. Messages come only when I open the app.
+My school app sends homework updates but I am not getting them on top of screen. I only see when I go inside the app. Teacher scolded me today because of that.
+Snapchat messages are not showing anymore when they come. No ding sound also. Only when I open snap I see 10 messages waiting.
+When phone is locked I dont get any WhatsApp message alert. Once I unlock and open the app then all come together. How to make them come on time?
+My notifications are not coming properly since last week. Gmail, WhatsApp, Telegram all are late. Phone is new also, only 2 months old.
+Mummy sent me message to come down for dinner and I didnt get anything. Later when I opened WhatsApp it was there from 20 minutes. Why message is not popping up?
+I turned on some battery saving mode for our long trip. Now Instagram and WhatsApp messages are coming silent, no sound no banner. Please help how to get them normal.
+Messges are just silently coming and sitting there, I dont get to know. The little icons on top bar don't show anymore. How do I get the alerts back?
+
+## talkback_on
+I was trying to make the phone louder from settings and pressed something. Now phone is talking whatever I touch and a green box is coming. I cant open anything with one tap.
+Phone is speaking out loud everything on the screen in a lady voice. When I tap WhatsApp it just says WhatsApp and doesn't open, I have to tap two times quickly. Please help how to stop this.
+My little brother was playing with my phone and pressed both volume buttons together I think. Now it reads everything aloud. Scrolling also not happening with one finger.
+Mobile is talking by itself since lunch. Every button I touch it says the name loudly. My friends are laughing at me in class.
+There is green square coming around everything I touch and the phone reads it. To open YouTube I have to double tap. How do I go back to normal?
+Phone started telling double tap to activate every time I touch. I can't even type my password properly. Please tell how to turn this off.
+I turned on TalkBack by mistake while exploring settings. Now I cant even turn it off because tapping doesnt work normal. Help.
+Yesterday night phone started narrating everything. I was scared it was hacked. Even scroling down needs two fingers now.
+My phone has become like a robot reading everything. I tap on Instagram and it says Instagram but doesn't open. Mummy is sleeping and its loud also.
+How do I stop the screen reader voice? It is reading every message and app name aloud. I have exam tomorow and I need to study.
+
+## colours_wrong
+I was showing my friend some settings and suddenly whole screen became black and white. My photos look like old movie. How to get colours back?
+Phone screen colours are opposite now, white became black and black became white. Faces in photos look like ghost. I didn't do anything only.
+Everything on my phone is grey grey since morning. Instagram reels are also without colour. Is my display spoilt?
+I was playing with some settings for Free Fire graphics. Now my screen has gone like a photo negative. Even the wallpaper looks weird.
+Screen colours are looking very strange, red is looking like brown and green looking greyish. My friend's same phone is looking normal. What happened to my phone?
+I put on bedtime mode last night and in the morning the phone was full grey. Now even in afternoon its still grey. How to remove it?
+Phone colours got inverted after I pressed volume buttons together. Now YouTube looks like x-ray. How to undo this?
+My screen is in greyscale suddenly. I didn't change anything, it just happened after an update. Want my colours back pls.
+The whole display has a weird pinkish shade on everything, even white looks pink. It was normal yesterday evening. What setting did I change?
+All apps and photos are coming without colour, only white black and grey. My new selfie looks like 1990s photo lol. How do I make it colourful again?
+
+## screen_too_dim
+I went outside for cricket and wanted to check the score on my phone. Screen was so dark I couldn't see anything in sunlight. Even inside it's dull.
+My phone screen is very dim since yesterday. I am pulling the brightness line full but still it is dark. Is something wrong with it?
+While watching YouTube the screen keeps getting darker by itself. Then I touch and it's still dull. Very irritating.
+I can barely see anything on screen, its too dark. Mummy said my eyes will spoil by straining. How to make it more bright?
+In the bus going to school I tried to read my notes on the phone. When sun came on it the screen was just dark, not able to read anything.
+Phone display has become very dull, like it's at lowest light. I tried sliding the sun icon but it goes back down. Please help.
+Screen is going dark on its own after few seconds, not switching off just dull. Then becomes little bright again. Why its doing like this?
+My phone screen is too dark to read WhatsApp msgs. I had put battery saver yesterday maybe that did something. How to increase light?
+In the market I wanted to show the Paytm QR to the shopkeeper. He couldn't scan because my screen was so dim. Even at full brightness it is low.
+The screen looks very dark like someone dimmed it. I cant see properly even in my room with light on. How do I make the screen brighter?
+
+## screen_turns_off_fast
+I was reading my chemistry notes PDF and the screen keeps going black every few seconds. I have to touch again and again. So annoying yaar.
+Phone locks too fast when I am reading something. Like 15 seconds and its gone. How to make it stay on longer?
+While I was reading a long story on Wattpad the screen went off three times. Then I have to put the password again. Please help me make it stay.
+My screen turns off very quickly if I don't touch it. Even reading a long WhatsApp message fully is difficult. Earlier it used to stay much longer.
+I was following a recipe for mummy on my phone and the screen kept going black. I had flour on my hands so couldnt touch. How to stop the screen from going off so soon?
+I set something in settings to save battery and now the screen goes dark and locks in some seconds. I want it to stay on longer. Help.
+My cousin changed some settings in my phone last week. Now screen timeout is very short and it locks while I am reading. How do I increase it?
+When I'm checking directions on Google Maps while walking the screen goes black quickly. Then I lose where to go. Phone is falling asleep too fast.
+I was doing an online quiz and phone screen went off in the middle while I was reading the question. When I unlocked it, time was over. Why does my screen go black so fast?
+Screen goes of within few seconds of reading. Have to keep tapping it like mad. Can I make it stay longer?
+
+## text_too_small
+My dadi gave me her old phone and the letters are so tiny. I have to bring phone close to my eyes. How do I make the writing bigger?
+WhatsApp messages are coming in very small font. I can't read without squeezing my eyes. Please tell how to increase.
+After phone update all the words became small. Even app names under icons are tiny. Very dificult to read.
+I got new specs but still I can't read the text on phone properly, it's that small. My friend's phone shows bigger letters. How to make mine like that?
+I think my brother changed something while playing on my phone. Icons and letters on my screen look very small now. Everything looks crowded and tiny.
+Reading my school notices in Chrome is very hard, the text is too small. I want the letters bigger in whole phone. How to do?
+The writing in my messages and settings is too small to read. Can you make it big? My eyes are paining.
+I was trying to read the bus timing on the app and the letters were like ants. I missed my bus because of that. Please make the words bigger.
+How to increase font size in my phone? Everything is very small and I keep making mistakes reading.
+My phone's text is very small and thin. When I chat on Instagram I can barely read what my freinds wrote. How can I make it bigger for whole phone?
+
+## bluetooth_earphones
+I got new wireless earbuds for my birthday. When I open the case, phone is not finding them at all. My friend's phone found them in one second.
+My earpods were working fine yesterday with my phone. Today they are not connecting, music comes from phone speaker only. I tried taking them out and putting back also.
+Papa wants me to connect phone to the car so we can play songs. Car screen shows searching but my phone is not showing the car. How do I connect it?
+My smart watch stopped showing messages because it got disconnected from phone. Now it is not connecting back. The watch app says device not found.
+Bluetooth is not turning on in my phone. I press the button and it goes off again. I want to connect my JBL speaker.
+I was watching YouTube with my neckband and suddenly sound came out loud from phone in class. Everyone looked at me. Now neckband is not conecting again.
+How do I pair my new earbuds with my phone? I tried pressing the button on case but nothing shows on phone. Box instructions are not clear.
+My friend brought her speaker to the party and I wanted to play songs from my Spotify. Phone is not able to find it in the list. Everyone else's phone could connect.
+The wireless earphones show connected for 2 sec then disconnect. I want to listen songs while going to gym. Very frustrating.
+The blutooth symbol is not even coming on top now. My earbuds are not connecting at all. Please help.
+
+## app_permission
+I want to video call on WhatsApp but it says camera cannot be opened. Normal camera app is working fine. Only WhatsApp has issue.
+Instagram is not letting me record voice message. When I hold the mic button nothing records. Other apps record my voice fine.
+I needed to go to my friend's house so I opened Google Maps. It is not able to find where I am, the blue dot is not coming. Other apps know where I am.
+I was trying to scan a QR in PhonePe and it shows black screen instead of camera. My camera app works. Why only PhonePe doesn't open camera?
+Snapchat keeps asking allow camera allow camera. I pressed dont allow by mistake the first time. Now how do I give it?
+I installed a new app for my coaching class and it needs microphone for speaking test. It said permission denied. How to give permission?
+Zomato is not showing my location, it says turn on location. I am at home and other apps know my location. Only food app is creating problem.
+My school attendance app needs to take selfie but camera doesn't open in it. It just shows a grey box. In other apps camera is fine.
+When I press the mic in Google search to speak, nothing happens. It says something about access. I want to search by voice.
+Uber is not detecting where I am so driver is going to wrong place. It says location access is off for this app. How to turn it on only for Uber?
+
+## reset_network
+My uncle said to reset the network settings to fix my phone signal issues. I don't know where it is. Can you do it for me?
+Wifi and bluetooth both are acting weird since last week. My friend told me to reset all the wifi and sim settings but not delete my photos. How to do that?
+I want to clear all the saved wifi, bluetooth and mobile net settings and start fresh. Not the full phone reset, just those. Please help.
+Shopkeeper at mobile shop told me to reset network when I showed him my issue. But I don't want to lose my data. Will you do that reset for me?
+Can you reset only the internet related settings of my phone? Like wifi passwords and bluetooth devices everything should go back to new. My games and photos should stay.
+Calls are dropping and wifi has problems both, so my cousin said do the connection settings reset. I'm scared to do it myself. Please do it.
+I tried everything for my net problem, restarting phone also. Now I just want to put all wifi and mobile data settings back to default. How do I do it?
+My earbuds and home wifi both got messed up after the update. I saw on YouTube that resetting the connection settings fixes it. Can you reset that for my phone?
+Please reset the sim and wifi settings of my phone back to how they were when new. I don't want to format the whole phone. Just the connection part.
+Teacher in computer class said wiping the internet and bluetooth setings back to default can fix such problems. I want to do that on my phone. Where is the option?

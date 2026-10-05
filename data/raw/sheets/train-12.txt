@@ -1,0 +1,143 @@
+## no_internet
+nothing loads at all
+internet gone on my fone
+no internet since this mornin
+whatsapp wont send anyting
+youtube says no conection
+pressed plane thing now nothin
+mobile data off how fix
+cant get online anymore
+apps all say ofline
+google maps wont load nothin
+
+## wifi_no_load
+home net conected nothing loads
+says conected pages wont open
+wifi full bars nothin opens
+network name shows youtube spins
+got tick but apps stuck
+conected at work whatsapp stuck
+hotel internet conected nothin loads
+new router conected nothing opens
+says conected sites blank
+wifi conected no internet help
+
+## phone_not_ringing
+phone dont ring anymore
+missed calls no sound
+calls come in quiet
+cant hear it ringin
+whatsapp calls no ring
+only buzzes when ppl call
+mom called never herd it
+how make it ring again
+ring sound gone after update
+stuck on silent help
+
+## notifications_missing
+texts come late no sound
+whatsapp msgs only when opened
+dont get alerts anymore
+no ding for mesages
+messages show up hours later
+bank app alerts stoped
+facebook pings not showin
+emails dont pop up
+how get message alerts back
+no notifcations unless app open
+
+## talkback_on
+phone talks when i touch
+green box around everyting
+have to tap twice now
+cant scroll needs two fingers
+voice reads out everything
+kid played with it now talks
+lady voice wont shut up
+how stop phone talkin
+tapping does nothin just talks
+talkback on cant turn off
+
+## colours_wrong
+screen gone black and white
+colors look all wierd
+everything grey all of sudden
+looks like photo negative
+screen colors all backwards
+pics look washed gray
+youtube all gray no color
+screen weird greenish color
+how get colors back
+after update no color
+
+## screen_too_dim
+screen to dark cant see
+cant see screen outside
+screen keeps gettin darker
+brightness wont go up
+so dim even turned up
+cant read it in sun
+maps to dark in car
+screen dims by itself
+how make screen brighter
+screen real dark after update
+
+## screen_turns_off_fast
+screen goes black to fast
+keeps locking while im reading
+screen shuts off quick
+watching youtube screen goes off
+recipe open screen keeps sleepin
+have to keep tapping screen
+locks every few seconds
+how keep screen on longer
+screen turns off mid article
+screen timeout to short
+
+## text_too_small
+letters to small cant read
+words tiny on screen
+need bigger writing
+cant read tiny texts
+icons so smal
+how make font bigger
+whatsapp words realy tiny
+need glasses to read phone
+print so small now
+after update letters tiny
+
+## bluetooth_earphones
+earbuds wont conect
+airpods not pairing
+car wont find my phone
+speaker wont hook up
+watch disconected wont come back
+bluetooth off cant turn on
+new headphones wont pair
+how conect wireless earbuds
+spotify wont play thru earbuds
+car stereo dont see phone
+
+## app_permission
+camera wont work in whatsapp
+zoom says no mic acess
+maps cant find my location
+app keeps asking permision
+instagram camera black screen
+bank app wont scan check
+uber dont know where i am
+how let app use camera
+whatsapp voice msgs wont record
+doctor video app no camera
+
+## reset_network
+reset network settings how
+reset wifi and bluetooth stuff
+how reset internet settings
+reset wifi data bluetooth settings
+reset my conection settings please
+tech guy said reset network
+wipe wifi settings not phone
+start over internet settings
+clear all saved wifi stuff
+reset signal settings pls

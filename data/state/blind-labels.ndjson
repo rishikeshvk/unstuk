@@ -1,0 +1,125 @@
+{"key": "s001", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s002", "labels": ["colours_wrong", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "s003", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s004", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s005", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s006", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s007", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s008", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s009", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s010", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s011", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s012", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s013", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s014", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s015", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s016", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s017", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s018", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s019", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s020", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s021", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s022", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s023", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s024", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s025", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s026", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s027", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s028", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s029", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s030", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s031", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s032", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s033", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s034", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s035", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s036", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s037", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s038", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s039", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s040", "labels": ["no_internet"], "vague": false, "rule": "§9 net"}
+{"key": "s041", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s042", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s043", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s044", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s045", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s046", "labels": ["colours_wrong", "text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s047", "labels": ["text_too_small", "screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s048", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s049", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s050", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s051", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s052", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s053", "labels": ["colours_wrong", "screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "s054", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s055", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s056", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s057", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s058", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "s059", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s060", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s061", "labels": ["screen_too_dim", "colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "s062", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s063", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s064", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s065", "labels": ["colours_wrong", "screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "s066", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s067", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s068", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s069", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s070", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s071", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s072", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s073", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "s074", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s075", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s076", "labels": ["colours_wrong"], "vague": false, "rule": "§4"}
+{"key": "s077", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s078", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s079", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s080", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s081", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s082", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "s083", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s084", "labels": ["notifications_missing"], "vague": false, "rule": "§5 messages"}
+{"key": "s085", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s086", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s087", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s088", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "s089", "labels": ["no_internet"], "vague": false, "rule": "§9 net"}
+{"key": "s090", "labels": ["colours_wrong", "text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s091", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s092", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s093", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s094", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s095", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s096", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s097", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s098", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s099", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s100", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s101", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "s102", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s103", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s104", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s105", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "s106", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s107", "labels": ["no_internet"], "vague": false, "rule": "§5 not said to be connected"}
+{"key": "s108", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s109", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s110", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s111", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s112", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s113", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "s114", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s115", "labels": ["phone_not_ringing"], "vague": false, "rule": "§5 incoming calls"}
+{"key": "s116", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "s117", "labels": ["no_internet"], "vague": true, "rule": "§8"}
+{"key": "s118", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s119", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s120", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s121", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s122", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "s123", "labels": ["colours_wrong"], "vague": false, "rule": "§5 colour"}
+{"key": "s124", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "s125", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}

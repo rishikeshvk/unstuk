@@ -107,6 +107,13 @@ Pick by accuracy on the real user test set.
 7. Quantize to int8 and re-check calibration afterwards.
 8. Export to ONNX for ONNX Runtime Android or LiteRT, behind a Kotlin `decide(state, questions)` API.
 
+**Correction (2026-10-05): data.** Real user messages can't be collected during M3. M3 builds a *proxy* test set
+instead, written by hand and by other LLM families than the training data, and frozen before any training data
+exists. M5 picks a model on it; the M8 field test confirms that choice on real messages before the model counts as
+shipped (invariant 10). Intent labels come from the words alone, and a separate state slice measures whether state
+helps. Generation runs in Claude Code sessions and chat apps, not through an API. See the
+[M3 spec](m3-spec.md).
+
 **Why not a small LLM?** Even at 100 MB, 0.5B-class models (\~300 MB+ at 4-bit) don't fit. FunctionGemma 270M is the closest generative option for phone actions, but it maps explicit commands ("turn on the flashlight") rather than symptoms, and at 270M parameters it is likely past the budget. Gemini Nano is used only as an optional System 2 where the phone has it.
 
 ## Size budget
@@ -227,8 +234,8 @@ Eight recent developments shaped the plan above; the biggest change is copying t
   automatically. The threshold value is set in the M2 spec and tuned in M6.
 - *Answered (2026-10-04):* the app's look and UX are set before M3: the "calm core, expressive surface" design
   in [design-spec.md](design-spec.md), with the Unknot logo and one screen per reply.
-- *Settle in the M3 spec:* consent and storage rules for real user messages. They are first collected in M3 for the
-  test set, so this can't wait for the M8 field test.
+- *Settle in the M8 spec (moved from M3, 2026-10-05):* consent and storage rules for real user messages. M3 uses
+  a proxy test set, so real messages are first collected in the M8 field test.
 - *Settle in the M7 spec:* how the int8 model file reaches the APK (Git LFS or a build step). Until then `*.onnx` is
   gitignored.
 - *Open:* voice or Hinglish in v2?

@@ -1,0 +1,224 @@
+## no_internet
+Why won't my videos load at home? I think I swiped something and turned the Wi-Fi off. How do I get it back on?
+## wifi_no_load
+Why won't my videos load at home? The Wi-Fi symbol is right there at the top and it says connected. How do I get it working?
+## no_internet
+How come nothing works at my friend's house? I think I turned off the Wi-Fi when I was messing with the settings. Can you help?
+## wifi_no_load
+How come nothing works at my friend's house? It says I'm on their Wi-Fi but every page just keeps loading forever. Can you help?
+## no_internet
+Why can't I send snaps anymore? There's a little airplane at the top of my screen since my flight. How do I fix it?
+## wifi_no_load
+Why can't I send snaps anymore? The Wi-Fi symbol is at the top of my screen and it says connected. How do I fix it?
+## no_internet
+Is my phone broken? My games won't go online and I think the mobile data got switched off. What do I do?
+## wifi_no_load
+Is my phone broken? My games won't go online even though it shows I'm connected to the Wi-Fi. What do I do?
+## phone_not_ringing
+Why doesn't my phone make any noise when my mom calls me? I only see it later as a missed call. How do I fix that?
+## notifications_missing
+Why doesn't my phone make any noise when my mom texts me? I only see her messages way later. How do I fix that?
+## phone_not_ringing
+How come my phone stays silent when someone calls? The sound is turned up but it never rings.
+## notifications_missing
+How come my phone stays silent when I get a message in my chat app? The sound is turned up but it never beeps.
+## phone_not_ringing
+Why didn't my phone ring when my coach called me? I totally missed the news about practice.
+## notifications_missing
+Why didn't I get the alert when my coach posted in the team app until hours later? I totally missed the news about practice.
+## phone_not_ringing
+Is there a reason my phone doesn't ring for calls anymore? It just lights up with no sound.
+## notifications_missing
+Is there a reason my phone doesn't buzz for texts anymore? They just show up with no sound.
+## screen_too_dim
+Why is my screen so dark all of a sudden? I can barely see anything even inside.
+## colours_wrong
+Why is my screen black and white all of a sudden? I can barely tell anything apart even inside.
+## screen_too_dim
+How do I fix my screen? It got really dim and I have to squint to read.
+## colours_wrong
+How do I fix my screen? It turned all gray and I have to squint to tell what's what.
+## screen_too_dim
+Why does my phone look so dark, like the brightness went all the way down? It's super hard to see.
+## colours_wrong
+Why does my phone look flipped, like the white parts are black and pictures look like negatives? It's super hard to see.
+## screen_too_dim
+Did I break my screen? It's way too dark now even though I didn't drop it.
+## colours_wrong
+Did I break my screen? It's only gray now with no color even though I didn't drop it.
+## screen_too_dim
+How do I make my screen brighter? It's so dark I can't see my homework.
+## out_of_scope
+How do I make my screen less bright? It's so bright it hurts my eyes when I do homework at night.
+## screen_too_dim
+Why is my screen so dim when I'm in bed? Can I make it better?
+## out_of_scope
+Why is my screen so blinding when I'm in bed? Can I make it better?
+## screen_too_dim
+How do I make my phone not so dark? Everything is hard to see.
+## out_of_scope
+How do I make my phone have the dark background like my friend's? All the white is hard on my eyes.
+## screen_too_dim
+Can you help me turn up the brightness? My screen is way too dark at the beach.
+## out_of_scope
+Can you help me turn down the brightness? My screen is way too bright in my dark room.
+## screen_turns_off_fast
+Why does my screen keep going black after a few seconds while I'm reading? I have to keep tapping it.
+## out_of_scope
+Why does my whole phone keep turning off while I'm reading? I have to hold the power button to turn it back on.
+## screen_turns_off_fast
+How do I stop my screen from going dark so fast when I'm reading a recipe?
+## out_of_scope
+How do I stop my phone from restarting by itself when I'm reading a recipe?
+## screen_turns_off_fast
+Is it normal that my screen shuts off so quick when I'm looking at my notes? It goes black and I have to unlock it again.
+## out_of_scope
+Is it normal that my phone shuts off completely when I'm looking at my notes? It goes black and I have to wait for the logo to come back.
+## screen_turns_off_fast
+Why does the screen go black in the middle of reading a long text? Can I make it stay on longer?
+## out_of_scope
+Why does the whole phone restart itself in the middle of reading a long text? Can I make it stop?
+## text_too_small
+How do I make the letters bigger? They're so tiny I can't read my texts.
+## out_of_scope
+How do I make the screen go back to normal? Everything is zoomed in so much I can't read my texts.
+## text_too_small
+Why are the words on my phone so small? I can barely read them.
+## out_of_scope
+Why is everything on my phone so huge and zoomed in? I can only see part of the screen.
+## text_too_small
+Can I make the writing bigger in my messages? I have to hold the phone right up to my face.
+## out_of_scope
+Can I make the screen stop being magnified? I have to drag around with my fingers to see everything.
+## text_too_small
+Is there a way to make the text bigger? The words in my menus are way too small.
+## out_of_scope
+Is there a way to zoom back out? The whole screen including the menus is way too big.
+## talkback_on
+Why is my phone talking out loud every time I touch something? And now I have to tap twice to open anything?
+## out_of_scope
+Why is my mom's car talking out loud every time I get a text? It reads the whole message when I'm riding with her.
+## talkback_on
+How do I make my phone stop reading everything I tap? I can't even unlock it with a normal tap.
+## out_of_scope
+How do I make the voice assistant stop reading my messages out loud? It does it whenever my earbuds are in.
+## talkback_on
+Why does my phone say the name of every button I press? I have to double tap everything now.
+## out_of_scope
+Why does my dad's car say the name of everyone who texts me? It reads them out through the speakers.
+## talkback_on
+Did I turn on some voice thing? My phone reads every app out loud when I touch it and a single tap doesn't work.
+## out_of_scope
+Did I turn on some voice thing? My smart speaker reads my texts out loud when they come in.
+## bluetooth_earphones
+Why won't my wireless earbuds connect to my phone? They worked yesterday.
+## out_of_scope
+Why won't my wired earphones work with my phone? They worked yesterday.
+## bluetooth_earphones
+How do I get my speaker to connect to my phone? It shows up in the list but never links up.
+## out_of_scope
+How do I get my earbuds to work? They won't turn on at all and I think the battery is totally dead.
+## bluetooth_earphones
+Why can't my phone find my earbuds when I take them out of the case?
+## out_of_scope
+Why can't I hear anything from my earphones with the cord when I plug them in?
+## bluetooth_earphones
+Is there a way to fix my earbuds not connecting to my phone? Music just plays from the phone instead.
+## out_of_scope
+Is there a way to fix my plug-in headphones? Music just plays from the phone instead.
+## app_permission
+Why won't my video chat app use my camera? It works fine in the regular camera app.
+## out_of_scope
+Why won't any app use my camera? It's just black in the regular camera app too.
+## app_permission
+Why can't I take pictures in my chat app? It says it isn't allowed to use the camera.
+## out_of_scope
+Why can't I take pictures in any app? The camera lens is cracked and everything looks blurry.
+## app_permission
+Why does my homework app say it can't use the camera when I try to scan my worksheet? The normal camera works.
+## out_of_scope
+Why does every app show a black screen when I try to use the camera? Even the normal camera doesn't work.
+## app_permission
+Is there a way to let my map app see where I am? It keeps saying it doesn't have access to my location.
+## out_of_scope
+Is there a way to fix my camera? I dropped my phone and now it's broken in every app.
+## reset_network
+Can you reset the network settings on my phone? My internet stopped working this morning.
+## no_internet
+Can you tell me why my internet stopped working this morning? Nothing will load on my phone.
+## reset_network
+How do I get my phone online again? My friend said I should reset the network settings.
+## no_internet
+How do I get my phone online again? It just says there's no internet.
+## reset_network
+Should I reset my network settings? The internet won't work on my phone at all.
+## no_internet
+Why won't the internet work on my phone at all? I didn't change anything.
+## reset_network
+Is it okay to reset all the network stuff on my phone? Wi-Fi and data won't work.
+## no_internet
+Is something wrong with my phone? Wi-Fi and data won't work.
+## reset_network
+How do I reset just the network settings on my phone without losing my photos?
+## out_of_scope
+How do I reset my whole phone back to how it was when I got it?
+## reset_network
+Can you reset only the Wi-Fi and Bluetooth settings on my phone?
+## out_of_scope
+Can you reset everything on my phone and wipe it clean?
+## reset_network
+Will resetting my network settings delete my apps? I just want to do that part.
+## out_of_scope
+Will resetting my whole phone delete my apps? I want to start completely fresh.
+## reset_network
+Is there a way to reset only the network stuff? My connections are all messed up.
+## out_of_scope
+Is there a way to erase my whole phone before I sell it? I want it to be like new.
+## notifications_missing
+Why do my texts from friends show up an hour late?
+## out_of_scope
+Why do the login codes sent by text never show up?
+## notifications_missing
+How come my game alerts don't come until I open the app?
+## out_of_scope
+How come the code text from my bank app doesn't come when I try to sign in?
+## notifications_missing
+Why am I not getting notifications from my group chat until way later?
+## out_of_scope
+Why am I not getting the six-digit code text when I try to log in to my school account?
+## notifications_missing
+Is there a reason my messages come in so late? My friends get mad I don't reply.
+## out_of_scope
+Is there a reason the code text never comes? I can't sign up for the app without it.
+## phone_not_ringing
+Why doesn't my phone ring when someone calls me?
+## out_of_scope
+Why is my phone ringing so loud when someone calls me?
+## phone_not_ringing
+How do I make my phone ring for calls again? It's totally silent.
+## out_of_scope
+How do I change the song my phone plays for calls? The one I have is so boring.
+## phone_not_ringing
+Can you help my phone actually make a sound when my friends call?
+## out_of_scope
+Can you help me make my phone quieter when my friends call? It's embarrassing in class.
+## phone_not_ringing
+Is there a way to fix my ringtone? Calls come in with no sound at all.
+## out_of_scope
+Is there a way to change my ringtone? I want my favorite song when calls come in.
+## no_internet
+Why can't I use the internet? I think I turned my mobile data off by accident.
+## out_of_scope
+Why can't I use the internet? I think I used up all my data for the month.
+## no_internet
+How come nothing loads when I'm away from home? I might have switched off the data.
+## out_of_scope
+How come nothing loads when I'm away from home? My parents said our phone plan ran out.
+## no_internet
+Can you help me get online? I turned off the Wi-Fi and data and forgot how to turn them back on.
+## out_of_scope
+Can you help me get online? My prepaid card ran out and I need to add more money.
+## no_internet
+Is there a reason my apps won't connect? The data button looks switched off.
+## out_of_scope
+Is there a reason my apps won't connect? I got a text saying my data pack expired.

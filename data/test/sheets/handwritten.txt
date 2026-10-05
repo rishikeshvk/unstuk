@@ -1,0 +1,56 @@
+# Proxy test set: complaints written by hand (M3 spec section 5)
+#
+# Write as different people would type to a helper app: your parents, a grandparent, a teenager,
+# someone in a hurry, someone annoyed. Short, long, typos, no punctuation, Indian English, all fine.
+# Don't look at data/seed/ or the guide's examples while writing, so your words stay your own.
+#
+# Under each header, about 5 complaints, one per line. To mark a line's slice, end it with
+# "| tag", for example:   net gone since mrng | typo
+# Tags: plain paraphrase typo collision negation oos_near long_story indian_english short_vague multi
+# Tags are optional; I'll propose them for untagged lines and you approve.
+#
+# When done:  cd ml && uv run unstuk-import-sheet ../data/test/sheets/handwritten.txt \
+#               ../data/test/handwritten.jsonl --source handwritten --generator human --batch test-hand-01
+
+## no_internet
+
+## wifi_no_load
+
+## phone_not_ringing
+
+## cant_hear_call
+
+## notifications_missing
+
+## talkback_on
+
+## colours_wrong
+
+## screen_too_dim
+
+## screen_turns_off_fast
+
+## screen_wont_rotate
+
+## text_too_small
+
+## bluetooth_earphones
+
+## app_permission
+
+## wrong_time
+
+## reset_network
+
+# Out of scope: 5 that use our words with another meaning ("my ring finger hurts")
+## out_of_scope | collision
+
+# Out of scope: 5 real phone topics near ours that Unstuk can't fix ("my internet bill is too high")
+## out_of_scope | oos_near
+
+# Out of scope: 5 anything else (other phone problems, chit-chat, requests)
+## out_of_scope
+
+# Vague: write the 2 or 3 problems it could mean in the header, e.g. "## no_internet, notifications_missing | vague short_vague"
+
+# Two problems in one complaint: the main one first, e.g. "## no_internet, screen_too_dim | multi"

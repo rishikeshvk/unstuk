@@ -1,0 +1,124 @@
+## out_of_scope | plain
+my phone battery is finishing so fast, 100 to 20 just by watching few reels
+phone back is bulging out, i think batery is swelling, what to do
+charger is connected but phone is not charging at all
+phone is charging very slowly, it shows charging but percentage not increasing
+phone becomes very hot when i play bgmi, scared it will blast
+storage full it is saying, cant even download one photo
+phone is hanging too much, every app takes forever to opne
+my phone got stuck on the logo and not going ahead
+instagram keeps closing by itself whenever i open it
+cant install free fire, it says app not installed
+system update is stuck at 45 percent pls help
+phone is saying update avilable but it fails everytime
+screen got cracked when it fell from my bag, lines are coming
+half screen is gone black after it fell in water, touch also not working
+speaker is broken, songs coming very cracky even on full volume
+back camera showing all blurry, i think lens is brokn
+camera glass is cracked and photos are coming with lines
+my wired earphones not working, only one side is coming
+i forgot my pattern lock, now phone is locked plz help
+forgot gmail password and cant login in playstore
+sim card is not detecting, it says no sim
+new jio sim inserted but showing emergency calls only
+no signal in my room, cant make calls, bars are empty
+otp is not coming for bank login, tried 5 times
+whole screen is zoomed in and i cant get it back to normal size
+screen is too much bright, eyes are paining
+how to put dark mode, everything is white and its hurting
+screen turned yellowish, mummy said its eye comfort mode, how to remove
+how to change ringtone to my favourite song
+ringtone is too loud, everybody in class laughs when it rings
+all my contacts are gone sudenly, cant see any numbers
+my photos are deleted from gallery, how to get them back
+i lost my phone in bus, how to find it
+my phone got stolen at market, how to block it
+how to factory reset my full phone, i am giving it to my cousin
+recharge done but balance is not showing
+postpaid bill came 900 rupees, why so much
+phone is very slow after downloading so many games, it lags evrywhere
+whatsapp is not installing, says device not compatable
+charging port is loose, wire has to be held in one angle only
+## out_of_scope | collision
+my ear ring got lost in school, mummy will scold me
+gold ring is too tight on my finger, how to remove it
+my skin got dark after playing cricket in sun, any home remedy
+which colour shirt will suit for farewell, black or blue
+dads bike is not starting, i think battery is dead
+no connection between me and my best freind since the fight, how to talk again
+my cousin is not connecting with family since he went to hostel
+speaker in our school assembly is very bad, how to tell principal
+small size tshirt is too tight, can i exchange in the shop
+my voice is cracking because of cold, singing competition is there
+teacher said the signal part in my physics project is wrong
+sound coming from my scooty engine is very weird
+how to reset my brain after exams, too much stress
+need permission from parents for school trip, how to convince them
+school gave notification that fees is pending, papa is angry
+my uncle tooth became blue after he fell, is that serious
+dark chocolate or milk chocolate which is better for helth
+sky is so dark, will it rain in our area
+ring road traffic is very bad, which way to take
+my brother rings the doorbell too loud, how to stop him
+mehendi colour came very light, how to make it dark
+text book font is too small, my eyes are paining while reading
+bike headlight is too dim, cant see anything on road
+my sister keeps reading out loud from my diary, how to stop her
+my nose ring hole is swollen and red
+rice became dark brown, did i burn it
+my uncle lost money in some network marketing scheme
+coach said i should connect my breathing with my steps while running, how
+mom is giving me silent treatment, not a single sound from her
+can i get permision to go to my freinds birthday party
+## out_of_scope | oos_near
+turn on airplane mode
+put my phone on do not disturb, exam is going on
+switch off wifi pls
+turn off bluetooth, battery is going
+torch on karo, light gone at home
+call mummy
+send message to rahul that i am coming late
+set alarm for tution
+remind me to take my tablet after food
+take a selfie of me
+open youtube
+play arijit singh songs
+switch off mobile data
+make phone silent, i am in class
+turn off locaton
+call papa on speaker
+whatsapp my freind happy birthday
+open camera and click a photo of my notes
+play some bhajan for nani
+lock my phone
+make the brightness low
+open calculater
+off the torch
+remind me to submit assignment
+switch off the phone
+## out_of_scope | plain
+hi
+hello bhaiya how are you
+thank you so much
+will it rain in delhi
+who won india vs pakistan match
+how to make maggi more tasty
+price of iphone 16 in india
+how to go to railway station from here
+what is the latest news about board exams
+bye
+what is the meaning of diwali
+i have fever and headache what to do
+ok thanks
+how to make chai with ginger
+which is best school for science in pune
+who is the captian of indian cricket team
+how much is petrol rate
+can you tell me a joke
+what should i eat for gym
+ganesh chaturthi pooja vidhi kya hai
+stomach is paining after eating pani puri
+who are you
+how to reach india gate by metro
+how is the wether in chennai
+best place to eat biryani in hyderabad

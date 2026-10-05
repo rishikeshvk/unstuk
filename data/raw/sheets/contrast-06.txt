@@ -1,0 +1,224 @@
+## no_internet
+i think i swiched off wifi by mistake, now nothing is opening in phone. whatsapp also not going. please help yaar
+## wifi_no_load
+wifi is showing connected only, full signal also, but nothing is opening in phone. whatsapp also not going. please help yaar
+## no_internet
+Mobile data is off and I dont know how to on it again, net is not coming at all. Very urgent I have to send payment
+## wifi_no_load
+Wifi symbol is coming on top and it says connected but net is not coming at all. Very urgent I have to send payment
+## no_internet
+aeroplane symbol is showing on top of my phone since morning and internet is not working. how to remove this
+## wifi_no_load
+wifi name is showing on top of my phone since morning, it says conected, but internet is not working. how to remove this problem
+## no_internet
+my son was playing with phone and now data is switched off, youtube is not loading anything. what to do
+## wifi_no_load
+my son was playing with phone and now wifi says connected but youtube is not loading anything. what to do
+## phone_not_ringing
+Phone is not ringing when somebody calls me, I am missing all calls from office. My boss is very angry
+## notifications_missing
+Phone is not making any sound when whatsapp messages come, I am missing all messages from office. My boss is very angry
+## phone_not_ringing
+since yesterday calls are coming but no ringtone, i only see missed call later. very iritating
+## notifications_missing
+since yesterday messages are coming late, i only see them after one hour when i open the app. very iritating
+## phone_not_ringing
+My mother called 5 times and phone didnt ring even once. Volume is full I checked. What is the problem??
+## notifications_missing
+My mother sent 5 messages and phone didnt show any notification even once. I see them only when I open whatsapp. What is the problem??
+## phone_not_ringing
+no sound for incoming calls in my phone, vibrate also not happening. how i will know who is calling
+## notifications_missing
+no sound for gmail and bank app alerts in my phone, they are coming silently. how i will know when something comes
+## screen_too_dim
+my screen has become very dark, i cannot see anything properly even inside the house. pls tell how to fix
+## colours_wrong
+my screen has become black and white, i cannot see any colours even inside the house. pls tell how to fix
+## screen_too_dim
+Suddenly display is too dull, everything is looking dark dark. Brightnes I think got reduced somehow
+## colours_wrong
+Suddenly display is grey grey, everything is looking like old photo. Colour I think got removed somehow
+## screen_too_dim
+phone screen is too dim to read messages, i have to keep it very near to my eyes. very much tension
+## colours_wrong
+phone screen colours are all reversed, white is black and black is white, i cant read messages. very much tension
+## screen_too_dim
+Screen went very dark after I pressed something, photos are not visible clearly. please help me fast
+## colours_wrong
+Screen went in negative colours after I pressed something, photos are looking like x-ray. pleae help me fast
+## screen_too_dim
+screen is too dark, i cant see anything properly, eyes are paining. how to make it better
+## out_of_scope
+screen is too bright, i cant look at it properly, eyes are paining. how to make it better
+## screen_too_dim
+Display is very dim since morning, even full brightness it is looking dark. what happend
+## out_of_scope
+Display is very bright since morning, even lowest brightness it is glaring. what happend
+## screen_too_dim
+I want my screen brighter, it is too dark to read the small letters. pls help
+## out_of_scope
+I want my screen in dark mode with black background like my friend's phone. pls help
+## screen_too_dim
+phone screen is dull and dark like no light, whole day i am struggling to read
+## out_of_scope
+phone apps are all white background, i want them black like dark mode, whole day white is hurting
+## screen_turns_off_fast
+while reading news the screen is going black after few seconds, again and again i have to touch it. very annoying
+## out_of_scope
+while reading news the phone is switching off fully after few seconds, again and again i have to press power button to start it. very annoying
+## screen_turns_off_fast
+Screen goes off too fast, I am reading recipe and it becomes dark in middle. How to keep it on longer
+## out_of_scope
+Phone restarts by itself, I am reading recipe and it shows logo and starts again in middle. How to stop this
+## screen_turns_off_fast
+my display is turning off very quickly when i am reading whatsapp msgs, phone is still on only
+## out_of_scope
+my phone is turning off completly when i am reading whatsapp msgs, have to switch on again from button
+## screen_turns_off_fast
+screen becoming black within 15 sec when i read pdf from office. so irritating yaar
+## out_of_scope
+phone itself shutting down and restarting when i read pdf from office, battery is there. so irritating yaar
+## text_too_small
+letters in my phone are too small, I cant read messages without spects. how to make bigger
+## out_of_scope
+whole screen in my phone is zoomed in, I cant see full messages, everything is too big. how to make normal
+## text_too_small
+font size is very small, my eyes are getting strain reading whatsapp. please increase it
+## out_of_scope
+whole screen is magnified, some big box is coming and moving when i touch. please remove it
+## text_too_small
+All writing on phone has become tiny tiny, cannot read anything. What to do
+## out_of_scope
+All the screen has become big big like zoomed, cannot see anything fully. What to do
+## text_too_small
+Text is too small in my mobile, my mother also can't read it. Need bigger letters
+## out_of_scope
+Everything is zoomed in my mobile, icons and all are huge and cut off. Need normal size
+## talkback_on
+phone is speaking out everything i touch and i have to tap two times to open anything. how to stop this
+## out_of_scope
+car is speaking out every whatsapp message when i drive and reading it loudly. how to stop this
+## talkback_on
+Some lady voice is reading whatever I touch on screen, and single touch is not working, only double tap
+## out_of_scope
+Some lady voice from Google assistant is reading my messages aloud when they come, everyone in office can hear
+## talkback_on
+green box is coming around icons and phone is talking, i cant even unlock properly. please help urgently
+## out_of_scope
+alexa is reading my sms out loud in my house, i dont want this. please help urgently
+## talkback_on
+mobile is reading out loud every button i touch, double tap needed for everything, very frustated
+## out_of_scope
+my car bluetooth system is reading out loud every message i get, very frustated
+## bluetooth_earphones
+my wireless earbuds are not connecting to phone, bluetooth is on but they are not coming in list
+## out_of_scope
+my wired earphones are not working with phone, I plugged in but sound is coming from speaker only
+## bluetooth_earphones
+Bluetooth speaker not pairing with my mobile, it is showing searching searching only
+## out_of_scope
+Earphone with wire not working with my mobile, pluged it but no sound in ears
+## bluetooth_earphones
+new earbuds i bought are not getting connected, tried many times. waste of money it seems
+## out_of_scope
+new earbuds i bought are not charging, battery is dead, case light also not coming. waste of money it seems
+## bluetooth_earphones
+my earpods not connecting to phone since yesterday, they are charged fully, earlier it was working fine
+## out_of_scope
+my earpods battery is finishing in 10 minutes since yesterday, earlier it was working fine
+## app_permission
+whatsapp video call camera is not opening, it says allow permission, but normal camera is working fine
+## out_of_scope
+camera is not opening in any app, whatsapp, normal camera all showing black screen
+## app_permission
+Instagram cannot use my camera, it says permission is denied. Other apps camera is working
+## out_of_scope
+camera lens is cracked after phone fell, photos are blurry in every app
+## app_permission
+bank app is not able to open camera for scanning cheque, says it needs permision. normal camera ok
+## out_of_scope
+camera is not opening for scanning cheque in bank app or any other app, glass is broken on back
+## app_permission
+in zoom only my camera is not coming, it says allow access, in whatsapp it is coming fine
+## out_of_scope
+in zoom and whatsapp both my camera is not coming, everywhere black screen only, i think it is damaged
+## reset_network
+internet is not working properly, i want to reset the network settings. how to do it
+## no_internet
+internet is not working properly since morning, i dont know what happened. how to fix it
+## reset_network
+someone told me to reset network settings to fix wifi problem, please do that for me
+## no_internet
+someone told me my wifi problem is big, net not coming at all, please fix that for me
+## reset_network
+Please reset all network settings in my phone, data and wifi both giving problem
+## no_internet
+Please help, no internet in my phone, data and wifi both giving problem
+## reset_network
+shop guy said do network reset, can you do it, net is not comming
+## no_internet
+shop guy said its phone problem, net is not comming, i dont have internet at all
+## reset_network
+I want to reset only network settings, not delete my photos or anything
+## out_of_scope
+I want to reset the full phone like new, delete everything and start fresh
+## reset_network
+please reset network settings in my mobile, wifi passwords can go no problem
+## out_of_scope
+please factory reset my mobile, all data can go no problem, I am selling it
+## reset_network
+how to do network reset, internet keeps disconecting yaar
+## out_of_scope
+how to do full phone reset, phone is very slow and hanging yaar
+## reset_network
+my brother said reset the network settings only, will my contacts be safe?
+## out_of_scope
+my brother said do factory reset of whole phone, will my contacts be safe?
+## notifications_missing
+whatsapp messages are coming very late, after 1 hr only i get notification. very annoying
+## out_of_scope
+OTP sms are not coming at all, i am trying to login to bank. very annoying
+## notifications_missing
+Gmail alerts not coming on time, I see mails only when I open the app. Waiting and waiting
+## out_of_scope
+OTP for payment not coming on SMS, I am waiting 10 mins and transaction is failing
+## notifications_missing
+my app notifications are coming late, amazon delivery msg came after delivery only
+## out_of_scope
+my otp messages are not coming, amazon delivery otp didnt come and delivery boy went back
+## notifications_missing
+messages notification is not poping, i am missing important msgs from school group
+## out_of_scope
+one time password sms not recieving, i am missing login to school fees portal
+## phone_not_ringing
+my phone is not ringing at all when someone calls, everyone is complaining. how to fix
+## out_of_scope
+my phone ringtone is too loud when someone calls, everyone is staring. how to reduce
+## phone_not_ringing
+Calls are coming silently, no ringtone sound. I missed my doctor call
+## out_of_scope
+Ringtone is so boring, I want to change it to a song. I missed nothing but want new tune
+## phone_not_ringing
+ringtone is not coming for incoming calls, phone just lights up. tension
+## out_of_scope
+ringtone is coming very very loud for incoming calls, my heart jumps every time. tension
+## phone_not_ringing
+no ring when my husband calls, i keep missing his calls and he is angry
+## out_of_scope
+want diffrent ringtone when my husband calls, how to set special tune for him
+## no_internet
+internet not working, i think mobile data got switched off by mistake
+## out_of_scope
+internet not working, i think my data pack got finished, daily limit is over
+## no_internet
+Net is gone, I pressed something and data is off now. How to on it
+## out_of_scope
+Net is gone, I think recharge is over. How to recharge it
+## no_internet
+no internet in my phone, wifi is switched off and I dont know where to on
+## out_of_scope
+no internet in my phone, the 1.5GB per day is finished already and its only 2pm
+## no_internet
+youtube not playing, data button is off it seems, please help
+## out_of_scope
+youtube not playing, message came that my plan validity is expired, please help

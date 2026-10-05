@@ -1,0 +1,143 @@
+## no_internet
+Why has nothing on my phone gone online since I got off the plane this morning? WhatsApp just sits there spinning.
+How come nothing loads at all when I'm out and about, when it was fine yesterday?
+Why is there a little aeroplane at the top of my screen and none of my apps will work?
+Is there a reason none of my apps will connect when I'm away from the house?
+Why cant I get on the internet at all? I think I pressed something in the pull down bit at the top.
+How do I turn the mobile data back on? My son reckons that's why nothing works.
+Why does my banking app keep saying no connection when I'm in town, even though I can still make calls?
+Ever since I tapped a data saver option to save money, nothing loads on the bus, why is that?
+Why won't Google Maps load anything? It just says check your connection and the wifi symbol has disapeared from the top.
+Why has the internet stopped working on my phone completly, not even my emails come through?
+
+## wifi_no_load
+My phone says it's connected to our home wifi with full bars, so why won't YouTube load anything?
+Why does it show a tick next to the cafe's wifi name but no pages open?
+It says right there that I'm connected to the wifi at my mum's, so why does nothing actually load?
+Why is the wifi symbol full at the top yet Google just says I'm not online?
+How come my laptop works fine on our wifi but my phone, which says connected, just goes round and round?
+Why does it say "connected, no internet" under our wifi name?
+The hotel wifi shows as connected, so why won't any of my apps load?
+Why does Instagram keep failing to load when I'm definately connected to the router at home?
+After the broadband man came round my phone shows our network name as connected but websites wont open, why?
+How do I get pages to load when my phone insists it's on the wifi?
+
+## phone_not_ringing
+Why didn't my phone ring at all today? I've got five missed calls and never heard a thing.
+How come my phone just buzzes in my pocket instead of ringing when someone calls?
+Why do WhatsApp calls come through with no sound at all? I only see them afterwards.
+Why is my phone dead quiet when people ring me, have I turned something off by accident?
+My sister says she rang three times last night, why didn't I hear it go off?
+Is there a reason my phone stopped ringing after I put that little moon thing on for the cinema?
+Why does the ringer seem to be turned all the way down, and how do I get it back up?
+Why does my phone not make any noise when the doctors surgery rings? I keep missing them.
+Why has my phone stopped ringing out loud, it only vibrates now when I get a call?
+How do I take my phone off silent so I can actualy hear calls coming in?
+
+## notifications_missing
+Why do my WhatsApp messages only show up when I open the app?
+Why are my texts arriving hours late? My friend says she sent hers at lunchtime.
+Why doesn't my phone make a sound anymore when I get an email?
+How come I don't get any alerts from my banking app until I go into it myself?
+Why do Facebook messages just appear without any ping?
+Why have all my notifications gone quiet since the phone did an update last night?
+Why does Messenger only tell me about messages a whole day after they were sent?
+Is there a reason my delivery app never tells me the parcel's coming untill I open it?
+Why have I stopped getting the little pop ups at the top of the screen when a message comes in?
+How do I get my messages to beep again when they arive?
+
+## talkback_on
+Why is my phone suddenly reading out everything I touch in a robot voice?
+Why is there a green box round everything and I have to tap twice to open anything?
+My phone started talking to me after I held both volume buttons, how do I stop it?
+Why can't I scroll with one finger anymore? It only moves if I use two.
+Why does my phone say out loud the name of every app I press on?
+How do I turn off TalkBack? My nephew switched it on and now I'm stuck.
+Why does one tap not open WhatsApp any more, it just talks and puts a box round it?
+Why is my phone narrating the whole screen? I can't even unlock it properley.
+Why does it read out every single letter when I'm typing a message?
+Is there a way to make the phone stop speaking everything and go back to normal tapping?
+
+## colours_wrong
+Why has my screen gone all grey, like an old telly?
+Why do all my photos look black and white now when they were in colour last week?
+Why is everything on my screen back to front, white is black and peoples faces look like negatives?
+Why has my screen got a strange green tinge all over it?
+How come YouTube videos look like they've had all the colour drained out?
+Why do the colours on my phone look so wrong, reds come out brown and odd?
+Why did my phone go grayscale after I set up that bedtime thing?
+Why does my screen look like an old photo negative since this morning?
+Why has my whole phone gone a pinkish colour?
+How do I get the proper colours back on my screen?
+
+## screen_too_dim
+Why is my screen so dark I can barely make anything out?
+Why can't I see anything on my phone when I'm outside in the sun?
+Why does my screen keep dimming itself while I'm reading?
+Why won't the brightness go any higher? The slider is already right at the top.
+Why has my screen gone so dull since the battery got low?
+How do I make my screen brighter, it's really gloomy?
+Why does Google Maps go so dark when I'm walking that I can't read the street names?
+Why does the screen get darker on its own every few minuts?
+Why is my phone screen so dim even when I'm indoors with the lights on?
+Why can't I read my messages in daylight? The screen looks so faint.
+
+## screen_turns_off_fast
+Why does my screen go black after a few seconds when I'm reading a recipe?
+Why does my phone lock itself so quickly? I keep having to put my code back in.
+How come the screen switches off while I'm still reading a long email?
+Why does the screen go dark right in the middle of me reading the news?
+Why does my phone lock itself after about fifteen seconds of not touching it?
+How do I change the screen timeout so it stays on longer?
+Why does the screen keep going off when I'm following a knitting pattern online?
+Why does my phone turn the screen off while I'm looking at the bus timetable?
+Why does it go black so fast when I'm looking at a photo somone sent on WhatsApp?
+Why does my screen lock before I've even finished reading a text mesage?
+
+## text_too_small
+Why is the writing on my phone so tiny that I need my glasses for everything?
+How do I make the letters bigger on my phone?
+Why are my text messages in such small print?
+Can I get a bigger font? I can hardly read anything.
+Why are the names under the app pictures so small?
+Why is the writing in WhatsApp so tiny I have to squint?
+How do I make the icons bigger, they look like little dots?
+Why has all the text on my phone been so small since I got it?
+Is there a way to make the words in my emails larger?
+Why can't I read my bank app, the numbers are so smal?
+
+## bluetooth_earphones
+Why won't my wireless earbuds connect to my phone any more?
+Why can't my phone find my car when I get in?
+How do I get my new speaker to pair with my phone?
+Why does my watch keep saying it's disconnected from my phone?
+Why has the Bluetooth gone off on its own?
+Why won't my earphones without wires show up on the list on my phone?
+Why can't I play Spotify through the speaker in the kitchen? It just won't link up.
+Why did my AirPods stop connecting after the phone updated itself?
+Why does the car stereo keep saying no phone found when I'm sat right there with it?
+How do I get my new earbuds to work with my phone, they came with no instructions?
+
+## app_permission
+Why won't WhatsApp let me send a voice note? It says it can't use the microphone.
+Why does my camera work fine on its own but not inside Instagram?
+Why can't Google Maps work out where I am?
+Why does my banking app keep asking to use the camera when I try to scan a cheque?
+Why does Zoom say it hasn't got acess to my microphone?
+Why does the Uber app say it can't see my location when I'm stood outside?
+Why won't the camera open inside Facebook Messenger, it just stays black?
+How do I let WhatsApp use my camera? I pressed no by mistake.
+Why does the weather app keep asking for permission to know where I am?
+Why does the scanning bit in my parcel app say it cant use the camera?
+
+## reset_network
+How do I reset the network settings on my phone?
+Can I wipe all the wifi and bluetooth settings back to how they were, without losing my photos?
+My son told me to reset the phone's connection settings, how do I do that?
+How do I clear out all the saved wifi and mobile settings and start fresh?
+Is there a way to put the wifi, data and bluetooth settings back to default without reseting the whole phone?
+The phone shop said to reset my network settings, where do I find that?
+How do I set all my connection settings back to the begining?
+Could you reset the wifi and bluetooth bits on my phone for me?
+How do I do a reset of just the internet and bluetooth settings and nothing else?
+Where's the option to reset wifi, mobile data and bluetooth all in one go?

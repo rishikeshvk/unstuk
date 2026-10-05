@@ -1,0 +1,224 @@
+## no_internet
+cant get on the internet on my phone, the wifi has gone off and i dont know how to put it back on
+## wifi_no_load
+cant get on the internet on my phone, the wifi says its conected but nothing will open at all
+## no_internet
+my grandson says i pressed the little aeroplane by mistake and now the news wont load when im out
+## wifi_no_load
+my grandson says the wifi is joined up fine but the news still wont load when im at home
+## no_internet
+the bbc page wont come up when i go out, i think i turned the mobile data off when i was tidying the buttons
+## wifi_no_load
+the bbc page wont come up at home, the phone shows the wifi fan all full but the page just goes round and round
+## no_internet
+emails not coming in this morning, theres a little plane at the top of the screen now and no bars
+## wifi_no_load
+emails not coming in this morning, theres the wifi sign at the top of the screen with full bars but nothing comes
+## phone_not_ringing
+my daughter rang me three times and the phone never rang, i only saw it after, no sound at all
+## notifications_missing
+my daughter sent me three messages and the phone never pinged, i only saw them hours after
+## phone_not_ringing
+when someone phones me it just lights up quiet, no ring, i miss all my calls from the surgery
+## notifications_missing
+when the surgery sends me a text it just comes in quiet, no beep, i miss all my apointment reminders
+## phone_not_ringing
+the phone doesnt ring anymore when people call, its not on silent i dont think, missed the plumber twice
+## notifications_missing
+the whatsapp doesnt make a noise anymore when people write, its not on silent i dont think, missed the plumbers message twice
+## phone_not_ringing
+no ringing when my friend calls me, the screen shows her name but not a sound comes out
+## notifications_missing
+no ding when my friend messages me, the facebook ones turn up late in the evening with not a sound
+## screen_too_dim
+my screen has gone very dark and i can hardly see anything even indoors, how do i make it lighter
+## colours_wrong
+my screen has gone all grey with no colour and i can hardly tell anything apart, how do i get the colours back
+## screen_too_dim
+the phone screen is so dim i have to hold it right up to the lamp to read it
+## colours_wrong
+the phone screen is all black and white now i have to hold it right up to see whos photo it is
+## screen_too_dim
+somethings happened to my phone the pictures are all very dark and gloomy cant make out faces
+## colours_wrong
+somethings happened to my phone the pictures are all back to front colours like an old negative cant make out faces
+## screen_too_dim
+the screen went dark last night and stayed dark, everything is still there just very dull
+## colours_wrong
+the screen went white where it was black and black where it was white last night, everything is still there just wrong
+## screen_too_dim
+my screen is far too dark, i cant read my messages, can you make it brighter please
+## out_of_scope
+my screen is far too bright, it hurts my eyes, can you make it darker please
+## screen_too_dim
+the phone is so dim in the day i cant see a thing on it, want it lighter
+## out_of_scope
+the phone is so glaring at night i cant look at it in bed, want it dimmer
+## screen_too_dim
+everything on the screen looks dark and murky, i need it lit up more to see the words
+## out_of_scope
+everything on the screen is white and dazzling, my friend says i should have it in the dark mode with black behind the words
+## screen_too_dim
+how do i turn the light up on my phone, its gone too dark to see
+## out_of_scope
+how do i turn the light down on my phone, its far too bright for me
+## screen_turns_off_fast
+im reading a recipe on my phone and the screen keeps going black after a few seconds, i have to keep tapping it
+## out_of_scope
+im reading a recipe on my phone and the whole phone keeps switching itself off, i have to hold the button to start it again
+## screen_turns_off_fast
+the screen goes dark so quick when im reading my book on it, i barely get a line read
+## out_of_scope
+the phone turns right off and starts up again by itself when im reading my book on it, shows the makers name and all
+## screen_turns_off_fast
+when i read the long emails the screen blacks out half way and i have to wake it up again
+## out_of_scope
+when i read the long emails the phone dies half way and i have to put the pin number in again after it comes back on
+## screen_turns_off_fast
+screen goes off too fast while im looking at my bus times, the phone is still on just the screen goes
+## out_of_scope
+phone goes off completly while im looking at my bus times, not just the screen the whole thing restarts
+## text_too_small
+the writing on my phone is too small for me to read even with my glasses, can i have bigger letters
+## out_of_scope
+the whole screen on my phone is blown up too big, i can only see part of it even with my glasses, how do i get it back to normal
+## text_too_small
+the letters in my messages are tiny i cant make out the words
+## out_of_scope
+everything in my messages is magnified huge and i have to slide about to see the words
+## text_too_small
+the words on the menus are so small, i need the writing larger please
+## out_of_scope
+the menus are all zoomed in so big, theres a square box that magnifies whatever i touch
+## text_too_small
+my phone has very small print on everything, can you make the print bigger
+## out_of_scope
+my phone has gone zoomed in on everything, i tapped three times and now i cant get it back
+## talkback_on
+my phone keeps talking out loud whatever i touch and i have to tap twice to open anything
+## out_of_scope
+my car keeps talking out loud my messages whenever im driving and i dont want it to
+## talkback_on
+theres a voice reading out everything on the screen when i put my finger on it and green boxes round things
+## out_of_scope
+theres a voice reading out my texts when i say hey google and i only wanted the weather
+## talkback_on
+the phone has started reading every button i press and wont open things unless i tap two times
+## out_of_scope
+the car radio has started reading every text i get through the speakers since my son set the bluetooth up
+## talkback_on
+a ladys voice says everything i touch on the phone, cant even answer a call properly now
+## out_of_scope
+alexa reads all my messages out to me in the kitchen, cant stop her doing it
+## bluetooth_earphones
+my little wireless earphones wont connect to the phone anymore, they used to work fine
+## out_of_scope
+my earphones with the wire wont work in the phone anymore, no sound comes through the wire
+## bluetooth_earphones
+the bluetooth speaker my son gave me wont join up with my phone, it just keeps searching
+## out_of_scope
+the bluetooth speaker my son gave me wont turn on at all, i think the battery in it is dead flat
+## bluetooth_earphones
+my earbuds are charged but the phone cant find them when i try to pair
+## out_of_scope
+my earbuds wont charge in the little case so they dont come on at all
+## bluetooth_earphones
+cant get my hearing headphones to link up to the phone without a wire, it says not connected
+## out_of_scope
+cant get any sound out of the headphones with the cord plugged in to the phone, its like the hole isnt working
+## app_permission
+the whatsapp wont let me use the camera for a video call but the camera works fine taking photos
+## out_of_scope
+the camera wont work for anything, whatsapp or photos, the glass on the back is cracked
+## app_permission
+the doctors app says it cant use my microphone so they cant hear me, other calls are fine
+## out_of_scope
+nobody can hear me on any calls at all, the microphone seems broke on the whole phone
+## app_permission
+the maps wont find where i am, it says it isnt allowed my location
+## out_of_scope
+the camera shows just black in every app since i dropped it, cant take any pictures at all
+## app_permission
+the facebook says it needs permision for the camera and wont let me take a picture in it
+## out_of_scope
+the camera is all blurry and cracked in every app, facebook and the normal camera both
+## reset_network
+can you reset the network settings on my phone please the man in the shop said that would fix it
+## no_internet
+can you help my phone the internet isnt working the man in the shop couldnt fix it
+## reset_network
+i want to reset the wifi and network settings back to how they were, my grandson said to
+## no_internet
+i want the internet back on, it stopped working and my grandson isnt here to sort it
+## reset_network
+how do i do the network reset thing, the internet keeps playing up
+## no_internet
+how do i get the internet going, it keeps playing up and wont come on
+## reset_network
+please reset my mobile network settings, the data stopped working
+## no_internet
+please help me the data stopped working on my phone and i cant get online
+## reset_network
+i need to reset just the network settings, not my photos or anything else
+## out_of_scope
+i need to reset the whole phone back to factory, wipe everything, im giving it to my niece
+## reset_network
+how do i reset the network bit only, the wifi and bluetooth, keep everything else
+## out_of_scope
+how do i reset the whole phone like new, wipe all of it, start over from scratch
+## reset_network
+the phone shop said reset network settings and leave the rest as is, how do i do that
+## out_of_scope
+the phone shop said do a factory reset and wipe it all clean, how do i do that
+## reset_network
+want to clear out the network settings only, its saved too many old wifis
+## out_of_scope
+want to clear out the whole phone completely, its too full and slow, start fresh
+## notifications_missing
+my whatsapp messages come in hours late, i only see them when i open the app
+## out_of_scope
+my bank code texts never come in, i press send code and nothing arrives
+## notifications_missing
+the texts from my family arrive late in the afternoon when they sent them in the morning
+## out_of_scope
+the one time code texts from the post office never arrive so i cant log on
+## notifications_missing
+emails dont tell me theyve come anymore, no little alert pops up till much later
+## out_of_scope
+the security number text for amazon doesnt come, waited ten minutes and still nothing
+## notifications_missing
+the app alerts from the chemist turn up the next day instead of straight away
+## out_of_scope
+the passcode text from the chemist app never turns up when i try to sign in
+## phone_not_ringing
+my phone doesnt ring when people call me, no sound at all, how do i get it ringing again
+## out_of_scope
+my phone rings far too loud when people call me, makes me jump, how do i get it quieter
+## phone_not_ringing
+no ringing when my son calls me, the phone just sits there silent
+## out_of_scope
+i dont like the ringing when my son calls me, can i have a nicer tune for it
+## phone_not_ringing
+calls come in with no sound at all now, i miss them every time
+## out_of_scope
+calls come in with a horrible loud racket now, i want a different ringtone
+## phone_not_ringing
+the ringer has gone quiet completly when anyone rings me
+## out_of_scope
+the ringer is too loud when anyone rings me, the neighbours hear it
+## no_internet
+the internet stopped, i think i switched off the mobile data by accident in the top bit
+## out_of_scope
+the internet stopped, i think my data pack has run out, the man said i have to top up
+## no_internet
+no internet on my phone, the wifi button is grey and switched off
+## out_of_scope
+no internet on my phone, it says my recharge has run out and i need to pay more
+## no_internet
+cant go online when im out, the data is turned off on the phone i dont know how
+## out_of_scope
+cant go online when im out, a text came saying ive used all my data for the month
+## no_internet
+my phone wont load anything since i pressed the wifi and data off by mistake
+## out_of_scope
+my phone wont load anything since my monthly allowance ran out, how do i buy more

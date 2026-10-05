@@ -1,0 +1,143 @@
+## no_internet
+nothing on my phone will go online, not even google
+I was on a plane yesterday and now nothing loads, I think I left something on
+my apps all just spin and say no connection, but my husband's phone works fine in the same room
+WhatsApp messages wont send, they just sit there with a little clock
+how do I get the internet back on my phone? it just stopped
+I turned off something at the top of the screen by accident and now YouTube says offline
+theres a little airplane picture at the top and nothing works
+I'm out running errands and none of my apps work, no Maps, no email, nothing. At home I don't have this problem but I don't think I turned the wifi on either
+everything says check your connection
+my kid was playing with my phone and now nothing connects to the internet, can you turn it back on
+
+## wifi_no_load
+it says connected to my home wifi with full bars but nothing will load
+wifi has the check mark and everything but youtube just keeps buffering forever
+I'm connected to the Wi-Fi at my sister's house, I can see the name, but Google won't open any page
+the phone shows the wifi symbol at the top but my bank app says no internet connection
+connected to wifi but no internet?? how do I fix this
+my laptop works on the same network but my phone says connected and then pages just time out
+it found my wifi and connected fine, but Instagram and Chrome both just sit there loading
+the wifi bars are full but nothing opens, I already restarted the router
+wifi says connected, without internet underneath it. what does that even mean
+at the hotel it says I'm on their wifi but no website comes up
+
+## phone_not_ringing
+my phone didnt ring at all today and I found 4 missed calls from my mom
+calls come in but there's no sound, I only see them later
+I keep missing calls because the phone just stays quiet, it doesn't even buzz sometimes
+my boss called me twice and the phone didn't make a peep, I had it right next to me
+I think my phone is stuck on vibrate, how do I make it ring again
+WhatsApp calls from my brother don't ring, I just see missed call when I open it
+there's a little moon at the top and my phone wont ring anymore
+the ringer seems to be all the way down and I cant figure out how to get it back up
+since last night nobody can reach me, the phone shows the calls as missed but it never rang
+I put it on silent at a movie and now I can't get it to ring again
+
+## notifications_missing
+I don't get my text messages until I open the app, then they all show up at once
+WhatsApp messages come hours late, people think I'm ignoring them
+my email doesn't tell me anything new came in, I have to go check it myself
+no more little popups when I get messages, the phone stays quiet
+my bank app used to alert me when I spend money and now it just stopped
+Facebook and Messenger don't notify me at all anymore, only when I open them
+texts arrive with no sound and no banner, I only find them by accident
+how do I get my notifications back? they stopped after an update
+my work chat app is silent until I open it and then theres like 10 mesages waiting
+the badge on my apps shows messages but I never got any alert for them
+
+## talkback_on
+my phone keeps talking out loud everything I touch
+theres a green box around everything and it reads it out loud, I cant turn it off
+I have to tap twice to open anything now, one tap just makes it talk
+something turned on and now a voice says every button I press, how do I stop it
+I can't scroll anymore with one finger and the phone keeps reading the screen to me
+I pressed both volume buttons by mistake and now the phone narrates everything
+my phone is reading my texts out loud and putting a box around the words, very annoying
+how do I turn off TalkBack, it came on by itself
+I cant even unlock it normaly, it keeps saying what I touched and won't open
+a robot voice describes everything on the screen and apps won't open with a normal tap
+
+## colours_wrong
+my screen went black and white all of a sudden
+everything looks like a negative of a photo, white is black and black is white
+the colors on my phone are all weird, kind of greenish
+my screen turned grey, no colors at all, even my pictures
+I was messing with settings and now all my photos look inverted, how do I put it back
+the whole phone has a strange purple tint, its not my eyes
+YouTube videos look like old black and white tv now
+since this morning the colors are washed out and grey
+my wallpaper looks like an xray, the colors are all backwards
+how do I turn off color inversion, the screen looks crazy
+
+## screen_too_dim
+my screen is so dark I can barely see it
+I can't see anything on my phone when I'm outside in the sun
+the brightness keeps going down on its own
+I slide the brightness all the way up and it's still really dim
+how do I make my screen brighter, its too dark to read
+reading recipes in the kitchen and the screen keeps getting darker by itself
+Google Maps is impossible to see in the car during the day, the screen is way too dark
+the screen got really dim after the update and I cant get it back
+even at full brightness its hard to read, it used to be way brighter
+my phone screen looks dull and dark all the time now, I have to squint
+
+## screen_turns_off_fast
+my screen keeps going black after a few seconds while I'm reading
+I'm trying to read a long email and the phone keeps locking itself
+the screen shuts off so fast, I have to keep touching it
+how do I make the screen stay on longer
+when I follow a recipe the phone goes dark every few seconds and my hands are messy
+it locks so quick that I have to type my code like 20 times a day
+reading the news and the screen just turns off in the middle of an article
+I want to change the screen timeout, its way too short
+the screen goes dark while I'm looking at photos, I didnt even put it down
+every time I look at directions the screen goes off and I have to unlock it agian
+
+## text_too_small
+the words on my phone are too small to read
+I can't read my messages without my glasses, can I make the letters bigger
+everything is so tiny, the text and the little icons
+how do I make the font bigger on my phone
+my mom gave me her old phone and the writing is so small
+the letters in WhatsApp are tiny, I have to hold it right up to my face
+I need bigger text, I'm straining my eyes all day
+the menus and app names are too small, I keep tapping the wrong thing
+can you increase the font size, I can barely read the settings
+the writing on the screen got smaller after an update and its hard to read
+
+## bluetooth_earphones
+my wireless earbuds won't connect to my phone anymore
+I bought a new bluetooth speaker and the phone can't find it
+my car won't connect to my phone, it used to play music through it
+my watch says disconnected from phone and won't pair again
+how do I connect my earbuds, they just keep blinking
+I think bluetooth is off and I dont know how to turn it on
+the earbuds work with my laptop but my phone doesnt see them
+I was listening to Spotify and the headphones dropped and now they wont reconect
+my car says no device found when I try to hook up my phone
+the speaker shows up in the list but it fails every time I tap it
+
+## app_permission
+my camera works fine but in WhatsApp video calls it's just black
+Google Maps can't find where I am, it says location is off for this app
+Instagram won't let me take a picture, it keeps asking for permission
+when I try to send a voice message the app says it can't use the microphone
+my bank app wants to scan a check but the camera won't open inside the app
+Zoom says it doesn't have access to my mic
+the delivery app doesn't know my location even though other apps do
+I said deny by mistake when an app asked for the camera, how do I change it
+TikTok says allow access to camera and microphone but when I tap it nothing happens
+Facebook won't let me upload a video, it says it needs permision for the camera
+
+## reset_network
+how do I reset my network settings
+can you reset the wifi and bluetooth settings on my phone, nothing else works
+my carrier told me to reset the network settings, how do I do that
+I want to reset all the wifi, mobile and bluetooth stuff but keep my photos and apps
+someone online said to reset network settngs to fix my wifi, can you do that
+please reset my phones connection settings back to the start
+I tried everything with my wifi and data, now I just want to reset the network part
+the store guy said reset the network, not the whole phone, where is that
+can you wipe just the wifi passwords and bluetooth devices and start fresh
+I need to reset my network setings because my calls and internet keep acting up
