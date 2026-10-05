@@ -1,0 +1,143 @@
+## no_internet
+why has nothing on my phone gone on the internet since this morning, theres a little aeroplane at the top and i dont know how it got there
+my grandson was here yesterday and fiddled with somthing, now whatsapp wont send and the news wont come up, what has he done
+how do i get the phone back on line, when im out at the shops nothing loads at all its just a circle going round
+i think ive pressed some button and switched off the internet for when im out and about, how do i put it back
+why does the bbc weather say no connection when i havent touched anything
+the phone says im offline in every thing i open, emails youtube the lot, is it broken
+at home nothing works on the internet anymore and the wifi sign has gone from the top completly, how do i bring it back
+i pressed somthing called data saver after a pop up and now my banking app wont load, can you put it right
+why cant i look anything up on google, it says no internet but i didnt change nothing
+went on holiday and put it on flight mode for the plane, now im home and still cant get on anything, how do i undo it
+
+## wifi_no_load
+the wifi says connected with all the bars full but nothing will load, why is that
+it shows our home wifi name with a tick by it yet youtube just keeps spinning, whats wrong
+why does the phone say its on the wifi but google wont open any pages
+at my daughters house it joined her wifi fine, says connected, but whatsapp messages wont go and nothing loads, why
+the little fan shape is at the top all full but the pages come up blank, how do i sort it
+it says connected next to the router name so why wont the bank app load, keeps saying try again
+its on the wifi i can see it in the settings but the news page just sits there white, whats going on
+why will nothing open when the phone clearly says its on the wifi, my tablet works fine on the same one
+we had the man round to put a new box in, the phone says connected to it but nothing works on line, what do i do
+connected, no internet it says under the wifi name, what does that mean and how do i fix it
+
+## phone_not_ringing
+why doesnt my phone ring anymore, i keep finding missed calls from my sister and never heard a thing
+the phone just buzzes when someone calls, no ringing, how do i get the ring back
+my son rang three times on whatsapp and i heard nothing at all, the phone was right next to me, why
+is there a way to make it ring again, i think ive put it on silent and cant find how to undo it
+there is a little moon at the top and since then no calls make any noise, what is it
+the doctors surgery said they tried ringing me but the phone never made a sound, why is that
+i turned the sound right down at church on sunday and now calls are quiet as anything, how do i turn the ringing back up
+why does it show missed calls when i was sat in the same room, it didnt ring once
+it only shakes now for phone calls and i cant feel it in my handbag, how do i make it ring out loud
+someone said do not disturb is on my phone and thats why it doesnt ring, how do i switch it off
+
+## notifications_missing
+why dont i get the ping when a whatsapp message comes, i only see them when i open it
+my texts are coming hours late, my friend sent one at ten and i got it at two, why
+the emails dont pop up anymore, i have to go in and look myself, how do i get them to show
+why are facebook messages silent now, no noise or nothing at the top till i open the app
+why am i missing messages from my grandaughter, they only turn up when i go into whatsapp hours after
+the bank used to tell me when money went out, now nothing comes up till i open it, whats changed
+how do i get the little alerts back at the top of the screen, they stopped after the phone did an update
+messages come in with no sound and no little picture at the top, i only find them later, why
+why dont the notifications come through anymore for my messages, it used to beep
+after i cleared some space on the phone the messenger app doesnt tell me anything new till i open it, how do i fix that
+
+## talkback_on
+why is my phone talking to me reading everything out loud, and theres a green box round everything
+i cant open anything with one tap now, i have to tap twice and a voice says what i touched, how do i stop it
+a ladys voice reads out every button i press, i think i held the volume buttons too long, what do i do
+how do i turn off this talking thing, it says everything and i cant scroll the page down
+why does the phone keep describing what im touching with a square round it, nothing opens properly
+was on youtube and now the phone speaks every word on the screen, double tap to activate it keeps saying, what is that
+why do i need two fingers to move up and down the page now, and its chattering away to me
+has my phone gone mad, it reads out the time and every name in my contacts when i touch them
+someone told me its talkback thats on, how do i get it off when i cant even tap properly
+it wont let me press anything normal, just says the name of it in a robot voice, why
+
+## colours_wrong
+why has my screen gone all grey, no colours on anything, the photos look like old ones
+everything is black and white now since this morning, how do i get the colour back
+the screen looks like a photo negative, white is black and black is white, what happened
+my pictures of the grandchildren look all grey and the whole phone is like that not just the photos, why
+why is everything a funny pink colour on the screen, its not my eyes my husband sees it too
+the colours have gone all back to front, faces look blue in whatsapp video, is it broke
+i pressed somthing in the settings and now everything is greenish, how do i put it back to normal colours
+how do i turn off the grey screen, my daughter says its grayscale but i cant find it
+why are all the icons grey, i cant tell which app is which anymore
+the lady in the shop said my screen is inverted, colours all wrong, can you fix that
+
+## screen_too_dim
+why is my screen so dark i can hardly see a thing, ive tried turning it up
+when im in the garden i cant see anything on the phone its too dark, what can i do
+how do i make the screen brighter, its very dull
+the screen keeps going darker on its own while im reading, why does it do that
+i cant read my messages in the sunshine, the screen is too dim, can you help
+the bar for the light goes up but the screen stays dark, whats wrong with it
+since the update the phone is so murky i have to hold it right up to my face, why
+why does the screen get dimmer by itself in the evening, i didnt ask it to
+was trying to use google maps on my walk but couldnt see the screen at all its that dark, how do i fix it
+is the light going on my phone, everything looks shadowy and not bright like before
+
+## screen_turns_off_fast
+why does my screen go black so quick, im half way through reading and its gone
+the phone locks itself every few seconds and i have to put my number in again, how do i stop it
+how do i make the screen stay on longer, it goes off while im reading the recipe
+why does the screen keep going dark and off after a moment when im watching the snooker on youtube
+why does it switch off when im looking at photos my son sent on whatsapp, i barely get a look
+the screen goes to sleep too fast, can i make it wait a bit
+im following a knitting pattern and the screen goes black every few seconds, why
+can you change the screen timeout so it stays on, it goes off almost straight away
+every time i stop touching it for a second it goes black and locked, it never used to do that, whats changed
+why does the screen turn off while im still looking at it, i have to keep pressing the button to wake it
+
+## text_too_small
+the writing on my phone is too small to read even with my glasses, how do i make it bigger
+why is all the text so tiny, i cant read my messages
+can i make the letters bigger on whatsapp, i struggle to see what people have wrote
+the little pictures for the apps are so small i keep pressing the wrong one, can they be bigger
+how do i get a bigger font, my eyes arent what they were
+why are the words under the icons so minute, i need them larger
+after the phone updated all the writing went smaller, how do i put it back bigger
+my emails are in such small print i have to get the magnifying glass out, is there a way round it
+why is the print so small in the settings and messages, can it be made larger for an old lady
+is there a way to make the letters and the little app pictures bigger so i can read them
+
+## bluetooth_earphones
+my new earbuds wont connect to the phone, how do i get them working
+why wont the phone find my speaker, my son set it up before and now nothing
+why wont the car play my phone calls through the speakers anymore, it used to
+bought a watch and it says to pair with the phone but it cant find it, what do i do
+my wireless headphones keep saying not connected and the little blue light just flashes, why
+how do i turn the bluetooth back on, i think i switched it off
+the earpieces my daughter gave me wont link up to the phone, why
+was listening to youtube in my earbuds then they cut out and now they wont join again, what happened
+why cant the phone see my little speaker in the kitchen, it doesnt show in the list
+the car says no phone found when i get in, it used to connect itself, whats happened
+
+## app_permission
+why wont the camera work in whatsapp, it works fine on its own
+the doctors video app says it cant use the microphone, how do i let it
+google maps doesnt know where i am, it says it isnt allowed to see where i am, how do i change that
+when i try to send a voice message on whatsapp it says it needs permission, what do i press
+the bank app wants to scan my face but says camera not allowed, why
+why does the camera button on facebook just show black when the normal camera is fine
+how do i let the weather app know where i live, it keeps asking for permission
+the video calling app for my grandson says the microphone is blocked for it, how do i unblock it
+why wont the taxi app find my address, it says it hasnt got access to where i am
+i pressed dont allow by mistake when the camera came up in messenger, now it wont work, how do i undo that
+
+## reset_network
+my nephew said to reset the network settings, how do i do that, the wifi and bluetooth are all messed up
+can you set the wifi and mobile and bluetooth settings back to how they were when new, without losing my photos
+how do i wipe just the internet and bluetooth settings and start them again
+the man in the phone shop said reset the network part of the phone, can you do it for me
+how do i put all the connection settings back to the start, not the whole phone just that bit
+is there a way to clear the wifi and signal settings so it starts fresh, without losing my contacts
+can you reset network settings on my phone, ive tried everything else
+after the update nothing connects properly, i was told to put the wifi and mobile settings back to how they came, how
+how do i do the reset for wifi and bluetooth and mobile that the help man on the phone told me about
+can the phone forget all its wifi and bluetooth and mobile settings and start again, my grandaughter said that might help

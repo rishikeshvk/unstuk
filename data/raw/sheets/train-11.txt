@@ -1,0 +1,143 @@
+## no_internet
+nothin loads at all
+internet just gone
+whatsapp wont send anything
+tapped plane, now nothing works
+no internet anywhere, help
+mobile data switched off?
+youtube says im offline
+how do i get online
+apps all say no conection
+data saver blocking evrything
+
+## wifi_no_load
+wifi connected but nothing loads
+got wifi bars, no youtube
+says conected but wont load
+full bars still nothing
+home wifi ticked, pages blank
+on the wifi, cant load
+wifi shows connected, tiktok broken
+connected to wifi but useless
+wifi name there, nothing opens
+conected fine but no internet
+
+## phone_not_ringing
+phone dont ring anymore
+missed mums calls, no ring
+calls come in silent
+only buzzes when ppl call
+whatsapp calls make no sound
+phone stuck on silnt
+friends ring, i hear nothin
+do not disturb stuck on
+how make it ring
+rign volume at zero
+
+## notifications_missing
+messages come really late
+no snapchat alerts anymore
+only see texts when opening
+whatsapp msgs dont pop up
+notifcations not showing up
+instagram dms arrive hours late
+texts come silent, no ping
+alerts only when app opened
+how get notifications back
+group chat never buzzes
+
+## talkback_on
+phone keeps talking at me
+green box round everything
+have to tap twice now
+it reads out evrything
+cant scroll with one finger
+weird robot voice wont stop
+talkback turned on somehow
+tapping does nothing, just talks
+how stop phone speaking
+phone wont shut up talkin
+
+## colours_wrong
+black and whte screen
+everything looks grey now
+colours look like negative
+screen weirdly green tint
+youtube all grey, why
+colours inverted somehow
+photos look all wierd colour
+no colour on screen
+how get colours back
+greyscale stuck on
+
+## screen_too_dim
+screen way too dark
+cant see screen outside
+brightness wont go up
+keeps going dark by itself
+screen super dim
+screen unreadable at the park
+how make screen brighter
+tiktok so dark cant see
+slider up, still darrk
+screen dimmin itself loads
+
+## screen_turns_off_fast
+screen goes black too quick
+keeps locking while reading
+screen shuts off mid tiktok
+phone locks every few seconds
+screen timeout too short
+screen blacks out while reading
+how keep screen on longer
+screen sleeps way to fast
+keeps going black reading recipes
+locks itsself so fast
+
+## text_too_small
+writing too small to read
+letters are tiny
+cant read the words
+make text bigger pls
+icons tiny, cant see
+font size too small
+whatsapp writing really smal
+how make words bigger
+squinting at tiny letters
+everyting so small to read
+
+## bluetooth_earphones
+earbuds wont connect
+airpods not pairing
+speakr wont find phone
+bluetooth wont turn on
+car wont connect to phone
+watch lost connection to phone
+wireless headphones not conecting
+how connect my earbuds
+wireless buds dont show up
+spotify wont go to earbuds
+
+## app_permission
+snapchat cant use camera
+whatsapp mic not working
+maps cant find location
+instagram says allow camera
+voice notes wont record
+tiktok camera black screen
+uber cant see location
+app keeps askin permission
+how let app use camera
+teams mic blokced somehow
+
+## reset_network
+reset network settings please
+how reset wifi and bluetooth
+wipe internet settings only pls
+want network reset, not everything
+reset all connection stuff
+start wifi settings fresh
+reset the internet setings
+clear all saved wifi stuff
+can u reset connections
+resett mobile and wifi settings
