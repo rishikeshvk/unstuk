@@ -20,3 +20,19 @@ Known before cleaning: 47 exact duplicate texts across batches; the word "clock"
 pending-message icon in `no_internet` and `wifi_no_load` lines, while the held-out `wrong_time` also uses it, which
 the zero-shot test will probe. Prompt v2 cut the echo of definition phrases ("full bars" from 1.7% of lines to
 0.5%).
+
+## Out of scope and contrast pairs (step 7), 2026-10-05
+
+| Batches | Prompt | Plan | Lines |
+| --- | --- | --- | --- |
+| `oos-01` to `oos-10` | [oos-v1](prompts/oos-v1.md) | [`plan-oos.json`](plan-oos.json) | 1,200 out of scope |
+| `contrast-01` to `contrast-06` | [contrast-v1](prompts/contrast-v1.md) | [`plan-contrast.json`](plan-contrast.json) | 672 (336 pairs; 240 out of scope, 432 across 12 intents) |
+
+Each agent read only its own rendered prompt and wrote only its own sheet (checked in every transcript). The first
+of each kind was a pilot, read in full; neither needed a prompt change. No training line mentions rotation, and
+the two "clock" lines are WhatsApp's pending icon.
+
+The raw pool is now 6,672 lines: 5,232 across the 12 trained intents and 1,440 out of scope.
+
+**Not done: Google's Mobile Actions fit check.** This environment's network policy blocks `huggingface.co`. The
+data is complete without it; the check runs when the host is allowed.
