@@ -1,0 +1,63 @@
+{
+  "c": 100.0,
+  "class_weight": null,
+  "temperature": 1.0373,
+  "grid": [
+    {
+      "c": 0.1,
+      "class_weight": null,
+      "dev_macro_f1": 0.8900587209443666,
+      "dev_log_loss": 0.9462789613791058,
+      "dev_in_scope_accuracy": 0.8732212160413971
+    },
+    {
+      "c": 0.3,
+      "class_weight": null,
+      "dev_macro_f1": 0.925412368326369,
+      "dev_log_loss": 0.576353515524333,
+      "dev_in_scope_accuracy": 0.9275549805950841
+    },
+    {
+      "c": 1.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9409704459171707,
+      "dev_log_loss": 0.35294313635934466,
+      "dev_in_scope_accuracy": 0.9482535575679172
+    },
+    {
+      "c": 3.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.94960808891506,
+      "dev_log_loss": 0.23906633491658777,
+      "dev_in_scope_accuracy": 0.9547218628719275
+    },
+    {
+      "c": 10.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9548568830270023,
+      "dev_log_loss": 0.17315427812250583,
+      "dev_in_scope_accuracy": 0.9598965071151359
+    },
+    {
+      "c": 30.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9586965561822035,
+      "dev_log_loss": 0.13837104226767574,
+      "dev_in_scope_accuracy": 0.96248382923674
+    },
+    {
+      "c": 100.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9592140092025556,
+      "dev_log_loss": 0.13535544167826496,
+      "dev_in_scope_accuracy": 0.96248382923674
+    },
+    {
+      "c": 300.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9579087526282911,
+      "dev_log_loss": 0.1414075499295263,
+      "dev_in_scope_accuracy": 0.9598965071151359
+    }
+  ]
+}
