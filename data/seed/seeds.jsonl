@@ -1,0 +1,118 @@
+{"id": "seed-no_internet-01", "text": "internet stopped working on my phone", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-02", "text": "net not coming from morning pls help", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-03", "text": "cant open google or youtube, no internet at all", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-04", "text": "my 4g is not working since yesterday even though my pack is active", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-05", "text": "how do i switch off flight mode, there is a plane sign on top", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-06", "text": "I'm at home and nothing loads, and the wifi symbol is gone from the top", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-07", "text": "data saver came on by itself and now apps don't load", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-no_internet-08", "text": "turn on mobile data", "labels": ["no_internet"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-01", "text": "wifi is connected but pages just keep loading", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-02", "text": "it shows my home wifi with full bars but instagram won't refresh", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-03", "text": "connected to the hotel wifi, nothing opens", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-04", "text": "laptop works on the same wifi but my phone can't open anything", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-05", "text": "wify connected but net not working", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-06", "text": "under my wifi name it says connected without internet", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-07", "text": "my son changed something called private DNS and now websites don't open on wifi", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-wifi_no_load-08", "text": "switch off private dns", "labels": ["wifi_no_load"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-01", "text": "my phone is not ringing when people call me", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-02", "text": "I keep missing calls, it never makes a sound", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-03", "text": "callers say it rings but my phone stays quiet", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-04", "text": "how to remove silent mode", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-05", "text": "phone only vibrates, no ringtone", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-06", "text": "there is a moon symbol on top and calls dont ring", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-07", "text": "My daughter called three times and I heard nothing. I think the ring volume is at zero", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-phone_not_ringing-08", "text": "switch off dnd mode please", "labels": ["phone_not_ringing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-01", "text": "whatsapp messages come very late", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-02", "text": "I don't get notifications from any app until I open it", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-03", "text": "gmail notifications stopped coming", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-04", "text": "no sound when a message comes", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-05", "text": "msgs arriving after hours, my friends think i'm ignoring them", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-06", "text": "telegram alerts are not showing on the lock screen", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-07", "text": "my bank app alerts don't pop up anymore", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-notifications_missing-08", "text": "notifications are coming late since last week", "labels": ["notifications_missing"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-01", "text": "phone keeps reading everything out loud", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-02", "text": "a voice says the name of everything i touch", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-03", "text": "green box comes around whatever i tap", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-04", "text": "single tap not working, i need to press two times", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-05", "text": "cant scroll with one finger and it keeps talking", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-06", "text": "my grandson did something and now the phone speaks every button", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-07", "text": "how to stop this voice that reads my screen", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-talkback_on-08", "text": "please stop talkback", "labels": ["talkback_on"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-01", "text": "my screen is black and white suddenly", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-02", "text": "all colours look reversed like an x-ray", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-03", "text": "photos look grey, no colour at all", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-04", "text": "the colours are inverted on everything, even pictures", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-05", "text": "screen goes gray every night", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-06", "text": "faces look blue and everything has strange colours", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-07", "text": "how do i get the colours back on my screen", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-colours_wrong-08", "text": "remove colour inversion", "labels": ["colours_wrong"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-01", "text": "screen is very dark, i can barely see", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-02", "text": "brightness is too low and wont go up", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-03", "text": "can't read anything outdoors, the screen is too dim", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-04", "text": "display keeps getting darker by itself", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-05", "text": "screen light is very less", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-06", "text": "the screen looks so dim even indoors", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-07", "text": "make my screen brighter please", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_too_dim-08", "text": "increase brightness", "labels": ["screen_too_dim"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-01", "text": "screen goes off after few seconds", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-02", "text": "my phone locks itself too quickly while I read", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-03", "text": "display turns black in the middle of a cooking video", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-04", "text": "how to keep the screen on longer", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-05", "text": "screen timeout is too short", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-06", "text": "every 15 seconds the screen switches off, very irritating", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-07", "text": "while reading news the screen goes dark and locks", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-screen_turns_off_fast-08", "text": "increase screen time out", "labels": ["screen_turns_off_fast"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-01", "text": "letters are too tiny to read", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-02", "text": "how do i make the font bigger", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-03", "text": "I can't read my messages without my glasses", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-04", "text": "the writing on my phone is very small", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-05", "text": "names in my contacts are too small to see", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-06", "text": "please make the words larger, my eyes are weak", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-07", "text": "font is small on whatsapp and everywhere", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-text_too_small-08", "text": "increase text size", "labels": ["text_too_small"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-01", "text": "my earbuds won't connect", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-02", "text": "bluetooth headphones not pairing with phone", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-03", "text": "the car does not connect to my phone anymore", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-04", "text": "boat airdopes not connecting", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-05", "text": "my speaker can't find my phone", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-06", "text": "smartwatch got disconnected and won't connect again", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-07", "text": "how to connect wireless earphones", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-bluetooth_earphones-08", "text": "switch bluetooth on", "labels": ["bluetooth_earphones"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-01", "text": "camera not opening in whatsapp", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-02", "text": "instagram says it needs camera permission", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-03", "text": "google maps can't find where I am", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-04", "text": "voice notes are not recording my voice", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-05", "text": "zoom says microphone access denied", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-06", "text": "video call shows black, the app is blocked from the camera", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-07", "text": "uber cannot get my location", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-app_permission-08", "text": "how to allow camera for an app", "labels": ["app_permission"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-01", "text": "reset network settings", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-02", "text": "how do I reset all my wifi and bluetooth settings", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-03", "text": "i want to reset the network on my phone", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-04", "text": "customer care told me to reset network settings, how do i do that", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-05", "text": "please do a network reset", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-06", "text": "reset wifi mobile data and bluetooth settings", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-07", "text": "how to reset network settings on android", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-reset_network-08", "text": "Can you reset my network settings, nothing else worked", "labels": ["reset_network"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-01", "text": "my screen is cracked", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-02", "text": "battery drains very fast", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-03", "text": "phone storage is full", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-04", "text": "how to take a screenshot", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-05", "text": "phone is very slow and hangs all the time", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-06", "text": "instagram keeps crashing", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-07", "text": "i forgot my screen lock pattern", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-08", "text": "what's the weather today", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-09", "text": "call my wife", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-10", "text": "the ring on my finger is stuck", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-11", "text": "how do i change my wifi router password", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-12", "text": "switch on the flashlight", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-13", "text": "brightness is too high, it hurts my eyes at night", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-14", "text": "set dark theme for whatsapp", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-15", "text": "my bluetooth speaker won't charge", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-16", "text": "phone gets very hot while charging", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-17", "text": "the person on the call can't hear my voice", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-out_of_scope-18", "text": "thanks a lot, bye", "labels": ["out_of_scope"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-vague-01", "text": "youtube not working", "labels": ["no_internet", "wifi_no_load"], "tags": ["vague"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-vague-02", "text": "not getting calls or anything", "labels": ["phone_not_ringing", "no_internet"], "tags": ["vague"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-vague-03", "text": "something is wrong with my screen", "labels": ["screen_too_dim", "colours_wrong", "text_too_small"], "tags": ["vague"], "source": "seed", "generator": "claude", "batch": "seed-01"}
+{"id": "seed-vague-04", "text": "no sound", "labels": ["phone_not_ringing", "notifications_missing"], "tags": ["vague"], "source": "seed", "generator": "claude", "batch": "seed-01"}
