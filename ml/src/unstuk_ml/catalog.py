@@ -13,6 +13,8 @@ class Catalog:
     """Intent id to its option text, the text the model chooses between."""
     checks: frozenset[str]
     """Check ids named by the intents' causes, which a record's `state` may list."""
+    causes: dict[str, tuple[str, ...]]
+    """Intent id to the check ids of its causes, in diagnosis order."""
 
 
 def load_catalog(directory: Path = CATALOG_DIR) -> Catalog:
@@ -20,4 +22,5 @@ def load_catalog(directory: Path = CATALOG_DIR) -> Catalog:
     return Catalog(
         intents={intent["id"]: intent["option"] for intent in intents},
         checks=frozenset(cause["check"] for intent in intents for cause in intent["causes"]),
+        causes={i["id"]: tuple(c["check"] for c in i["causes"]) for i in intents},
     )
