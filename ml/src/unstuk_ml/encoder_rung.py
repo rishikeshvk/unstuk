@@ -4,33 +4,21 @@ Nothing in the encoder is trained; logistic regression learns which directions o
 dimensions separate the intents, so this rung measures what pre-training alone already knows.
 """
 
-from collections.abc import Sequence
-
-import numpy as np
-from numpy.typing import NDArray
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline, make_pipeline
 from sklearn.preprocessing import FunctionTransformer
 
 from unstuk_ml import rung
 from unstuk_ml.baseline_report import REPORTS, Below, Decider
-from unstuk_ml.embedding_cache import EmbeddingCache, cache_path
-from unstuk_ml.encoder import POOLING, REVISION, load_encoder
+from unstuk_ml.encoder import embed_cached
 from unstuk_ml.record import Record
 from unstuk_ml.rung import ClassWeight, Rung
 from unstuk_ml.tfidf_rung import TFIDF
 
-CACHE = cache_path(REVISION, POOLING)
-
-
-def embeddings(texts: Sequence[str]) -> NDArray[np.float32]:
-    # The encoder is opened only when the cache lacks a text.
-    return EmbeddingCache(CACHE, lambda missing: load_encoder().embed(missing)).get(texts)
-
 
 def build(c: float, class_weight: ClassWeight) -> Pipeline:
     return make_pipeline(
-        FunctionTransformer(embeddings),
+        FunctionTransformer(embed_cached),
         LogisticRegression(C=c, class_weight=class_weight, max_iter=5000),
     )
 

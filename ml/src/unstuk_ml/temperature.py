@@ -28,11 +28,16 @@ def negative_log_likelihood(
     return float(-log_p[np.arange(len(targets)), targets].mean())
 
 
-def fit_temperature(logits: NDArray[np.float64], targets: NDArray[np.int64]) -> float:
+def fit_temperature(
+    logits: NDArray[np.float64],
+    targets: NDArray[np.int64],
+    bounds: tuple[float, float] = (LOWEST, HIGHEST),
+) -> float:
     """The temperature with the lowest log-loss on these lines, rounded to be written down."""
+    low, high = bounds
     result = minimize_scalar(
         lambda log_t: negative_log_likelihood(logits, targets, math.exp(log_t)),
-        bounds=(math.log(LOWEST), math.log(HIGHEST)),
+        bounds=(math.log(low), math.log(high)),
         method="bounded",
     )
     return round(math.exp(float(result.x)), 4)

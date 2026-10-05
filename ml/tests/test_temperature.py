@@ -20,3 +20,12 @@ def test_fitting_recovers_the_temperature_the_labels_were_drawn_with() -> None:
     targets = np.array([rng.choice(5, p=row) for row in truth], dtype=np.int64)
 
     assert abs(fit_temperature(logits, targets) - 2.0) < 0.1
+
+
+def test_narrow_bounds_reach_the_small_temperatures_cosines_need() -> None:
+    rng = np.random.default_rng(19)
+    cosines = rng.uniform(0.6, 0.8, size=(20_000, 5))
+    truth = softmax(cosines, 0.02)
+    targets = np.array([rng.choice(5, p=row) for row in truth], dtype=np.int64)
+
+    assert abs(fit_temperature(cosines, targets, bounds=(0.001, 1.0)) - 0.02) < 0.002

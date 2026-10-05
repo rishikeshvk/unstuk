@@ -7,7 +7,7 @@ import numpy as np
 import pytest
 from records import make
 
-from unstuk_ml import encoder_rung
+from unstuk_ml import encoder, encoder_rung
 from unstuk_ml.embedding_cache import EmbeddingCache
 from unstuk_ml.encoder import downloaded
 from unstuk_ml.rung import score, train
@@ -35,12 +35,12 @@ def test_a_warm_cache_never_opens_the_encoder(
     texts = [r.text for r in TRAIN]
     fake = np.random.default_rng(0).normal(size=(len(texts), 4)).astype(np.float32)
     EmbeddingCache(cache, lambda _: fake).get(texts)
-    monkeypatch.setattr(encoder_rung, "CACHE", cache)
+    monkeypatch.setattr(encoder, "CACHE", cache)
 
     def refuse() -> None:
         raise AssertionError("the encoder was opened")
 
-    monkeypatch.setattr(encoder_rung, "load_encoder", refuse)
+    monkeypatch.setattr(encoder, "load_encoder", refuse)
 
     model = train(encoder_rung.ENCODER, TRAIN, c=1.0, class_weight=None)
 
@@ -51,7 +51,7 @@ def test_a_warm_cache_never_opens_the_encoder(
 def test_the_probe_reads_meaning_the_words_do_not_share(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    monkeypatch.setattr(encoder_rung, "CACHE", tmp_path / "e.npz")
+    monkeypatch.setattr(encoder, "CACHE", tmp_path / "e.npz")
     model = train(encoder_rung.ENCODER, TRAIN, c=10.0, class_weight=None)
 
     lines = [
@@ -70,9 +70,9 @@ def test_training_and_scoring_do_not_depend_on_string_hashing(tmp_path: Path) ->
         "from pathlib import Path\n"
         "from test_encoder_rung import TRAIN\n"
         "from records import make\n"
-        "from unstuk_ml import encoder_rung\n"
+        "from unstuk_ml import encoder, encoder_rung\n"
         "from unstuk_ml.rung import score, train\n"
-        f"encoder_rung.CACHE = Path({str(tmp_path / 'e.npz')!r})\n"
+        f"encoder.CACHE = Path({str(tmp_path / 'e.npz')!r})\n"
         "model = train(encoder_rung.ENCODER, TRAIN, c=1.0, class_weight=None)\n"
         "print(score(model, 1.5, [make('t', 'no ring and no internet')])[0].probabilities)\n"
     )

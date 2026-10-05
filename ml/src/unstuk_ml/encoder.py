@@ -13,6 +13,8 @@ from huggingface_hub import hf_hub_download, try_to_load_from_cache
 from numpy.typing import NDArray
 from tokenizers import Tokenizer
 
+from unstuk_ml.embedding_cache import EmbeddingCache, cache_path
+
 REPO = "BAAI/bge-small-en-v1.5"
 REVISION = "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a"
 POOLING = "cls-l2"
@@ -20,6 +22,7 @@ MODEL_FILE, TOKENIZER_FILE = "onnx/model.onnx", "tokenizer.json"
 HUB_CACHE = Path(__file__).resolve().parents[2] / "cache" / "hub"
 MAX_TOKENS = 512
 DIMENSIONS = 384
+CACHE = cache_path(REVISION, POOLING)
 
 
 def download() -> tuple[Path, Path]:
@@ -75,3 +78,8 @@ class Encoder:
 
 def load_encoder() -> Encoder:
     return Encoder(*download())
+
+
+def embed_cached(texts: Sequence[str]) -> NDArray[np.float32]:
+    """Vectors from the cache; the encoder is opened only when the cache lacks a text."""
+    return EmbeddingCache(CACHE, lambda missing: load_encoder().embed(missing)).get(texts)
