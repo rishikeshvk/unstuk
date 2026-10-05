@@ -15,6 +15,7 @@ from pathlib import Path
 
 from unstuk_ml.decision_training import RunConfig, add_run_arguments, config_from, run_arguments
 from unstuk_ml.fine_tuning import CHECKPOINT, COMMIT_FILE, REPO_ROOT, RESULT, RUNS_DIR
+from unstuk_ml.fixed_head_rung import GRID as FIXED_HEAD_GRID
 
 SESSION = "unstuk-m5"
 GPU = "T4"
@@ -77,6 +78,12 @@ def decision_run(config: RunConfig) -> ColabRun:
     return ColabRun("unstuk-train-decision", tuple(run_arguments(config)), config.name)
 
 
+def fixed_head_grid() -> list[ColabRun]:
+    return [
+        ColabRun("unstuk-fixed-head", ("train", *c.arguments()), c.name) for c in FIXED_HEAD_GRID
+    ]
+
+
 def run_code(run: ColabRun) -> str:
     """Runs one training command on the VM, echoing its output line by line as it comes."""
     command = [run.command, *run.arguments, "--out", _remote_runs()]
@@ -137,6 +144,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     jobs = parser.add_subparsers(dest="job", required=True)
     add_run_arguments(jobs.add_parser("decision", help="one decision-model run"))
+    jobs.add_parser("fixed-head", help="the fixed-head rung's grid, in one session")
     args = parser.parse_args()
 
-    train_on_colab([decision_run(config_from(args))])
+    if args.job == "fixed-head":
+        train_on_colab(fixed_head_grid())
+    else:
+        train_on_colab([decision_run(config_from(args))])

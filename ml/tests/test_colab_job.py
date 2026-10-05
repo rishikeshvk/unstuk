@@ -4,7 +4,14 @@ from pathlib import Path
 
 import pytest
 
-from unstuk_ml.colab_job import bundle, decision_run, run_code, setup_code, shipped_files
+from unstuk_ml.colab_job import (
+    bundle,
+    decision_run,
+    fixed_head_grid,
+    run_code,
+    setup_code,
+    shipped_files,
+)
 from unstuk_ml.decision_training import RunConfig, run_arguments
 
 FILES = {
@@ -73,3 +80,15 @@ def test_the_remote_code_is_python_that_runs_the_configs_command() -> None:
     compile(code, "run", "exec")
     assert repr(["unstuk-train-decision", *run_arguments(config)])[:-1] in code
     assert decision_run(config).name == config.name
+
+
+def test_the_fixed_head_grid_trains_each_point_into_its_own_run() -> None:
+    runs = fixed_head_grid()
+
+    assert [r.name for r in runs] == [
+        "fixed-head-lr2e-05",
+        "fixed-head-lr2e-05-typos",
+        "fixed-head-lr5e-05",
+        "fixed-head-lr5e-05-typos",
+    ]
+    assert "'unstuk-fixed-head', 'train', '--learning-rate', '2e-05'" in run_code(runs[0])
