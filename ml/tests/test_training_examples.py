@@ -1,0 +1,183 @@
+import os
+import subprocess
+import sys
+from collections.abc import Sequence
+
+import pytest
+from records import make
+
+from unstuk_ml.catalog import load_catalog
+from unstuk_ml.folds import trained_intents
+from unstuk_ml.labels import HELD_OUT
+from unstuk_ml.node_labels import NodeQuestion
+from unstuk_ml.record import Record
+from unstuk_ml.state_slice import excluded_checks
+from unstuk_ml.training_examples import (
+    MAX_DISTRACTORS,
+    OTHER_OPTIONS,
+    Example,
+    epoch,
+    render_state,
+)
+
+CATALOG = load_catalog()
+INTENTS = trained_intents(CATALOG)
+OPTION_OF = {option: intent for intent, option in CATALOG.intents.items()}
+RECORDS = [
+    make(f"line-{n}", f"complaint number {n} about the phone", label)
+    for n, label in enumerate([*INTENTS, "out_of_scope"] * 10)
+]
+NODE = NodeQuestion(
+    id="node-1",
+    target="airplane_mode",
+    question="Which item on the screen is the airplane mode switch?",
+    options=["Dark theme", "Airplane mode", "Torch"],
+    answer="Airplane mode",
+    source="aosp:values",
+    oem="aosp",
+)
+
+
+def draw(
+    records: Sequence[Record] | None = None,
+    number: int = 0,
+    state: bool = False,
+    typos: bool = False,
+    intents: list[str] = INTENTS,
+) -> list[Example]:
+    return epoch(
+        RECORDS if records is None else records,
+        [],
+        CATALOG,
+        intents,
+        seed=7,
+        number=number,
+        state=state,
+        typos=typos,
+    )
+
+
+def test_the_gold_option_is_offered_once_among_three_to_eleven_others() -> None:
+    for record, example in zip(RECORDS, draw(), strict=True):
+        if example.out_of_scope:
+            continue
+        gold = [OPTION_OF[example.options[i]] for i in example.answers]
+
+        assert gold == record.labels
+        assert len(set(example.options)) == len(example.options)
+        assert OTHER_OPTIONS[0] <= len(example.options) - 1 <= OTHER_OPTIONS[1]
+
+
+def test_only_the_runs_intents_are_offered() -> None:
+    offered = {OPTION_OF[o] for example in draw() for o in example.options}
+
+    assert offered == set(INTENTS)
+    assert not offered & HELD_OUT
+
+
+def test_a_fold_offers_fewer_options_without_failing() -> None:
+    kept = INTENTS[:4]
+    records = [make("a", "no net", kept[0]), make("b", "book a cab", "out_of_scope")]
+
+    for example in draw(records, intents=kept):
+        assert {OPTION_OF[o] for o in example.options} <= set(kept)
+
+
+def test_a_line_naming_an_intent_the_run_cant_offer_is_an_error() -> None:
+    with pytest.raises(ValueError, match="line-0"):
+        draw(RECORDS[:1], intents=INTENTS[1:])
+
+
+def test_out_of_scope_lines_ask_the_noul_and_mask_the_choice() -> None:
+    examples = draw([make("a", "book a cab", "out_of_scope"), make("b", "no net", "no_internet")])
+
+    assert [e.out_of_scope for e in examples] == [True, False]
+    assert examples[0].answers == frozenset()
+    assert len(examples[1].answers) == 1
+
+
+def test_a_line_with_two_problems_has_two_answers() -> None:
+    (example,) = draw([make("a", "silent and no net", labels=["phone_not_ringing", "no_internet"])])
+
+    assert {OPTION_OF[example.options[i]] for i in example.answers} == {
+        "phone_not_ringing",
+        "no_internet",
+    }
+
+
+def test_options_are_drawn_again_each_epoch_and_repeat_for_the_same_epoch() -> None:
+    assert draw(number=0) == draw(number=0)
+    assert [e.options for e in draw(number=0)] != [e.options for e in draw(number=1)]
+
+
+def test_state_and_typos_never_change_the_options_drawn() -> None:
+    plain = [e.options for e in draw()]
+
+    assert [e.options for e in draw(state=True, typos=True)] == plain
+
+
+def test_without_state_or_typos_the_line_is_unchanged() -> None:
+    for record, example in zip(RECORDS, draw(), strict=True):
+        assert (example.text, example.state) == (record.text, "")
+
+
+def test_typos_change_about_a_quarter_of_the_lines() -> None:
+    changed = sum(e.text != r.text for r, e in zip(RECORDS, draw(typos=True), strict=True))
+
+    assert 0.1 < changed / len(RECORDS) < 0.4
+
+
+def test_a_records_own_state_is_rendered() -> None:
+    record = make("a", "silent", "phone_not_ringing", state=["ringer_not_normal", "dnd_on"])
+
+    (example,) = draw([record], state=True)
+
+    assert example.state == "ringer not normal; dnd on" == render_state(record.state or [])
+
+
+def test_distractor_state_says_nothing_about_the_label() -> None:
+    texts = {render_state([c]): c for c in CATALOG.checks}
+    for record, example in zip(RECORDS, draw(state=True), strict=True):
+        checks = [texts[part] for part in example.state.split("; ") if part]
+        causes = {c for label in record.labels for c in CATALOG.causes.get(label, ())}
+
+        assert len(checks) <= MAX_DISTRACTORS
+        assert not set(checks) & (causes | excluded_checks(CATALOG))
+
+
+def test_a_node_question_keeps_its_options_and_skips_the_noul() -> None:
+    (example,) = epoch([], [NODE], CATALOG, INTENTS, seed=7, number=0, state=True, typos=True)
+
+    assert example == Example(
+        text=NODE.question,
+        state="",
+        options=("Dark theme", "Airplane mode", "Torch"),
+        answers=frozenset({1}),
+        out_of_scope=None,
+    )
+
+
+def test_an_epoch_does_not_depend_on_string_hashing() -> None:
+    # Python salts str hashes per process, so only separate processes expose set-order effects.
+    script = (
+        "from unstuk_ml.catalog import load_catalog\n"
+        "from unstuk_ml.folds import trained_intents\n"
+        "from unstuk_ml.record import Record\n"
+        "from unstuk_ml.training_examples import epoch\n"
+        "c = load_catalog()\n"
+        "r = [Record(id=f'r{n}', text='phone is silent', labels=[i], source='generated',\n"
+        "            generator='g', batch='b') for n, i in enumerate(trained_intents(c))]\n"
+        "print(epoch(r, [], c, trained_intents(c), seed=7, number=0, state=True, typos=True))\n"
+    )
+    outputs = {
+        subprocess.run(
+            [sys.executable, "-c", script],
+            env={**os.environ, "PYTHONHASHSEED": str(seed)},
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout
+        for seed in range(8)
+    }
+
+    assert len(outputs) == 1
