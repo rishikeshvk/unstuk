@@ -155,6 +155,8 @@ def _resamples(n: int, seed: int) -> Iterator[list[int]]:
 def _interval(values: Iterable[float]) -> tuple[float, float]:
     # Drops the NaN of a resample with no line of the kind.
     kept = sorted(v for v in values if v == v)
+    if not kept:
+        return float("nan"), float("nan")
     return kept[int(0.025 * len(kept))], kept[int(0.975 * len(kept)) - 1]
 
 

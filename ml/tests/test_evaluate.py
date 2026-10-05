@@ -79,6 +79,12 @@ def test_bootstrap_keeps_the_intervals_reported_before_m4() -> None:
     assert bootstrap([RIGHT] * 30 + [WRONG_SURE] * 10, accuracy) == (0.625, 0.875)
 
 
+def test_bootstrap_has_no_interval_when_no_line_is_of_the_kind() -> None:
+    low, high = bootstrap([RIGHT] * 5, out_of_scope_recall)
+
+    assert low != low and high != high
+
+
 def _decider(right: int, wrong_confidence: float, n: int = 200) -> list[Scored]:
     """Right on the first `right` lines, wrong on the rest with the given confidence."""
     return [
