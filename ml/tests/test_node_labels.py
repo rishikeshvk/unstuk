@@ -8,9 +8,11 @@ from unstuk_ml.node_labels import (
     Label,
     NodeQuestion,
     aosp_labels,
+    baseline_accuracy,
     build,
     match,
     oem_labels,
+    phone_questions,
     selector_labels,
     split_by_oem,
 )
@@ -86,3 +88,47 @@ def test_reads_aosp_strings_selectors_and_maker_sheets(tmp_path: Path) -> None:
     assert aosp == [Label("airplane_mode", "Aeroplane mode", "aosp:values-en-rGB", "aosp")]
     assert {(lb.item, lb.text) for lb in pixel} == {("wifi", "Internet"), ("talkback", "TalkBack")}
     assert makers == [Label("dnd", "Do not disturb", "oem-variants", "samsung")]
+
+
+def test_builds_phone_questions_from_dumps_and_scores_the_baseline() -> None:
+    dumps: dict[str, dict[str, object]] = {
+        "qs": {
+            "manufacturer": "motorola",
+            "nodes": [
+                {"text": "Flight mode", "description": None},
+                {"text": "Wi-Fi", "description": "Wi-Fi,Off"},
+                {"text": "Torch", "description": None},
+            ],
+        }
+    }
+    phone = {
+        "quickSettings": {
+            "tiles": {
+                "airplane_mode": {"labels": ["Flight mode"]},
+                "wifi": {"labels": ["Wi-Fi"]},
+                "bluetooth": {"labels": ["Bluetooth"]},
+            }
+        },
+        "settings": {"paths": {"talkback": [{"labels": ["TalkBack"]}]}},
+    }
+    descriptions = {t: t for t in ("airplane_mode", "wifi", "bluetooth", "talkback")}
+
+    questions, missing = phone_questions(dumps, phone, descriptions)
+
+    assert [(q.target, q.answer) for q in questions] == [
+        ("airplane_mode", "Flight mode"),
+        ("wifi", "Wi-Fi"),
+    ]
+    assert questions[0].options == ["Flight mode", "Wi-Fi", "Wi-Fi,Off", "Torch"]
+    assert missing == [
+        "bluetooth on qs: no label on screen matches the selector file",
+        "talkback on accessibility: screen not dumped",
+    ]
+    known = [
+        Label("airplane_mode", "Airplane mode", "aosp", "aosp"),
+        Label("wifi", "Wi-Fi", "a", "a"),
+    ]
+    assert baseline_accuracy(questions, known) == [
+        ("node-test-qs-airplane_mode", False),
+        ("node-test-qs-wifi", True),
+    ]

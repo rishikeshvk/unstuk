@@ -162,6 +162,69 @@ def match(options: Sequence[str], known: Sequence[str]) -> str | None:
     return best if score >= FUZZY else None
 
 
+# The Settings screen whose first path step names each target; Quick Settings tiles are on "qs".
+SETTINGS_SCREEN = {"airplane_mode": "network", "dnd": "dnd", "talkback": "accessibility"}
+MAX_LABEL = 40
+
+
+def screen_options(dump: dict[str, object]) -> list[str]:
+    """Every distinct short label on a dumped screen, text and content description alike."""
+    nodes = dump["nodes"]
+    assert isinstance(nodes, list)
+    texts = [n.get(field) for n in nodes for field in ("text", "description")]
+    return _distinct([t for t in texts if t and len(t) <= MAX_LABEL], len(texts))
+
+
+def phone_questions(
+    dumps: dict[str, dict[str, object]], selectors: dict[str, object], descriptions: dict[str, str]
+) -> tuple[list[NodeQuestion], list[str]]:
+    """Test questions from a phone's dumps: options are the labels really on the screen, and the
+    answer is the one the phone's selector file names there. Places with no match are listed."""
+    oem = str(next(iter(dumps.values()))["manufacturer"]).lower() if dumps else "unknown"
+    qs, settings = selectors["quickSettings"], selectors["settings"]
+    assert isinstance(qs, dict) and isinstance(settings, dict)
+    places = [(t, "qs", tile["labels"]) for t, tile in qs["tiles"].items()]
+    places += [
+        (t, SETTINGS_SCREEN[t], steps[0].get("labels", []))
+        for t, steps in settings["paths"].items()
+        if t in SETTINGS_SCREEN
+    ]
+    questions, missing = [], []
+    for target, where, labels in sorted(places):
+        if target not in descriptions:
+            continue
+        if where not in dumps:
+            missing.append(f"{target} on {where}: screen not dumped")
+            continue
+        options = screen_options(dumps[where])
+        answers = [o for o in options if _key(o) in {_key(label) for label in labels}]
+        if not answers:
+            missing.append(f"{target} on {where}: no label on screen matches the selector file")
+            continue
+        questions.append(
+            NodeQuestion(
+                id=f"node-test-{where}-{target}",
+                target=target,
+                question=f"Which item on the screen is {descriptions[target]}?",
+                options=options,
+                answer=answers[0],
+                source=f"dump:{where}",
+                oem=oem,
+            )
+        )
+    return questions, missing
+
+
+def baseline_accuracy(
+    questions: Sequence[NodeQuestion], known: Sequence[Label]
+) -> list[tuple[str, bool]]:
+    """Whether the string-matching baseline picks each answer, from labels known in advance."""
+    by_target: dict[str, list[str]] = defaultdict(list)
+    for label in known:
+        by_target[label.item].append(label.text)
+    return [(q.id, match(q.options, by_target[q.target]) == q.answer) for q in questions]
+
+
 def _distinct(texts: Sequence[str], count: int) -> list[str]:
     chosen: list[str] = []
     seen: set[str] = set()
@@ -209,9 +272,35 @@ def main() -> None:
     make.add_argument("pixel", type=Path)
     make.add_argument("oem_sheet", type=Path)
     make.add_argument("out", type=Path)
+    test = commands.add_parser("test", help="test questions from a phone's dumps, and the baseline")
+    test.add_argument("mapping", type=Path)
+    test.add_argument("aosp", type=Path)
+    test.add_argument("pixel", type=Path)
+    test.add_argument("phone", type=Path, help="the phone's own selector file")
+    test.add_argument("dumps", type=Path, help="folder of <screen>.json dumps")
+    test.add_argument("out", type=Path)
     args = parser.parse_args()
 
     mapping = json.loads(args.mapping.read_text(encoding="utf-8"))
+    if args.command == "test":
+        descriptions = {t: spec["description"] for t, spec in mapping["targets"].items()}
+        dumps = {
+            p.stem: json.loads(p.read_text(encoding="utf-8")) for p in args.dumps.glob("*.json")
+        }
+        phone = json.loads(args.phone.read_text(encoding="utf-8"))
+        questions, missing = phone_questions(dumps, phone, descriptions)
+        lines = "".join(q.model_dump_json() + "\n" for q in questions)
+        args.out.write_text(lines, encoding="utf-8")
+        known = [Label(**row) for row in json.loads(args.aosp.read_text(encoding="utf-8"))]
+        known += selector_labels(json.loads(args.pixel.read_text(encoding="utf-8")))
+        scores = baseline_accuracy(questions, known)
+        right = sum(ok for _, ok in scores)
+        print(f"{len(questions)} test questions in {args.out}; baseline {right}/{len(scores)}")
+        for qid, ok in scores:
+            print(f"  {'right' if ok else 'wrong'}  {qid}")
+        for line in missing:
+            print(f"  missing  {line}")
+        return
     if args.command == "aosp":
         targets = {t: spec["resources"] for t, spec in mapping["targets"].items()}
         found = aosp_labels(args.strings_dir, targets, mapping["neighbours"])
