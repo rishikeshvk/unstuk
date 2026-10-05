@@ -31,9 +31,9 @@ intents (`screen_wont_rotate`, `wrong_time`, `cant_hear_call`) never appear in t
 
 ## 2. Training setup, shared by both rungs
 
-- **Labels:** the 15 trained intents' IDs plus `out_of_scope`, as one softmax. The gate reads the output exactly as
-  `evaluate.Scored.outcome` does today: top `out_of_scope` → decline, top below 0.5 → clarify, 0.5 to 0.8 →
-  confirm, 0.8 and above → automatic.
+- **Labels:** the 12 trained intents' IDs (the catalog's 15 minus the 3 held out) plus `out_of_scope`, as one
+  13-way softmax. The gate reads the output exactly as `evaluate.Scored.outcome` does today: top `out_of_scope` →
+  decline, top below 0.5 → clarify, 0.5 to 0.8 → confirm, 0.8 and above → automatic.
 - **Lines with two labels** (3 in train) count once per label.
 - **Tuning on dev only.** A small grid per rung (below), chosen by dev macro-F1, ties broken by dev log-loss.
   Dev is split by batch (M3), so near-twins can't inflate it.
