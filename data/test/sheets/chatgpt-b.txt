@@ -68,7 +68,7 @@ What is two hundred rupees in dollars | plain
 ## phone_not_ringing, notifications_missing
 no alert | vague short_vague
 
-## cant_hear_call, phone_not_ringing
+## cant_hear_call, phone_not_ringing, notifications_missing
 no sound | vague short_vague
 
 ## no_internet

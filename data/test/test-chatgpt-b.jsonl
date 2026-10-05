@@ -56,7 +56,7 @@
 {"id": "test-chatgpt-b-056", "text": "Tell me a joke", "labels": ["out_of_scope"], "tags": ["plain"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
 {"id": "test-chatgpt-b-057", "text": "What is two hundred rupees in dollars", "labels": ["out_of_scope"], "tags": ["plain"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
 {"id": "test-chatgpt-b-058", "text": "no alert", "labels": ["phone_not_ringing", "notifications_missing"], "tags": ["vague", "short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
-{"id": "test-chatgpt-b-059", "text": "no sound", "labels": ["cant_hear_call", "phone_not_ringing"], "tags": ["vague", "short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
+{"id": "test-chatgpt-b-059", "text": "no sound", "labels": ["cant_hear_call", "phone_not_ringing", "notifications_missing"], "tags": ["vague", "short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
 {"id": "test-chatgpt-b-060", "text": "net not working", "labels": ["no_internet"], "tags": ["short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
 {"id": "test-chatgpt-b-061", "text": "nothing coming", "labels": ["notifications_missing", "no_internet"], "tags": ["vague", "short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}
 {"id": "test-chatgpt-b-062", "text": "screen looks strange", "labels": ["screen_too_dim", "colours_wrong"], "tags": ["vague", "short_vague"], "source": "generated", "generator": "chatgpt", "batch": "test-chatgpt-b"}

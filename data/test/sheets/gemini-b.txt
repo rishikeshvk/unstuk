@@ -65,17 +65,11 @@ Where is the nearest ATM? | plain
 ## no_internet
 pages not opening | short_vague
 
-## phone_not_ringing, notifications_missing
-no sound | vague short_vague
-
 ## screen_too_dim, screen_turns_off_fast
 screen getting dark | vague short_vague
 
 ## cant_hear_call, bluetooth_earphones
 cannot hear anything | vague short_vague
-
-## app_permission, no_internet
-app not working | vague short_vague
 
 ## talkback_on, text_too_small
 weird screen | vague short_vague
@@ -94,9 +88,6 @@ browser error | vague short_vague
 
 ## out_of_scope
 speaker broke | short_vague
-
-## screen_wont_rotate, screen_turns_off_fast
-screen problem | vague short_vague
 
 ## app_permission, notifications_missing
 whatsapp broken | vague short_vague
