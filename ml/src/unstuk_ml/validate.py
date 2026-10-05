@@ -18,6 +18,8 @@ DEFAULT_DATA_DIR = Path(__file__).resolve().parents[3] / "data"
 # Real messages are never training data (invariant 9); only the test set may hold held-out intents.
 REAL_DIR = "real"
 TEST_DIR = "test"
+# Derived by unstuk-clean from validated inputs; its ids repeat the raw ids by design.
+CLEAN_DIR = "clean"
 
 
 @dataclass(frozen=True)
@@ -64,7 +66,7 @@ def validate(data_dir: Path, catalog: Catalog) -> list[Problem]:
 
 def _data_files(data_dir: Path) -> Iterator[Path]:
     for path in sorted(data_dir.rglob("*.jsonl")):
-        if path.relative_to(data_dir).parts[0] != REAL_DIR:
+        if path.relative_to(data_dir).parts[0] not in (REAL_DIR, CLEAN_DIR):
             yield path
 
 

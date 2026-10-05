@@ -82,7 +82,9 @@ def render(c: Cleaning) -> str:
 
 
 def _reason_kind(reason: str) -> str:
-    return reason.split(" of ")[0].split(" (")[0].split(" test ")[0]
+    if reason.startswith("close to test"):
+        return "close to the test set"
+    return reason.split(" of ")[0].split(":")[0]
 
 
 def _label_counts(records: Sequence[Record]) -> Counter[str]:
