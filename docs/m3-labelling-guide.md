@@ -264,6 +264,8 @@ how well the model handles an intent it knows only from its option text (zero-sh
 | `wrong_time` | Shares a cause (automatic time) and some words with `wifi_no_load`: a hard case |
 | `cant_hear_call` | Close to both `phone_not_ringing` and `bluetooth_earphones`: a hard case |
 
+The same list is in `ml/src/unstuk_ml/labels.py`, where the data validator enforces it.
+
 This guide still defines them, because the test set needs them labelled the same way as everything else, and
 training data needs to know what they are so it can keep them out. A training line that turns out to belong to a
 held-out intent is removed, not relabelled.
