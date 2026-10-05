@@ -35,7 +35,8 @@ def flag(records: Sequence[Record], seed: int) -> list[Flag]:
     probs = cross_val_predict(
         model, [r.text for r in single], targets, cv=folds, method="predict_proba"
     )
-    issues = find_label_issues(targets, probs, return_indices_ranked_by="self_confidence")
+    # cleanlab's worker processes fork; forking after onnxruntime is loaded can deadlock.
+    issues = find_label_issues(targets, probs, return_indices_ranked_by="self_confidence", n_jobs=1)
     return [
         Flag(single[i], labels[int(probs[i].argmax())], float(probs[i][targets[i]])) for i in issues
     ]
