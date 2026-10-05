@@ -121,8 +121,9 @@ def test_builds_phone_questions_from_dumps_and_scores_the_baseline() -> None:
             "manufacturer": "motorola",
             "nodes": [
                 {"text": "Flight mode", "description": None},
-                {"text": "Wi-Fi", "description": "Wi-Fi,Off"},
-                {"text": "Torch", "description": None},
+                {"text": "Wi-Fi, Off", "description": "Wi-Fi,"},
+                {"text": "Auto-rotate, Off", "description": "Auto-rotate screen"},
+                {"text": None, "description": "Torch"},
             ],
         }
     }
@@ -130,30 +131,35 @@ def test_builds_phone_questions_from_dumps_and_scores_the_baseline() -> None:
         "quickSettings": {
             "tiles": {
                 "airplane_mode": {"labels": ["Flight mode"]},
+                "auto_rotate": {"labels": ["Auto-rotate"]},
                 "wifi": {"labels": ["Wi-Fi"]},
                 "bluetooth": {"labels": ["Bluetooth"]},
             }
         },
         "settings": {"paths": {"talkback": [{"labels": ["TalkBack"]}]}},
     }
-    descriptions = {t: t for t in ("airplane_mode", "wifi", "bluetooth", "talkback")}
+    targets = ("airplane_mode", "auto_rotate", "wifi", "bluetooth", "talkback")
+    descriptions = {t: t for t in targets}
 
     questions, missing = phone_questions(dumps, phone, descriptions)
 
     assert [(q.target, q.answer) for q in questions] == [
         ("airplane_mode", "Flight mode"),
-        ("wifi", "Wi-Fi"),
+        ("auto_rotate", "Auto-rotate, Off"),
+        ("wifi", "Wi-Fi, Off"),
     ]
-    assert questions[0].options == ["Flight mode", "Wi-Fi", "Wi-Fi,Off", "Torch"]
+    assert questions[0].options == ["Flight mode", "Wi-Fi, Off", "Auto-rotate, Off", "Torch"]
     assert missing == [
         "bluetooth on qs: no label on screen matches the selector file",
         "talkback on accessibility: screen not dumped",
     ]
     known = [
         Label("airplane_mode", "Airplane mode", "aosp", "aosp"),
+        Label("auto_rotate", "Auto-rotate", "a", "a"),
         Label("wifi", "Wi-Fi", "a", "a"),
     ]
     assert baseline_accuracy(questions, known) == [
         ("node-test-qs-airplane_mode", False),
-        ("node-test-qs-wifi", True),
+        ("node-test-qs-auto_rotate", True),
+        ("node-test-qs-wifi", False),
     ]

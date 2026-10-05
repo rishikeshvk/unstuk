@@ -169,11 +169,19 @@ MAX_LABEL = 40
 
 
 def screen_options(dump: dict[str, object]) -> list[str]:
-    """Every distinct short label on a dumped screen, text and content description alike."""
+    """One option per labelled node on a dumped screen: its text, or its description if it has
+    none. One node as two options would mark a pick of the right item wrong."""
     nodes = dump["nodes"]
     assert isinstance(nodes, list)
-    texts = [n.get(field) for n in nodes for field in ("text", "description")]
+    texts = [n.get("text") or n.get("description") for n in nodes]
     return _distinct([t for t in texts if t and len(t) <= MAX_LABEL], len(texts))
+
+
+def matches_label(text: str, labels: Sequence[str]) -> bool:
+    """The app's rule (selector/LabelMatch.kt): the text before the first ',' or '.' equals a
+    label, ignoring case, so a tile's state ("Wi-Fi, Off") doesn't hide its label."""
+    lead = re.split(r"[,.]", text, maxsplit=1)[0].strip().casefold()
+    return any(label.casefold() == lead for label in labels)
 
 
 def phone_questions(
@@ -198,7 +206,7 @@ def phone_questions(
             missing.append(f"{target} on {where}: screen not dumped")
             continue
         options = screen_options(dumps[where])
-        answers = [o for o in options if _key(o) in {_key(label) for label in labels}]
+        answers = [o for o in options if matches_label(o, labels)]
         if not answers:
             missing.append(f"{target} on {where}: no label on screen matches the selector file")
             continue
