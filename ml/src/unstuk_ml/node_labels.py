@@ -45,6 +45,14 @@ class NodeQuestion(BaseModel):
         return self
 
 
+def read_questions(path: Path) -> list[NodeQuestion]:
+    return [
+        NodeQuestion.model_validate_json(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
 @dataclass(frozen=True)
 class Label:
     item: str

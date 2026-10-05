@@ -17,7 +17,7 @@ from sklearn.pipeline import Pipeline
 
 from unstuk_ml.baseline_report import Below, Decider, Table, load_test, write
 from unstuk_ml.evaluate import Scored, in_scope_accuracy, macro_f1
-from unstuk_ml.record import Record
+from unstuk_ml.record import Record, read_records
 from unstuk_ml.temperature import fit_temperature, negative_log_likelihood, softmax
 from unstuk_ml.validate import DEFAULT_DATA_DIR
 
@@ -134,11 +134,7 @@ def test(rung: Rung, below: Callable[[list[Record]], Below]) -> None:
 
 
 def read_clean(split: str) -> list[Record]:
-    return [
-        Record.model_validate_json(line)
-        for line in (CLEAN_DIR / f"{split}.jsonl").read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
+    return read_records(CLEAN_DIR / f"{split}.jsonl")
 
 
 def main(rung: Rung, below: Callable[[list[Record]], Below]) -> None:

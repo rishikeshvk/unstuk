@@ -8,7 +8,6 @@ import json
 import re
 from collections import defaultdict
 from collections.abc import Callable, Sequence
-from pathlib import Path
 
 import numpy as np
 from numpy.typing import NDArray
@@ -16,7 +15,7 @@ from numpy.typing import NDArray
 from unstuk_ml.baseline_report import REPORTS
 from unstuk_ml.encoder import embed_cached
 from unstuk_ml.evaluate import share_interval
-from unstuk_ml.node_labels import Label, NodeQuestion, match, selector_labels
+from unstuk_ml.node_labels import Label, NodeQuestion, match, read_questions, selector_labels
 from unstuk_ml.validate import DEFAULT_DATA_DIR
 
 Embed = Callable[[Sequence[str]], NDArray[np.float32]]
@@ -113,15 +112,11 @@ def _lead(text: str) -> str:
     return re.split(r"[,.]", text, maxsplit=1)[0].strip()
 
 
-def _read(path: Path) -> list[NodeQuestion]:
-    return [
-        NodeQuestion.model_validate_json(line)
-        for line in path.read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
-
-
 def main() -> None:
-    text = render(_read(NODES_DIR / "dev.jsonl"), _read(NODES_DIR / "test.jsonl"), embed_cached)
+    text = render(
+        read_questions(NODES_DIR / "dev.jsonl"),
+        read_questions(NODES_DIR / "test.jsonl"),
+        embed_cached,
+    )
     REPORT.write_text(text, encoding="utf-8")
     print(f"see {REPORT}")

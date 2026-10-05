@@ -1,5 +1,6 @@
 """One line of a data file (M3 spec section 7)."""
 
+from pathlib import Path
 from typing import Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
@@ -39,3 +40,11 @@ class Record(BaseModel):
         if unknown_tags:
             raise ValueError(f"unknown tags: {', '.join(sorted(unknown_tags))}")
         return self
+
+
+def read_records(path: Path) -> list[Record]:
+    return [
+        Record.model_validate_json(line)
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
