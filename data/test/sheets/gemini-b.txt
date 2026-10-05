@@ -62,8 +62,8 @@ Thanks a lot! | plain
 Hello. | plain
 Where is the nearest ATM? | plain
 
-## no_internet, wifi_no_load
-pages not opening | vague short_vague
+## no_internet
+pages not opening | short_vague
 
 ## phone_not_ringing, notifications_missing
 no sound | vague short_vague
@@ -92,8 +92,8 @@ no messages coming | vague short_vague
 ## wrong_time, no_internet
 browser error | vague short_vague
 
-## bluetooth_earphones, phone_not_ringing
-speaker broke | vague short_vague
+## out_of_scope
+speaker broke | short_vague
 
 ## screen_wont_rotate, screen_turns_off_fast
 screen problem | vague short_vague
@@ -101,8 +101,8 @@ screen problem | vague short_vague
 ## app_permission, notifications_missing
 whatsapp broken | vague short_vague
 
-## no_internet, reset_network
-network failure | vague short_vague
+## no_internet
+network failure | short_vague
 
 ## text_too_small, colours_wrong
 hard to read | vague short_vague

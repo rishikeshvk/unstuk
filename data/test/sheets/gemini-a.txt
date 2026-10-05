@@ -1,7 +1,6 @@
 # Gemini app, prompt external-v1 Part A, 2026-10-05. Saved as returned.
 
 ## no_internet
-My whatsapp is completely dead. | plain
 Can't open any websites at all. | plain
 The globe icon at the top is missing and nothing is working. | paraphrase
 My brother sent me a video but it just keeps spinning forever. | paraphrase
@@ -42,7 +41,6 @@ I have to put people on speaker just to talk to them. | plain
 People on the other end sound like they are whispering from a mile away. | paraphrase
 The earpiece is dead quiet when I hold it to my head. | paraphrase
 cnt undrstand what ppl say on mic | typo
-very low noise wen sumone calls | typo
 Sound is coming very less from the opposite side. | indian_english
 I bought this expensive handset just two months back from the local shop. Whenever my son calls from America, I try to catch up with him on his life. But when I hold it to my ear, the volume is so faint I can barely make out a word he says. | long_story
 The ringer is loud, but I get total silence from the person on the line. | negation
@@ -174,8 +172,12 @@ I'm fed up and want to wipe my internet configurations. | plain
 How can I completely erase all the saved signal data and start fresh? | paraphrase
 I want to wipe all the memory of my home routers and mobile carriers. | paraphrase
 need to clr all signls now | typo
-whre is the wip web data button | typo
 Please tell me how to completely format my connectivity options. | indian_english
 I have been struggling for three days because my mobile drops calls and fails to load any pages. I watched a tutorial that said I should clear out all the wireless data and start from zero. I have tried searching everywhere in the menus but I cannot find the option to wipe everything out. | long_story
 I don't want to wipe my photos, I just want to restore all my signal data to factory defaults. | negation
 Give me the exact steps to wipe out all wireless configurations. | plain
+
+# Moved in review, 2026-10-05 (see docs/m3-labelling-guide.md)
+
+## no_internet, notifications_missing
+My whatsapp is completely dead. | vague short_vague

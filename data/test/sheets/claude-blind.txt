@@ -32,7 +32,6 @@ My ears are fine, I checked with the doctor last month. But since a few days on 
 whatsapp messages come only when I open whatsapp | plain
 Messages are reaching late, my customers say they sent order in morning and I am seeing it at night | indian_english paraphrase
 no alerts for gmail untill i open the app itself | typo
-How do I make the bank OTP messages pop up right away instead of after an hour? | paraphrase
 The phone does make sound, that's not it. The trouble is chat messages don't show at the top until I go into the app. | negation
 
 ## talkback_on
@@ -122,8 +121,8 @@ my phone has become very slow and hangs | plain
 good morning ji | plain
 tell me a good recipe for paneer butter masala | plain
 
-## no_internet, wifi_no_load
-nothing loading | vague short_vague
+## no_internet
+nothing loading | short_vague
 
 ## screen_too_dim, colours_wrong
 display looks dark and weird | vague short_vague
@@ -149,5 +148,10 @@ phone is reading aloud everything I touch and on top of that the display has gon
 ## bluetooth_earphones, cant_hear_call
 my earbuds won't pair with the phone, and even without them the caller's voice is so faint on calls | multi
 
-## screen_turns_off_fast, screen_wont_rotate
+## screen_wont_rotate, screen_turns_off_fast
 video stays standing when I hold the phone sideways and the display also keeps going black after a few seconds | multi
+
+# Moved in review, 2026-10-05 (see docs/m3-labelling-guide.md)
+
+## out_of_scope
+How do I make the bank OTP messages pop up right away instead of after an hour? | oos_near

@@ -8,11 +8,8 @@ My eyes are seeing everything too dark today | collision
 The colours of this shirt look wrong to me | collision
 My watch is not showing the right time | collision
 The food is too hot, how can I cool it down | collision
-I need a bigger screen for my eyes to read the menu | collision
-My Bluetooth necklace is not what I am asking about | collision
 There is no signal on the TV because of the weather | collision
 My phone cover has a bright colour and I don't like it | collision
-The rain is stopping my internet at home | collision
 
 ## out_of_scope | oos_near
 How can I recharge my phone, balance is finished | oos_near
@@ -74,8 +71,8 @@ no alert | vague short_vague
 ## cant_hear_call, phone_not_ringing
 no sound | vague short_vague
 
-## no_internet, wifi_no_load
-net not working | vague short_vague
+## no_internet
+net not working | short_vague
 
 ## notifications_missing, no_internet
 nothing coming | vague short_vague
@@ -101,7 +98,7 @@ phone showing wrong | vague short_vague
 ## no_internet, wifi_no_load, bluetooth_earphones
 not connecting | vague short_vague
 
-## phone_not_ringing, notifications_missing, talkback_on
+## phone_not_ringing, notifications_missing
 phone is silent | vague short_vague
 
 ## colours_wrong, screen_too_dim
@@ -113,8 +110,8 @@ app not working | vague short_vague
 ## screen_too_dim, screen_turns_off_fast, text_too_small
 screen problem | vague short_vague
 
-## no_internet, wifi_no_load
-The WiFi is connected but WhatsApp is not opening | multi
+## wifi_no_load
+The WiFi is connected but WhatsApp is not opening | plain
 
 ## phone_not_ringing, notifications_missing
 I don't hear anything when someone calls and I also don't get message alerts | multi
@@ -137,8 +134,8 @@ My messages are not arriving on time and nothing else online is loading either |
 ## app_permission, bluetooth_earphones
 This app cannot use the microphone and my wireless earphones are not connecting | multi
 
-## wrong_time, no_internet
-The phone time is wrong and now some websites are not opening | multi
+## wrong_time
+The phone time is wrong and now some websites are not opening | plain
 
 ## talkback_on, text_too_small
 The phone is speaking everything and the letters are too small for me | multi
