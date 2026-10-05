@@ -1,0 +1,58 @@
+{
+  "targets": {
+    "airplane_mode": {
+      "description": "the switch that turns airplane mode on and off",
+      "resources": ["systemui:status_bar_airplane", "settings:airplane_mode"]
+    },
+    "dnd": {
+      "description": "the switch for Do Not Disturb",
+      "resources": ["systemui:quick_settings_dnd_label", "settings:zen_mode_settings_title"]
+    },
+    "mobile_data": {
+      "description": "the switch for mobile data",
+      "resources": ["systemui:mobile_data", "systemui:quick_settings_cellular_detail_title", "settings:mobile_data_settings_title"]
+    },
+    "wifi": {
+      "description": "the switch for Wi-Fi",
+      "resources": ["systemui:quick_settings_wifi_label", "settings:wifi"]
+    },
+    "data_saver": {
+      "description": "the switch for Data Saver",
+      "resources": ["systemui:data_saver", "settings:data_saver_title"]
+    },
+    "inversion": {
+      "description": "the switch that inverts the screen colours",
+      "resources": ["systemui:quick_settings_inversion_label", "settings:accessibility_display_inversion_preference_title"]
+    },
+    "auto_rotate": {
+      "description": "the switch that lets the screen rotate",
+      "resources": ["systemui:quick_settings_rotation_unlocked_label"]
+    },
+    "bluetooth": {
+      "description": "the switch for Bluetooth",
+      "resources": ["systemui:quick_settings_bluetooth_label", "settings:bluetooth_settings_title"]
+    },
+    "talkback": {
+      "description": "the screen reader setting that reads the screen aloud",
+      "resources": []
+    }
+  },
+  "neighbours": [
+    "systemui:quick_settings_hotspot_label",
+    "systemui:quick_settings_flashlight_label",
+    "systemui:quick_settings_location_label",
+    "systemui:battery_detail_switch_title",
+    "systemui:quick_settings_nfc_label",
+    "systemui:quick_settings_screen_record_label",
+    "systemui:quick_settings_ui_mode_night_label",
+    "systemui:quick_settings_night_display_label",
+    "systemui:quick_settings_cast_title",
+    "systemui:quick_settings_internet_label",
+    "systemui:quick_settings_camera_label",
+    "systemui:qr_code_scanner_title",
+    "settings:mic_toggle_title",
+    "settings:even_dimmer_display_title",
+    "settings:location_settings_title",
+    "settings:dark_ui_mode"
+  ]
+}

@@ -1,0 +1,154 @@
+## airplane_mode
+samsung | Airplane mode
+samsung | Flight mode
+xiaomi | Airplane mode
+oppo | Aeroplane mode
+oppo | Airplane mode
+vivo | Airplane mode
+oneplus | Airplane mode
+oneplus | Aeroplane mode
+
+## dnd
+samsung | Do not disturb
+xiaomi | Do not disturb
+xiaomi | DND
+oppo | Do Not Disturb
+vivo | Do not disturb
+oneplus | Do Not Disturb
+
+## mobile_data
+samsung | Mobile data
+xiaomi | Mobile data
+oppo | Mobile data
+vivo | Mobile data
+oneplus | Mobile data
+
+## wifi
+samsung | Wi-Fi
+xiaomi | Wi-Fi
+oppo | Wi-Fi
+vivo | Wi-Fi
+oneplus | Wi-Fi
+
+## data_saver
+samsung | Data saver
+xiaomi | Data saver
+oppo | Data saver
+vivo | Data saver
+oneplus | Data saver
+
+## inversion
+samsung | Colour inversion
+samsung | Color inversion
+xiaomi | Color inversion
+xiaomi | Invert colors
+oppo | Colour inversion
+vivo | Color inversion
+oneplus | Colour inversion
+oneplus | Color inversion
+
+## auto_rotate
+samsung | Auto rotate
+samsung | Portrait
+samsung | Landscape
+xiaomi | Auto-rotate
+oppo | Auto rotate
+vivo | Auto-rotate
+oneplus | Auto-rotate
+
+## bluetooth
+samsung | Bluetooth
+xiaomi | Bluetooth
+oppo | Bluetooth
+vivo | Bluetooth
+oneplus | Bluetooth
+
+## talkback
+samsung | TalkBack
+xiaomi | TalkBack
+oppo | TalkBack
+vivo | TalkBack
+oneplus | TalkBack
+
+## hotspot
+samsung | Mobile Hotspot
+xiaomi | Hotspot
+oppo | Personal hotspot
+oppo | Hotspot
+vivo | Personal hotspot
+vivo | Hotspot
+oneplus | Hotspot
+oneplus | Personal hotspot
+
+## flashlight
+samsung | Torch
+samsung | Flashlight
+xiaomi | Flashlight
+xiaomi | Torch
+oppo | Torch
+vivo | Torch
+vivo | Flashlight
+oneplus | Torch
+oneplus | Flashlight
+
+## location
+samsung | Location
+xiaomi | Location
+oppo | Location
+vivo | Location
+oneplus | Location
+
+## battery_saver
+samsung | Power saving
+samsung | Power saving mode
+xiaomi | Battery saver
+oppo | Power saving mode
+oppo | Power saving
+vivo | Power saving
+oneplus | Battery saver
+
+## nfc
+samsung | NFC
+xiaomi | NFC
+oppo | NFC
+vivo | NFC
+oneplus | NFC
+
+## screen_record
+samsung | Screen recorder
+xiaomi | Screen recorder
+oppo | Screen recording
+vivo | Screen recording
+oneplus | Screen recording
+oneplus | Screen recorder
+
+## dark_mode
+samsung | Dark mode
+xiaomi | Dark mode
+oppo | Dark mode
+vivo | Dark mode
+oneplus | Dark mode
+
+## eye_comfort
+samsung | Eye comfort shield
+samsung | Blue light filter
+xiaomi | Reading mode
+oppo | Eye comfort
+vivo | Eye protection
+oneplus | Eye comfort
+oneplus | Reading mode
+
+## cast
+samsung | Smart View
+xiaomi | Cast
+
+## sound_mode
+samsung | Sound
+samsung | Vibrate
+samsung | Mute
+xiaomi | Silent
+xiaomi | Vibrate
+
+## qr_scanner
+samsung | Scan QR code
+xiaomi | Scanner

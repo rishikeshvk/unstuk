@@ -20,6 +20,8 @@ REAL_DIR = "real"
 TEST_DIR = "test"
 # Derived by unstuk-clean from validated inputs; its ids repeat the raw ids by design.
 CLEAN_DIR = "clean"
+# Node-label questions have their own shape, checked by node_labels.NodeQuestion.
+NODES_DIR = "nodes"
 
 
 @dataclass(frozen=True)
@@ -66,7 +68,7 @@ def validate(data_dir: Path, catalog: Catalog) -> list[Problem]:
 
 def _data_files(data_dir: Path) -> Iterator[Path]:
     for path in sorted(data_dir.rglob("*.jsonl")):
-        if path.relative_to(data_dir).parts[0] not in (REAL_DIR, CLEAN_DIR):
+        if path.relative_to(data_dir).parts[0] not in (REAL_DIR, CLEAN_DIR, NODES_DIR):
             yield path
 
 
