@@ -1,0 +1,55 @@
+{
+  "instruction": true,
+  "out_of_scope_option": "A question or request that has nothing to do with fixing the phone's settings",
+  "temperature": 0.0309,
+  "grid": [
+    {
+      "instruction": false,
+      "out_of_scope_option": "Something else that is not a problem with this phone",
+      "temperature": 0.0428,
+      "dev_macro_f1": 0.6789419520425004,
+      "dev_log_loss": 1.5423458916532673,
+      "dev_in_scope_accuracy": 0.7994825355756792
+    },
+    {
+      "instruction": false,
+      "out_of_scope_option": "A question or request that has nothing to do with fixing the phone's settings",
+      "temperature": 0.0343,
+      "dev_macro_f1": 0.6960375091660425,
+      "dev_log_loss": 1.2903735885886165,
+      "dev_in_scope_accuracy": 0.7891332470892626
+    },
+    {
+      "instruction": false,
+      "out_of_scope_option": "I want help with something other than my phone not working",
+      "temperature": 0.0315,
+      "dev_macro_f1": 0.7041788026030111,
+      "dev_log_loss": 1.1879962716356969,
+      "dev_in_scope_accuracy": 0.7697283311772316
+    },
+    {
+      "instruction": true,
+      "out_of_scope_option": "Something else that is not a problem with this phone",
+      "temperature": 0.0418,
+      "dev_macro_f1": 0.6707406879065031,
+      "dev_log_loss": 1.5321452020490158,
+      "dev_in_scope_accuracy": 0.796895213454075
+    },
+    {
+      "instruction": true,
+      "out_of_scope_option": "A question or request that has nothing to do with fixing the phone's settings",
+      "temperature": 0.0309,
+      "dev_macro_f1": 0.7061096179792994,
+      "dev_log_loss": 1.1731364753532625,
+      "dev_in_scope_accuracy": 0.7632600258732212
+    },
+    {
+      "instruction": true,
+      "out_of_scope_option": "I want help with something other than my phone not working",
+      "temperature": 0.0319,
+      "dev_macro_f1": 0.6898113462729538,
+      "dev_log_loss": 1.2151447968262452,
+      "dev_in_scope_accuracy": 0.7671410090556274
+    }
+  ]
+}
