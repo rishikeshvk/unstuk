@@ -9,13 +9,10 @@ from tokenizers import Tokenizer
 from unstuk_ml.catalog import load_catalog
 from unstuk_ml.decision_batch import decision_tokenizer
 from unstuk_ml.decision_training import (
-    HEAD_LEARNING_RATE,
     Data,
     RunConfig,
     add_run_arguments,
     config_from,
-    learning_rate_factor,
-    parameter_groups,
     removed_intents,
     run_arguments,
     train,
@@ -67,23 +64,6 @@ def test_a_runs_name_says_what_it_tried() -> None:
     assert (
         config(typos=True, fold=1, limit=64).name == "attention-lr5e-05-typos-state-fold1-limit64"
     )
-
-
-def test_the_heads_learn_at_their_own_rate() -> None:
-    model = tiny_model("attention")
-
-    backbone, heads = parameter_groups(model, 5e-5)
-
-    assert (backbone["lr"], heads["lr"]) == (5e-5, HEAD_LEARNING_RATE)
-    ids = {id(p) for p in heads["params"]}
-    assert {id(model.log_scale), id(model.noul.weight)} <= ids
-    assert not ids & {id(p) for p in model.backbone.parameters()}
-
-
-def test_the_rate_warms_up_over_a_tenth_then_decays_to_zero() -> None:
-    factors = [learning_rate_factor(step, steps=100) for step in (0, 5, 10, 55, 100)]
-
-    assert factors == [0.0, 0.5, 1.0, 0.5, 0.0]
 
 
 def test_a_fold_removes_one_of_the_folds() -> None:

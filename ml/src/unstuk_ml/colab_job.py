@@ -11,15 +11,8 @@ import tarfile
 import tempfile
 from pathlib import Path
 
-from unstuk_ml.decision_training import (
-    COMMIT_FILE,
-    REPO_ROOT,
-    RUNS_DIR,
-    RunConfig,
-    add_run_arguments,
-    config_from,
-    run_arguments,
-)
+from unstuk_ml.decision_training import RunConfig, add_run_arguments, config_from, run_arguments
+from unstuk_ml.fine_tuning import COMMIT_FILE, REPO_ROOT, RUNS_DIR
 
 SESSION = "unstuk-m5"
 GPU = "T4"
