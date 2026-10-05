@@ -1,0 +1,35 @@
+# Gemini app, prompt external-v1-topup, 2026-10-05. Saved as returned.
+
+## out_of_scope | collision
+bahu I lost my gold ring in market today | collision
+sky is too dark looking like heavy rain | collision
+aree wrong colour saree delivered by flipkart! | collision
+sir stuck at red signal since 20 mins. | collision
+how to connect with old school friends for reunion | collision
+doctor sahab not getting sound sleep at night | collision
+beta what time your tution is finishing? | collision
+the motivational speaker at work was very boring tbh | collision
+my shop ceiling fan is not rotating. | collision
+jeans size too small bro. | collision
+having bad cough and voice completely gone | collision
+going for network marketing meeting at hotel. | collision
+hospital staff will reset uncle's dislocated shoulder | collision
+mummy sign the permission diary for school trip. | collision
+need green net screen for balcony | collision
+send 2 dark fantasy biscuit packets | collision
+please switch off the gas stove | collision
+why you reading my personal diary aloud! | collision
+
+## out_of_scope | plain
+phone display totally broken after dropping | plain
+how to put new jio sim card in this tray? | plain
+deducted 500 rupees for phone bill but showing unpaid! | plain
+why instagram is crashing every 5 minutes?? | plain
+storage full error coming again and again | plain
+battery dying in just two hours mere bhai | plain
+forgot my pattern lock and phone is totally locked. | plain
+where did all my saved contacts go? | plain
+how to hide private photos in gallery | plain
+auto wala stole my mobile yesterday night. | plain
+bgmi game not installing from play store | plain
+my phone fell in bucket water and not starting. | plain
