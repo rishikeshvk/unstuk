@@ -27,7 +27,7 @@ keyword matcher (M3: 40.2% in scope, 8.7% confident and wrong)
 
 Both learned rungs are **fixed-head classifiers**: one output per label they were trained on. The three held-out
 intents (`screen_wont_rotate`, `wrong_time`, `cant_hear_call`) never appear in training, so these rungs score
-**0% on them by construction**. That is reported, not hidden: it is the case for M5's option-text heads.
+**0% on them by construction**, except on the 5 two-problem test lines whose other problem is trained. That is reported, not hidden: it is the case for M5's option-text heads.
 
 ## 2. Training setup, shared by both rungs
 

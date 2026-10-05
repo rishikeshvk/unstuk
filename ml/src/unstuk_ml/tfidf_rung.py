@@ -35,7 +35,8 @@ TFIDF = Decider(
     command="unstuk-tfidf test",
     about="Word 1-2-grams and character 2-5-grams, read by logistic regression trained on "
     "`data/clean/train.jsonl`",
-    held_out_note="0% by construction: the rung has no output for them",
+    held_out_note="no output for them; only a two-problem line whose other problem is trained can "
+    "count as right",
     report=REPORTS / "tfidf.md",
 )
 
