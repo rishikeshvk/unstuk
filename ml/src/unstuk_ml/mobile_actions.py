@@ -14,8 +14,8 @@ from typing import Any
 from unstuk_ml.labels import OUT_OF_SCOPE
 from unstuk_ml.record import Record
 
-# Wi-Fi settings sit too close to the Wi-Fi intents; calendar requests are full of dates and times, which
-# would teach "time words mean out of scope" and bias the held-out wrong_time intent.
+# Wi-Fi settings sit too close to the Wi-Fi intents; calendar requests are full of dates and times,
+# which would teach "time words mean out of scope" and bias the held-out wrong_time intent.
 EXCLUDED_TOOLS = frozenset({"open_wifi_settings", "create_calendar_event"})
 PER_TOOL = {"train": 50, "eval": 10}
 SEED = 9
