@@ -1,0 +1,224 @@
+## no_internet
+wifi switched off, no internet
+## wifi_no_load
+wifi conected, no internet
+## no_internet
+little aeroplane showing, nothing works
+## wifi_no_load
+wifi fan showing, nothing loads
+## no_internet
+mobile data off, no google
+## wifi_no_load
+says connected, no gogle
+## no_internet
+wifi symbol gone, no news
+## wifi_no_load
+wifi simbol there, no news
+## phone_not_ringing
+phone dosnt ring anymore
+## notifications_missing
+texts dont beep anymore
+## phone_not_ringing
+missed calls, no ringing
+## notifications_missing
+missed messages, no beep
+## phone_not_ringing
+daughter rings, no sound
+## notifications_missing
+daughter texts, no sound
+## phone_not_ringing
+calls silent since tuesday
+## notifications_missing
+whatsap silent since tuesday
+## screen_too_dim
+screen gone very dark
+## colours_wrong
+screen gone all grey
+## screen_too_dim
+picture too dim to see
+## colours_wrong
+picture black and white now
+## screen_too_dim
+photos look too dark
+## colours_wrong
+photos look like negatives
+## screen_too_dim
+screen to dark, cant read
+## colours_wrong
+screen grey, cant read
+## screen_too_dim
+screen much too dark
+## out_of_scope
+screen much too bright
+## screen_too_dim
+cant see screen, too dim
+## out_of_scope
+screen hurts eyes, too brite
+## screen_too_dim
+make screen lighter please
+## out_of_scope
+make screen background black please
+## screen_too_dim
+screen dim in garden
+## out_of_scope
+screen glareing at night
+## screen_turns_off_fast
+screen goes black reading
+## out_of_scope
+phone switches off reading
+## screen_turns_off_fast
+screen keeps going blank
+## out_of_scope
+phone keeps restarting itself
+## screen_turns_off_fast
+screen goes off mid recipe
+## out_of_scope
+phone restarts mid recipie
+## screen_turns_off_fast
+screen blacks out to quick
+## out_of_scope
+whole phone turns off quick
+## text_too_small
+letters far too small
+## out_of_scope
+screen zoomed in, stuck
+## text_too_small
+writing tiny on mesages
+## out_of_scope
+messages all magnified, stuck
+## text_too_small
+words too small, squinting
+## out_of_scope
+everything enlarged, cant see edges
+## text_too_small
+make letters bigger please
+## out_of_scope
+make screen normal size pleese
+## talkback_on
+phone talks when I touch
+## out_of_scope
+car reads my texts out
+## talkback_on
+must tap twice, it talks
+## out_of_scope
+google lady reads texts
+## talkback_on
+phone speaking every button
+## out_of_scope
+car speaking every message
+## talkback_on
+touchin screen, it talks
+## out_of_scope
+car stereo reads messages
+## bluetooth_earphones
+wireless earbuds wont connect
+## out_of_scope
+corded earphones wont work
+## bluetooth_earphones
+earbuds wont pair up
+## out_of_scope
+earbuds wont charge up
+## bluetooth_earphones
+little speaker wont link
+## out_of_scope
+little speaker battery flat
+## bluetooth_earphones
+grandsons earbuds wont conect
+## out_of_scope
+plug in earphones no sound
+## app_permission
+whatsapp camera wont open
+## out_of_scope
+camera broken in everything
+## app_permission
+facebook wont use camra
+## out_of_scope
+camera cracked, all blurry
+## app_permission
+video call cant see me
+## out_of_scope
+camera black in every app
+## app_permission
+doctors app cant see me
+## out_of_scope
+camera lens smashed, no pictures
+## reset_network
+reset the internet settings please
+## no_internet
+internet not working please
+## reset_network
+wifi stuff reset please
+## no_internet
+wifi stuff not workng
+## reset_network
+start network over fresh
+## no_internet
+network not working today
+## reset_network
+son said reset netwrok
+## no_internet
+son said no internet
+## reset_network
+reset just the internet bits
+## out_of_scope
+reset whole phone like new
+## reset_network
+reset wifi setings only
+## out_of_scope
+reset everything, wipe phone
+## reset_network
+clear network settings please
+## out_of_scope
+clear whole phone please
+## reset_network
+fresh start for wifi
+## out_of_scope
+fresh start whole phone
+## notifications_missing
+bank app alerts late
+## out_of_scope
+bank code text not coming
+## notifications_missing
+texts arrive hours late
+## out_of_scope
+code texts never arive
+## notifications_missing
+messages come late
+## out_of_scope
+one time number not comming
+## notifications_missing
+email pings come late
+## out_of_scope
+login code not coming
+## phone_not_ringing
+phone ring has no sound
+## out_of_scope
+phone ring far too loud
+## phone_not_ringing
+calls make no noise
+## out_of_scope
+want diffrent ringing noise
+## phone_not_ringing
+cant hear phone ring
+## out_of_scope
+want a nicer ring
+## phone_not_ringing
+ringer gone silent
+## out_of_scope
+ringer frightens the dog
+## no_internet
+data switched off, no internet
+## out_of_scope
+data ran out, no internet
+## no_internet
+turned internet off by mistake
+## out_of_scope
+used up internet allowence
+## no_internet
+wifi off, cant browse
+## out_of_scope
+top up gone, cant browse
+## no_internet
+pressed something, no intenet
+## out_of_scope
+credit run out, no internet
