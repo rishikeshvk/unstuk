@@ -61,6 +61,9 @@ macro-F1 still rising. So the grid was extended to 30 and 100 on dev alone, befo
   about 7,500 short lines takes minutes, so no Colab.
 - **Cache:** embeddings stored under `ml/cache/` (gitignored), keyed by model revision and text hash.
 - **Head:** logistic regression, grid `C` ∈ {0.1, 0.3, 1, 3, 10}.
+- **Grid edge, decided before any encoder score (2026-10-05):** if dev's winner is the largest `C`, the grid
+  extends to 30, then 100, then 300, one at a time, until the winner sits inside it. The TF-IDF grid needed this
+  extension, and fixing the rule in advance means it can't be bent to fit a result.
 
 ## 3. When does a rung "beat" the one below?
 
@@ -80,7 +83,9 @@ slices and writers, common mistakes), with the decider's name in the title. A se
 refactor is due. Added:
 - a comparison table with each rung's paired difference against the one below;
 - raw and calibrated ECE;
-- confusion pairs that the learned rungs fixed or introduced compared with the keyword matcher.
+- confusion pairs that each learned rung fixed or introduced compared with the rung below it. For the encoder that
+  is TF-IDF, which shows what meaning adds over n-grams; against the keyword matcher it would mostly repeat what
+  TF-IDF already fixed.
 
 One generated report per rung under `ml/reports/`, plus `docs/m4-results.md` and a plain-language summary.
 
