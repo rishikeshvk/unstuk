@@ -25,7 +25,6 @@ from unstuk_ml.encoder import download
 from unstuk_ml.encoder_rung import ENCODER
 from unstuk_ml.evaluate import in_scope_accuracy, macro_f1
 from unstuk_ml.fine_tuning import (
-    CHECKPOINT,
     RESULT,
     RUNS_DIR,
     EpochCheck,
@@ -33,8 +32,8 @@ from unstuk_ml.fine_tuning import (
     Training,
     chunks,
     fine_tune,
+    load_weights,
     save_run,
-    sha256,
     shuffled,
     steps_per_epoch,
     training_device,
@@ -194,12 +193,9 @@ def choose(runs: Path = RUNS_DIR) -> Settings:
 
 
 def load_checkpoint(directory: Path, expected_sha256: str) -> FixedHeadModel:
-    """The run's weights, refused unless they are the bytes the settings name."""
-    checkpoint = directory / CHECKPOINT
-    if sha256(checkpoint) != expected_sha256:
-        raise ValueError(f"{checkpoint} is not the checkpoint the settings name")
+    weights = load_weights(directory, expected_sha256)
     model = FixedHeadModel(load_backbone(), fixed_labels(load_catalog()))
-    model.load_state_dict(torch.load(checkpoint, map_location="cpu", weights_only=True))
+    model.load_state_dict(weights)
     return model
 
 

@@ -181,6 +181,15 @@ def save_run[C: BaseModel, E: EpochCheck](
     return result
 
 
+def load_weights(directory: Path, expected_sha256: str) -> dict[str, torch.Tensor]:
+    """A run's weights, refused unless they are the bytes the settings name."""
+    checkpoint = directory / CHECKPOINT
+    if sha256(checkpoint) != expected_sha256:
+        raise ValueError(f"{checkpoint} is not the checkpoint the settings name")
+    weights: dict[str, torch.Tensor] = torch.load(checkpoint, map_location="cpu", weights_only=True)
+    return weights
+
+
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 

@@ -13,6 +13,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
+from unstuk_ml.decision_rung import GRID as DECISION_GRID
 from unstuk_ml.decision_training import RunConfig, add_run_arguments, config_from, run_arguments
 from unstuk_ml.fine_tuning import CHECKPOINT, COMMIT_FILE, REPO_ROOT, RESULT, RUNS_DIR
 from unstuk_ml.fixed_head_rung import GRID as FIXED_HEAD_GRID
@@ -77,6 +78,10 @@ class ColabRun:
 
 def decision_run(config: RunConfig) -> ColabRun:
     return ColabRun("unstuk-train-decision", tuple(run_arguments(config)), config.name)
+
+
+def decision_grid() -> list[ColabRun]:
+    return [decision_run(config) for config in DECISION_GRID]
 
 
 def fixed_head_grid() -> list[ColabRun]:
@@ -154,10 +159,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     jobs = parser.add_subparsers(dest="job", required=True)
     add_run_arguments(jobs.add_parser("decision", help="one decision-model run"))
+    jobs.add_parser("decision-grid", help="the decision model's grid and folds, in one session")
     jobs.add_parser("fixed-head", help="the fixed-head rung's grid, in one session")
     args = parser.parse_args()
 
-    if args.job == "fixed-head":
+    if args.job == "decision-grid":
+        train_on_colab(decision_grid())
+    elif args.job == "fixed-head":
         train_on_colab(fixed_head_grid())
     else:
         train_on_colab([decision_run(config_from(args))])
