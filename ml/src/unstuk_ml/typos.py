@@ -3,6 +3,7 @@
 import random
 
 EDITS = ("drop", "swap", "double")
+TYPO_SHARE = 0.25
 
 
 def add_typo(text: str, rng: random.Random) -> str:
@@ -17,6 +18,11 @@ def add_typo(text: str, rng: random.Random) -> str:
     if edit == "double":
         return text[:i] + text[i] + text[i:]
     return text[:i] + text[i + 1] + text[i] + text[i + 2 :]
+
+
+def noisy(text: str, rng: random.Random) -> str:
+    """A typo in about a quarter of the lines, the rest left as written."""
+    return add_typo(text, rng) if rng.random() < TYPO_SHARE else text
 
 
 def _spots(text: str, edit: str) -> list[int]:

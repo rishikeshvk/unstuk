@@ -14,11 +14,10 @@ from unstuk_ml.labels import OUT_OF_SCOPE
 from unstuk_ml.node_labels import NodeQuestion
 from unstuk_ml.record import Record
 from unstuk_ml.state_slice import excluded_checks
-from unstuk_ml.typos import add_typo
+from unstuk_ml.typos import noisy
 
 OTHER_OPTIONS = (3, 11)
 MAX_DISTRACTORS = 2
-TYPO_SHARE = 0.25
 
 
 @dataclass(frozen=True)
@@ -76,7 +75,7 @@ def _line_example(
 ) -> Example:
     chosen = _options(record, intents, streams.options)
     return Example(
-        text=_noisy(record.text, streams.typos) if typos else record.text,
+        text=noisy(record.text, streams.typos) if typos else record.text,
         state=_state(record, catalog, streams.state) if state else "",
         options=tuple(catalog.intents[i] for i in chosen),
         answers=frozenset(n for n, i in enumerate(chosen) if i in record.labels),
@@ -104,10 +103,6 @@ def _state(record: Record, catalog: Catalog, rng: random.Random) -> str:
     causes = {c for label in record.labels for c in catalog.causes.get(label, ())}
     pool = sorted(catalog.checks - causes - excluded_checks(catalog))
     return render_state(rng.sample(pool, rng.randint(0, MAX_DISTRACTORS)), catalog)
-
-
-def _noisy(text: str, rng: random.Random) -> str:
-    return add_typo(text, rng) if rng.random() < TYPO_SHARE else text
 
 
 def _node_example(question: NodeQuestion) -> Example:

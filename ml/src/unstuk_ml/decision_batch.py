@@ -69,8 +69,8 @@ def collate(examples: Sequence[Example], tokenizer: Tokenizer) -> DecisionBatch:
         answers[n, list(example.answers)] = True
     return DecisionBatch(
         # Without a state the line is encoded alone, exactly as M4's encoder read it.
-        queries=_encode(tokenizer, [(e.text, e.state) if e.state else e.text for e in examples]),
-        options=_encode(tokenizer, texts),
+        queries=encode(tokenizer, [(e.text, e.state) if e.state else e.text for e in examples]),
+        options=encode(tokenizer, texts),
         option_index=index,
         option_mask=mask,
         answers=answers,
@@ -79,7 +79,7 @@ def collate(examples: Sequence[Example], tokenizer: Tokenizer) -> DecisionBatch:
     )
 
 
-def _encode(tokenizer: Tokenizer, inputs: Sequence[str | tuple[str, str]]) -> Encoded:
+def encode(tokenizer: Tokenizer, inputs: Sequence[str | tuple[str, str]]) -> Encoded:
     encodings: list[Encoding] = tokenizer.encode_batch(list(inputs))
     return Encoded(
         input_ids=torch.tensor([e.ids for e in encodings]),
