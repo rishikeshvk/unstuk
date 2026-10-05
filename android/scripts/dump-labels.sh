@@ -17,7 +17,12 @@ out_dir="$repo_root/data/nodes/${1:-moto}"
 mkdir -p "$out_dir"
 
 ensure_ready
+# The executor meets the DND screen with DND on, so dump it that way: its "Turn off now" button only shows then.
+zen_before=$(sh_adb settings get global zen_mode)
+restore_dnd() { [ "$zen_before" != "0" ] || sh_adb cmd notification set_dnd off; }
+trap restore_dnd EXIT
 for screen in "${SCREENS[@]}"; do
+    [ "$screen" != dnd ] || sh_adb cmd notification set_dnd on
     sh_adb "run-as $PKG rm -f files/labels/$screen.json"
     # In the background: am broadcast blocks until the receiver finishes (M2 lesson).
     sh_adb am broadcast -n "$RECEIVER" -a "$PKG.debug.DUMP_LABELS" --es screen "$screen" >/dev/null &
@@ -26,6 +31,7 @@ for screen in "${SCREENS[@]}"; do
         sleep 1
     done
     wait
+    [ "$screen" != dnd ] || restore_dnd
     if ! sh_adb "run-as $PKG cat files/labels/$screen.json" >"$out_dir/$screen.json" 2>/dev/null; then
         echo "$screen: no dump within ${RESULT_TIMEOUT_S}s" >&2
         rm -f "$out_dir/$screen.json"
