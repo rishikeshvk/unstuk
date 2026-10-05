@@ -32,3 +32,6 @@ ml/checkpoints/
 
 # Device traces pulled over adb
 traces/
+
+# Downloaded models and cached embeddings
+ml/cache/
