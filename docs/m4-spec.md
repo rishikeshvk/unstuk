@@ -1,6 +1,6 @@
 # M4 spec: Baselines
 
-2026-10-05 · Status: **draft, waiting for approval.** Background: [plan.md](plan.md), roadmap step 4, and
+2026-10-05 · Status: **approved (2026-10-05); step 1 done.** Background: [plan.md](plan.md), roadmap step 4, and
 [m3-results.md](m3-results.md).
 
 M4 answers one question: **does a cheap learned classifier beat the keyword matcher on the frozen proxy test, and
@@ -81,9 +81,9 @@ refactor is due. Added:
 
 One generated report per rung under `ml/reports/`, plus `docs/m4-results.md` and a plain-language summary.
 
-## 5. Decisions for you
+## 5. Decisions (approved 2026-10-05)
 
-| # | Question | Proposed |
+| # | Question | Chosen |
 | --- | --- | --- |
 | 1 | What counts as "beats" | Section 3: paired bootstrap on accuracy and macro-F1, and no worse on confident and wrong |
 | 2 | fastText | **Leave it out.** Meta archived the repository in March 2024; its last release (0.9.3) ships one wheel, for Python 3.9 on Apple-silicon macOS, so here it would build from C++ source with no maintainer behind it. Its strength, sub-word n-grams for typos, is what the `char_wb` features give the TF-IDF rung |
