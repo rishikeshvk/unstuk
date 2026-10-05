@@ -3,8 +3,8 @@ import math
 
 import pytest
 import torch
+from tiny_model import tiny_model
 from tokenizers import Tokenizer
-from transformers import BertConfig, BertModel
 
 from unstuk_ml.decision_batch import collate, decision_tokenizer
 from unstuk_ml.decision_model import DecisionModel, Head
@@ -30,18 +30,6 @@ LONG = Example(
 @pytest.fixture(scope="module")
 def tokenizer() -> Tokenizer:
     return decision_tokenizer(download()[1])
-
-
-def tiny_model(head: Head) -> DecisionModel:
-    torch.manual_seed(0)
-    config = BertConfig(
-        hidden_size=32, num_hidden_layers=1, num_attention_heads=4, intermediate_size=64
-    )
-    # transformers leaves BertModel's constructor unannotated.
-    backbone = BertModel(config, add_pooling_layer=False)  # type: ignore[no-untyped-call]
-    model = DecisionModel(backbone, head)
-    model.train(False)
-    return model
 
 
 def scores(model: DecisionModel, examples: list[Example], tokenizer: Tokenizer) -> torch.Tensor:

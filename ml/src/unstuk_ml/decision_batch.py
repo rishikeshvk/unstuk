@@ -5,7 +5,7 @@ index, because the catalog's dozen option texts repeat in nearly every example.
 """
 
 from collections.abc import Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from pathlib import Path
 
 import torch
@@ -22,6 +22,9 @@ class Encoded:
     input_ids: torch.Tensor
     attention_mask: torch.Tensor
     token_type_ids: torch.Tensor
+
+    def to(self, device: torch.device) -> "Encoded":
+        return Encoded(*(getattr(self, f.name).to(device) for f in fields(self)))
 
 
 @dataclass(frozen=True)
@@ -40,6 +43,9 @@ class DecisionBatch:
     """[examples] the Noul target, 0 where the example doesn't ask it."""
     asks_out_of_scope: torch.Tensor
     """[examples] True where the example has a Noul target."""
+
+    def to(self, device: torch.device) -> "DecisionBatch":
+        return DecisionBatch(*(getattr(self, f.name).to(device) for f in fields(self)))
 
 
 def decision_tokenizer(path: Path) -> Tokenizer:
