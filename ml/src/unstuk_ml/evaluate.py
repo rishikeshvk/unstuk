@@ -127,8 +127,7 @@ def paired_bootstrap(
     base: Sequence[Scored], challenger: Sequence[Scored], metric: Metric, seed: int = SEED
 ) -> tuple[float, float]:
     """A 95% interval on challenger minus base, both scored on the same resampled lines."""
-    if [s.record.id for s in base] != [s.record.id for s in challenger]:
-        raise ValueError("a paired comparison needs the same lines in the same order")
+    _require_pairs(base, challenger)
     differences = (
         metric([challenger[i] for i in drawn]) - metric([base[i] for i in drawn])
         for drawn in _resamples(len(base), seed)
@@ -160,14 +159,34 @@ def _interval(values: Iterable[float]) -> tuple[float, float]:
     return kept[int(0.025 * len(kept))], kept[int(0.975 * len(kept)) - 1]
 
 
-def confusions(items: Sequence[Scored], top: int = 10) -> list[tuple[str, str, list[Scored]]]:
+Confusions = list[tuple[str, str, list[Scored]]]
+
+
+def confusions(items: Sequence[Scored], top: int = 10) -> Confusions:
     """The most common (given, predicted) mistakes among clear lines, with their lines."""
-    wrong = [s for s in items if not s.vague and not s.correct]
+    return _grouped([s for s in items if not s.vague and not s.correct], top)
+
+
+def changed(base: Sequence[Scored], challenger: Sequence[Scored]) -> tuple[Confusions, Confusions]:
+    """Mistakes the challenger fixed, grouped as base made them, and mistakes it introduced."""
+    _require_pairs(base, challenger)
+    pairs = [(b, c) for b, c in zip(base, challenger, strict=True) if not b.vague]
+    fixed = [b for b, c in pairs if not b.correct and c.correct]
+    introduced = [c for b, c in pairs if b.correct and not c.correct]
+    return _grouped(fixed, None), _grouped(introduced, None)
+
+
+def _grouped(wrong: Sequence[Scored], top: int | None) -> Confusions:
     pairs = Counter((s.record.labels[0], s.top[0]) for s in wrong)
     return [
         (given, said, [s for s in wrong if (s.record.labels[0], s.top[0]) == (given, said)])
         for (given, said), _ in pairs.most_common(top)
     ]
+
+
+def _require_pairs(base: Sequence[Scored], challenger: Sequence[Scored]) -> None:
+    if [s.record.id for s in base] != [s.record.id for s in challenger]:
+        raise ValueError("a paired comparison needs the same lines in the same order")
 
 
 def _share(flags: Iterable[bool]) -> float:

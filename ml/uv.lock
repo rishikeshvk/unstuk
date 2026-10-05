@@ -825,8 +825,10 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "cleanlab" },
+    { name = "numpy" },
     { name = "pydantic" },
     { name = "scikit-learn" },
+    { name = "scipy" },
 ]
 
 [package.dev-dependencies]
@@ -839,8 +841,10 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "cleanlab", specifier = ">=2.9.0" },
+    { name = "numpy", specifier = ">=2.5.3" },
     { name = "pydantic", specifier = ">=2.13.5" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
+    { name = "scipy", specifier = ">=1.18.1" },
 ]
 
 [package.metadata.requires-dev]

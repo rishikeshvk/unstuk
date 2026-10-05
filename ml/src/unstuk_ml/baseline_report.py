@@ -6,10 +6,13 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from unstuk_ml.evaluate import (
+    Confusions,
     Metric,
     Scored,
     accuracy,
+    beats,
     bootstrap,
+    changed,
     confident_and_wrong,
     confusions,
     expected_calibration_error,
@@ -18,6 +21,7 @@ from unstuk_ml.evaluate import (
     macro_f1,
     out_of_scope_precision,
     out_of_scope_recall,
+    paired_bootstrap,
     vague_handled,
 )
 from unstuk_ml.freeze import LOCK, frozen_changes
@@ -49,6 +53,29 @@ class Decider:
     report: Path
 
 
+COMPARED: list[tuple[str, Metric]] = [
+    ("Top-1 accuracy, in scope", in_scope_accuracy),
+    ("Macro-F1", macro_f1),
+    ("**Confident and wrong**", confident_and_wrong),
+    ("Out-of-scope recall", out_of_scope_recall),
+    ("Expected calibration error", expected_calibration_error),
+]
+
+
+@dataclass(frozen=True)
+class Below:
+    """The rung this one has to beat, scored on the same lines."""
+
+    decider: Decider
+    items: Sequence[Scored]
+
+
+@dataclass(frozen=True)
+class Table:
+    header: list[str]
+    rows: list[list[str]]
+
+
 KEYWORDS = Decider(
     title="Keyword baseline",
     command="unstuk-evaluate-keywords",
@@ -58,7 +85,13 @@ KEYWORDS = Decider(
 )
 
 
-def render(decider: Decider, items: Sequence[Scored]) -> str:
+def render(
+    decider: Decider,
+    items: Sequence[Scored],
+    before_temperature: Sequence[Scored] = (),
+    below: Below | None = None,
+    tuning: Table | None = None,
+) -> str:
     lines = [f"# {decider.title} on the proxy test set", ""]
     lines += [
         f"Written by `uv run {decider.command}`; do not edit by hand. {decider.about}, "
@@ -71,6 +104,15 @@ def render(decider: Decider, items: Sequence[Scored]) -> str:
     for name, metric in headline:
         low, high = bootstrap(items, metric)
         lines.append(f"| {name} | {_pct(metric(items))} | {_pct(low)} to {_pct(high)} |")
+    if before_temperature:
+        ece = expected_calibration_error
+        low, high = bootstrap(before_temperature, ece)
+        lines.append(
+            "| Expected calibration error, before temperature | "
+            f"{_pct(ece(before_temperature))} | {_pct(low)} to {_pct(high)} |"
+        )
+    if below:
+        lines += _comparison(decider, items, below)
     lines += [
         "",
         "## What the gate would do",
@@ -94,10 +136,56 @@ def render(decider: Decider, items: Sequence[Scored]) -> str:
             f"| {name} | {len(clear)} | {_pct(accuracy(clear))} | {_pct(low)} to {_pct(high)} |"
         )
     lines += ["", "## Most common mistakes", ""]
-    for given, said, wrong in confusions(items):
+    lines += _mistakes(confusions(items))
+    if tuning:
+        lines += ["", "## Tuning on dev", ""]
+        lines += [_row(tuning.header), _row(["---"] * len(tuning.header))]
+        lines += [_row(r) for r in tuning.rows]
+    return "\n".join(lines) + "\n"
+
+
+def _comparison(decider: Decider, items: Sequence[Scored], below: Below) -> list[str]:
+    name = below.decider.title
+    lines = ["", f"## Against the rung below: {name}", ""]
+    lines += [
+        "Differences are this rung minus the one below, with paired 95% bootstrap intervals: "
+        "both are scored on the same resampled lines.",
+        "",
+        f"| Metric | {name} | {decider.title} | Difference | 95% interval |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for metric_name, metric in COMPARED:
+        base, ours = metric(below.items), metric(items)
+        low, high = paired_bootstrap(below.items, items, metric)
+        lines.append(
+            f"| {metric_name} | {_pct(base)} | {_pct(ours)} | {_signed(ours - base)} | "
+            f"{_signed(low)} to {_signed(high)} |"
+        )
+    verdict = "yes" if beats(below.items, items) else "no"
+    lines += [
+        "",
+        f"**Beats {name}: {verdict}.** The rule (M4 spec section 3): the intervals for "
+        "in-scope accuracy and macro-F1 both lie above 0, and the one for confident and wrong "
+        "does not.",
+    ]
+    fixed, introduced = changed(below.items, items)
+    for title, groups in (("Fixed", fixed), ("Introduced", introduced)):
+        total = sum(len(wrong) for _, _, wrong in groups)
+        lines += ["", f"### Mistakes {title.lower()}: {total}", ""]
+        lines += _mistakes(groups)
+    return lines
+
+
+def _mistakes(groups: Confusions) -> list[str]:
+    lines = []
+    for given, said, wrong in groups[:10]:
         examples = "; ".join(f"`{s.record.text}`" for s in wrong[:2])
         lines.append(f"- **{given} → {said}** ({len(wrong)}): {examples}")
-    return "\n".join(lines) + "\n"
+    return lines
+
+
+def _row(cells: list[str]) -> str:
+    return "| " + " | ".join(cells) + " |"
 
 
 def _groups(items: Sequence[Scored]) -> list[tuple[str, list[Scored]]]:
@@ -129,6 +217,10 @@ def _pct(value: float) -> str:
     return "n/a" if value != value else f"{value:.1%}"
 
 
+def _signed(value: float) -> str:
+    return "n/a" if value != value else f"{value:+.1%}"
+
+
 def load_test(test_dir: Path = TEST_DIR) -> list[Record]:
     """The frozen test lines; refuses to read them unless they still match the lock."""
     if not (test_dir / LOCK).exists():
@@ -144,9 +236,16 @@ def load_test(test_dir: Path = TEST_DIR) -> list[Record]:
     ]
 
 
-def write(decider: Decider, items: Sequence[Scored]) -> None:
+def write(
+    decider: Decider,
+    items: Sequence[Scored],
+    before_temperature: Sequence[Scored] = (),
+    below: Below | None = None,
+    tuning: Table | None = None,
+) -> None:
+    text = render(decider, items, before_temperature, below, tuning)
     decider.report.parent.mkdir(parents=True, exist_ok=True)
-    decider.report.write_text(render(decider, items), encoding="utf-8")
+    decider.report.write_text(text, encoding="utf-8")
     print(f"scored {len(items)} test lines; see {decider.report}")
 
 

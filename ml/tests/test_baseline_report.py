@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from records import make
 
-from unstuk_ml.baseline_report import Decider, load_test, render
+from unstuk_ml.baseline_report import Below, Decider, load_test, render
 from unstuk_ml.evaluate import Scored
 from unstuk_ml.freeze import freeze
 
@@ -31,6 +31,13 @@ def test_the_report_names_its_decider_and_why_held_out_scores_as_it_does(tmp_pat
     assert "`uv run unstuk-tfidf`" in text
     assert "A linear model, scored on all 4 frozen test lines." in text
     assert "| Held-out intents (0% by construction) |" in text
+    assert "## Against the rung below" not in text
+
+    below = Below(decider, [Scored(s.record, {}) for s in items])
+    compared = render(decider, items, below=below)
+    assert "## Against the rung below: TF-IDF" in compared
+    assert "**Beats TF-IDF: no.**" in compared
+    assert "### Mistakes fixed: 1" in compared
 
 
 def test_the_test_set_loads_only_while_it_matches_its_lock(tmp_path: Path) -> None:

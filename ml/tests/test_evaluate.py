@@ -6,6 +6,7 @@ from unstuk_ml.evaluate import (
     accuracy,
     beats,
     bootstrap,
+    changed,
     confident_and_wrong,
     expected_calibration_error,
     in_scope_accuracy,
@@ -126,3 +127,18 @@ def test_a_rung_beats_the_one_below_only_if_it_is_not_less_safe() -> None:
     assert beats(_decider(100, 1.0), _decider(130, 1.0))
     assert not beats(careful_base, _decider(130, 1.0))
     assert not beats(careful_base, careful_base)
+
+
+def test_changed_lists_mistakes_fixed_and_introduced() -> None:
+    base, challenger = _decider(right=100, wrong_confidence=1.0), _decider(110, 1.0)
+    swapped = challenger[:5] + base[5:]  # wrong where base is right on the first five lines
+    swapped[:5] = [Scored(s.record, {"screen_too_dim": 0.9}) for s in swapped[:5]]
+
+    fixed, introduced = changed(base, challenger)
+    assert [(g, s, len(lines)) for g, s, lines in fixed] == [("no_internet", "screen_too_dim", 10)]
+    assert introduced == []
+
+    _, introduced = changed(base, swapped)
+    assert [(g, s, len(lines)) for g, s, lines in introduced] == [
+        ("no_internet", "screen_too_dim", 5)
+    ]
