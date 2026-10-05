@@ -1,6 +1,6 @@
 # M3 spec: Data
 
-2026-10-05 · Status: **draft, awaiting approval**
+2026-10-05 · Status: **approved; in progress.** Labelling guide: [m3-labelling-guide.md](m3-labelling-guide.md)
 
 M3 answers one question: **can we build data that teaches a small model to map plain complaints to the right fix,
 and a test honest enough to tell us whether that model beats the keyword matcher?**
@@ -131,7 +131,7 @@ When generation finds a new ambiguity, we add a rule to the guide first, then la
 ### Held-out intents
 
 Three intents never appear in training or dev data (invariant 9). The test set has them, so we can measure how
-well the model handles an intent it only knows from its option text. Proposed:
+well the model handles an intent it only knows from its option text. Chosen (2026-10-05):
 
 - `screen_wont_rotate`: distinct from everything; the easy case.
 - `wrong_time`: shares a cause and some words with `wifi_no_load`; a hard case.
@@ -139,8 +139,10 @@ well the model handles an intent it only knows from its option text. Proposed:
 
 ### Frozen IDs
 
-`catalog/ids.lock` lists every intent, fix and option ID once data uses it (invariant 8). A Python test fails if
-an ID in the lock disappears or changes. Adding new IDs is fine.
+`catalog/ids.lock` lists every intent, fix and check ID (invariant 8; an intent's ID is also its option's ID).
+`CatalogConsistencyTest` fails if a locked ID is renamed or removed, or if a new catalog ID is missing from the
+lock, so adding one is a deliberate edit to both. The test is Kotlin, beside the catalog's other rules, because
+`ml/` doesn't exist yet; the Python validator (step 3) checks that every data label exists in the catalog.
 
 ## 5. Sources and splits
 
@@ -343,7 +345,9 @@ messages.
 | 2 | Generators | Claude for training; you by hand, Gemini and open models for the test |
 | 3 | Device state | Labels from words; a separate state slice |
 | 4 | Breadth | Intents, out of scope and node labels |
-| 5 | Held-out intents | `screen_wont_rotate`, `wrong_time`, `cant_hear_call` (proposed; confirm at step 2) |
+| 5 | Held-out intents | `screen_wont_rotate`, `wrong_time`, `cant_hear_call` |
+| 6 | Commands with no symptom | Labelled with the intent that owns the fix |
+| 7 | Nearby problems not in the catalog (zoom, proximity, broken camera) | `out_of_scope` |
 
 ### Rejected alternatives
 

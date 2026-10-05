@@ -1,6 +1,7 @@
 package com.rishikeshvk.unstuk.catalog
 
 import java.io.File
+import kotlinx.serialization.json.Json
 
 /** The repository's `catalog/`, read from the app module's directory, where Gradle runs unit tests. */
 object CatalogTestFiles {
@@ -13,6 +14,9 @@ object CatalogTestFiles {
     val keywords: Map<String, List<String>> by lazy {
         CatalogLoader.parseKeywords(text(CatalogLoader.KEYWORDS))
     }
+
+    /** IDs that data refers to, by kind; see `ids.lock`. */
+    val idsLock: Map<String, List<String>> by lazy { Json.decodeFromString(text("ids.lock")) }
 
     private fun text(name: String) = File(dir, name).readText()
 }

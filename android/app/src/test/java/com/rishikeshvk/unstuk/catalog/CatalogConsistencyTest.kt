@@ -63,4 +63,14 @@ class CatalogConsistencyTest {
     fun `keyword rules cover exactly the catalog's intents`() {
         assertEquals(catalog.intents.map { it.id }.toSet(), CatalogTestFiles.keywords.keys)
     }
+
+    @Test
+    fun `ids lock matches the catalog, so no id that data uses is renamed or removed`() {
+        val inCatalog = mapOf(
+            "intents" to catalog.intents.map { it.id }.toSet(),
+            "fixes" to catalog.fixes.map { it.id }.toSet(),
+            "checks" to catalog.intents.flatMap { it.causes }.map { it.check }.toSet()
+        )
+        assertEquals(inCatalog, CatalogTestFiles.idsLock.mapValues { it.value.toSet() })
+    }
 }
