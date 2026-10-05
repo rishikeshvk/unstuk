@@ -1,0 +1,143 @@
+## no_internet
+Nothing loads, no internet
+WhatsApp won't send anything
+Internet gone since holiday
+Mobile data seems switched off
+No internet anywhere at all
+Plane mode stuck on?
+YouTube just keeps spinning
+How do I get online?
+Phone won't go online
+Nothing works away from home
+
+## wifi_no_load
+Wi-Fi connected but nothing loads
+Says connected, pages won't open
+Full bars, nothing loading
+Home Wi-Fi ticked, no internet
+Connected but YouTube won't play
+Wi-Fi shows connected, still nothing
+Joined hotel Wi-Fi, nothing works
+Wi-Fi tick but BBC won't load
+Connected yet apps won't load
+Why won't connected Wi-Fi work?
+
+## phone_not_ringing
+Phone doesn't ring anymore
+Missed calls, never heard ringing
+Calls come in silently
+Only vibrates when someone rings
+WhatsApp calls make no sound
+Mum rang, phone stayed silent
+Do not disturb stuck on?
+Ring volume gone to nothing
+How do I make it ring?
+Missed calls after the cinema
+
+## notifications_missing
+Messages arrive hours late
+No alerts until I open WhatsApp
+Texts come in silently
+Not getting app notifications
+Banking app alerts stopped
+Emails only appear when opened
+Messages turn up very late
+No pings from Facebook anymore
+Outlook stopped alerting me
+How do I get alerts back?
+
+## talkback_on
+Phone reads everything out loud
+Green box around everything
+Have to tap twice now
+Phone keeps talking to me
+Can't scroll with one finger
+Voice reading out every button
+Kids played with it, now talking
+TalkBack switched itself on
+Stop the phone talking please
+Double tap to open everything
+
+## colours_wrong
+Screen gone black and white
+Everything looks like a negative
+Colours all gone weird
+Screen turned grey suddenly
+Whites are black, blacks white
+Instagram all grey suddenly
+Strange tint on the screen
+Colours inverted, how to fix?
+Screen gone greyscale
+Colours wrong after update
+
+## screen_too_dim
+Screen far too dark
+Can't see screen outside
+Brightness won't go up
+Screen keeps dimming itself
+Barely see anything in sunshine
+Screen dark even on full
+Can't read Google Maps outdoors
+How do I brighten the screen?
+Display really dull today
+Screen gloomy since the update
+
+## screen_turns_off_fast
+Screen goes off too quickly
+Phone locks while I'm reading
+Screen keeps going black quickly
+Goes dark mid recipe
+Locks itself every few seconds
+Screen off while reading Kindle
+Keeps locking during YouTube videos
+Screen timeout far too short
+How do I keep screen on?
+Black screen after seconds idle
+
+## text_too_small
+Writing far too small
+Can't read the tiny letters
+Need bigger text please
+Icons are really tiny
+Text messages too small to read
+WhatsApp writing is minuscule
+How do I enlarge the font?
+Words too small without glasses
+Font size too small
+Squinting at tiny letters
+
+## bluetooth_earphones
+Earbuds won't connect
+AirPods won't pair
+Speaker won't connect to phone
+Car won't find my phone
+Watch keeps disconnecting
+Bluetooth seems to be off
+New earbuds not showing up
+Wireless headphones won't link up
+Can't play Spotify on speaker
+How do I pair earbuds?
+
+## app_permission
+WhatsApp camera won't open
+Microphone not working in Zoom
+Google Maps can't find me
+App keeps asking for permission
+Instagram won't use my camera
+Can't send voice notes WhatsApp
+Banking app wants camera access
+Uber doesn't know my location
+Camera blank only in Teams
+How do I allow camera?
+
+## reset_network
+Reset network settings please
+How do I reset the network?
+Want to reset Wi-Fi settings
+Reset all connection settings
+Clear Wi-Fi and Bluetooth settings
+Shop said reset network settings
+Start connections afresh, how?
+Reset mobile and Wi-Fi settings
+Wipe saved networks, not phone
+Put connections back to default
