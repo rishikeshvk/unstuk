@@ -40,9 +40,13 @@ def main() -> None:
     parser.add_argument("count", type=int)
     parser.add_argument("out", type=Path)
     parser.add_argument("--seed", type=int, required=True)
+    parser.add_argument("--prefix", required=True, help="batch id prefix, such as train or oos")
     args = parser.parse_args()
 
-    plan = {f"train-{i:02d}": cell for i, cell in enumerate(plan_batches(args.count, args.seed), 1)}
+    plan = {
+        f"{args.prefix}-{i:02d}": cell
+        for i, cell in enumerate(plan_batches(args.count, args.seed), 1)
+    }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(plan, indent=2) + "\n", encoding="utf-8")
     print(f"{len(plan)} batches planned in {args.out}")

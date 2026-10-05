@@ -1,0 +1,44 @@
+{
+  "contrast-01": {
+    "age": "senior",
+    "comfort": "medium",
+    "variety": "british",
+    "style": "plain",
+    "typos": "many"
+  },
+  "contrast-02": {
+    "age": "adult",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "story",
+    "typos": "many"
+  },
+  "contrast-03": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "question",
+    "typos": "none"
+  },
+  "contrast-04": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "second_language",
+    "style": "dictated",
+    "typos": "none"
+  },
+  "contrast-05": {
+    "age": "senior",
+    "comfort": "low",
+    "variety": "british",
+    "style": "terse",
+    "typos": "some"
+  },
+  "contrast-06": {
+    "age": "adult",
+    "comfort": "medium",
+    "variety": "indian",
+    "style": "frustrated",
+    "typos": "some"
+  }
+}

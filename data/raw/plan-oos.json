@@ -1,0 +1,72 @@
+{
+  "oos-01": {
+    "age": "senior",
+    "comfort": "medium",
+    "variety": "second_language",
+    "style": "terse",
+    "typos": "none"
+  },
+  "oos-02": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "british",
+    "style": "story",
+    "typos": "many"
+  },
+  "oos-03": {
+    "age": "adult",
+    "comfort": "low",
+    "variety": "american",
+    "style": "frustrated",
+    "typos": "none"
+  },
+  "oos-04": {
+    "age": "adult",
+    "comfort": "low",
+    "variety": "british",
+    "style": "story",
+    "typos": "some"
+  },
+  "oos-05": {
+    "age": "adult",
+    "comfort": "medium",
+    "variety": "second_language",
+    "style": "dictated",
+    "typos": "none"
+  },
+  "oos-06": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "indian",
+    "style": "question",
+    "typos": "none"
+  },
+  "oos-07": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "british",
+    "style": "question",
+    "typos": "some"
+  },
+  "oos-08": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "plain",
+    "typos": "some"
+  },
+  "oos-09": {
+    "age": "senior",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "plain",
+    "typos": "many"
+  },
+  "oos-10": {
+    "age": "senior",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "frustrated",
+    "typos": "many"
+  }
+}
