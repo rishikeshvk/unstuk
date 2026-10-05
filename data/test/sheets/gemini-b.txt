@@ -1,0 +1,153 @@
+# Gemini app, prompt external-v1 Part B, 2026-10-05. Saved as returned.
+
+## out_of_scope
+My gold ring is completely dark and black now. | collision
+The weather is so dim outside I can't see the road. | collision
+Rotating the tires on my car is so hard. | collision
+I need a reset after this long week of work. | collision
+The speaker at the political rally was too quiet. | collision
+Can you give me permission to sleep early? | collision
+The colors of my new shirt washed out completely. | collision
+My internet friend is not talking to me today. | collision
+The time is flying so fast these days! | collision
+I am taking a silent vow for my pooja tomorrow. | collision
+My dog keeps sleeping fast after eating. | collision
+The text in my English book is wrong. | collision
+How do I pay my Airtel mobile recharge bill? | oos_near
+I dropped my mobile and the glass is totally cracked into pieces. | oos_near
+Please turn on dark mode for all my applications. | oos_near
+Why does my alarm clock keep ringing at 5 AM even on Sundays? | oos_near
+The light is blindingly bright and burning my eyes at night! | oos_near
+When I lie down in bed, the display spins around when I don't want it to. | oos_near
+My Jio data pack expired today, how to renew? | oos_near
+The physical volume button on the side broke off. | oos_near
+How do I change my WhatsApp DP? | oos_near
+My caller tune is not playing Bollywood songs for my friends. | oos_near
+The tempered glass guard has bubbles inside it. | oos_near
+Need to change my SIM card from prepaid to postpaid. | oos_near
+How to put a screen lock password on my gallery? | oos_near
+My battery drains from 100 to zero in two hours. | plain
+Storage is full and I can't download any more photos. | plain
+The phone is hanging so much it takes a minute to open dialer. | plain
+WhatsApp keeps crashing to the home screen. | plain
+I forgot my lock pattern and am locked out. | plain
+Device is getting boiling hot while playing PUBG. | plain
+How to clear cache memory? | plain
+Memory full warning keeps coming every five minutes. | plain
+Why is my handset getting so warm when charging? | plain
+Pls help phone is very slow today. | plain
+I forgot my Gmail password and cannot sign in. | plain
+Camera app closes automatically after taking one picture. | plain
+How do I delete old videos to make space? | plain
+Can I change my Google account name? | plain
+Battery is dead completely. | plain
+Games are lagging terribly. | plain
+My fingerprint sensor is not recognizing my thumb anymore. | plain
+The back panel of the phone is bulging out. | plain
+Pls reset my screen password sir. | plain
+I want to factory format my whole phone. | plain
+Hello good morning sir. | plain
+Thank you so much for your help yesterday. | plain
+Please call my son on this number. | plain
+What is the weather in Delhi today? | plain
+How are you doing brother? | plain
+Send me a good joke. | plain
+I am very tired today. | plain
+Can you book a train ticket for me? | plain
+Pls call me immediately. | plain
+Good night sweet dreams. | plain
+What time does the bank open? | plain
+I want to buy a new television. | plain
+Thanks a lot! | plain
+Hello. | plain
+Where is the nearest ATM? | plain
+
+## no_internet, wifi_no_load
+pages not opening | vague short_vague
+
+## phone_not_ringing, notifications_missing
+no sound | vague short_vague
+
+## screen_too_dim, screen_turns_off_fast
+screen getting dark | vague short_vague
+
+## cant_hear_call, bluetooth_earphones
+cannot hear anything | vague short_vague
+
+## app_permission, no_internet
+app not working | vague short_vague
+
+## talkback_on, text_too_small
+weird screen | vague short_vague
+
+## colours_wrong, screen_too_dim
+display is bad | vague short_vague
+
+## phone_not_ringing, cant_hear_call
+calls are silent | vague short_vague
+
+## notifications_missing, no_internet
+no messages coming | vague short_vague
+
+## wrong_time, no_internet
+browser error | vague short_vague
+
+## bluetooth_earphones, phone_not_ringing
+speaker broke | vague short_vague
+
+## screen_wont_rotate, screen_turns_off_fast
+screen problem | vague short_vague
+
+## app_permission, notifications_missing
+whatsapp broken | vague short_vague
+
+## no_internet, reset_network
+network failure | vague short_vague
+
+## text_too_small, colours_wrong
+hard to read | vague short_vague
+
+## no_internet, phone_not_ringing
+My data is completely off and on top of that my phone doesn't make a sound when people call. | multi
+
+## screen_too_dim, text_too_small
+The display is way too dark to see and the letters are like tiny ants! | multi
+
+## cant_hear_call, bluetooth_earphones
+During a call I can barely hear the other person, plus my wireless buds refuse to pair at all. | multi
+
+## talkback_on, screen_turns_off_fast
+A robot lady keeps talking when I touch it, and then the screen shuts off in five seconds! | multi
+
+## notifications_missing, wifi_no_load
+WhatsApp alerts arrive three hours late, and even though I have full home router signal, no pages open. | multi
+
+## colours_wrong, screen_wont_rotate
+Everything looks like a black and white negative, and my photos won't flip when I turn it sideways. | multi
+
+## app_permission, wrong_time
+Zoom says it can't use my microphone, and also the clock at the top is showing last night's time. | multi
+
+## wifi_no_load, reset_network
+My home connection shows full bars but nothing loads, tell me how to wipe all my connectivity data to fix it. | multi
+
+## phone_not_ringing, screen_too_dim
+The handset is completely silent for incoming calls, and the display keeps fading to black randomly. | multi
+
+## text_too_small, wrong_time
+The writing is microscopic and impossible to read, plus my calendar widget is stuck on yesterday. | multi
+
+## no_internet, talkback_on
+The globe icon is gone so nothing works, and a green box keeps highlighting my apps and talking. | multi
+
+## cant_hear_call, app_permission
+The earpiece is dead quiet when I talk to my son, and the camera app says access is denied. | multi
+
+## screen_turns_off_fast, screen_wont_rotate
+The glass shuts down way too quickly while reading, and it never spins horizontally for videos. | multi
+
+## colours_wrong, text_too_small
+The display looks totally washed out like an x-ray, and I have to squint because the words are so tiny. | multi
+
+## bluetooth_earphones, notifications_missing
+The car audio system can't find my device, and my bank popups are completely delayed. | multi

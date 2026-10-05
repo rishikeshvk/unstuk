@@ -1,0 +1,181 @@
+# ChatGPT, prompt external-v1 Part A, 2026-10-05. Saved as returned.
+
+## no_internet
+My phone internet is not working | plain
+Nothing is loading on my phone, not even WhatsApp | plain
+Everything online is stuck but the phone itself is working | paraphrase
+I can use the phone but anything that needs online connection just sits there | paraphrase
+net not workng in my moble | typo
+whatsapp and youtube not opning internet gone | typo
+Why is my mobile data not coming? | indian_english
+I was trying to watch a video while travelling and then WhatsApp stopped sending messages too. I checked a few things and the phone is showing normally otherwise. Now nothing online is opening at all | long_story
+WiFi is not the issue and the phone is not broken, but nothing that needs the internet is opening | negation
+How do I get the internet working again on my phone? | plain
+
+## wifi_no_load
+WiFi is connected but nothing is opening | plain
+My phone shows full WiFi but internet does not work | plain
+It says connected but the connection is not actually doing anything | paraphrase
+The WiFi symbol is there and strong, but every online page just waits | paraphrase
+wifi conneted but nothng loading | typo
+full wifi sign but youtube not opning | typo
+WiFi is connected but net is not coming, what to do? | indian_english
+I am at home and the WiFi was working fine earlier. The phone still shows the same strong connection and other people may be using it, but on my phone every website and app is waiting. The problem is that connected WiFi is not giving me internet | long_story
+The WiFi is not missing and the signal is not weak, but pages and apps still do not load | negation
+How can I make the internet work when my phone says WiFi connected? | plain
+
+## phone_not_ringing
+My phone does not ring when someone calls | plain
+I see missed calls but I don't hear the phone | plain
+Calls are coming in but the phone stays quiet | paraphrase
+People say they called me but I only notice afterwards | paraphrase
+phone not rining when some one calls me | typo
+i dont here any sound for calls only see missd call | typo
+When someone is calling, my mobile is not giving any sound | indian_english
+My daughter called me several times this morning and later asked why I did not answer. I was holding the phone and there was no sound when she called. After some time I saw the missed calls on the screen, so the problem is that incoming calls are silent | long_story
+The calls are not failing and my phone is not switched off, but I cannot hear it when somebody calls | negation
+How do I make my phone ring again when people call? | plain
+
+## cant_hear_call
+I cannot hear the other person during a call | plain
+The caller's voice is very low and I cannot hear properly | plain
+I can talk but the voice from the other side is missing | paraphrase
+The call is connected but I am getting no useful sound from the person speaking | paraphrase
+cant here the person on call | typo
+voice is very low i cant heer anythng | typo
+In call I am not able to hear the other person properly | indian_english
+I made a call to my brother and he could hear me clearly. I kept saying hello but his voice was not reaching me properly, so I checked that the call was connected. Everything looked normal on the screen, but I still could not hear the caller | long_story
+The call is not disconnected and my microphone is not the problem, but I cannot hear the person talking to me | negation
+How do I get the caller's voice back on my phone? | plain
+
+## notifications_missing
+I am not getting message notifications | plain
+WhatsApp and other alerts are not showing until I open the app | plain
+Messages are there but the phone does not tell me when they arrive | paraphrase
+I only discover new messages after checking the apps myself | paraphrase
+notifcations not comng on time | typo
+whatsap mesages only show when i open app | typo
+Messages are coming late in my phone, what is the reason? | indian_english
+My son sends me messages while I am busy and usually I see them immediately. Now he says he has sent many messages, but I only see them when I open WhatsApp myself. I checked the phone and the messages are there, but the alerts are not appearing on time | long_story
+The messages are not being deleted and the apps are not missing, but I am not being told when new messages arrive | negation
+How do I make my WhatsApp and other app alerts show immediately? | plain
+
+## talkback_on
+My phone is speaking everything I touch | plain
+I have to touch things twice now and there is a box around everything | plain
+The phone is reading the screen aloud and one touch does not open anything | paraphrase
+Every button I touch gets announced and I have to tap again to select it | paraphrase
+phone talking when i touch it and tap not working | typo
+evrything is being read aloud and need two taps | typo
+My mobile is speaking whatever I am pressing and I am not able to use normally | indian_english
+I was using my phone normally and somehow the way it responds changed. Now it reads out buttons and messages when I touch them, and I have to touch things twice instead of once. I do not know what I pressed, but this talking and double tapping has started | long_story
+The speaker is not broken and the screen is not frozen, but the phone talks about each thing I touch and needs two taps | negation
+How do I stop the phone from reading everything I touch? | plain
+
+## colours_wrong
+My screen colours have suddenly changed | plain
+Everything on the screen looks black and white | plain
+The display looks like a photo negative now | paraphrase
+The colours are completely different from how they normally look | paraphrase
+my scren is black n white suddenly | typo
+colours look weard all inverted | typo
+My phone display colour has become different suddenly | indian_english
+I gave the phone to my child for a few minutes and when I got it back the screen looked strange. The icons and photos are still there and the phone is working, but the colours are not normal anymore. Everything is showing in a strange colour pattern | long_story
+The screen is not cracked and the brightness is not the problem, but the colours look wrong | negation
+How do I change the screen colours back to normal? | plain
+
+## screen_too_dim
+My screen is too dark to see | plain
+The display is very dim even when I need it brighter | plain
+I can hardly make out what is on the screen | paraphrase
+The picture on the phone looks faint, especially outside | paraphrase
+screen is to dim cant see proply | typo
+brightness keeps goin low | typo
+Outside I am not able to see my mobile screen properly because it is too dark | indian_english
+I was checking a message outside in the afternoon and could barely read it. I thought the sunlight was the only problem, but even after moving to a shaded place the display stayed very faint. The screen is simply too dark to see comfortably | long_story
+The screen is not broken and the text is not too small, but the display is much too dark | negation
+How can I make my phone screen brighter? | plain
+
+## screen_turns_off_fast
+My screen goes off too quickly | plain
+The phone locks while I am still using it | plain
+The display disappears before I finish reading | paraphrase
+It keeps going blank even though I am looking at the phone | paraphrase
+screen goes of very fast | typo
+phone locks while im reding | typo
+My phone screen is switching off very soon, what to do? | indian_english
+I was reading a long message yesterday and kept having to touch the screen every few seconds. If I stop touching it for a short time, the display goes dark and then I have to unlock it again. I want it to stay on longer | long_story
+The phone is not shutting down and the battery is not dead, but the screen keeps going off while I am using it | negation
+How do I make the screen stay on for longer? | plain
+
+## screen_wont_rotate
+My screen does not turn sideways | plain
+The phone stays vertical when I turn it sideways | plain
+Turning the phone around does not change the way the picture is shown | paraphrase
+The video stays in the same upright view even when I hold the phone sideways | paraphrase
+screen wont rotat when i turn it | typo
+vidio stays uprght when phone is side ways | typo
+When I turn my mobile sideways, screen is not changing | indian_english
+I wanted to watch a video properly and turned the phone sideways like I normally do. I waited and turned it again, but the picture stayed upright. The phone works otherwise, but it is not changing the screen view when I turn it | long_story
+The phone is not frozen and the video is playing, but turning the phone sideways does not change the screen | negation
+How do I make the screen turn sideways when I rotate the phone? | plain
+
+## text_too_small
+The writing on my phone is too small | plain
+I cannot read the letters properly because they are tiny | plain
+The words are difficult to make out on the screen | paraphrase
+Everything is written in a size that is hard for me to see | paraphrase
+letters are to smal cant read | typo
+text on my phone is very tinny | typo
+The letters are very small for me to read properly | indian_english
+I have been using this phone for some time and suddenly I am finding the writing difficult to read. My eyes are fine for other things and the screen is clear, but the words and menus are too tiny. I need the writing to be bigger | long_story
+The screen is not dark and the display is not damaged, but the letters are too small for me to read | negation
+How can I increase the size of the letters on my phone? | plain
+
+## bluetooth_earphones
+My wireless earphones will not connect | plain
+My Bluetooth device is not connecting to the phone | plain
+The earbuds are not linking with my phone | paraphrase
+My speaker can be seen but the phone will not establish the connection | paraphrase
+bluetooh ear buds not conneting | typo
+my wirless earphons wont conect | typo
+My Bluetooth is showing the device but connection is not happening | indian_english
+I use these earbuds every day and they were working yesterday. Today I put them in and tried to use them with the phone, but the phone is not connecting to them. I have tried taking them out and putting them back, but the sound still will not go through them | long_story
+The earphones are charged and the phone itself is working, but they are not connecting to each other | negation
+How do I connect my wireless earphones to the phone again? | plain
+
+## app_permission
+The app says it needs permission for the camera | plain
+This app cannot use my microphone | plain
+The app is asking to be allowed to use something on my phone | paraphrase
+Only this one app cannot access the camera or location it needs | paraphrase
+app is asking permision for camra | typo
+mic not working in this app says allow permision | typo
+This app is not taking camera permission from my phone | indian_english
+I can use the camera normally in other places and my microphone also works. But when I open this particular app, it says it cannot use the camera and asks me to allow access. I do not know where to allow it | long_story
+The camera is not broken and the phone is not generally blocking it, but this one app cannot use it | negation
+How do I allow this app to use my camera or microphone? | plain
+
+## wrong_time
+The time on my phone is wrong | plain
+My phone is showing the wrong date and time | plain
+The clock on the phone does not match the actual time | paraphrase
+Websites are saying my phone's date or time is incorrect | paraphrase
+time on my phne is rong | typo
+date is showng wrong and apps giving error | typo
+My mobile time is not matching, how to correct it? | indian_english
+I noticed the clock was showing a different time this morning and later one website would not open properly. I checked again and the date also looked strange. I want the phone to show the correct date and time automatically | long_story
+The battery is fine and the phone is working, but the clock and date are not correct | negation
+How do I set the correct date and time on my phone? | plain
+
+## reset_network
+How do I reset the network settings? | plain
+I want to reset all the phone's connection settings | plain
+I need to clear the saved connection setup and start again | paraphrase
+I want the phone to forget its current network arrangements and reconnect fresh | paraphrase
+how to reset netwrok settngs | typo
+i tried evrything how do i reset network setings | typo
+Please tell me how to reset network settings in my mobile | indian_english
+I have already restarted the phone and tried different connections, but the problem is still there. I do not want to keep changing random settings because I may make something worse. I want to start the phone's connection settings fresh by resetting the network settings | long_story
+I do not want to reset the whole phone and I am not asking about deleting my photos, but I want to reset the connection settings | negation
+How can I reset the network settings without resetting the whole phone? | plain

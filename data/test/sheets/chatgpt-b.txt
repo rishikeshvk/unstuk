@@ -1,0 +1,159 @@
+# ChatGPT, prompt external-v1 Part B, 2026-10-05. Saved as returned.
+
+## out_of_scope | collision
+My legs are aching after walking, can you tell me why | collision
+My ear is ringing all day and it is irritating me | collision
+I cannot hear properly from my left ear | collision
+My eyes are seeing everything too dark today | collision
+The colours of this shirt look wrong to me | collision
+My watch is not showing the right time | collision
+The food is too hot, how can I cool it down | collision
+I need a bigger screen for my eyes to read the menu | collision
+My Bluetooth necklace is not what I am asking about | collision
+There is no signal on the TV because of the weather | collision
+My phone cover has a bright colour and I don't like it | collision
+The rain is stopping my internet at home | collision
+
+## out_of_scope | oos_near
+How can I recharge my phone, balance is finished | oos_near
+My mobile bill is much higher this month | oos_near
+I want to turn on dark mode, not change the brightness | oos_near
+Please set an alarm for six in the morning | oos_near
+My screen is too bright and hurting my eyes | oos_near
+The screen rotates even when I don't want it to | oos_near
+My phone screen is cracked after it fell down | oos_near
+I need to change the wallpaper to a black one | oos_near
+How do I stop the alarm from ringing every day | oos_near
+My recharge went through but the balance is not updated | oos_near
+The display is flickering after I dropped the phone | oos_near
+I want to change my mobile plan to more data | oos_near
+My phone bill payment is failing, please help | oos_near
+
+## out_of_scope | plain
+My battery is finishing very fast | plain
+Phone storage is full, I cannot save photos | plain
+My phone has become very slow | plain
+WhatsApp keeps crashing whenever I open it | plain
+I forgot my screen lock password | plain
+My phone is getting very hot | plain
+The battery is not charging properly | plain
+I have no space left for installing an app | plain
+My phone keeps restarting by itself | plain
+I forgot my Google account password | plain
+The camera app crashes every time | plain
+My phone freezes when I try to open settings | plain
+How do I delete old files to make space | plain
+The battery percentage is stuck at fifty percent | plain
+My phone is hanging too much today | plain
+The phone becomes hot while charging | plain
+I cannot remember my phone PIN | plain
+Apps are taking too long to open | plain
+My phone switched off even though the battery showed thirty percent | plain
+The storage is full because of too many videos | plain
+
+## out_of_scope | plain
+Hello, how are you | plain
+Good morning, can you help me | plain
+Thank you very much | plain
+What is the weather today | plain
+Who won the cricket match yesterday | plain
+Can you tell me a good recipe for biryani | plain
+What time is the train to Chennai | plain
+Please call my daughter | plain
+Can you send a message to my brother | plain
+What is the capital of Karnataka | plain
+I want to know today's gold price | plain
+Good night | plain
+Can you translate this into Hindi | plain
+Tell me a joke | plain
+What is two hundred rupees in dollars | plain
+
+## phone_not_ringing, notifications_missing
+no alert | vague short_vague
+
+## cant_hear_call, phone_not_ringing
+no sound | vague short_vague
+
+## no_internet, wifi_no_load
+net not working | vague short_vague
+
+## notifications_missing, no_internet
+nothing coming | vague short_vague
+
+## screen_too_dim, colours_wrong
+screen looks strange | vague short_vague
+
+## screen_too_dim, text_too_small
+cant see screen | vague short_vague
+
+## screen_turns_off_fast, screen_too_dim
+screen going off | vague short_vague
+
+## bluetooth_earphones, cant_hear_call
+no voice in earphones | vague short_vague
+
+## talkback_on, screen_wont_rotate
+screen behaving differently | vague short_vague
+
+## wrong_time, notifications_missing
+phone showing wrong | vague short_vague
+
+## no_internet, wifi_no_load, bluetooth_earphones
+not connecting | vague short_vague
+
+## phone_not_ringing, notifications_missing, talkback_on
+phone is silent | vague short_vague
+
+## colours_wrong, screen_too_dim
+display not normal | vague short_vague
+
+## app_permission, no_internet
+app not working | vague short_vague
+
+## screen_too_dim, screen_turns_off_fast, text_too_small
+screen problem | vague short_vague
+
+## no_internet, wifi_no_load
+The WiFi is connected but WhatsApp is not opening | multi
+
+## phone_not_ringing, notifications_missing
+I don't hear anything when someone calls and I also don't get message alerts | multi
+
+## cant_hear_call, bluetooth_earphones
+When I answer calls I cannot hear the other person and my earbuds are not connecting | multi
+
+## screen_too_dim, text_too_small
+The screen is very dark and the writing is also too small for me to read | multi
+
+## screen_turns_off_fast, screen_too_dim
+The display goes dark very quickly and when it comes back it is too dim | multi
+
+## colours_wrong, screen_too_dim
+My screen has strange colours and it is also very dark | multi
+
+## no_internet, notifications_missing
+My messages are not arriving on time and nothing else online is loading either | multi
+
+## app_permission, bluetooth_earphones
+This app cannot use the microphone and my wireless earphones are not connecting | multi
+
+## wrong_time, no_internet
+The phone time is wrong and now some websites are not opening | multi
+
+## talkback_on, text_too_small
+The phone is speaking everything and the letters are too small for me | multi
+
+## screen_wont_rotate, screen_turns_off_fast
+The screen will not turn sideways and it also switches off while I am watching | multi
+
+## wifi_no_load, bluetooth_earphones
+WiFi is connected but pages do not load, and my earbuds also will not connect | multi
+
+## phone_not_ringing, cant_hear_call
+The phone does not make a sound when I get a call and I cannot hear the caller either | multi
+
+## notifications_missing, app_permission
+I don't get alerts from this app and it is also asking for permission to use the camera | multi
+
+## no_internet, wrong_time
+Nothing online is working and the phone is showing the wrong date | multi
