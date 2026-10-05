@@ -5,9 +5,11 @@ from pathlib import Path
 import pytest
 
 from unstuk_ml.colab_job import (
+    ColabRun,
     bundle,
     decision_run,
     fixed_head_grid,
+    pending,
     run_code,
     setup_code,
     shipped_files,
@@ -92,3 +94,13 @@ def test_the_fixed_head_grid_trains_each_point_into_its_own_run() -> None:
         "fixed-head-lr5e-05-typos",
     ]
     assert "'unstuk-fixed-head', 'train', '--learning-rate', '2e-05'" in run_code(runs[0])
+
+
+def test_runs_whose_results_came_back_are_not_trained_again(tmp_path: Path) -> None:
+    runs = [ColabRun("c", (), "done"), ColabRun("c", (), "half"), ColabRun("c", (), "new")]
+    (tmp_path / "done").mkdir()
+    (tmp_path / "done" / "result.json").write_text("{}")
+    (tmp_path / "half").mkdir()
+    (tmp_path / "half" / "model.pt").write_bytes(b"")
+
+    assert [r.name for r in pending(runs, tmp_path)] == ["half", "new"]

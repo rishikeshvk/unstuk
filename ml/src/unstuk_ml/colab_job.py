@@ -26,7 +26,8 @@ REMOTE_BUNDLE = "/content/unstuk.tar.gz"
 # The CLI gives up after 30 seconds by default; a full run takes most of an hour.
 SETUP_TIMEOUT = 15 * 60
 RUN_TIMEOUT = 4 * 60 * 60
-OUTPUTS = (RESULT, CHECKPOINT)
+# The result goes last: its presence marks a run as complete.
+OUTPUTS = (CHECKPOINT, RESULT)
 
 
 def shipped_files(repo: Path = REPO_ROOT) -> list[str]:
@@ -98,8 +99,17 @@ def run_code(run: ColabRun) -> str:
     )
 
 
+def pending(runs: Sequence[ColabRun], local_runs: Path = RUNS_DIR) -> list[ColabRun]:
+    """The runs whose results haven't come back yet, so a cut session can be resumed."""
+    return [r for r in runs if not (local_runs / r.name / RESULT).exists()]
+
+
 def train_on_colab(runs: Sequence[ColabRun]) -> None:
-    """One session for all the runs; each run's outputs come back as soon as it finishes."""
+    """One session for the runs not yet done; each run's outputs come back as it finishes."""
+    runs = pending(runs)
+    if not runs:
+        print("every run is already in ml/runs; nothing to train")
+        return
     with tempfile.TemporaryDirectory() as scratch:
         archive = bundle(Path(scratch) / "unstuk.tar.gz")
         _colab("new", "-s", SESSION, "--gpu", GPU)
