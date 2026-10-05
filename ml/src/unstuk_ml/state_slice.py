@@ -128,6 +128,8 @@ def main() -> None:
 
     texts = read_texts(args.sheet)
     flat = [t for pair in PAIRS for t in texts.get(pair, [])]
+    # Numbered after shuffling, so neither a key nor a line's neighbours hint at its pair.
+    random.Random(SEED).shuffle(flat)
     keys = {f"s{n:03d}": t for n, t in enumerate(flat, 1)}
     if args.command == "blind":
         args.out.write_text("".join(f"{k}\t{t}\n" for k, t in keys.items()), encoding="utf-8")
