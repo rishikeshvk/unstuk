@@ -58,7 +58,7 @@ def build(texts: dict[Pair, list[str]], catalog: Catalog, seed: int = SEED) -> l
         noise = distractors(catalog, pair)
         batch = f"state-p{number}"
         for n, text in enumerate(texts.get(pair, []), 1):
-            states = [
+            states: list[tuple[str | None, list[str], str]] = [
                 (rng.choice(a_checks), [pair[0]], "a"),
                 (rng.choice(b_checks), [pair[1]], "b"),
             ]
