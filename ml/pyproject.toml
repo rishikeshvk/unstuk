@@ -20,6 +20,7 @@ unstuk-freeze = "unstuk_ml.freeze:main"
 unstuk-plan-batches = "unstuk_ml.grid:main"
 unstuk-import-mobile-actions = "unstuk_ml.mobile_actions:main"
 unstuk-clean = "unstuk_ml.clean:main"
+unstuk-audit = "unstuk_ml.audit:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
