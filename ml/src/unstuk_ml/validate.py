@@ -9,6 +9,7 @@ from pydantic import ValidationError
 from pydantic_core import ErrorDetails
 
 from unstuk_ml.catalog import Catalog, load_catalog
+from unstuk_ml.freeze import frozen_changes
 from unstuk_ml.labels import HELD_OUT, OUT_OF_SCOPE
 from unstuk_ml.record import Record
 
@@ -22,10 +23,10 @@ TEST_DIR = "test"
 @dataclass(frozen=True)
 class Place:
     path: Path
-    line: int
+    line: int | None = None
 
     def __str__(self) -> str:
-        return f"{self.path}:{self.line}"
+        return str(self.path) if self.line is None else f"{self.path}:{self.line}"
 
 
 @dataclass(frozen=True)
@@ -56,6 +57,8 @@ def validate(data_dir: Path, catalog: Catalog) -> list[Problem]:
                 )
             else:
                 first_seen[record.id] = place
+    test_dir = data_dir / TEST_DIR
+    problems += [Problem(Place(test_dir), change) for change in frozen_changes(test_dir)]
     return problems
 
 

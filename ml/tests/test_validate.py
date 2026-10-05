@@ -5,6 +5,7 @@ from typing import Any
 import pytest
 
 from unstuk_ml.catalog import load_catalog
+from unstuk_ml.freeze import freeze
 from unstuk_ml.validate import validate
 
 CATALOG = load_catalog()
@@ -108,3 +109,11 @@ def test_skips_real_user_messages(tmp_path: Path) -> None:
     write(tmp_path / "real" / "a.jsonl", "anything at all")
 
     assert messages(tmp_path) == []
+
+
+def test_reports_a_test_file_changed_after_freezing(tmp_path: Path) -> None:
+    write(tmp_path / "test" / "a.jsonl", record())
+    freeze(tmp_path / "test")
+    write(tmp_path / "test" / "a.jsonl", record(text="edited later"))
+
+    assert messages(tmp_path) == ["a.jsonl changed after freezing"]
