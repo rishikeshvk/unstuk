@@ -40,3 +40,16 @@ def test_numbers_records_within_the_batch() -> None:
 def test_rejects_a_tag_outside_the_contract() -> None:
     with pytest.raises(ValueError, match="unknown tags"):
         to_records(parse_sheet("## no_internet\nno net | sarcasm\n"), "handwritten", "human", "b")
+
+
+def test_stores_the_batch_persona_on_every_record() -> None:
+    persona = {"age": "senior", "typos": "many"}
+
+    records = to_records(parse_sheet(SHEET), "generated", "claude-fresh", "train-01", persona)
+
+    assert all(record.persona == persona for record in records)
+
+
+def test_rejects_a_persona_outside_the_grid() -> None:
+    with pytest.raises(ValueError, match="unknown age value toddler"):
+        to_records(parse_sheet(SHEET), "generated", "claude-fresh", "train-01", {"age": "toddler"})

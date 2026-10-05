@@ -15,6 +15,7 @@ dependencies = [
 unstuk-validate = "unstuk_ml.validate:main"
 unstuk-import-sheet = "unstuk_ml.sheet:main"
 unstuk-freeze = "unstuk_ml.freeze:main"
+unstuk-plan-batches = "unstuk_ml.grid:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]

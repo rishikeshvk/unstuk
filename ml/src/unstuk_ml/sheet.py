@@ -14,6 +14,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from unstuk_ml.grid import Cell, check_cell
 from unstuk_ml.record import Record
 
 HEADER = "## "
@@ -44,7 +45,11 @@ def parse_sheet(text: str) -> list[SheetLine]:
     return lines
 
 
-def to_records(lines: list[SheetLine], source: str, generator: str, batch: str) -> list[Record]:
+def to_records(
+    lines: list[SheetLine], source: str, generator: str, batch: str, persona: Cell | None = None
+) -> list[Record]:
+    if persona is not None:
+        check_cell(persona)
     return [
         Record.model_validate(
             {
@@ -55,6 +60,7 @@ def to_records(lines: list[SheetLine], source: str, generator: str, batch: str) 
                 "source": source,
                 "generator": generator,
                 "batch": batch,
+                "persona": persona,
             }
         )
         for index, line in enumerate(lines, start=1)
@@ -82,10 +88,12 @@ def main() -> None:
     parser.add_argument("--source", required=True)
     parser.add_argument("--generator", required=True)
     parser.add_argument("--batch", required=True)
+    parser.add_argument("--persona", nargs="*", metavar="AXIS=VALUE", help="the batch's grid cell")
     args = parser.parse_args()
 
     lines = parse_sheet(args.sheet.read_text(encoding="utf-8"))
-    records = to_records(lines, args.source, args.generator, args.batch)
+    persona = dict(pair.split("=", 1) for pair in args.persona) if args.persona else None
+    records = to_records(lines, args.source, args.generator, args.batch, persona)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with args.out.open("w", encoding="utf-8") as out:
         for record in records:
