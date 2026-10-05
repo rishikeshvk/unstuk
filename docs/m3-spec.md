@@ -1,6 +1,7 @@
 # M3 spec: Data
 
-2026-10-05 · Status: **approved; in progress.** Labelling guide: [m3-labelling-guide.md](m3-labelling-guide.md)
+2026-10-05 · Status: **data built; phone run pending.** Results: [m3-results.md](m3-results.md). Plain-language
+summary: [m3-summary.md](m3-summary.md). Labelling guide: [m3-labelling-guide.md](m3-labelling-guide.md)
 
 M3 answers one question: **can we build data that teaches a small model to map plain complaints to the right fix,
 and a test honest enough to tell us whether that model beats the keyword matcher?**
