@@ -1,0 +1,143 @@
+## no_internet
+why does nothing load on my phone?? like insta, youtube, everything just says no connection
+i think i pressed something when i swiped down from the top and now none of my apps can get online, how do i undo it?
+is there a reason my phone says no internet everywere even tho it worked this morning?
+why is there a little airplane at the top of my screen and now none of my apps work?
+how come snapchat wont send anything and google wont load when im not at home?
+my friend was messing with my phone and now nothing goes online at all, what did he turn off?
+why does every app just spin forever and then say check your conection?
+how do i get the internet back on my phone? nothing opens since i turned on some saving thing
+why cant i stream spotify or load tiktok when im out, did i turn off mobile data by accident?
+why does whatsapp say waiting for network and the wifi symbol isnt even at the top anymore?
+
+## wifi_no_load
+my phone says its connected to our home wifi with full bars but youtube wont load anything, why?
+why does it show the wifi name with a checkmark but google just says this site cant be reached?
+how is it conected to the wifi but nothing actually opens??
+why do all the bars show up on the wifi thing but tiktok keeps saying no internet?
+at my friends house it says connected to their wifi but instagram wont refresh, whats going on?
+why does my phone say connected but no internet under the wifi name?
+the wifi has a little tick next to it and the bars are full so why wont any websites load??
+i joined the wifi at the library and it says connected but chrome just loads forever, how do i fix that?
+why is my phone on the wifi with full signal but netflix and roblox both say check your network?
+its literaly connected to the wifi, full bars, but whatsapp wont send pics, why is it doing that?
+
+## phone_not_ringing
+why didnt my phone ring when my mom called? i just saw 3 missed calls
+how come i never hear my phone when ppl call me but i get missed calls later?
+my phone just shakes a little when someone calls insted of ringing, how do i make it make noise again?
+why do whatsapp calls not make any sound? i only see that i missed them after
+is my phone stuck on silent or something? nobodys calls make a sound anymore
+i made my phone quiet for class and now it never rings even tho class is over, how do i undo it?
+why is there a little moon at the top and my phone wont ring when people call?
+my freind said she called me like 5 times but my phone didnt ring at all, why?
+how do i make my phone ring loud again when ppl call? i think i slid the volume all the way down
+why does my phone stay quiet when calls come in? do not disturb isnt on i dont think
+
+## notifications_missing
+why do i only get my snapchat messages when i open the app?
+how come whatsapp messages show up like an hour late?
+why dont i get the little pop ups for messages anymore? i only see them when i go in the app
+my insta dms come in with no sound or anything, how do i fix that?
+why are my notifications not showing up?? my friends say they texted me hours ago
+after i updated discord i stopped getting any alerts at all, why?
+is there a reason my texts come in silent and late? i keep missing stuff
+why doesnt my phone buzz when i get a message, it just sits there untill i unlock it
+why doesnt my phone tell me when someone messages me on teams for school?
+how do i make my apps show alerts again? nothing pops up at the top anymore
+
+## talkback_on
+why is my phone talking out loud every time i touch something??
+theres a green box around everything i tap and it reads it out, how do i make it stop?
+why do i have to tap twice to open apps now? one tap just says the name of the app
+my little brother played with my phone and now it talks and i cant even scroll, what happened?
+why cant i scroll with one finger anymore and why is a robot voice reading everything?
+how do i turn off talkback? i cant even unlock my phone it keeps saying stuff
+why does my phone say everything i press out loud, like button double tap to activate?
+after i held both volume buttons my phone started reading the screen to me, how do i get it back to normal?
+why does it need two fingers to scrol now and theres a box around stuff?
+why wont my apps open when i tap them, it just talks and puts a rectangle around tehm?
+
+## colours_wrong
+why did my screen turn all black and white?
+how come everything on my phone looks like a negative photo, like white is black now?
+why is my screen kind of grey? all my pics look old
+my phone colers look weird and kinda pink, how do i fix it?
+why does instagram look all gray? actually everything does
+i was messing around in settings and my colors got all flipped, how do i put them back?
+is there a way to get color back on my screen? its all grayscale now
+why does my screen look greenish all of a suddn?
+why does youtube look super strange, like the colors are inverted or something?
+my screen went gray right after i set up a bedtime thing, why?
+
+## screen_too_dim
+why is my screen so dark i can barely see anything?
+how do i make my screen brighter? its super dim
+why cant i see my phone at all when im outside in the sun?
+my screen keeps getting darker on its own, why does it do that?
+why wont the brightness go up even when i slide the bar all the way?
+after the battery saver thing turned on my screen got really dim, how do i fix it?
+why is youtube so dark on my phone even tho the videos look fine on my laptop?
+why is my phone so dim all the time? i keep squinting at it
+why does my screen get dimer by itself while im reading?
+how come google maps is impossible to see when im walking outside?
+
+## screen_turns_off_fast
+why does my screen go black so fast when im reading?
+how come my phone locks itself like after a few seconds?
+why does my screen turn off in the middle of reading a long text from my friend?
+how do i make the screen stay on longer? it keeps going black
+why does my phone lock when im following a recipe on tiktok and not touching it?
+why does my screen timeout so quick?
+when im reading on wattpad the screen just shuts off every few secs, why?
+why do i have to keep tapping my phone so it doesnt go dark?
+why does my screen turn black so fast while im looking at pics of my homework?
+after i changed some battery stuff my phone locks super fast now, how do i fix it?
+
+## text_too_small
+why is all the writing on my phone so tiny?
+how do i make the letters bigger? i can barely read my texts
+why are the words so small in my messages, can i make them bigger?
+the app icons are tiny and the names under them too, how do i fix that?
+how do i change the font size? everything is so small
+why is the text in whatsapp so small i have to squint?
+can i make the words on my phone bigger so i dont have to hold it up to my face?
+why did all the writing get smaller after the update?
+how do i make the letters in settings and evrything bigger?
+my eyes hurt from reading cuz the text is so small, can i make it larger?
+
+## bluetooth_earphones
+why wont my airpods connect to my phone?
+how come my earbuds dont show up when i try to connect them?
+why does my speaker keep saying ready to pair but my phone cant find it?
+my watch disconnected and now it wont conect again, why?
+why wont my phone connect to my moms car anymore? it used to play spotify
+how do i turn on bluetooth? i think i turned it off by accident
+why do my wireless earbuds connect to my laptop but not my phone?
+my new headphones wont pair, what am i doing wrong?
+why does my phone say couldnt connect when i tap my earbuds name?
+after the update my jbl speaker wont connect anymore, why?
+
+## app_permission
+why does snapchat say it cant use my camera? the normal camera app works fine
+why does instagram say it needs acess to my microphone when i try to record a video?
+how do i let google maps know where i am? it keeps saying location is off for the app
+why does tiktok show a black screen when i try to film but my camera app works?
+my bank app wants to use the camera to scan a check but it wont open, how do i let it?
+why cant uber find my location when google maps can?
+why does whatsapp say i need to allow the microphone to send a voice note?
+how do i turn on camera permission for zoom?
+i pressed dont allow by accident on snapchat and now the camera wont open in it, how do i fix?
+why wont the voice search in youtube pick up my voice when it works in other apps?
+
+## reset_network
+how do i reset all the wifi and bluetooth stuff on my phone?
+can i reset my network settings? my friend said that might help
+my teacher said to reset the internet settings on my phone, how do i do that?
+how do i make my phone forget all the wifis and bluetooth things at once and start fresh?
+is there a way to reset just the conection stuff without deleting my pics?
+how do i do the reset for wifi, mobile data and bluetooth? the guy at the store told me to
+can you reset my phones wifi and data settings back to how they were at the start?
+how do i wipe all my wifi and bluetooth settings so its like new but not the whole phone?
+my dad said to reset network settings, where is that?
+my phone kept dropping calls so my cousin said reset the network part, how do i do that?
