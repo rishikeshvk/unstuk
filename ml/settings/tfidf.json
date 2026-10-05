@@ -1,0 +1,91 @@
+{
+  "c": 100.0,
+  "class_weight": null,
+  "temperature": 0.7767,
+  "grid": [
+    {
+      "c": 0.3,
+      "class_weight": null,
+      "dev_macro_f1": 0.9398549342430222,
+      "dev_log_loss": 0.5636615743338595,
+      "dev_in_scope_accuracy": 0.9223803363518758
+    },
+    {
+      "c": 0.3,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9284045248991197,
+      "dev_log_loss": 0.676953642984314,
+      "dev_in_scope_accuracy": 0.9767141009055628
+    },
+    {
+      "c": 1.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9585481136311021,
+      "dev_log_loss": 0.31744208428072346,
+      "dev_in_scope_accuracy": 0.9521345407503234
+    },
+    {
+      "c": 1.0,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9504642336408324,
+      "dev_log_loss": 0.3882008389050396,
+      "dev_in_scope_accuracy": 0.9793014230271668
+    },
+    {
+      "c": 3.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9635340856915862,
+      "dev_log_loss": 0.20411015208490188,
+      "dev_in_scope_accuracy": 0.9611901681759379
+    },
+    {
+      "c": 3.0,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9637685869292979,
+      "dev_log_loss": 0.24424103647227868,
+      "dev_in_scope_accuracy": 0.9831824062095731
+    },
+    {
+      "c": 10.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9676496129037319,
+      "dev_log_loss": 0.14288085285416396,
+      "dev_in_scope_accuracy": 0.9689521345407504
+    },
+    {
+      "c": 10.0,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9691477959225131,
+      "dev_log_loss": 0.16250305443376736,
+      "dev_in_scope_accuracy": 0.9831824062095731
+    },
+    {
+      "c": 30.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9725422825147986,
+      "dev_log_loss": 0.11205174206134876,
+      "dev_in_scope_accuracy": 0.9767141009055628
+    },
+    {
+      "c": 30.0,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9711264281633908,
+      "dev_log_loss": 0.1275380187780722,
+      "dev_in_scope_accuracy": 0.9844760672703752
+    },
+    {
+      "c": 100.0,
+      "class_weight": null,
+      "dev_macro_f1": 0.9750023355362039,
+      "dev_log_loss": 0.09902952416071349,
+      "dev_in_scope_accuracy": 0.981888745148771
+    },
+    {
+      "c": 100.0,
+      "class_weight": "balanced",
+      "dev_macro_f1": 0.9727804263657865,
+      "dev_log_loss": 0.10355717002548198,
+      "dev_in_scope_accuracy": 0.9857697283311773
+    }
+  ]
+}
