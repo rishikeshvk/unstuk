@@ -1,0 +1,153 @@
+# Claude, as a fresh agent with no project context and no file access, 2026-10-05. Saved as returned.
+
+## no_internet
+nothing is opening on my mobile, whatsapp youtube all stuck on loading | plain
+small aeroplane sign came on top and now no apps are working | paraphrase
+Data is on but nothing is loading only, kindly help | indian_english
+my net is not wrking since mrng pls check | typo indian_english
+Yesterday my grandson was playing games on my phone. After he gave it back, every app says I am offline. Even google does not open. | long_story paraphrase
+
+## wifi_no_load
+it shows connected to my home router but chrome just keeps spinning | paraphrase
+conected to shop router name showing with tick but nothing opening | typo
+Not asking about mobile data, that I have switched off. The house connection shows full bars yet YouTube says no connection. | negation
+Router connection is showing but pages are not coming, what to do sir | indian_english
+We got a new broadband box installed on Monday. The man set it up and left, and the phone shows the name with a tick. But no website loads at all. | long_story
+
+## phone_not_ringing
+people say they called me but I never get any sound, only missed calls later | plain
+my son called 5 times and the phone stayed totally quiet, I saw it after | paraphrase
+phone is silent when calls are coming, aunty scolded me for not picking | indian_english paraphrase
+incmng calls no sound at all only see miss call | typo
+Volume for music is fine, songs play loud. Only problem is when someone calls me it makes no tone at all. | negation
+
+## cant_hear_call
+during calls the other side voice is very low | plain
+I can talk but can't catch what my daughter is saying on the line, her voice is like a whisper | paraphrase
+call connects but othr person voice not coming propely | typo indian_english
+Not a signal issue, bars are full. On calls the person's voice is so faint I have to guess what they said. | negation
+My ears are fine, I checked with the doctor last month. But since a few days on every phone call the other voice is almost gone. I keep saying hello hello. | long_story
+
+## notifications_missing
+whatsapp messages come only when I open whatsapp | plain
+Messages are reaching late, my customers say they sent order in morning and I am seeing it at night | indian_english paraphrase
+no alerts for gmail untill i open the app itself | typo
+How do I make the bank OTP messages pop up right away instead of after an hour? | paraphrase
+The phone does make sound, that's not it. The trouble is chat messages don't show at the top until I go into the app. | negation
+
+## talkback_on
+phone is talking out loud everything I touch | plain
+some lady voice reads every button and a green box comes around things, one tap not opening anything | paraphrase
+mobile is speaking whatever I am touching and now double tap is needed, how to stop this | indian_english
+voise reading evrything i press help cant open apps | typo
+I was cleaning the phone with a cloth and pressed some buttons on the side. Now it announces everything I touch and puts a box around it. I have to tap twice to open anything and I don't know how to get out. | long_story
+
+## colours_wrong
+whole display became black and white suddenly | plain
+photos look like old newspaper, everything grey | paraphrase
+screen is showing all opposite, white is black and black is white, kindly suggest | indian_english
+evrything gone grey no red green nothing | typo
+It's not night mode, I know what that looks like. My pictures look like negatives from the old camera film. | negation
+
+## screen_too_dim
+display very dark, can't see anything outside in the sun | plain
+display has become so dark I cannot read anything when I am out in market | paraphrase indian_english
+How do I make the display lighter? | paraphrase
+display v dark cant see nothin in sunlite | typo
+I take my phone on my morning walk to see the steps count. Since last week the display has become so dull that outside I see only my own reflection. | long_story paraphrase
+
+## screen_turns_off_fast
+display goes black after a few seconds if I don't touch it | plain
+reading a recipe and the phone keeps locking every little while, my hands are full of flour | paraphrase
+while reading news the display is going off within seconds only, very irritating | indian_english
+phone keep locking itself every 10 sec so annoyng | typo
+Battery is okay, phone is not switching off fully. Just the display goes black very quickly when I'm reading. | negation
+
+## screen_wont_rotate
+when I turn the phone sideways the picture stays straight | plain
+cricket match video not coming full when I hold phone sideways, it stays standing | paraphrase indian_english
+videos not going landscape when i tilt phone | typo
+How do I make the picture turn when I hold the phone lying down? | paraphrase
+My granddaughter sent me videos of her dance. I hold the phone on its side to see them bigger, but the video stays tall and thin in the middle. It used to turn by itself before. | long_story
+
+## text_too_small
+letters are too tiny, I can't read without glasses | plain
+writing on the phone is very fine, my eyes are paining while reading | indian_english paraphrase
+make the font bigger please | plain
+fonts very tiny cant read msgs | typo
+I am 74 and my eyesight is weak. My son bought me this new phone but the writing in the messages is like ant size. Is there a way to make the words larger? | long_story
+
+## bluetooth_earphones
+my wireless earbuds are not connecting to the phone | plain
+the little ear pods I bought won't pair, the light keeps blinking blue | paraphrase
+car music system is not catching my mobile, earlier it was working | indian_english
+smart watch not conecting with phn | typo
+Not the wired ones, those are fine. It's the cordless earphones my daughter gifted, the phone just doesn't find them. | negation
+
+## app_permission
+camera not opening inside whatsapp video call, it says allow access | plain
+Zoom keeps asking to be allowed to use the mic every single time | paraphrase
+google maps cant find my location says turn on acess for the app | typo
+In Instagram camera is not opening, it is asking allow allow again and again | indian_english
+The camera itself works fine, I took photos just now. Only inside the PhonePe app when scanning QR it says camera not allowed. | negation
+
+## wrong_time
+phone clock is showing 2 hours behind | plain
+the date at the top says 2019 and my bank site says something about a certificate | paraphrase
+clock is showing different from my wall clock, kindly correct it | indian_english
+dat on phone is incorect calender showing yesterday | typo
+My train ticket app says device date invalid. I checked and the phone thinks it is a different day. How did this happen? | long_story
+
+## reset_network
+I want to clear all the connection settings and start fresh | paraphrase
+how to restore mobile data, router and pairing settings to factory default, only that, not the whole phone | paraphrase negation
+servicecentre guy told me to put all the connction settings back to default how do i | typo
+Please do the full fresh start of the signal and router settings, the shop person told me to do | indian_english paraphrase
+I've tried everything with my mobile data and the house router for two days. Restarting did nothing and aeroplane mode on and off did nothing. Can you just wipe the connection settings back to how they came from the factory? | long_story
+
+## out_of_scope
+my grandmother's hearing is weak, which doctor should we visit | collision
+the ring I bought from the jeweller is too small for my finger | collision
+weather is so dim and grey today, will it rain | collision
+my son's bicycle wheel won't rotate properly | collision
+the colours of my new saree faded after the first wash | collision
+how to pay my postpaid bill from the phone | oos_near
+recharge done but balance not showing in the message | oos_near
+how to turn on dark mode in whatsapp | oos_near
+my alarm did not go off this morning, I was late for office | oos_near
+display is cracked after it fell from the table | oos_near
+battery is draining very fast these days | plain
+phone storage full, cannot take any more photos | plain
+my phone has become very slow and hangs | plain
+good morning ji | plain
+tell me a good recipe for paneer butter masala | plain
+
+## no_internet, wifi_no_load
+nothing loading | vague short_vague
+
+## screen_too_dim, colours_wrong
+display looks dark and weird | vague short_vague
+
+## phone_not_ringing, cant_hear_call
+call sound problem | vague short_vague
+
+## text_too_small, screen_too_dim
+cant read phone | vague short_vague
+
+## no_internet, notifications_missing, app_permission
+whatsapp not working properly | vague short_vague
+
+## phone_not_ringing, text_too_small
+calls are coming silently and I see missed calls later, also the letters are too tiny to read who called | multi
+
+## wifi_no_load, wrong_time
+house router shows connected but sites are not opening, and the clock is also showing last year's date | multi
+
+## talkback_on, screen_too_dim
+phone is reading aloud everything I touch and on top of that the display has gone very dark | multi
+
+## bluetooth_earphones, cant_hear_call
+my earbuds won't pair with the phone, and even without them the caller's voice is so faint on calls | multi
+
+## screen_turns_off_fast, screen_wont_rotate
+video stays standing when I hold the phone sideways and the display also keeps going black after a few seconds | multi
