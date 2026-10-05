@@ -33,8 +33,9 @@ class Example:
     """The Noul target; None for node questions, which don't ask it."""
 
 
-def render_state(checks: Sequence[str]) -> str:
-    return "; ".join(check.replace("_", " ") for check in checks)
+def render_state(checks: Sequence[str], catalog: Catalog) -> str:
+    """The checks as the app words them, so the encoder reads plain sentences, not IDs."""
+    return " ".join(catalog.findings[check] for check in checks)
 
 
 def epoch(
@@ -99,10 +100,10 @@ def _options(record: Record, intents: Sequence[str], rng: random.Random) -> list
 def _state(record: Record, catalog: Catalog, rng: random.Random) -> str:
     """The record's own state, or distractor checks that say nothing about its label."""
     if record.state is not None:
-        return render_state(record.state)
+        return render_state(record.state, catalog)
     causes = {c for label in record.labels for c in catalog.causes.get(label, ())}
     pool = sorted(catalog.checks - causes - excluded_checks(catalog))
-    return render_state(rng.sample(pool, rng.randint(0, MAX_DISTRACTORS)))
+    return render_state(rng.sample(pool, rng.randint(0, MAX_DISTRACTORS)), catalog)
 
 
 def _noisy(text: str, rng: random.Random) -> str:

@@ -18,3 +18,10 @@ def test_reads_the_checks_that_causes_name() -> None:
     assert "airplane_on" in catalog.checks
     assert "dnd_on" in catalog.checks
     assert "airplane_off" not in catalog.checks
+
+
+def test_each_check_reads_as_its_fixs_finding() -> None:
+    catalog = load_catalog()
+
+    assert set(catalog.findings) == catalog.checks
+    assert catalog.findings["dnd_on"] == "Do Not Disturb is on."

@@ -17,7 +17,6 @@ from unstuk_ml.training_examples import (
     OTHER_OPTIONS,
     Example,
     epoch,
-    render_state,
 )
 
 CATALOG = load_catalog()
@@ -132,13 +131,12 @@ def test_a_records_own_state_is_rendered() -> None:
 
     (example,) = draw([record], state=True)
 
-    assert example.state == "ringer not normal; dnd on" == render_state(record.state or [])
+    assert example.state == "The ringer is on silent or vibrate. Do Not Disturb is on."
 
 
 def test_distractor_state_says_nothing_about_the_label() -> None:
-    texts = {render_state([c]): c for c in CATALOG.checks}
     for record, example in zip(RECORDS, draw(state=True), strict=True):
-        checks = [texts[part] for part in example.state.split("; ") if part]
+        checks = [c for c in CATALOG.checks if CATALOG.findings[c] in example.state]
         causes = {c for label in record.labels for c in CATALOG.causes.get(label, ())}
 
         assert len(checks) <= MAX_DISTRACTORS

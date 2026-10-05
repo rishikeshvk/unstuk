@@ -13,7 +13,7 @@ from tokenizers import Encoding, Tokenizer
 
 from unstuk_ml.training_examples import Example
 
-# Training lines reach 83 tokens; a state adds about 15.
+# Training lines reach 83 tokens; a state of two findings adds about 20.
 MAX_TOKENS = 128
 
 
