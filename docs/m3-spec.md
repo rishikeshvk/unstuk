@@ -337,6 +337,15 @@ messages.
 - Real user messages, and consent rules for them (M8).
 - Hinglish or other languages (v2).
 
+## Changes during M3
+
+| Date | Change | Why |
+| --- | --- | --- |
+| 2026-10-05 | No cap per intent in cleaning (section 6, step 7) | The data was generated balanced; the remaining gap comes from contrast pairs, the most valuable lines. Training can weight classes |
+| 2026-10-05 | Mobile Actions gives 300 out-of-scope commands from five tools; Wi-Fi settings and calendar requests are left out | None of its tools is a symptom we fix; Wi-Fi is too close to our intents, and calendar dates would bias the held-out `wrong_time` |
+| 2026-10-05 | Every training batch is written by a fresh agent with no project context | This session read the test set while reviewing it; isolation keeps test phrasing out of training |
+| 2026-10-05 | The label review and the 200-line audit use a blind, context-free agent as the second labeller | Chosen in planning; it makes agreement a measurement between two independent labellers |
+
 ## Decisions (2026-10-05)
 
 | # | Decision | Chosen |
