@@ -1,0 +1,224 @@
+## no_internet
+yesterday my son was playng game on my phone and he give it back to me. now whatsapp is not goign, no msgs are comming. i think he switched off the data or wifi somthing, the top icons are gone. pls help
+## wifi_no_load
+yesterday my son was playng game on my phone and he give it back to me. now whatsapp is not goign, no msgs are comming. the wifi symbol is showing on top full lines only but nothing is loding. pls help
+## no_internet
+i came back from delhi by flight last nite. since then youtube and google not opning at all. there is a small aeroplane symbol on top of screen, i dont know what it is. what to do
+## wifi_no_load
+i came back from delhi by flight last nite. since then youtube and google not opning at all. at home it is showing conected to our wifi only, but pages are keep loading loading. what to do
+## no_internet
+in office my collegue was cheking something in my mobile setings. after that internet is totaly not there, no 4g sign also. mobile data is off it seams. how to get it back
+## wifi_no_load
+in office my collegue was cheking something in my mobile setings. after that internet is totaly not working. wifi is showing conected with office name only but no site is opning. how to get it back
+## no_internet
+there was power cut in our area today mrng and i restarted my phone. after that gpay is not opeing, saying no conection. wifi button and data button both are grey, i think both are off. kindly help
+## wifi_no_load
+there was power cut in our area today mrng and i restarted my phone. after that gpay is not opeing, saying no conection. but phone is showing wifi conected, the fan symbol is ther. kindly help
+## phone_not_ringing
+my mother called me 3 times yesterdy and i didnt know at all. phone was in my hand bag but no ring came, only i saw missed calls later. she is scolding me now. why phone is not ringng
+## notifications_missing
+my mother sent me whatsapp msgs 3 times yesterdy and i didnt know at all. phone was in my hand bag but no sound came, i saw msgs only later. she is scolding me now. why msgs are not making sound
+## phone_not_ringing
+last week i put phone quite for one office meting. after that whenever somebody calls, no ringing is comming, it just shows on screen silently. i missed my bosses call also. pls tell how to fix
+## notifications_missing
+last week i put phone quite for one office meting. after that whenever whatsapp or email comes, no tone is comming, i see them very late. i missed my bosses msg also. pls tell how to fix
+## phone_not_ringing
+i am waiting for amazon delivary from morning. the delivery boy said he called me 4 times but my phone never rang, there is no sound for calls only. what is the problm
+## notifications_missing
+i am waiting for amazon delivary from morning. the delivery boy said he sent me msgs but my phone showed them after 2 hours, the alerts are comming very late. what is the problm
+## phone_not_ringing
+my phone did some update on sunday nite. from monday incomming calls are coming without any ringtone, screen lights up but no sound. other sounds like youtube are fine. pls help me
+## notifications_missing
+my phone did some update on sunday nite. from monday whatsapp and facebook notifcations are coming without any sound, only when i open the app i see them. other sounds like youtube are fine. pls help me
+## screen_too_dim
+my daughter was playing with my phone and some how screen has become very dark. even in the day time i cant see anything properly, i have to go inside the room. how to make it normal
+## colours_wrong
+my daughter was playing with my phone and some how screen has become black and white. even photos are coming without colour, everything is grey grey. how to make it normal
+## screen_too_dim
+i was trying to set some night mode for sleeping. now screen is too dim, i am not able to read msgs even with full straning my eyes. pls help to get the light back
+## colours_wrong
+i was trying to set some night mode for sleeping. now screen colours are all oposite, white became black and faces looking like negetive of photo. pls help to get the colours back
+## screen_too_dim
+yesterday battery became 5 percent and i put it for chargng. after that the display is very very dark, like brightnes is gone low. even after full charge it is same. is it some seting
+## colours_wrong
+yesterday battery became 5 percent and i put it for chargng. after that the display is all grey colour, like old black and white tv. even after full charge it is same. is it some seting
+## screen_too_dim
+i installed one new app for reading books. since then my phone screen has gone dull and dark, i keep pressing my face near to see. pls tell what to do
+## colours_wrong
+i installed one new app for reading books. since then my phone screen has gone all reverse colours, pictures look like xray and faces look strange. pls tell what to do
+## screen_too_dim
+i use phone mostly in the nite after kids sleep. but now even in daytime the screen is too dark, i cant see whatsapp properly. how to increse it
+## out_of_scope
+i use phone mostly in the nite after kids sleep. but now the screen is too bright, it is paining my eyes in the dark. how to decrese it
+## screen_too_dim
+my husband changed something in my phone setings last night. now the screen is very dim, i can barely see the leters outside in sun. pls make it brighter
+## out_of_scope
+my husband changed something in my phone setings last night. now the screen is all white and shining, i want that black backgroud dark mode like his phone. pls make it like that
+## screen_too_dim
+i got this new samsung phone from my brother. the screen is very dark compared to my old phone, i cant read anything when i go to market. can you fix
+## out_of_scope
+i got this new samsung phone from my brother. the screen is very bright compared to my old phone, it is hurting eyes when i read at night in bed. can you fix
+## screen_too_dim
+i was watching serial on phone in the bus. suddenly the screen went too dark, i had to stop watchng. how to make light more
+## out_of_scope
+i was watching serial on phone in the bus. suddenly the screen went too bright, everybody next to me is looking. how to make light less
+## screen_turns_off_fast
+i am reading bhagavad gita on my phone every mrng. but after few seconds the screen goes black and i have to touch again and again. very iritating. how to stop this
+## out_of_scope
+i am reading bhagavad gita on my phone every mrng. but after few minits the whole phone switches off and i have to press power button to start again. very iritating. how to stop this
+## screen_turns_off_fast
+my son sends long recipies on whatsapp for me to cook. while i am reading and cutting vegtables the screen keeps going dark very fast. i have masala hands, cant keep touching
+## out_of_scope
+my son sends long recipies on whatsapp for me to cook. while i am reading and cutting vegtables the phone keeps restarting by itself, samsung logo comes again. i have masala hands, cant keep touching
+## screen_turns_off_fast
+in office i read pdf files on my mobile. the screen is turning off within 15 seconds itself if i dont touch. how to keep it on longer
+## out_of_scope
+in office i read pdf files on my mobile. the phone is getting swiched off fully within 15 minutes itself even with batery there. how to keep it on
+## screen_turns_off_fast
+since last week this problm started. when i am reading news the display goes black quickly, but phone is still on, just screen sleeping. pls help
+## out_of_scope
+since last week this problm started. when i am reading news the phone goes off fully and restarts by itself, takes 2 minutes to come back. pls help
+## text_too_small
+my eyes are weak now after 40. in my phone the leters are too small, msgs and contacts names i cant read without specs. how to make leters big
+## out_of_scope
+my eyes are weak now after 40. in my phone everything has become zoomed in sudenly, the whole screen is magnifed and i cant see full page. how to make it normal
+## text_too_small
+my father in law gave me his old phone. the writing in it is very tiny, i am strugling to read the whatsapp chats. pls tell how to increase font
+## out_of_scope
+my father in law gave me his old phone. the screen is very zoomed, only half of whatsapp is showing and i have to move with 2 fingers. pls tell how to remove
+## text_too_small
+after the phone update yesterday i notice the text in all apps is too small, like ant size. my wife also cant read it. how to get bigger
+## out_of_scope
+after the phone update yesterday i notice the screen in all apps is too much zoomed, like big magnifying glass. my wife also cant use it. how to get normal
+## text_too_small
+i want to read the bank sms properly. the font size is very small, my eyes are paning. can you make the leters larger only
+## out_of_scope
+i want to read the bank sms properly. but whole screen is blown up big, there is some orange box around it and i cant scrol. can you make it normal size
+## talkback_on
+my nephew was playing with my phone yesterday. now whatever i touch the phone is talking it loudly, and i have to tap two times to open anything. how to stop it
+## out_of_scope
+my nephew was playing with my phone and car yesterday. now whenever a msg comes the car speaker is reading it loudly while i drive. how to stop it
+## talkback_on
+i dont know what i presed. a lady voice is saying everything i touch on the screen and there is green box comming. single touch is not working only double tap
+## out_of_scope
+i dont know what i presed. a lady voice from google assistent is reading my whatsapp msgs aloud when i say hey google. i want that to stop
+## talkback_on
+i pressed both volume butons together by mistake in the bus. since then phone is speaking out every button i touch, unlock also needs double tap. very embarassing
+## out_of_scope
+i said ok google by mistake in the bus. since then the assistent is reading out every msg that comes in my earphones. very embarassing
+## talkback_on
+my grandmother uses my phone sometimes. now the phone reads out loud every app name i touch and i cant scrol normally with one finger. pls help
+## out_of_scope
+my grandmother uses my phone sometimes. now when i drive the car screen reads out loud every msg name and text that comes on phone. pls help
+## bluetooth_earphones
+i bought new boat earbuds last month for walking. today they are not conecting to my phone, it keeps searching searching. pls help
+## out_of_scope
+i bought new boat earbuds last month for walking. today they are not working, the case light is not comming and i think charge is fully finished. pls help
+## bluetooth_earphones
+for online class of my son we use one bluetooth speaker. since yesterday the phone is not pairing with the speaker, it shows failed. what to do
+## out_of_scope
+for online class of my son we use one wire earphones. since yesterday the phone is not giving sound in the earphones when i plug it, sound comes from phone only. what to do
+## bluetooth_earphones
+my husband gave me his wireless earphones. i am trying to conect them in my phone but its not showing in the list at all. how to conect
+## out_of_scope
+my husband gave me his old earphones with wire. i pluged them in my phone but no sound is comming in them at all. how to fix
+## bluetooth_earphones
+every mrng i listen bhajans on my bluetooth earbuds. today they are not conecting, phone says cannot conect. kindly help
+## out_of_scope
+every mrng i listen bhajans on my bluetooth earbuds. today they are dead, i forgot to charge the box for one week. kindly help
+## app_permission
+i am trying to video call my sister on whatsapp. the camera is not opning only in whatsapp, but in normal camera app it works fine. what is wrong
+## out_of_scope
+i am trying to video call my sister on whatsapp. the camera is not opning in any app, even normal camera app shows black screen, glass is also craked. what is wrong
+## app_permission
+i want to send voice msg in telegram for my busines. when i hold the mic button it says no acess to microphone. in other apps mic is ok
+## out_of_scope
+i want to send voice msg in telegram for my busines. when i hold the mic button nobody can hear me, in calls also and every app mic is not working after phone fell in water
+## app_permission
+i am trying to scan the qr code in phonepe at shop. the scaner is not opening, it says camera permision needed. in other apps camera is fine
+## out_of_scope
+i am trying to scan the qr code in phonepe at shop. the scaner is not opening, and camera is not working in any app since the back glass got craked
+## app_permission
+my daughter needs to do zoom class for school. zoom app is not showing her face, its asking for camera allow something. please help
+## out_of_scope
+my daughter needs to do zoom class for school. zoom and all apps are showing only lines in camera, it is broken in every app after it fell. please help
+## reset_network
+since two days my internet is very bad on this phone. my frend said do network reset, it will fix everything. pls reset network setings for me
+## no_internet
+since two days my internet is not working on this phone. my frend said check something, i dont know what. pls fix the internet for me
+## reset_network
+i went to the jio shop and the boy said reset the network setings once. i dont know how to do it. can you do the network reset
+## no_internet
+i went to the jio shop and the boy said everything is ok from there side. but in my phone still no internet at all. can you check
+## reset_network
+wifi and data both giving problm from sunday. i saw on youtube that reseting network setings will solve. how to do that
+## no_internet
+wifi and data both giving problm from sunday. i saw on youtube some video but didnt understnd. my internet is just not working
+## reset_network
+after i came back from dubai my phone net is not comming. my cousin told me to reset network option in setings. pls do it
+## no_internet
+after i came back from dubai my phone net is not comming. no 4g, nothing is opning. pls help
+## reset_network
+my phone internet and bluetooth both are giving trouble. i want to reset only the network setings, not my photos and all. pls do it
+## out_of_scope
+my phone internet and bluetooth both are giving trouble. i want to reset the whole phone like new, factory reset, delete everything. pls do it
+## reset_network
+my wifi is keep disconecting from last week. the service center guy said reset network setings only, data will not go. how to do
+## out_of_scope
+my phone is very slow from last week. the service center guy said do factory reset, full data will go. how to do
+## reset_network
+i changed my sim card from airtel to jio. now calls and net are confused. pls reset the network setings so it becomes fresh
+## out_of_scope
+i changed my sim card from airtel to jio. also i want to give this phone to my cousin. pls reset the full phone so it becomes fresh like new
+## reset_network
+my hotspot and wifi paswords are all mesed up. i want to clear only the network things and start again. can you reset network
+## out_of_scope
+my phone is all mesed up with too many apps. i want to clear everything and start again like new phone. can you reset the phone fully
+## notifications_missing
+i am waiting for importent msg from my bank app. the notifications are comming very late, like 1 hour after. why is this
+## out_of_scope
+i am trying to login to my bank app. the otp sms is not comming at all, i tried 5 times resend. why is this
+## notifications_missing
+i do online shoping on flipkart. the app alerts about my order are not comming, i see them only when i open the app. pls help
+## out_of_scope
+i do online shoping on flipkart. the otp for payment is not comming in sms, so order is not getting placed. pls help
+## notifications_missing
+my kids school sends msgs in whatsapp group. since last week those msgs are comming very late, sometimes next day only. how to fix
+## out_of_scope
+my kids school sends otp sms for fees payment portal. since last week those otp msgs are not comming at all. how to fix
+## notifications_missing
+in my office we use teams app. the msgs from my manager are reaching late in my phone, no alert comes on time. what to do
+## out_of_scope
+in my office we use teams app. the login otp to my phone number is not reaching, no sms comes at all. what to do
+## phone_not_ringing
+my phone is with me always in the kichen. but when somebody calls the ringtone is not comming at all, i see missed calls later. pls make it ring
+## out_of_scope
+my phone is with me always in the kichen. but when somebody calls the ringtone is too loud, everyone in house gets scared. pls make it less
+## phone_not_ringing
+i like the old nokia tune. but now my phone is not making any sound when calls come, vibrate also not. help
+## out_of_scope
+i like the old nokia tune. i want to put that as my ringtone insted of this samsung music. help
+## phone_not_ringing
+in temple i keep phone silent, then i forget. now even at home calls come without any sound. how to make it ring again
+## out_of_scope
+in temple i keep phone silent, then i forget. now at home i want to change the ringtone to a bhajan song. how to make it
+## phone_not_ringing
+my husband calls me from office in afternoon. my phone shows his call but does not ring, so i miss it. what is the seting
+## out_of_scope
+my husband calls me from office in afternoon. my phone rings so loud that baby wakes up from sleep. what is the seting
+## no_internet
+i was watching reels in the nite. sudenly the internet stopped, i see mobile data is swiched off on top. how to on it
+## out_of_scope
+i was watching reels in the nite. sudenly the internet stopped, i got msg that my daily 1.5 gb data is over. how to get more
+## no_internet
+my husband took my phone for hotspot yesterday. today internet is not there, i think he swiched off the data button. pls help
+## out_of_scope
+my husband took my phone for hotspot yesterday. today internet is not there, i think he used up all my data pack. pls help
+## no_internet
+i am in my vilage for diwali. net not working, wifi and mobile data both are off in phone. what to press
+## out_of_scope
+i am in my vilage for diwali. net not working, my recharge got finished yesterday and no shop nearby. what to do
+## no_internet
+on my phone the youtube is not loding since morning. i checked and the data is turned off, i dont know how. pls turn on
+## out_of_scope
+on my phone the youtube is not loding since morning. i checked and my airtel recharge pack is expired, validity over. pls tell
