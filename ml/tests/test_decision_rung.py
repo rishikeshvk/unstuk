@@ -44,8 +44,8 @@ def results(scores: dict[str, tuple[float, float, float]]) -> dict[str, Decision
 
 
 def test_every_config_runs_on_all_the_data_and_each_fold() -> None:
-    assert len(CONFIGS) == 8
-    assert len(GRID) == 32
+    assert len(CONFIGS) == 13
+    assert len(GRID) == 52
     assert [r.name for r in runs_of(CONFIGS[0])] == [
         "cosine-lr2e-05-state",
         "cosine-lr2e-05-state-fold0",
@@ -80,7 +80,7 @@ def test_when_no_config_reaches_the_line_nothing_is_picked() -> None:
     grid, best = pick(results({}), line=0.9)
 
     assert best is None
-    assert len(grid) == 8
+    assert len(grid) == 13
 
 
 def fake_embed(texts: Sequence[str]) -> NDArray[np.float32]:
@@ -108,3 +108,13 @@ def test_a_fold_config_differs_from_its_full_run_only_by_the_fold() -> None:
     full, *rest = runs_of(RunConfig(head="attention", learning_rate=5e-5, typos=True, state=True))
 
     assert [r.model_copy(update={"fold": None}) for r in rest] == [full] * 3
+
+
+def test_round_two_moves_the_backbone_less() -> None:
+    assert [c.name for c in CONFIGS[8:]] == [
+        "cosine-lr1e-05-typos-state",
+        "attention-lr1e-05-typos-state",
+        "cosine-lr5e-06-typos-state",
+        "attention-lr5e-06-typos-state",
+        "attention-lr2e-05-typos-state-frozen8",
+    ]

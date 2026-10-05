@@ -26,3 +26,12 @@ def backbone_downloaded() -> bool:
         isinstance(try_to_load_from_cache(REPO, name, cache_dir=HUB_CACHE, revision=REVISION), str)
         for name in WEIGHTS
     )
+
+
+def freeze_lower(backbone: BertModel, layers: int) -> None:
+    """Stops training the embeddings and the lowest layers, so fine-tuning can't move them."""
+    if layers == 0:
+        return
+    frozen = [backbone.embeddings, *backbone.encoder.layer[:layers]]
+    for parameter in (p for module in frozen for p in module.parameters()):
+        parameter.requires_grad = False

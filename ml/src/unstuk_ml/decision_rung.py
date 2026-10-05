@@ -27,12 +27,22 @@ from unstuk_ml.record import Record
 
 SETTINGS = rung.SETTINGS_DIR / "decision.json"
 HEADS: tuple[Head, ...] = ("cosine", "attention")
-CONFIGS = [
+ROUND_1 = [
     RunConfig(head=head, learning_rate=lr, typos=typos, state=True)
     for lr in (2e-5, 5e-5)
     for typos in (False, True)
     for head in HEADS
 ]
+# Round 1 forgot zero-shot naming from the first epoch (spec section 3), so round 2 moves less.
+ROUND_2 = [
+    *(
+        RunConfig(head=head, learning_rate=lr, typos=True, state=True)
+        for lr in (1e-5, 5e-6)
+        for head in HEADS
+    ),
+    RunConfig(head="attention", learning_rate=2e-5, typos=True, state=True, frozen_layers=8),
+]
+CONFIGS = ROUND_1 + ROUND_2
 
 
 def runs_of(config: RunConfig) -> list[RunConfig]:

@@ -13,7 +13,7 @@ from pydantic import BaseModel, ConfigDict
 from tokenizers import Tokenizer
 
 from unstuk_ml import rung
-from unstuk_ml.backbone import load_backbone
+from unstuk_ml.backbone import freeze_lower, load_backbone
 from unstuk_ml.catalog import Catalog, load_catalog
 from unstuk_ml.decision_batch import DecisionBatch, collate, decision_tokenizer
 from unstuk_ml.decision_loss import decision_loss
@@ -48,6 +48,8 @@ class RunConfig(BaseModel):
     typos: bool
     state: bool
     fold: int | None = None
+    frozen_layers: int = 0
+    """Backbone layers kept as pre-trained, from the bottom, with the embeddings when above 0."""
     epochs: int = 6
     batch_size: int = 32
     seed: int = 7
@@ -58,6 +60,7 @@ class RunConfig(BaseModel):
     def name(self) -> str:
         parts = [self.head, f"lr{self.learning_rate:g}"]
         parts += ["typos"] * self.typos + ["state"] * self.state
+        parts += [f"frozen{self.frozen_layers}"] if self.frozen_layers else []
         parts += [f"fold{self.fold}"] if self.fold is not None else []
         parts += [f"limit{self.limit}"] if self.limit is not None else []
         return "-".join(parts)
@@ -158,7 +161,9 @@ def train(
 def run(config: RunConfig, out: Path) -> DecisionRun:
     """Trains, then writes `model.pt` and `result.json` under `out/<run name>/`."""
     device = training_device()
-    model = DecisionModel(load_backbone(), config.head)
+    backbone = load_backbone()
+    freeze_lower(backbone, config.frozen_layers)
+    model = DecisionModel(backbone, config.head)
     tokenizer = decision_tokenizer(download()[1])
     epochs, weights = train(config, load_data(config.limit), model, tokenizer, device)
     return save_run(out / config.name, config, epochs, weights, device)
@@ -170,6 +175,7 @@ def add_run_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--typos", action="store_true")
     parser.add_argument("--state", action="store_true")
     parser.add_argument("--fold", type=int)
+    parser.add_argument("--frozen-layers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=RunConfig.model_fields["epochs"].default)
     parser.add_argument("--limit", type=int, help="first N lines and questions, for a smoke run")
 
@@ -181,6 +187,7 @@ def config_from(args: argparse.Namespace) -> RunConfig:
         typos=args.typos,
         state=args.state,
         fold=args.fold,
+        frozen_layers=args.frozen_layers,
         epochs=args.epochs,
         limit=args.limit,
     )
@@ -192,6 +199,7 @@ def run_arguments(config: RunConfig) -> list[str]:
     arguments += ["--typos"] * config.typos + ["--state"] * config.state
     arguments += ["--epochs", str(config.epochs)]
     arguments += ["--fold", str(config.fold)] if config.fold is not None else []
+    arguments += ["--frozen-layers", str(config.frozen_layers)] if config.frozen_layers else []
     arguments += ["--limit", str(config.limit)] if config.limit is not None else []
     return arguments
 
