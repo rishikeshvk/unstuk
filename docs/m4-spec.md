@@ -1,6 +1,6 @@
 # M4 spec: Baselines
 
-2026-10-05 · Status: **approved (2026-10-05); step 1 done.** Background: [plan.md](plan.md), roadmap step 4, and
+2026-10-05 · Status: **done.** Results: [m4-results.md](m4-results.md). Background: [plan.md](plan.md), roadmap step 4, and
 [m3-results.md](m3-results.md).
 
 M4 answers one question: **does a cheap learned classifier beat the keyword matcher on the frozen proxy test, and

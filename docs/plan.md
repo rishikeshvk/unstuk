@@ -114,6 +114,12 @@ shipped (invariant 10). Intent labels come from the words alone, and a separate 
 helps. Generation runs in Claude Code sessions and chat apps, not through an API. See the
 [M3 spec](m3-spec.md).
 
+**Correction (2026-10-05): baselines.** fastText is left out: it was archived in March 2024 and ships no wheel for
+this platform, and character n-grams in a TF-IDF baseline cover its typo strength. M4 adds a zero-shot baseline,
+which compares the complaint with each option text using the frozen encoder, and is the only baseline that can
+score held-out intents. No single baseline won everywhere, so M5's bar is set per metric by the best baseline. See
+[M4 results](m4-results.md).
+
 **Why not a small LLM?** Even at 100 MB, 0.5B-class models (\~300 MB+ at 4-bit) don't fit. FunctionGemma 270M is the closest generative option for phone actions, but it maps explicit commands ("turn on the flashlight") rather than symptoms, and at 270M parameters it is likely past the budget. Gemini Nano is used only as an optional System 2 where the phone has it.
 
 ## Size budget
