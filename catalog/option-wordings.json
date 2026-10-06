@@ -21,12 +21,10 @@
   ],
   "phone_not_ringing": [
     "I miss calls because there's no ring",
-    "My phone stays quiet when people phone me",
     "Callers say it rings but I hear nothing",
     "The phone makes no sound for incoming calls",
     "Calls come in silently and I only see them later",
     "When my daughter calls, the phone doesn't make a sound",
-    "I can't hear my phone when someone is calling",
     "Missed calls show up but it never rang"
   ],
   "notifications_missing": [
@@ -40,12 +38,9 @@
     "My phone isn't showing me any new message alerts"
   ],
   "talkback_on": [
-    "A voice reads out everything I touch on the screen",
     "My phone keeps speaking and one tap doesn't work anymore",
-    "There's a green box around things and a voice talking",
     "I have to tap everything twice to open it",
     "The phone reads aloud every button I press",
-    "A robot voice describes the screen and I can't scroll normally",
     "Every touch makes the phone say something out loud",
     "Single taps just select things and a voice speaks them"
   ],
@@ -72,11 +67,7 @@
   "screen_turns_off_fast": [
     "My phone goes black after just a few seconds",
     "The display shuts off while I'm still reading",
-    "I keep having to wake the phone up every few seconds",
-    "The screen goes dark before I finish typing",
-    "My phone locks itself almost right away",
     "The display switches off too soon when I stop touching it",
-    "While I read a message the screen keeps going dark",
     "The phone sleeps far too quickly"
   ],
   "text_too_small": [
