@@ -1,0 +1,108 @@
+## no_internet
+My phone won't go online at all
+The phone says there is no connection to the web
+Nothing loads because the phone has no internet
+I can't get online anywhere, not at home and not outside
+Pages and apps all say I am offline
+My phone stopped connecting to the internet today
+WhatsApp and the browser both say no connection
+There's no signal for internet on my phone anymore
+## wifi_no_load
+The phone shows it's on my Wi-Fi but pages never open
+Connected to the home Wi-Fi yet nothing will load
+My phone joins the Wi-Fi but apps say no connection
+Wi-Fi icon is full but websites just keep spinning
+The phone is on Wi-Fi and still can't open anything
+Apps fail to load even though the Wi-Fi shows connected
+My phone says connected to Wi-Fi, the browser shows an error
+On Wi-Fi with full bars but no page will come up
+## phone_not_ringing
+I miss calls because there's no ring
+My phone stays quiet when people phone me
+Callers say it rings but I hear nothing
+The phone makes no sound for incoming calls
+Calls come in silently and I only see them later
+When my daughter calls, the phone doesn't make a sound
+I can't hear my phone when someone is calling
+Missed calls show up but it never rang
+## notifications_missing
+I don't get alerts when new messages come in
+My texts only show up hours after they were sent
+The phone doesn't tell me about new WhatsApp messages
+App alerts have stopped appearing on my phone
+I only see new messages when I open the app myself
+Emails and chats arrive much later than they should
+No pop-ups or sounds when a message comes
+My phone isn't showing me any new message alerts
+## talkback_on
+A voice reads out everything I touch on the screen
+My phone keeps speaking and one tap doesn't work anymore
+There's a green box around things and a voice talking
+I have to tap everything twice to open it
+The phone reads aloud every button I press
+A robot voice describes the screen and I can't scroll normally
+Every touch makes the phone say something out loud
+Single taps just select things and a voice speaks them
+## colours_wrong
+Everything on my screen has gone grey
+The colours on my phone look like a photo negative
+My screen turned black and white suddenly
+White parts are black and pictures look strange
+Photos look odd, the colours are all reversed
+The phone display lost all its colour
+Faces in pictures look weird, like the colours are flipped
+My phone screen looks washed out with no colour at all
+## screen_too_dim
+I can barely see anything, the display is so dark
+My phone screen looks very dull even indoors
+The display is hard to read because it's so dim
+Everything on the phone looks dark and gloomy
+I can't see my screen outside, it's too faint
+The phone display is much darker than it used to be
+My screen is so dark I have to squint
+The picture on the screen is barely visible
+## screen_turns_off_fast
+My phone goes black after just a few seconds
+The display shuts off while I'm still reading
+I keep having to wake the phone up every few seconds
+The screen goes dark before I finish typing
+My phone locks itself almost right away
+The display switches off too soon when I stop touching it
+While I read a message the screen keeps going dark
+The phone sleeps far too quickly
+## text_too_small
+I can't read the words on my phone, they're tiny
+The writing on the screen is too small for my eyes
+I need bigger letters on my phone
+Messages are hard to read because the font is so small
+I have to hold the phone very close to read anything
+The words in my apps are too little
+Menus and messages have very small writing
+Please make the writing on my phone larger
+## bluetooth_earphones
+My wireless earbuds won't pair with the phone
+The phone can't find my wireless headphones
+My speaker won't link up with my phone
+My earbuds don't play sound from the phone anymore
+The phone doesn't see my headset when I try to connect
+My car audio won't connect to my phone
+I can't get my wireless headphones working with my phone
+Music won't go to my wireless speaker
+## app_permission
+The camera won't open inside WhatsApp
+Apps can't use my microphone, people can't hear me in calls on them
+The map app can't find where I am
+My video call app shows a black screen instead of my camera
+Voice messages don't record in my chat app
+The taxi app says it doesn't know my location
+An app keeps saying it can't access the camera
+I can't take photos from within an app
+## reset_network
+I want to clear all my connection settings and start fresh
+Please reset everything to do with Wi-Fi and signal
+Nothing connects and I'd like to wipe the connections back to default
+Start over with all my phone's connections
+I've tried everything, just reset the phone's network
+Erase my saved Wi-Fi and connections and begin again
+Put all the connection settings back to how they came
+I want a full network reset on my phone
