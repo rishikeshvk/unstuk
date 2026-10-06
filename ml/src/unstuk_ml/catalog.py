@@ -5,7 +5,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from unstuk_ml.labels import HELD_OUT
+
 CATALOG_DIR = Path(__file__).resolve().parents[3] / "catalog"
+# Training only: the app reads intents.json alone, with a strict parser.
+WORDINGS_FILE = CATALOG_DIR / "option-wordings.json"
 
 
 @dataclass(frozen=True)
@@ -18,6 +22,8 @@ class Catalog:
     """Intent id to the check ids of its causes, in diagnosis order."""
     findings: dict[str, str]
     """Check id to its fix's finding, the plain sentence the app shows ("Airplane mode is on.")."""
+    wordings: dict[str, tuple[str, ...]]
+    """Trained intent id to other wordings of its option text, for training only."""
 
 
 def load_catalog(directory: Path = CATALOG_DIR) -> Catalog:
@@ -28,7 +34,16 @@ def load_catalog(directory: Path = CATALOG_DIR) -> Catalog:
         checks=frozenset(cause["check"] for intent in intents for cause in intent["causes"]),
         causes={i["id"]: tuple(c["check"] for c in i["causes"]) for i in intents},
         findings=_findings(intents, {fix["id"]: fix["finding"] for fix in fixes}),
+        wordings=_wordings(directory / WORDINGS_FILE.name, {i["id"] for i in intents}),
     )
+
+
+def _wordings(path: Path, intents: set[str]) -> dict[str, tuple[str, ...]]:
+    wordings = json.loads(path.read_text(encoding="utf-8"))
+    wrong = set(wordings) - (intents - HELD_OUT)
+    if wrong:
+        raise ValueError(f"wordings only for trained intents, not {sorted(wrong)}")
+    return {intent: tuple(texts) for intent, texts in wordings.items()}
 
 
 def _findings(intents: list[dict[str, Any]], finding_of_fix: dict[str, str]) -> dict[str, str]:
