@@ -86,6 +86,12 @@ Typo noise stays on because it gave the higher fold accuracy for both heads in r
 rule and the heads' 1e-3 rate are unchanged, and the pool is both rounds' configs. If nothing qualifies after
 round 2, M5 records that fine-tuning costs zero-shot naming and asks how to go on; the test is still untouched.
 
+**Round 2 result (2026-10-06): no config qualifies.** At the kept epoch the best mean fold accuracy is 63.1%
+(attention, 5e-6); at any single epoch the best is 69.2% (cosine, 5e-6, after the first epoch). Lower rates trade
+dev macro-F1 (92–95%) for a few points on the folds, and freezing 8 layers (57.6%) does no better than training
+them all. Across 13 configs and 52 runs, fine-tuning on 12 fixed option texts costs the encoder its ability to
+name options it hasn't trained on, at every rate tried.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
