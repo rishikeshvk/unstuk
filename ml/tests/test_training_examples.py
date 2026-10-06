@@ -22,6 +22,7 @@ from unstuk_ml.training_examples import (
 CATALOG = load_catalog()
 INTENTS = trained_intents(CATALOG)
 OPTION_OF = {option: intent for intent, option in CATALOG.intents.items()}
+WORDING_OF = {w: intent for intent, ws in CATALOG.wordings.items() for w in ws}
 RECORDS = [
     make(f"line-{n}", f"complaint number {n} about the phone", label)
     for n, label in enumerate([*INTENTS, "out_of_scope"] * 10)
@@ -43,6 +44,7 @@ def draw(
     state: bool = False,
     typos: bool = False,
     intents: list[str] = INTENTS,
+    wordings: bool = False,
 ) -> list[Example]:
     return epoch(
         RECORDS if records is None else records,
@@ -53,6 +55,7 @@ def draw(
         number=number,
         state=state,
         typos=typos,
+        wordings=wordings,
     )
 
 
@@ -144,7 +147,9 @@ def test_distractor_state_says_nothing_about_the_label() -> None:
 
 
 def test_a_node_question_keeps_its_options_and_skips_the_noul() -> None:
-    (example,) = epoch([], [NODE], CATALOG, INTENTS, seed=7, number=0, state=True, typos=True)
+    (example,) = epoch(
+        [], [NODE], CATALOG, INTENTS, seed=7, number=0, state=True, typos=True, wordings=True
+    )
 
     assert example == Example(
         text=NODE.question,
@@ -165,7 +170,8 @@ def test_an_epoch_does_not_depend_on_string_hashing() -> None:
         "c = load_catalog()\n"
         "r = [Record(id=f'r{n}', text='phone is silent', labels=[i], source='generated',\n"
         "            generator='g', batch='b') for n, i in enumerate(trained_intents(c))]\n"
-        "print(epoch(r, [], c, trained_intents(c), seed=7, number=0, state=True, typos=True))\n"
+        "print(epoch(r, [], c, trained_intents(c), seed=7, number=0, state=True, typos=True,\n"
+        "            wordings=True))\n"
     )
     outputs = {
         subprocess.run(
@@ -179,3 +185,28 @@ def test_an_epoch_does_not_depend_on_string_hashing() -> None:
     }
 
     assert len(outputs) == 1
+
+
+def test_wordings_change_only_the_option_texts_and_keep_the_canonical_ones_often() -> None:
+    plain, worded = draw(), draw(wordings=True)
+    offered = [o for e in worded for o in e.options]
+
+    for before, after in zip(plain, worded, strict=True):
+        assert (after.text, after.state, after.answers) == (
+            before.text,
+            before.state,
+            before.answers,
+        )
+        assert [OPTION_OF[o] for o in before.options] == [
+            OPTION_OF.get(o) or WORDING_OF[o] for o in after.options
+        ]
+    assert 0.4 < sum(o in OPTION_OF for o in offered) / len(offered) < 0.6
+
+
+def test_a_fold_never_offers_a_removed_intents_wordings() -> None:
+    kept = INTENTS[:4]
+    records = [make(f"r{n}", "no net", kept[n % 4]) for n in range(40)]
+
+    offered = {o for e in draw(records, intents=kept, wordings=True) for o in e.options}
+
+    assert {OPTION_OF.get(o) or WORDING_OF[o] for o in offered} <= set(kept)

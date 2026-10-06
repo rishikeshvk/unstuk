@@ -42,7 +42,13 @@ ROUND_2 = [
     ),
     RunConfig(head="attention", learning_rate=2e-5, typos=True, state=True, frozen_layers=8),
 ]
-CONFIGS = ROUND_1 + ROUND_2
+# Round 2 failed too, so round 3 removes the 12 fixed option strings the model could memorise.
+ROUND_3 = [
+    RunConfig(head=head, learning_rate=lr, typos=True, state=True, wordings=True)
+    for lr in (5e-6, 1e-5, 2e-5)
+    for head in HEADS
+]
+CONFIGS = ROUND_1 + ROUND_2 + ROUND_3
 
 
 def runs_of(config: RunConfig) -> list[RunConfig]:

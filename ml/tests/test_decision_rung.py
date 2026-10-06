@@ -5,7 +5,15 @@ from numpy.typing import NDArray
 from records import make
 
 from unstuk_ml.catalog import load_catalog
-from unstuk_ml.decision_rung import CONFIGS, GRID, pick, runs_of, zero_shot_line
+from unstuk_ml.decision_rung import (
+    CONFIGS,
+    GRID,
+    ROUND_2,
+    ROUND_3,
+    pick,
+    runs_of,
+    zero_shot_line,
+)
 from unstuk_ml.decision_training import DecisionRun, EpochResult, RunConfig
 from unstuk_ml.folds import trained_intents
 
@@ -44,8 +52,8 @@ def results(scores: dict[str, tuple[float, float, float]]) -> dict[str, Decision
 
 
 def test_every_config_runs_on_all_the_data_and_each_fold() -> None:
-    assert len(CONFIGS) == 13
-    assert len(GRID) == 52
+    assert len(CONFIGS) == 19
+    assert len(GRID) == 76
     assert [r.name for r in runs_of(CONFIGS[0])] == [
         "cosine-lr2e-05-state",
         "cosine-lr2e-05-state-fold0",
@@ -80,7 +88,7 @@ def test_when_no_config_reaches_the_line_nothing_is_picked() -> None:
     grid, best = pick(results({}), line=0.9)
 
     assert best is None
-    assert len(grid) == 13
+    assert len(grid) == 19
 
 
 def fake_embed(texts: Sequence[str]) -> NDArray[np.float32]:
@@ -111,10 +119,21 @@ def test_a_fold_config_differs_from_its_full_run_only_by_the_fold() -> None:
 
 
 def test_round_two_moves_the_backbone_less() -> None:
-    assert [c.name for c in CONFIGS[8:]] == [
+    assert [c.name for c in ROUND_2] == [
         "cosine-lr1e-05-typos-state",
         "attention-lr1e-05-typos-state",
         "cosine-lr5e-06-typos-state",
         "attention-lr5e-06-typos-state",
         "attention-lr2e-05-typos-state-frozen8",
+    ]
+
+
+def test_round_three_trains_on_other_wordings_of_the_options() -> None:
+    assert [c.name for c in ROUND_3] == [
+        "cosine-lr5e-06-typos-wordings-state",
+        "attention-lr5e-06-typos-wordings-state",
+        "cosine-lr1e-05-typos-wordings-state",
+        "attention-lr1e-05-typos-wordings-state",
+        "cosine-lr2e-05-typos-wordings-state",
+        "attention-lr2e-05-typos-wordings-state",
     ]

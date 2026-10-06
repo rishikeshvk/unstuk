@@ -48,6 +48,8 @@ class RunConfig(BaseModel):
     typos: bool
     state: bool
     fold: int | None = None
+    wordings: bool = False
+    """Offer other wordings of the option texts in training (round 3)."""
     frozen_layers: int = 0
     """Backbone layers kept as pre-trained, from the bottom, with the embeddings when above 0."""
     epochs: int = 6
@@ -59,7 +61,7 @@ class RunConfig(BaseModel):
     @property
     def name(self) -> str:
         parts = [self.head, f"lr{self.learning_rate:g}"]
-        parts += ["typos"] * self.typos + ["state"] * self.state
+        parts += ["typos"] * self.typos + ["wordings"] * self.wordings + ["state"] * self.state
         parts += [f"frozen{self.frozen_layers}"] if self.frozen_layers else []
         parts += [f"fold{self.fold}"] if self.fold is not None else []
         parts += [f"limit{self.limit}"] if self.limit is not None else []
@@ -125,6 +127,7 @@ def train(
             number=number,
             state=config.state,
             typos=config.typos,
+            wordings=config.wordings,
         )
         order = shuffled(examples, config.seed, number)
         return (collate(chunk, tokenizer) for chunk in chunks(order, config.batch_size))
@@ -173,6 +176,7 @@ def add_run_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--head", choices=["cosine", "attention"], required=True)
     parser.add_argument("--learning-rate", type=float, required=True)
     parser.add_argument("--typos", action="store_true")
+    parser.add_argument("--wordings", action="store_true")
     parser.add_argument("--state", action="store_true")
     parser.add_argument("--fold", type=int)
     parser.add_argument("--frozen-layers", type=int, default=0)
@@ -186,6 +190,7 @@ def config_from(args: argparse.Namespace) -> RunConfig:
         learning_rate=args.learning_rate,
         typos=args.typos,
         state=args.state,
+        wordings=args.wordings,
         fold=args.fold,
         frozen_layers=args.frozen_layers,
         epochs=args.epochs,
@@ -197,6 +202,7 @@ def run_arguments(config: RunConfig) -> list[str]:
     """The command-line options that `config_from` turns back into this config."""
     arguments = ["--head", config.head, "--learning-rate", repr(config.learning_rate)]
     arguments += ["--typos"] * config.typos + ["--state"] * config.state
+    arguments += ["--wordings"] * config.wordings
     arguments += ["--epochs", str(config.epochs)]
     arguments += ["--fold", str(config.fold)] if config.fold is not None else []
     arguments += ["--frozen-layers", str(config.frozen_layers)] if config.frozen_layers else []

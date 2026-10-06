@@ -18,6 +18,8 @@ from unstuk_ml.typos import noisy
 
 OTHER_OPTIONS = (3, 11)
 MAX_DISTRACTORS = 2
+# Dev and the test show only the canonical texts, so training keeps seeing them often.
+CANONICAL_SHARE = 0.5
 
 
 @dataclass(frozen=True)
@@ -47,14 +49,16 @@ def epoch(
     number: int,
     state: bool,
     typos: bool,
+    wordings: bool,
 ) -> list[Example]:
     """One epoch's examples: every line with freshly drawn options, then every node question."""
     streams = _Streams(
         options=random.Random(f"{seed}/{number}/options"),
         state=random.Random(f"{seed}/{number}/state"),
         typos=random.Random(f"{seed}/{number}/typos"),
+        wording=random.Random(f"{seed}/{number}/wording"),
     )
-    lines = [_line_example(r, catalog, intents, streams, state, typos) for r in records]
+    lines = [_line_example(r, catalog, intents, streams, state, typos, wordings) for r in records]
     return lines + [_node_example(q) for q in nodes]
 
 
@@ -63,6 +67,7 @@ class _Streams:
     options: random.Random
     state: random.Random
     typos: random.Random
+    wording: random.Random
 
 
 def _line_example(
@@ -72,12 +77,16 @@ def _line_example(
     streams: _Streams,
     state: bool,
     typos: bool,
+    wordings: bool,
 ) -> Example:
     chosen = _options(record, intents, streams.options)
     return Example(
         text=noisy(record.text, streams.typos) if typos else record.text,
         state=_state(record, catalog, streams.state) if state else "",
-        options=tuple(catalog.intents[i] for i in chosen),
+        options=tuple(
+            _wording(i, catalog, streams.wording) if wordings else catalog.intents[i]
+            for i in chosen
+        ),
         answers=frozenset(n for n, i in enumerate(chosen) if i in record.labels),
         out_of_scope=OUT_OF_SCOPE in record.labels,
     )
@@ -94,6 +103,14 @@ def _options(record: Record, intents: Sequence[str], rng: random.Random) -> list
     chosen = gold + rng.sample(others, rng.randint(low, high))
     rng.shuffle(chosen)
     return chosen
+
+
+def _wording(intent: str, catalog: Catalog, rng: random.Random) -> str:
+    """The canonical option text half the time, otherwise one of the intent's other wordings."""
+    others = catalog.wordings.get(intent, ())
+    if not others or rng.random() < CANONICAL_SHARE:
+        return catalog.intents[intent]
+    return rng.choice(others)
 
 
 def _state(record: Record, catalog: Catalog, rng: random.Random) -> str:
