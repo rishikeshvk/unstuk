@@ -92,6 +92,22 @@ dev macro-F1 (92–95%) for a few points on the folds, and freezing 8 layers (57
 them all. Across 13 configs and 52 runs, fine-tuning on 12 fixed option texts costs the encoder its ability to
 name options it hasn't trained on, at every rate tried.
 
+### Round 3: paraphrased option texts (decided 2026-10-06, before any decision-model test score)
+
+Every training example shows the same 12 option strings, so the model can learn the strings instead of matching
+meaning to a description. Round 3 removes that shortcut:
+
+- **Wordings:** `catalog/option-wordings.json` holds 8 wordings of each trained intent's option text, for
+  training only (the app reads only `intents.json`, whose parser is strict). Held-out intents get none. A fresh
+  agent writes them from a prompt in `catalog/prompts/` that shows only the catalog, not data; the sheet is
+  committed as returned. Each wording must sit closer, under the frozen bge-small, to its own intent's option than
+  to any other of the 15; those that don't are dropped, never edited.
+- **Training:** each offered option is the canonical text half the time and a random wording otherwise. Dev, the
+  folds and the test see only the canonical texts. A fold removes its intents' wordings too.
+- **Grid:** wordings, typos and state on; learning rate {5e-6, 1e-5, 2e-5} × head {cosine, attention}: 6
+  configs, 24 runs. The guard, the rule and the pool (all three rounds) are unchanged. If nothing qualifies, M5
+  records it and asks how to go on.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
