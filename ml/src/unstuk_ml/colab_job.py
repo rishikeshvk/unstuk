@@ -24,9 +24,10 @@ SHIPPED = ("ml", "catalog", "data/clean", "data/state", "data/nodes")
 NEVER_SHIPPED = ("data/test/", "data/real/")
 REMOTE_ROOT = "/content/unstuk"
 REMOTE_BUNDLE = "/content/unstuk.tar.gz"
-# The CLI gives up after 30 seconds by default; a full run takes most of an hour.
+# The CLI's default is 30 seconds. A run takes about 3 minutes on a T4, and `colab exec` waits
+# out its timeout if Colab reclaims the VM, so the limit is how long a dead session can hang.
 SETUP_TIMEOUT = 15 * 60
-RUN_TIMEOUT = 4 * 60 * 60
+RUN_TIMEOUT = 30 * 60
 # The result goes last: its presence marks a run as complete.
 OUTPUTS = (CHECKPOINT, RESULT)
 
