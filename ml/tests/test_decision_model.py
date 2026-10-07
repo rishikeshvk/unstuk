@@ -7,7 +7,7 @@ from tiny_model import tiny_model
 from tokenizers import Tokenizer
 
 from unstuk_ml.decision_batch import collate, decision_tokenizer
-from unstuk_ml.decision_model import DecisionModel, Head
+from unstuk_ml.decision_model import DecisionModel, Head, fit_features
 from unstuk_ml.encoder import download, downloaded
 from unstuk_ml.training_examples import Example
 
@@ -129,3 +129,35 @@ def test_the_option_aware_noul_reads_the_options(tokenizer: Tokenizer) -> None:
     assert not torch.isclose(first, second)
     same_complaint = noul_logits(tiny_model("cosine"), [SHORT, other], tokenizer)
     assert torch.isclose(same_complaint[0], same_complaint[1])
+
+
+@pytest.mark.parametrize("head", HEADS)
+def test_the_fit_only_noul_ignores_option_order_and_batch_mates(
+    head: Head, tokenizer: Tokenizer
+) -> None:
+    model = tiny_model(head, "fit")
+    shuffled = Example(
+        LONG.text, LONG.state, tuple(LONG.options[i] for i in [3, 0, 4, 2, 1]), frozenset(), False
+    )
+
+    assert torch.allclose(
+        noul_logits(model, [LONG], tokenizer), noul_logits(model, [shuffled], tokenizer), atol=1e-5
+    )
+    assert torch.allclose(
+        noul_logits(model, [SHORT], tokenizer)[0],
+        noul_logits(model, [LONG, SHORT], tokenizer)[1],
+        atol=1e-5,
+    )
+    assert torch.isfinite(noul_logits(model, [LONG, SHORT], tokenizer)).all()
+
+
+def test_fit_features_are_the_best_score_its_margin_and_a_share_of_the_most_entropy() -> None:
+    padded = torch.tensor([[3.0, 1.0, -math.inf], [2.0, 2.0, 2.0]])
+    wider = torch.zeros(1, 12)
+
+    features = fit_features(padded)
+
+    assert torch.isfinite(features).all()
+    assert features[0, :2].tolist() == [3.0, 2.0]
+    assert features[1].tolist() == pytest.approx([2.0, 0.0, 1.0])
+    assert fit_features(wider)[0, 2].item() == pytest.approx(1.0)

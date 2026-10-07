@@ -16,8 +16,10 @@ from transformers import BertModel
 from unstuk_ml.decision_batch import DecisionBatch, Encoded
 
 Head = Literal["cosine", "attention"]
-NoulInput = Literal["complaint", "options"]
-"""What decides out of scope: the complaint alone, or the complaint against the offered options."""
+NoulInput = Literal["complaint", "options", "fit"]
+"""What decides out of scope: the complaint alone, the complaint against the options, or only how
+well the options fit (round 7), which can't tell a familiar complaint from an unfamiliar one."""
+
 # bge's cosines differ by hundredths, so a softmax over them needs a large scale to be decisive.
 INITIAL_SCALE = 20.0
 
@@ -43,7 +45,7 @@ class DecisionModel(nn.Module):
             else None
         )
         # Against the options: the complaint, the Choice-weighted options, their product, the best.
-        self.noul = nn.Linear(width if noul == "complaint" else 3 * width + 1, 1)
+        self.noul = nn.Linear({"complaint": width, "options": 3 * width + 1, "fit": 3}[noul], 1)
 
     def forward(self, batch: DecisionBatch) -> Decision:
         tokens = self._hidden(batch.queries)
@@ -67,6 +69,8 @@ class DecisionModel(nn.Module):
     ) -> torch.Tensor:
         if self.noul_input == "complaint":
             return query
+        if self.noul_input == "fit":
+            return fit_features(choice)
         weighted = (choice.softmax(dim=1)[..., None] * options).sum(dim=1)
         best = choice.max(dim=1).values[:, None]
         return torch.cat([query, weighted, query * weighted, best], dim=-1)
@@ -110,3 +114,12 @@ class AttentionCorrection(nn.Module):
         options = options + self.set(x, x, x, key_padding_mask=~option_mask)[0]
         correction: torch.Tensor = self.score(self.out_norm(options)).squeeze(-1)
         return correction
+
+
+def fit_features(choice: torch.Tensor) -> torch.Tensor:
+    """How well the offered options fit: the best logit, its margin over the second, and the
+    entropy as a share of its maximum, so 4 options and 12 read on the same scale."""
+    best, second = choice.topk(2, dim=1).values.unbind(dim=1)
+    offered = torch.isfinite(choice).sum(dim=1).float()
+    entropy = torch.special.entr(choice.softmax(dim=1)).sum(dim=1) / offered.log()
+    return torch.stack([best, best - second, entropy], dim=1)
