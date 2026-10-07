@@ -29,7 +29,7 @@ from unstuk_ml.decision_scoring import (
     predict,
     scored,
 )
-from unstuk_ml.decision_training import DecisionRun, RunConfig
+from unstuk_ml.decision_training import DecisionRun, RunConfig, noul_input
 from unstuk_ml.encoder import download, embed_cached
 from unstuk_ml.evaluate import Scored, in_scope_accuracy, macro_f1
 from unstuk_ml.fine_tuning import RESULT, RUNS_DIR, load_weights
@@ -63,7 +63,13 @@ ROUND_3 = [
     for lr in (5e-6, 1e-5, 2e-5)
     for head in HEADS
 ]
-CONFIGS = ROUND_1 + ROUND_2 + ROUND_3
+# Rounds 4 and 5 showed out of scope, not naming, fails the guard; round 6 teaches "no option fits".
+ROUND_6 = [
+    RunConfig(head=head, learning_rate=lr, typos=True, state=True, none_fits=True)
+    for lr in (5e-6, 1e-5)
+    for head in HEADS
+]
+CONFIGS = ROUND_1 + ROUND_2 + ROUND_3 + ROUND_6
 # Round 3 failed too; round 4 blends the best checkpoints back toward the frozen encoder (WiSE-FT).
 ALPHAS = (0.25, 0.5, 0.75)
 BLENDED = [ROUND_3[1], ROUND_3[2], ROUND_2[3], ROUND_1[6]]
@@ -159,7 +165,7 @@ class _Scoring:
 
     def model(self, run: str, alpha: float | None) -> DecisionModel:
         result = self.results[run]
-        model = DecisionModel(load_backbone(), result.config.head)
+        model = DecisionModel(load_backbone(), result.config.head, noul_input(result.config))
         model.load_state_dict(load_weights(self.runs / run, result.checkpoint_sha256))
         if alpha is not None:
             blend(model.backbone, self.frozen, alpha)
