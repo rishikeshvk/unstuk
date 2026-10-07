@@ -161,6 +161,14 @@ Out of scope is decided the way the zero-shot rung decides it: by how well the b
   with Noul, 12 blends, 19 gated configs); the guard and the rule are unchanged. If nothing qualifies, M5 records
   it and asks how to go on.
 
+**Round 5 result (2026-10-07): no gated config qualifies, and the gate does worse than Noul.** The best is 67.7%
+(cosine 5e-6 with typos); at 5e-5 one fold falls to 15%. The gate learns its threshold from trained intents,
+which fine-tuning makes the model very sure of; a never-trained intent's best option fits less well, so it falls
+below the threshold and reads as out of scope. Noul failed the same way from the complaint alone. **Any
+out-of-scope decision calibrated only on trained intents treats a new intent as out of scope**, while Choice by
+itself names new intents about as well as the frozen rung. Out of scope has to be taught as "no offered option
+fits", not as "unlike what I was trained on".
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
