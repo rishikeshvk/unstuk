@@ -120,6 +120,12 @@ which compares the complaint with each option text using the frozen encoder, and
 score held-out intents. No single baseline won everywhere, so M5's bar is set per metric by the best baseline. See
 [M4 results](m4-results.md).
 
+**Correction (2026-10-08): new intents.** "A new issue works zero-shot at first" doesn't hold for the fine-tuned
+model. On dev, its Choice head names never-trained intents about as well as the frozen encoder (77–83% against
+83.5%), but every out-of-scope check tried in M5 declines a fifth or more of a new intent's lines as unfamiliar.
+A new intent therefore ships with training lines, not option text alone. See the
+[M5 spec](m5-spec.md), section 3.
+
 **Why not a small LLM?** Even at 100 MB, 0.5B-class models (\~300 MB+ at 4-bit) don't fit. FunctionGemma 270M is the closest generative option for phone actions, but it maps explicit commands ("turn on the flashlight") rather than symptoms, and at 270M parameters it is likely past the budget. Gemini Nano is used only as an optional System 2 where the phone has it.
 
 ## Size budget

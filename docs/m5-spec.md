@@ -206,6 +206,18 @@ log-loss) from every row scored. M5 then goes on to step 7 (state) and step 8 (t
 report says that the held-out bar is expected to fail and why, and `plan.md` records that a new intent ships with
 training lines.
 
+**Round 7 result (2026-10-08): no config qualifies, and the stop rule applies.** Fit-only out of scope does worse
+than round 6: 42.4–69.7% on the folds, with one fold as low as 12.4%, and at 1e-5 the cosine head's dev macro-F1
+falls to 63.8%. How well the options fit is itself a familiarity signal: a never-trained intent's own option fits
+less well than a trained one's, so a head that sees only the fit still declines it. Across 31 configs, 108 runs
+and 71 scored variants, nothing reached the line (best: 75.3%, a WiSE-FT blend).
+
+**The guard is dropped (decided 2026-10-08, by the stop rule above).** `unstuk-decision choose --without-guard`
+picked by the rung rule alone from every row: `cosine-lr5e-05-typos-state` (complaint-only Noul, epoch 5, dev
+macro-F1 98.2%), whose fold accuracy (43.6%) is the lowest of any config. `decision.json` records
+`"guarded": false`. The step 8 report must say that this model was chosen without the guard and is expected to
+fail the held-out bar.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
