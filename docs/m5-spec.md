@@ -129,6 +129,25 @@ checkpoints already trained.
 - **Selection:** the pool is the 19 configs and the 12 blends, with the guard and the rule unchanged. If nothing
   qualifies, M5 records it and asks how to go on.
 
+**Round 4 result (2026-10-07): no blend qualifies.** The best is 75.3% on the folds (cosine 1e-5 with wordings,
+α = 0.25), with dev macro-F1 down to 85.0%. Even α = 0, the frozen backbone under the fine-tuned heads, scores
+73.5% on that config's folds: below the line with the frozen encoder itself.
+
+**Correction: the guard fails on out of scope, not on naming.** Diagnostics on dev, after round 4, split the fold
+score into its two heads, on the in-scope lines of each fold's unseen intents:
+
+| | Choice alone, right | Called out of scope |
+| --- | --- | --- |
+| Frozen zero-shot rung | 83.5% | about 5% (its out-of-scope option) |
+| Best fine-tuned configs | 82.6%, 82.4%, 82.3% | 15–38% (Noul) |
+| All 19 configs | 75.3–82.6% | 7.9–38.3% |
+
+Fine-tuning costs the Choice head about one point of zero-shot naming, not the 12–35 points the combined score
+suggested; the notes after rounds 1 to 3 that blamed forgetting were wrong. The loss is the Noul head: it reads
+only the complaint, and a complaint about an intent it never trained on looks out of scope to it. The test's
+held-out intents would meet the same head. This is a flaw in decision 1 (a Noul head on the complaint alone),
+found on dev; the test is still untouched.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
