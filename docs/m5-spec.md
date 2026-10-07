@@ -115,6 +115,20 @@ line; 2e-5 again does worst (61–62%). Fold 2 (`no_internet`, `wifi_no_load`, `
 points but doesn't remove it: across 19 configs and 76 runs, fine-tuning costs the encoder more zero-shot naming
 than any of the three remedies tried wins back.
 
+### Round 4: WiSE-FT blends (decided 2026-10-07, before any blend is scored)
+
+WiSE-FT (Wortsman et al., 2022) blends a fine-tuned model's weights with the frozen ones,
+`θ = α·θ_fine-tuned + (1−α)·θ_frozen`, and often keeps most of both. No new training: every blend comes from
+checkpoints already trained.
+
+- **Only the backbone is blended.** The heads keep their fine-tuned weights: the frozen encoder has none to blend
+  toward, and the zero-shot ability being protected lives in the encoder.
+- **Blends:** α ∈ {0.25, 0.5, 0.75} for the three configs best on the folds (attention 5e-6 with wordings; cosine
+  1e-5 with wordings; attention 5e-6 from round 2) and the one best on dev (cosine 5e-5 with typos): 12 blends.
+  A blend's full run gives its dev scores; its three fold runs, blended the same way, give its fold accuracies.
+- **Selection:** the pool is the 19 configs and the 12 blends, with the guard and the rule unchanged. If nothing
+  qualifies, M5 records it and asks how to go on.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
