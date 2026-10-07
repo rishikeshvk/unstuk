@@ -192,6 +192,20 @@ zero-shot *naming*: Choice alone names unseen intents at 77–83% against the fr
 deciding out of scope that was tried (from the complaint, from the best score, from the complaint against the
 options) learns that a never-trained intent is unfamiliar and declines a fifth or more of its lines.
 
+### Round 7, the last: out of scope from option fit only (decided 2026-10-07, before any run)
+
+Round 6's head still reads the complaint vector, so it can judge "this complaint is unfamiliar". Round 7 takes
+that away: Noul's logit is a linear layer over three numbers, namely the best Choice logit, the margin from the
+best to the second, and the Choice entropy divided by `log(options offered)`. Nothing else changes from round 6:
+gold-dropped examples, typos and state on, learning rate {5e-6, 1e-5} × head {cosine, attention}, 16 runs. The
+pool is every row; the guard and the rule are unchanged.
+
+**Stop rule.** If no row qualifies after round 7, there are no more rounds. The guard is dropped by a recorded
+decision, and the decision model is chosen by the rung rule alone (highest dev macro-F1, ties to the lower
+log-loss) from every row scored. M5 then goes on to step 7 (state) and step 8 (the single test scoring), whose
+report says that the held-out bar is expected to fail and why, and `plan.md` records that a new intent ships with
+training lines.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
