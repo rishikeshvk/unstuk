@@ -148,6 +148,19 @@ only the complaint, and a complaint about an intent it never trained on looks ou
 held-out intents would meet the same head. This is a flaw in decision 1 (a Noul head on the complaint alone),
 found on dev; the test is still untouched.
 
+### Round 5: out of scope from Choice (decided 2026-10-07, before any gated scoring)
+
+Out of scope is decided the way the zero-shot rung decides it: by how well the best offered option fits.
+
+- **The gate:** `p(out of scope) = sigmoid(a · m + b)`, where `m` is the line's best Choice logit over the
+  offered options. `a` and `b` come from a one-feature logistic regression on dev, by log-loss. The intents share
+  `1 − p` in proportion to Choice, as with Noul. No retraining: the existing checkpoints are re-scored.
+- **Fitted without the unseen intents:** a fold run's gate is fitted on dev without the lines of the intents that
+  fold removed, then scores those lines. A full run's gate is fitted on all of dev.
+- **Round 5:** all 19 configs, re-scored with the gate in place of Noul. The pool is every row so far (19 configs
+  with Noul, 12 blends, 19 gated configs); the guard and the rule are unchanged. If nothing qualifies, M5 records
+  it and asks how to go on.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
