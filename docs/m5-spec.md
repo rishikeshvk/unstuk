@@ -108,6 +108,13 @@ meaning to a description. Round 3 removes that shortcut:
   configs, 24 runs. The guard, the rule and the pool (all three rounds) are unchanged. If nothing qualifies, M5
   records it and asks how to go on.
 
+**Round 3 result (2026-10-07): no config qualifies.** The frozen check dropped 9 of 96 wordings, leaving 4 to 8
+per intent. The best mean fold accuracy is 66.9% (attention, 5e-6), up from 63.1% in round 2, against the 78.7%
+line; 2e-5 again does worst (61–62%). Fold 2 (`no_internet`, `wifi_no_load`, `screen_turns_off_fast`,
+`talkback_on`) stays near 50–60% in every config. Varying the option wording narrows the loss by about four
+points but doesn't remove it: across 19 configs and 76 runs, fine-tuning costs the encoder more zero-shot naming
+than any of the three remedies tried wins back.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
