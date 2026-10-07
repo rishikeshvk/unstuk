@@ -169,6 +169,18 @@ out-of-scope decision calibrated only on trained intents treats a new intent as 
 itself names new intents about as well as the frozen rung. Out of scope has to be taught as "no offered option
 fits", not as "unlike what I was trained on".
 
+### Round 6: out of scope as "no offered option fits" (decided 2026-10-07, before any run)
+
+- **Option-aware Noul:** its logit reads the complaint's vector `q`, the offered options' vectors averaged by
+  their Choice probabilities `ō`, their product `q ⊙ ō`, and the best Choice logit. It sums over options, so order
+  can't matter.
+- **Gold-dropped examples:** a quarter of in-scope training lines lose their correct option(s) from the offered
+  list (at least three others remain); their target becomes out of scope and their Choice loss is masked, as for
+  real out-of-scope lines. Out of scope then means "none of these fits", which a new intent's own option does.
+- **Grid:** both of the above, with typos and state on; learning rate {5e-6, 1e-5} × head {cosine, attention}:
+  4 configs, 16 runs. The pool is every row so far; the guard and the rule are unchanged. If nothing qualifies,
+  M5 records it and asks how to go on.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
