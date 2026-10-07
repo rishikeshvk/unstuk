@@ -10,8 +10,10 @@ from tokenizers import Tokenizer
 from unstuk_ml.catalog import load_catalog
 from unstuk_ml.decision_batch import decision_tokenizer
 from unstuk_ml.decision_scoring import (
+    Gate,
     Logits,
     Temperatures,
+    fit_gate,
     fit_temperatures,
     log_loss,
     node_accuracy,
@@ -140,3 +142,38 @@ def test_temperatures_soften_both_heads() -> None:
     assert soft[OUT_OF_SCOPE] == pytest.approx(1 / (1 + math.exp(-1)))
     assert sharp[OUT_OF_SCOPE] == pytest.approx(1 / (1 + math.exp(-2)))
     assert soft["a"] / soft["b"] == pytest.approx(math.e)
+
+
+def gated_lines(lines: int = 2000) -> tuple[Logits, list[Record]]:
+    """Out-of-scope lines' best option scores low; in-scope lines' scores high."""
+    rng = np.random.default_rng(1)
+    outside = rng.random(lines) < 0.3
+    best = np.where(outside, rng.normal(2.0, 1.0, lines), rng.normal(6.0, 1.0, lines))
+    choice = np.stack([best, best - 3.0, best - 4.0], axis=1)
+    records = [make(f"g{n}", "x", OUT_OF_SCOPE if o else "a") for n, o in enumerate(outside)]
+    return Logits(choice=choice, out_of_scope=np.zeros(lines)), records
+
+
+def test_the_gate_learns_that_a_poorly_fitting_best_option_means_out_of_scope() -> None:
+    logits, records = gated_lines()
+
+    gate = fit_gate(logits, records)
+    items = scored(gate.apply(logits), records, ["a", "b", "c"])
+
+    assert gate.weight < 0
+    assert sum(i.top[0] == i.record.labels[0] for i in items) / len(items) > 0.95
+
+
+def test_gated_probabilities_still_sum_to_one() -> None:
+    logits, records = gated_lines(50)
+
+    for item in scored(fit_gate(logits, records).apply(logits), records, ["a", "b", "c"]):
+        assert sum(item.probabilities.values()) == pytest.approx(1)
+
+
+def test_a_flat_gate_gives_every_line_the_same_out_of_scope_probability() -> None:
+    logits, records = gated_lines(50)
+
+    items = scored(Gate(weight=0.0, bias=math.log(3)).apply(logits), records, ["a", "b", "c"])
+
+    assert {round(i.probabilities[OUT_OF_SCOPE], 6) for i in items} == {0.75}

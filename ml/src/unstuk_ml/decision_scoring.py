@@ -12,6 +12,7 @@ from dataclasses import dataclass
 import numpy as np
 import torch
 from numpy.typing import NDArray
+from sklearn.linear_model import LogisticRegression
 from tokenizers import Tokenizer
 
 from unstuk_ml.catalog import Catalog
@@ -109,6 +110,29 @@ def fit_temperatures(
         choice=fit_temperature(logits.choice[in_scope], choice_targets),
         noul=fit_temperature(noul, noul_targets),
     )
+
+
+@dataclass(frozen=True)
+class Gate:
+    """Out of scope from how well the best offered option fits (M5 spec section 3, round 5).
+
+    Its logit is `weight * best Choice logit + bias`, in place of Noul's, which reads the complaint
+    alone and so calls never-trained intents out of scope.
+    """
+
+    weight: float
+    bias: float
+
+    def apply(self, logits: Logits) -> Logits:
+        return Logits(logits.choice, self.weight * logits.choice.max(axis=1) + self.bias)
+
+
+def fit_gate(logits: Logits, records: Sequence[Record]) -> Gate:
+    """One-feature logistic regression on dev, by log-loss, so the gate comes out calibrated."""
+    best = logits.choice.max(axis=1, keepdims=True)
+    targets = np.array([r.labels[0] == OUT_OF_SCOPE for r in records])
+    regression = LogisticRegression(C=np.inf).fit(best, targets)
+    return Gate(weight=float(regression.coef_[0, 0]), bias=float(regression.intercept_[0]))
 
 
 def log_loss(scored: Sequence[Scored]) -> float:
