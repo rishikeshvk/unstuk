@@ -181,6 +181,17 @@ fits", not as "unlike what I was trained on".
   4 configs, 16 runs. The pool is every row so far; the guard and the rule are unchanged. If nothing qualifies,
   M5 records it and asks how to go on.
 
+**Round 6 result (2026-10-07): no config qualifies.** The best is 68.2% on the folds (cosine 5e-6), 7 points
+above the same config with the complaint-only Noul (61.1%), still under 78.7%. Split as in round 4, the
+option-aware Noul still declines 18–22% of unseen intents' lines, and the dropped options cost Choice a point or
+two (77–81% alone). The head still reads the complaint vector, so "this complaint is unfamiliar" stays available
+to it, and it uses it. Gated versions do worse (38–61%).
+
+**Where six rounds leave M5.** 27 configs, 92 runs and 59 scored variants, all on dev. Fine-tuning keeps
+zero-shot *naming*: Choice alone names unseen intents at 77–83% against the frozen rung's 83.5%. Every way of
+deciding out of scope that was tried (from the complaint, from the best score, from the complaint against the
+options) learns that a never-trained intent is unfamiliar and declines a fifth or more of its lines.
+
 ## 4. State: in or out
 
 The chosen config is trained twice, with and without the state segment, and both are scored on
