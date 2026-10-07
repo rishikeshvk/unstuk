@@ -116,6 +116,8 @@ class GridRow(BaseModel):
 
 
 class Settings(BaseModel):
+    guarded: bool
+    """False when nothing cleared the zero-shot line and the stop rule picked by the rung rule."""
     run: str
     """The full run whose checkpoint the model starts from."""
     blend: float | None
@@ -151,6 +153,14 @@ def pick(grid: Sequence[GridRow]) -> GridRow | None:
     """The best qualifying row by the rung rule, if any qualifies."""
     qualified = [row for row in grid if row.qualifies]
     return rung.best(qualified) if qualified else None
+
+
+def select(grid: Sequence[GridRow], without_guard: bool) -> tuple[GridRow | None, bool]:
+    """The pick and whether the guard made it; without the guard only when nothing qualifies."""
+    best = pick(grid)
+    if best is not None or not without_guard:
+        return best, best is not None
+    return rung.best(grid), False
 
 
 def config_rows(results: Mapping[str, DecisionRun], line: float) -> list[GridRow]:
@@ -247,7 +257,9 @@ def _gated(
     return scored(gate.apply(logits), lines, intents)
 
 
-def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings | None]:
+def choose(
+    runs: Path = RUNS_DIR, without_guard: bool = False
+) -> tuple[list[GridRow], ZeroShotLine, Settings | None]:
     catalog = load_catalog()
     dev = rung.read_clean("dev")
     results = {
@@ -272,7 +284,7 @@ def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings
     grid = config_rows(results, line.mean)
     grid += [blend_row(config, alpha, scoring, line.mean) for config, alpha in BLENDS]
     grid += [gate_row(config, scoring, line.mean) for config in CONFIGS]
-    best = pick(grid)
+    best, guarded = select(grid, without_guard)
     if best is None:
         return grid, line, None
     run, alpha, gated = sources[best.run]
@@ -282,6 +294,7 @@ def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings
     temperatures = fit_temperatures(logits, dev, intents)
     gate = fit_gate(logits, dev) if gated else None
     settings = Settings(
+        guarded=guarded,
         run=run,
         blend=alpha,
         out_of_scope="gate" if gated else "noul",
@@ -325,12 +338,17 @@ def _row(config: RunConfig, results: Mapping[str, DecisionRun], line: float) -> 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
-    commands.add_parser(
+    chooser = commands.add_parser(
         "choose", help=f"pick the config on dev under the guard; write {SETTINGS.name}"
     )
-    parser.parse_args()
+    chooser.add_argument(
+        "--without-guard",
+        action="store_true",
+        help="if nothing qualifies, pick by the rung rule alone (the stop rule, spec section 3)",
+    )
+    args = parser.parse_args()
 
-    grid, line, settings = choose()
+    grid, line, settings = choose(without_guard=args.without_guard)
     print(
         f"zero-shot line on the folds: {line.mean:.1%} {[f'{a:.1%}' for a in line.fold_accuracies]}"
     )
@@ -344,6 +362,8 @@ def main() -> None:
         print("no config qualifies; nothing written")
         return
     SETTINGS.write_text(settings.model_dump_json(indent=2) + "\n", encoding="utf-8")
+    if not settings.guarded:
+        print("nothing qualified; picked by the rung rule alone, without the guard")
     print(
         f"{settings.run}, blend {settings.blend}, out of scope by {settings.out_of_scope}, "
         f"epoch {settings.epoch}, "

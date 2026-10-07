@@ -19,6 +19,7 @@ from unstuk_ml.decision_rung import (
     gate_name,
     pick,
     runs_of,
+    select,
     zero_shot_line,
 )
 from unstuk_ml.decision_training import DecisionRun, EpochResult, RunConfig
@@ -215,3 +216,14 @@ def test_round_seven_decides_out_of_scope_from_option_fit_alone() -> None:
         "cosine-lr1e-05-typos-state-nonefits-fitonly",
         "attention-lr1e-05-typos-state-nonefits-fitonly",
     ]
+
+
+def test_without_the_guard_the_rung_rule_picks_only_when_nothing_qualifies() -> None:
+    below = config_rows(results({CONFIGS[0].name: (0.99, 0.1, 0.5)}), line=0.9)
+    one_passes = [*below[1:], below[0].model_copy(update={"qualifies": True})]
+
+    assert select(below, without_guard=False) == (None, False)
+    best, guarded = select(below, without_guard=True)
+    assert (best is not None and best.run, guarded) == (CONFIGS[0].name, False)
+    best, guarded = select(one_passes, without_guard=True)
+    assert (best is not None and best.run, guarded) == (CONFIGS[0].name, True)
