@@ -120,6 +120,8 @@ def fit_features(choice: torch.Tensor) -> torch.Tensor:
     """How well the offered options fit: the best logit, its margin over the second, and the
     entropy as a share of its maximum, so 4 options and 12 read on the same scale."""
     best, second = choice.topk(2, dim=1).values.unbind(dim=1)
-    offered = torch.isfinite(choice).sum(dim=1).float()
-    entropy = torch.special.entr(choice.softmax(dim=1)).sum(dim=1) / offered.log()
+    offered = torch.isfinite(choice)
+    # Padded options have p = 0 and log p = -inf; masking log p keeps their gradient at 0, not NaN.
+    log_p = choice.log_softmax(dim=1).masked_fill(~offered, 0.0)
+    entropy = -(log_p.exp() * log_p).sum(dim=1) / offered.sum(dim=1).float().log()
     return torch.stack([best, best - second, entropy], dim=1)

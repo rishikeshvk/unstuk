@@ -161,3 +161,13 @@ def test_fit_features_are_the_best_score_its_margin_and_a_share_of_the_most_entr
     assert features[0, :2].tolist() == [3.0, 2.0]
     assert features[1].tolist() == pytest.approx([2.0, 0.0, 1.0])
     assert fit_features(wider)[0, 2].item() == pytest.approx(1.0)
+
+
+def test_fit_features_pass_finite_gradients_beside_padded_options() -> None:
+    choice = torch.tensor([[3.0, 1.0, 0.5], [2.0, 0.0, 1.0]], requires_grad=True)
+    padded = choice.masked_fill(torch.tensor([[False, False, True], [False] * 3]), -math.inf)
+
+    (grad,) = torch.autograd.grad(fit_features(padded).sum(), choice)
+
+    assert torch.isfinite(grad).all()
+    assert grad[0, 2] == 0
