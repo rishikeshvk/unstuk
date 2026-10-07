@@ -9,6 +9,7 @@ import argparse
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Literal
 
 import torch
 from pydantic import BaseModel
@@ -21,16 +22,18 @@ from unstuk_ml.decision_batch import decision_tokenizer
 from unstuk_ml.decision_model import DecisionModel, Head
 from unstuk_ml.decision_scoring import (
     decision_logits,
+    fit_gate,
     fit_temperatures,
     log_loss,
     node_accuracy,
     predict,
+    scored,
 )
 from unstuk_ml.decision_training import DecisionRun, RunConfig
 from unstuk_ml.encoder import download, embed_cached
-from unstuk_ml.evaluate import in_scope_accuracy, macro_f1
+from unstuk_ml.evaluate import Scored, in_scope_accuracy, macro_f1
 from unstuk_ml.fine_tuning import RESULT, RUNS_DIR, load_weights
-from unstuk_ml.folds import FOLDS, folds, naming, trained_intents
+from unstuk_ml.folds import FOLDS, folds, naming, trained_intents, without
 from unstuk_ml.labels import OUT_OF_SCOPE
 from unstuk_ml.node_labels import NodeQuestion, read_questions
 from unstuk_ml.record import Record
@@ -71,6 +74,10 @@ def blend_name(config: RunConfig, alpha: float) -> str:
     return f"{config.name}-wise{alpha:g}"
 
 
+def gate_name(config: RunConfig) -> str:
+    return f"{config.name}-gate"
+
+
 def runs_of(config: RunConfig) -> list[RunConfig]:
     """The config on all the data, then on each fold."""
     return [config] + [config.model_copy(update={"fold": f}) for f in range(FOLDS)]
@@ -101,9 +108,12 @@ class Settings(BaseModel):
     """The full run whose checkpoint the model starts from."""
     blend: float | None
     """WiSE-FT's alpha toward that checkpoint from the frozen backbone; None when unblended."""
+    out_of_scope: Literal["noul", "gate"]
     epoch: int
     choice_temperature: float
-    noul_temperature: float
+    noul_temperature: float | None
+    gate_weight: float | None
+    gate_bias: float | None
     checkpoint_sha256: str
     commit: str
     zero_shot: ZeroShotLine
@@ -182,6 +192,49 @@ def blend_row(config: RunConfig, alpha: float, scoring: _Scoring, line: float) -
     )
 
 
+def fold_lines(dev: Sequence[Record], removed: frozenset[str]) -> tuple[list[Record], list[Record]]:
+    """The lines a fold's gate is fitted on, naming no removed intent, and the lines it scores."""
+    return without(dev, removed), naming(dev, removed)
+
+
+def gate_row(config: RunConfig, scoring: _Scoring, line: float) -> GridRow:
+    """A config with the gate in place of Noul, scored as before: dev, then the folds."""
+    intents = trained_intents(scoring.catalog)
+    model = scoring.model(config.name, None)
+    scored_dev = _gated(model, scoring.dev, scoring.dev, scoring, intents)
+    fold_accuracies = []
+    for removed, fold in zip(folds(intents), runs_of(config)[1:], strict=True):
+        fit, unseen = fold_lines(scoring.dev, removed)
+        fold_model = scoring.model(fold.name, None)
+        fold_accuracies.append(in_scope_accuracy(_gated(fold_model, fit, unseen, scoring, intents)))
+    full = scoring.results[config.name]
+    mean = sum(fold_accuracies) / len(fold_accuracies)
+    return GridRow(
+        run=gate_name(config),
+        epoch=full.chosen_epoch,
+        dev_macro_f1=macro_f1(scored_dev),
+        dev_log_loss=log_loss(scored_dev),
+        dev_in_scope_accuracy=in_scope_accuracy(scored_dev),
+        node_dev_accuracy=node_accuracy(model, scoring.node_dev, scoring.tokenizer),
+        fold_accuracies=fold_accuracies,
+        mean_fold_accuracy=mean,
+        qualifies=mean >= line,
+    )
+
+
+def _gated(
+    model: DecisionModel,
+    fit: Sequence[Record],
+    lines: Sequence[Record],
+    scoring: _Scoring,
+    intents: Sequence[str],
+) -> list[Scored]:
+    """`lines` scored with a gate fitted on `fit`."""
+    gate = fit_gate(decision_logits(model, fit, intents, scoring.catalog, scoring.tokenizer), fit)
+    logits = decision_logits(model, lines, intents, scoring.catalog, scoring.tokenizer)
+    return scored(gate.apply(logits), lines, intents)
+
+
 def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings | None]:
     catalog = load_catalog()
     dev = rung.read_clean("dev")
@@ -199,26 +252,32 @@ def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings
         tokenizer=decision_tokenizer(download()[1]),
         frozen=load_backbone().state_dict(),
     )
-    sources = {config.name: (config.name, None) for config in CONFIGS} | {
-        blend_name(config, alpha): (config.name, alpha) for config, alpha in BLENDS
+    sources: dict[str, tuple[str, float | None, bool]] = {
+        **{config.name: (config.name, None, False) for config in CONFIGS},
+        **{blend_name(c, alpha): (c.name, alpha, False) for c, alpha in BLENDS},
+        **{gate_name(config): (config.name, None, True) for config in CONFIGS},
     }
     grid = config_rows(results, line.mean)
     grid += [blend_row(config, alpha, scoring, line.mean) for config, alpha in BLENDS]
+    grid += [gate_row(config, scoring, line.mean) for config in CONFIGS]
     best = pick(grid)
     if best is None:
         return grid, line, None
-    run, alpha = sources[best.run]
+    run, alpha, gated = sources[best.run]
     model = scoring.model(run, alpha)
     intents = trained_intents(catalog)
-    temperatures = fit_temperatures(
-        decision_logits(model, dev, intents, catalog, scoring.tokenizer), dev, intents
-    )
+    logits = decision_logits(model, dev, intents, catalog, scoring.tokenizer)
+    temperatures = fit_temperatures(logits, dev, intents)
+    gate = fit_gate(logits, dev) if gated else None
     settings = Settings(
         run=run,
         blend=alpha,
+        out_of_scope="gate" if gated else "noul",
         epoch=best.epoch,
         choice_temperature=temperatures.choice,
-        noul_temperature=temperatures.noul,
+        noul_temperature=None if gated else temperatures.noul,
+        gate_weight=gate.weight if gate else None,
+        gate_bias=gate.bias if gate else None,
         checkpoint_sha256=results[run].checkpoint_sha256,
         commit=results[run].commit,
         zero_shot=line,
@@ -274,7 +333,8 @@ def main() -> None:
         return
     SETTINGS.write_text(settings.model_dump_json(indent=2) + "\n", encoding="utf-8")
     print(
-        f"{settings.run}, blend {settings.blend}, epoch {settings.epoch}, "
+        f"{settings.run}, blend {settings.blend}, out of scope by {settings.out_of_scope}, "
+        f"epoch {settings.epoch}, "
         f"T choice {settings.choice_temperature}, "
         f"T noul {settings.noul_temperature}"
     )

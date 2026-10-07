@@ -13,6 +13,8 @@ from unstuk_ml.decision_rung import (
     ROUND_3,
     blend_name,
     config_rows,
+    fold_lines,
+    gate_name,
     pick,
     runs_of,
     zero_shot_line,
@@ -176,3 +178,20 @@ def test_a_blend_at_the_line_beats_a_better_config_below_it() -> None:
 
     assert best is not None
     assert best.run == "x-wise0.5"
+
+
+def test_a_folds_gate_is_fitted_without_the_intents_it_will_score() -> None:
+    dev = [
+        make("a", "phone talks", "talkback_on"),
+        make("b", "no net", "no_internet"),
+        make("c", "book a cab", "out_of_scope"),
+    ]
+
+    fit, unseen = fold_lines(dev, frozenset({"talkback_on"}))
+
+    assert [r.id for r in fit] == ["b", "c"]
+    assert [r.id for r in unseen] == ["a"]
+
+
+def test_a_gated_config_is_named_after_its_run() -> None:
+    assert gate_name(CONFIGS[0]) == "cosine-lr2e-05-state-gate"
