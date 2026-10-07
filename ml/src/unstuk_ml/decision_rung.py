@@ -7,23 +7,35 @@ rung does on the same lines; among those, the rung rule picks on dev. Nothing he
 
 import argparse
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from pathlib import Path
 
+import torch
 from pydantic import BaseModel
+from tokenizers import Tokenizer
 
 from unstuk_ml import rung, zero_shot
 from unstuk_ml.backbone import load_backbone
 from unstuk_ml.catalog import Catalog, load_catalog
 from unstuk_ml.decision_batch import decision_tokenizer
 from unstuk_ml.decision_model import DecisionModel, Head
-from unstuk_ml.decision_scoring import decision_logits, fit_temperatures
+from unstuk_ml.decision_scoring import (
+    decision_logits,
+    fit_temperatures,
+    log_loss,
+    node_accuracy,
+    predict,
+)
 from unstuk_ml.decision_training import DecisionRun, RunConfig
 from unstuk_ml.encoder import download, embed_cached
-from unstuk_ml.evaluate import in_scope_accuracy
+from unstuk_ml.evaluate import in_scope_accuracy, macro_f1
 from unstuk_ml.fine_tuning import RESULT, RUNS_DIR, load_weights
 from unstuk_ml.folds import FOLDS, folds, naming, trained_intents
 from unstuk_ml.labels import OUT_OF_SCOPE
+from unstuk_ml.node_labels import NodeQuestion, read_questions
 from unstuk_ml.record import Record
+from unstuk_ml.validate import DEFAULT_DATA_DIR
+from unstuk_ml.wise_ft import blend
 
 SETTINGS = rung.SETTINGS_DIR / "decision.json"
 HEADS: tuple[Head, ...] = ("cosine", "attention")
@@ -49,6 +61,14 @@ ROUND_3 = [
     for head in HEADS
 ]
 CONFIGS = ROUND_1 + ROUND_2 + ROUND_3
+# Round 3 failed too; round 4 blends the best checkpoints back toward the frozen encoder (WiSE-FT).
+ALPHAS = (0.25, 0.5, 0.75)
+BLENDED = [ROUND_3[1], ROUND_3[2], ROUND_2[3], ROUND_1[6]]
+BLENDS = [(config, alpha) for config in BLENDED for alpha in ALPHAS]
+
+
+def blend_name(config: RunConfig, alpha: float) -> str:
+    return f"{config.name}-wise{alpha:g}"
 
 
 def runs_of(config: RunConfig) -> list[RunConfig]:
@@ -78,6 +98,9 @@ class GridRow(BaseModel):
 
 class Settings(BaseModel):
     run: str
+    """The full run whose checkpoint the model starts from."""
+    blend: float | None
+    """WiSE-FT's alpha toward that checkpoint from the frozen backbone; None when unblended."""
     epoch: int
     choice_temperature: float
     noul_temperature: float
@@ -102,11 +125,61 @@ def zero_shot_line(embed: zero_shot.Embed, dev: Sequence[Record], catalog: Catal
     return ZeroShotLine(fold_accuracies=accuracies, mean=sum(accuracies) / len(accuracies))
 
 
-def pick(results: Mapping[str, DecisionRun], line: float) -> tuple[list[GridRow], GridRow | None]:
-    """Every config's row, and the best qualifying one by the rung rule, if any qualifies."""
-    grid = [_row(config, results, line) for config in CONFIGS]
+def pick(grid: Sequence[GridRow]) -> GridRow | None:
+    """The best qualifying row by the rung rule, if any qualifies."""
     qualified = [row for row in grid if row.qualifies]
-    return grid, rung.best(qualified) if qualified else None
+    return rung.best(qualified) if qualified else None
+
+
+def config_rows(results: Mapping[str, DecisionRun], line: float) -> list[GridRow]:
+    return [_row(config, results, line) for config in CONFIGS]
+
+
+@dataclass(frozen=True)
+class _Scoring:
+    """What scoring a checkpoint on dev needs, loaded once."""
+
+    runs: Path
+    results: Mapping[str, DecisionRun]
+    catalog: Catalog
+    dev: list[Record]
+    node_dev: list[NodeQuestion]
+    tokenizer: Tokenizer
+    frozen: dict[str, torch.Tensor]
+
+    def model(self, run: str, alpha: float | None) -> DecisionModel:
+        result = self.results[run]
+        model = DecisionModel(load_backbone(), result.config.head)
+        model.load_state_dict(load_weights(self.runs / run, result.checkpoint_sha256))
+        if alpha is not None:
+            blend(model.backbone, self.frozen, alpha)
+        return model
+
+
+def blend_row(config: RunConfig, alpha: float, scoring: _Scoring, line: float) -> GridRow:
+    """A blend scored as its config was: dev from the full run, the folds from the fold runs."""
+    intents = trained_intents(scoring.catalog)
+    model = scoring.model(config.name, alpha)
+    scored = predict(model, scoring.dev, intents, scoring.catalog, scoring.tokenizer)
+    fold_accuracies = []
+    for removed, fold in zip(folds(intents), runs_of(config)[1:], strict=True):
+        lines = naming(scoring.dev, removed)
+        fold_model = scoring.model(fold.name, alpha)
+        unseen = predict(fold_model, lines, intents, scoring.catalog, scoring.tokenizer)
+        fold_accuracies.append(in_scope_accuracy(unseen))
+    full = scoring.results[config.name]
+    mean = sum(fold_accuracies) / len(fold_accuracies)
+    return GridRow(
+        run=blend_name(config, alpha),
+        epoch=full.chosen_epoch,
+        dev_macro_f1=macro_f1(scored),
+        dev_log_loss=log_loss(scored),
+        dev_in_scope_accuracy=in_scope_accuracy(scored),
+        node_dev_accuracy=node_accuracy(model, scoring.node_dev, scoring.tokenizer),
+        fold_accuracies=fold_accuracies,
+        mean_fold_accuracy=mean,
+        qualifies=mean >= line,
+    )
 
 
 def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings | None]:
@@ -117,24 +190,37 @@ def choose(runs: Path = RUNS_DIR) -> tuple[list[GridRow], ZeroShotLine, Settings
         for run in GRID
     }
     line = zero_shot_line(embed_cached, dev, catalog)
-    grid, best = pick(results, line.mean)
+    scoring = _Scoring(
+        runs=runs,
+        results=results,
+        catalog=catalog,
+        dev=dev,
+        node_dev=read_questions(DEFAULT_DATA_DIR / "nodes" / "dev.jsonl"),
+        tokenizer=decision_tokenizer(download()[1]),
+        frozen=load_backbone().state_dict(),
+    )
+    sources = {config.name: (config.name, None) for config in CONFIGS} | {
+        blend_name(config, alpha): (config.name, alpha) for config, alpha in BLENDS
+    }
+    grid = config_rows(results, line.mean)
+    grid += [blend_row(config, alpha, scoring, line.mean) for config, alpha in BLENDS]
+    best = pick(grid)
     if best is None:
         return grid, line, None
-    chosen = results[best.run]
-    model = DecisionModel(load_backbone(), chosen.config.head)
-    model.load_state_dict(load_weights(runs / best.run, chosen.checkpoint_sha256))
+    run, alpha = sources[best.run]
+    model = scoring.model(run, alpha)
     intents = trained_intents(catalog)
-    tokenizer = decision_tokenizer(download()[1])
     temperatures = fit_temperatures(
-        decision_logits(model, dev, intents, catalog, tokenizer), dev, intents
+        decision_logits(model, dev, intents, catalog, scoring.tokenizer), dev, intents
     )
     settings = Settings(
-        run=best.run,
+        run=run,
+        blend=alpha,
         epoch=best.epoch,
         choice_temperature=temperatures.choice,
         noul_temperature=temperatures.noul,
-        checkpoint_sha256=chosen.checkpoint_sha256,
-        commit=chosen.commit,
+        checkpoint_sha256=results[run].checkpoint_sha256,
+        commit=results[run].commit,
         zero_shot=line,
         grid=grid,
     )
@@ -181,14 +267,15 @@ def main() -> None:
         mark = "qualifies" if row.qualifies else "below the line"
         print(
             f"{row.run}: dev macro-F1 {row.dev_macro_f1:.1%}, folds {row.mean_fold_accuracy:.1%} "
-            f"({mark})"
+            f"{[f'{a:.1%}' for a in row.fold_accuracies]} ({mark})"
         )
     if settings is None:
         print("no config qualifies; nothing written")
         return
     SETTINGS.write_text(settings.model_dump_json(indent=2) + "\n", encoding="utf-8")
     print(
-        f"{settings.run}, epoch {settings.epoch}, T choice {settings.choice_temperature}, "
+        f"{settings.run}, blend {settings.blend}, epoch {settings.epoch}, "
+        f"T choice {settings.choice_temperature}, "
         f"T noul {settings.noul_temperature}"
     )
     print(f"written to {SETTINGS}; commit it before scoring the test")

@@ -6,10 +6,13 @@ from records import make
 
 from unstuk_ml.catalog import load_catalog
 from unstuk_ml.decision_rung import (
+    BLENDS,
     CONFIGS,
     GRID,
     ROUND_2,
     ROUND_3,
+    blend_name,
+    config_rows,
     pick,
     runs_of,
     zero_shot_line,
@@ -67,7 +70,8 @@ def test_only_configs_at_or_above_the_line_compete_on_dev() -> None:
     best_on_dev, guarded = CONFIGS[0].name, CONFIGS[1].name
     runs = results({best_on_dev: (0.99, 0.1, 0.60), guarded: (0.95, 0.2, 0.80)})
 
-    grid, best = pick(runs, line=0.75)
+    grid = config_rows(runs, line=0.75)
+    best = pick(grid)
 
     assert best is not None
     assert best.run == guarded
@@ -78,14 +82,15 @@ def test_ties_on_dev_go_to_the_lower_log_loss() -> None:
     a, b = CONFIGS[2].name, CONFIGS[3].name
     runs = results({a: (0.95, 0.3, 0.9), b: (0.95, 0.2, 0.9)})
 
-    _, best = pick(runs, line=0.8)
+    best = pick(config_rows(runs, line=0.8))
 
     assert best is not None
     assert best.run == b
 
 
 def test_when_no_config_reaches_the_line_nothing_is_picked() -> None:
-    grid, best = pick(results({}), line=0.9)
+    grid = config_rows(results({}), line=0.9)
+    best = pick(grid)
 
     assert best is None
     assert len(grid) == 19
@@ -137,3 +142,37 @@ def test_round_three_trains_on_other_wordings_of_the_options() -> None:
         "cosine-lr2e-05-typos-wordings-state",
         "attention-lr2e-05-typos-wordings-state",
     ]
+
+
+def test_round_four_blends_the_best_on_the_folds_and_the_best_on_dev() -> None:
+    names = [blend_name(config, alpha) for config, alpha in BLENDS]
+
+    assert len(names) == 12
+    assert names[:3] == [
+        "attention-lr5e-06-typos-wordings-state-wise0.25",
+        "attention-lr5e-06-typos-wordings-state-wise0.5",
+        "attention-lr5e-06-typos-wordings-state-wise0.75",
+    ]
+    assert {config.name for config, _ in BLENDS} == {
+        "attention-lr5e-06-typos-wordings-state",
+        "cosine-lr1e-05-typos-wordings-state",
+        "attention-lr5e-06-typos-state",
+        "cosine-lr5e-05-typos-state",
+    }
+
+
+def test_a_blend_at_the_line_beats_a_better_config_below_it() -> None:
+    rows = config_rows(results({CONFIGS[0].name: (0.99, 0.1, 0.60)}), line=0.75)
+    blended = rows[1].model_copy(
+        update={
+            "run": "x-wise0.5",
+            "dev_macro_f1": 0.9,
+            "mean_fold_accuracy": 0.8,
+            "qualifies": True,
+        }
+    )
+
+    best = pick([*rows, blended])
+
+    assert best is not None
+    assert best.run == "x-wise0.5"
