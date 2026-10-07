@@ -7,9 +7,10 @@ import argparse
 from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Self
 
 import torch
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, model_validator
 from tokenizers import Tokenizer
 
 from unstuk_ml import rung
@@ -52,6 +53,8 @@ class RunConfig(BaseModel):
     """Offer other wordings of the option texts in training (round 3)."""
     none_fits: bool = False
     """Out of scope as "no offered option fits": an option-aware Noul and gold-dropped examples."""
+    fit_only: bool = False
+    """With `none_fits`: Noul reads only how the options fit, never the complaint (round 7)."""
     frozen_layers: int = 0
     """Backbone layers kept as pre-trained, from the bottom, with the embeddings when above 0."""
     epochs: int = 6
@@ -60,11 +63,17 @@ class RunConfig(BaseModel):
     limit: int | None = None
     """Only the first lines and questions of each file, for a smoke run."""
 
+    @model_validator(mode="after")
+    def fit_only_needs_none_fits(self) -> Self:
+        if self.fit_only and not self.none_fits:
+            raise ValueError("fit_only needs none_fits: the head learns from gold-dropped examples")
+        return self
+
     @property
     def name(self) -> str:
         parts = [self.head, f"lr{self.learning_rate:g}"]
         parts += ["typos"] * self.typos + ["wordings"] * self.wordings + ["state"] * self.state
-        parts += ["nonefits"] * self.none_fits
+        parts += ["nonefits"] * self.none_fits + ["fitonly"] * self.fit_only
         parts += [f"frozen{self.frozen_layers}"] if self.frozen_layers else []
         parts += [f"fold{self.fold}"] if self.fold is not None else []
         parts += [f"limit{self.limit}"] if self.limit is not None else []
@@ -108,6 +117,8 @@ def removed_intents(config: RunConfig, catalog: Catalog) -> frozenset[str]:
 
 
 def noul_input(config: RunConfig) -> NoulInput:
+    if config.fit_only:
+        return "fit"
     return "options" if config.none_fits else "complaint"
 
 
@@ -187,6 +198,7 @@ def add_run_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--wordings", action="store_true")
     parser.add_argument("--state", action="store_true")
     parser.add_argument("--none-fits", action="store_true")
+    parser.add_argument("--fit-only", action="store_true")
     parser.add_argument("--fold", type=int)
     parser.add_argument("--frozen-layers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=RunConfig.model_fields["epochs"].default)
@@ -201,6 +213,7 @@ def config_from(args: argparse.Namespace) -> RunConfig:
         state=args.state,
         wordings=args.wordings,
         none_fits=args.none_fits,
+        fit_only=args.fit_only,
         fold=args.fold,
         frozen_layers=args.frozen_layers,
         epochs=args.epochs,
@@ -213,6 +226,7 @@ def run_arguments(config: RunConfig) -> list[str]:
     arguments = ["--head", config.head, "--learning-rate", repr(config.learning_rate)]
     arguments += ["--typos"] * config.typos + ["--state"] * config.state
     arguments += ["--wordings"] * config.wordings + ["--none-fits"] * config.none_fits
+    arguments += ["--fit-only"] * config.fit_only
     arguments += ["--epochs", str(config.epochs)]
     arguments += ["--fold", str(config.fold)] if config.fold is not None else []
     arguments += ["--frozen-layers", str(config.frozen_layers)] if config.frozen_layers else []

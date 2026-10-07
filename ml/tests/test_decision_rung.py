@@ -12,6 +12,7 @@ from unstuk_ml.decision_rung import (
     ROUND_2,
     ROUND_3,
     ROUND_6,
+    ROUND_7,
     blend_name,
     config_rows,
     fold_lines,
@@ -58,8 +59,8 @@ def results(scores: dict[str, tuple[float, float, float]]) -> dict[str, Decision
 
 
 def test_every_config_runs_on_all_the_data_and_each_fold() -> None:
-    assert len(CONFIGS) == 23
-    assert len(GRID) == 92
+    assert len(CONFIGS) == 27
+    assert len(GRID) == 108
     assert [r.name for r in runs_of(CONFIGS[0])] == [
         "cosine-lr2e-05-state",
         "cosine-lr2e-05-state-fold0",
@@ -96,7 +97,7 @@ def test_when_no_config_reaches_the_line_nothing_is_picked() -> None:
     best = pick(grid)
 
     assert best is None
-    assert len(grid) == 23
+    assert len(grid) == 27
 
 
 def fake_embed(texts: Sequence[str]) -> NDArray[np.float32]:
@@ -204,4 +205,13 @@ def test_round_six_teaches_that_no_offered_option_fits() -> None:
         "attention-lr5e-06-typos-state-nonefits",
         "cosine-lr1e-05-typos-state-nonefits",
         "attention-lr1e-05-typos-state-nonefits",
+    ]
+
+
+def test_round_seven_decides_out_of_scope_from_option_fit_alone() -> None:
+    assert [c.name for c in ROUND_7] == [
+        "cosine-lr5e-06-typos-state-nonefits-fitonly",
+        "attention-lr5e-06-typos-state-nonefits-fitonly",
+        "cosine-lr1e-05-typos-state-nonefits-fitonly",
+        "attention-lr1e-05-typos-state-nonefits-fitonly",
     ]

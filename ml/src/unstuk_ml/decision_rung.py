@@ -69,7 +69,13 @@ ROUND_6 = [
     for lr in (5e-6, 1e-5)
     for head in HEADS
 ]
-CONFIGS = ROUND_1 + ROUND_2 + ROUND_3 + ROUND_6
+# Round 6's head still read the complaint; round 7, the last, lets it see only how the options fit.
+ROUND_7 = [
+    RunConfig(head=head, learning_rate=lr, typos=True, state=True, none_fits=True, fit_only=True)
+    for lr in (5e-6, 1e-5)
+    for head in HEADS
+]
+CONFIGS = ROUND_1 + ROUND_2 + ROUND_3 + ROUND_6 + ROUND_7
 # Round 3 failed too; round 4 blends the best checkpoints back toward the frozen encoder (WiSE-FT).
 ALPHAS = (0.25, 0.5, 0.75)
 BLENDED = [ROUND_3[1], ROUND_3[2], ROUND_2[3], ROUND_1[6]]

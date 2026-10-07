@@ -106,6 +106,9 @@ def test_the_same_config_trains_the_same_on_cpu(tokenizer: Tokenizer) -> None:
         RunConfig(head="attention", learning_rate=2e-5, typos=True, state=True, frozen_layers=8),
         RunConfig(head="cosine", learning_rate=5e-6, typos=True, state=True, wordings=True),
         RunConfig(head="attention", learning_rate=1e-5, typos=True, state=True, none_fits=True),
+        RunConfig(
+            head="cosine", learning_rate=5e-6, typos=True, state=True, none_fits=True, fit_only=True
+        ),
     ],
 )
 def test_a_config_survives_the_command_line(run: RunConfig) -> None:
@@ -113,3 +116,8 @@ def test_a_config_survives_the_command_line(run: RunConfig) -> None:
     add_run_arguments(parser)
 
     assert config_from(parser.parse_args(run_arguments(run))) == run
+
+
+def test_fit_only_without_none_fits_is_refused() -> None:
+    with pytest.raises(ValueError, match="fit_only needs none_fits"):
+        RunConfig(head="cosine", learning_rate=5e-6, typos=True, state=True, fit_only=True)
