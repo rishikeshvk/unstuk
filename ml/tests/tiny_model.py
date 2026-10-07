@@ -3,7 +3,7 @@
 import torch
 from transformers import BertConfig, BertModel
 
-from unstuk_ml.decision_model import DecisionModel, Head
+from unstuk_ml.decision_model import DecisionModel, Head, NoulInput
 
 
 def tiny_backbone() -> BertModel:
@@ -15,7 +15,7 @@ def tiny_backbone() -> BertModel:
     return BertModel(config, add_pooling_layer=False)  # type: ignore[no-untyped-call]
 
 
-def tiny_model(head: Head) -> DecisionModel:
-    model = DecisionModel(tiny_backbone(), head)
+def tiny_model(head: Head, noul: NoulInput = "complaint") -> DecisionModel:
+    model = DecisionModel(tiny_backbone(), head, noul)
     model.train(False)
     return model

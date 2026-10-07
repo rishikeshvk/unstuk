@@ -16,6 +16,8 @@ from transformers import BertModel
 from unstuk_ml.decision_batch import DecisionBatch, Encoded
 
 Head = Literal["cosine", "attention"]
+NoulInput = Literal["complaint", "options"]
+"""What decides out of scope: the complaint alone, or the complaint against the offered options."""
 # bge's cosines differ by hundredths, so a softmax over them needs a large scale to be decisive.
 INITIAL_SCALE = 20.0
 
@@ -29,17 +31,19 @@ class Decision:
 
 
 class DecisionModel(nn.Module):
-    def __init__(self, backbone: BertModel, head: Head) -> None:
+    def __init__(self, backbone: BertModel, head: Head, noul: NoulInput = "complaint") -> None:
         super().__init__()
         width = backbone.config.hidden_size
         self.backbone = backbone
+        self.noul_input = noul
         self.log_scale = nn.Parameter(torch.tensor(math.log(INITIAL_SCALE)))
         self.correction = (
             AttentionCorrection(width, backbone.config.num_attention_heads)
             if head == "attention"
             else None
         )
-        self.noul = nn.Linear(width, 1)
+        # Against the options: the complaint, the Choice-weighted options, their product, the best.
+        self.noul = nn.Linear(width if noul == "complaint" else 3 * width + 1, 1)
 
     def forward(self, batch: DecisionBatch) -> Decision:
         tokens = self._hidden(batch.queries)
@@ -52,10 +56,20 @@ class DecisionModel(nn.Module):
             scores = scores + self.correction(
                 options, tokens, batch.queries.attention_mask.bool(), batch.option_mask
             )
+        choice = scores.masked_fill(~batch.option_mask, -math.inf)
         return Decision(
-            choice_logits=scores.masked_fill(~batch.option_mask, -math.inf),
-            out_of_scope_logit=self.noul(query).squeeze(-1),
+            choice_logits=choice,
+            out_of_scope_logit=self.noul(self._noul_features(query, options, choice)).squeeze(-1),
         )
+
+    def _noul_features(
+        self, query: torch.Tensor, options: torch.Tensor, choice: torch.Tensor
+    ) -> torch.Tensor:
+        if self.noul_input == "complaint":
+            return query
+        weighted = (choice.softmax(dim=1)[..., None] * options).sum(dim=1)
+        best = choice.max(dim=1).values[:, None]
+        return torch.cat([query, weighted, query * weighted, best], dim=-1)
 
     def _hidden(self, encoded: Encoded) -> torch.Tensor:
         hidden: torch.Tensor = self.backbone(

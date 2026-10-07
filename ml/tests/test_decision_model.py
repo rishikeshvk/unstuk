@@ -85,3 +85,47 @@ def test_before_training_the_attention_head_scores_as_the_cosine_head(
     assert torch.equal(
         scores(cosine, [SHORT, LONG], tokenizer), scores(attention, [SHORT, LONG], tokenizer)
     )
+
+
+def noul_logits(
+    model: DecisionModel, examples: list[Example], tokenizer: Tokenizer
+) -> torch.Tensor:
+    with torch.no_grad():
+        logits: torch.Tensor = model(collate(examples, tokenizer)).out_of_scope_logit
+    return logits
+
+
+@pytest.mark.parametrize("head", HEADS)
+def test_the_option_aware_noul_ignores_option_order(head: Head, tokenizer: Tokenizer) -> None:
+    model = tiny_model(head, "options")
+    shuffled = Example(
+        LONG.text, LONG.state, tuple(LONG.options[i] for i in [3, 0, 4, 2, 1]), frozenset(), False
+    )
+
+    before = noul_logits(model, [LONG], tokenizer)
+    after = noul_logits(model, [shuffled], tokenizer)
+
+    assert torch.allclose(before, after, atol=1e-5)
+
+
+@pytest.mark.parametrize("head", HEADS)
+def test_the_option_aware_noul_scores_an_example_the_same_beside_a_longer_one(
+    head: Head, tokenizer: Tokenizer
+) -> None:
+    model = tiny_model(head, "options")
+
+    alone = noul_logits(model, [SHORT], tokenizer)[0]
+    beside = noul_logits(model, [LONG, SHORT], tokenizer)[1]
+
+    assert torch.allclose(alone, beside, atol=1e-5)
+
+
+def test_the_option_aware_noul_reads_the_options(tokenizer: Tokenizer) -> None:
+    model = tiny_model("cosine", "options")
+    other = Example(SHORT.text, SHORT.state, LONG.options[2:], frozenset(), False)
+
+    first, second = noul_logits(model, [SHORT, other], tokenizer)
+
+    assert not torch.isclose(first, second)
+    same_complaint = noul_logits(tiny_model("cosine"), [SHORT, other], tokenizer)
+    assert torch.isclose(same_complaint[0], same_complaint[1])
