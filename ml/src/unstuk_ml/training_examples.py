@@ -20,6 +20,8 @@ OTHER_OPTIONS = (3, 11)
 MAX_DISTRACTORS = 2
 # Dev and the test show only the canonical texts, so training keeps seeing them often.
 CANONICAL_SHARE = 0.5
+# In-scope lines whose correct option is withheld, so out of scope learns "none of these fits".
+DROP_SHARE = 0.25
 
 
 @dataclass(frozen=True)
@@ -50,6 +52,7 @@ def epoch(
     state: bool,
     typos: bool,
     wordings: bool,
+    drop_gold: bool,
 ) -> list[Example]:
     """One epoch's examples: every line with freshly drawn options, then every node question."""
     streams = _Streams(
@@ -57,8 +60,12 @@ def epoch(
         state=random.Random(f"{seed}/{number}/state"),
         typos=random.Random(f"{seed}/{number}/typos"),
         wording=random.Random(f"{seed}/{number}/wording"),
+        drop=random.Random(f"{seed}/{number}/drop"),
     )
-    lines = [_line_example(r, catalog, intents, streams, state, typos, wordings) for r in records]
+    lines = [
+        _line_example(r, catalog, intents, streams, state, typos, wordings, drop_gold)
+        for r in records
+    ]
     return lines + [_node_example(q) for q in nodes]
 
 
@@ -68,6 +75,7 @@ class _Streams:
     state: random.Random
     typos: random.Random
     wording: random.Random
+    drop: random.Random
 
 
 def _line_example(
@@ -78,8 +86,13 @@ def _line_example(
     state: bool,
     typos: bool,
     wordings: bool,
+    drop_gold: bool,
 ) -> Example:
     chosen = _options(record, intents, streams.options)
+    out_of_scope = OUT_OF_SCOPE in record.labels
+    if drop_gold and not out_of_scope and streams.drop.random() < DROP_SHARE:
+        chosen = [i for i in chosen if i not in record.labels]
+        out_of_scope = True
     return Example(
         text=noisy(record.text, streams.typos) if typos else record.text,
         state=_state(record, catalog, streams.state) if state else "",
@@ -88,7 +101,7 @@ def _line_example(
             for i in chosen
         ),
         answers=frozenset(n for n, i in enumerate(chosen) if i in record.labels),
-        out_of_scope=OUT_OF_SCOPE in record.labels,
+        out_of_scope=out_of_scope,
     )
 
 

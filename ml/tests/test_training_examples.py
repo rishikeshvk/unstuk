@@ -45,6 +45,7 @@ def draw(
     typos: bool = False,
     intents: list[str] = INTENTS,
     wordings: bool = False,
+    drop_gold: bool = False,
 ) -> list[Example]:
     return epoch(
         RECORDS if records is None else records,
@@ -56,6 +57,7 @@ def draw(
         state=state,
         typos=typos,
         wordings=wordings,
+        drop_gold=drop_gold,
     )
 
 
@@ -148,7 +150,16 @@ def test_distractor_state_says_nothing_about_the_label() -> None:
 
 def test_a_node_question_keeps_its_options_and_skips_the_noul() -> None:
     (example,) = epoch(
-        [], [NODE], CATALOG, INTENTS, seed=7, number=0, state=True, typos=True, wordings=True
+        [],
+        [NODE],
+        CATALOG,
+        INTENTS,
+        seed=7,
+        number=0,
+        state=True,
+        typos=True,
+        wordings=True,
+        drop_gold=True,
     )
 
     assert example == Example(
@@ -171,7 +182,7 @@ def test_an_epoch_does_not_depend_on_string_hashing() -> None:
         "r = [Record(id=f'r{n}', text='phone is silent', labels=[i], source='generated',\n"
         "            generator='g', batch='b') for n, i in enumerate(trained_intents(c))]\n"
         "print(epoch(r, [], c, trained_intents(c), seed=7, number=0, state=True, typos=True,\n"
-        "            wordings=True))\n"
+        "            wordings=True, drop_gold=True))\n"
     )
     outputs = {
         subprocess.run(
@@ -210,3 +221,24 @@ def test_a_fold_never_offers_a_removed_intents_wordings() -> None:
     offered = {o for e in draw(records, intents=kept, wordings=True) for o in e.options}
 
     assert {OPTION_OF.get(o) or WORDING_OF[o] for o in offered} <= set(kept)
+
+
+def test_a_quarter_of_in_scope_lines_lose_their_correct_option_and_turn_out_of_scope() -> None:
+    plain, dropped = draw(), draw(drop_gold=True)
+    in_scope = [(p, d) for p, d in zip(plain, dropped, strict=True) if not p.out_of_scope]
+    turned = [(p, d) for p, d in in_scope if d.out_of_scope]
+
+    assert 0.15 < len(turned) / len(in_scope) < 0.35
+    for before, after in turned:
+        assert after.answers == frozenset()
+        assert len(after.options) == len(before.options) - len(before.answers)
+        assert len(after.options) >= 3
+        assert set(after.options) < set(before.options)
+
+
+def test_out_of_scope_lines_are_left_alone_and_off_changes_nothing() -> None:
+    plain, dropped = draw(), draw(drop_gold=True)
+
+    for before, after in zip(plain, dropped, strict=True):
+        if before.out_of_scope or not after.out_of_scope:
+            assert after == before

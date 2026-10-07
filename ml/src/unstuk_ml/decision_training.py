@@ -128,6 +128,7 @@ def train(
             state=config.state,
             typos=config.typos,
             wordings=config.wordings,
+            drop_gold=False,
         )
         order = shuffled(examples, config.seed, number)
         return (collate(chunk, tokenizer) for chunk in chunks(order, config.batch_size))
