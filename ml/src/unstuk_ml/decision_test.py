@@ -134,7 +134,7 @@ def main() -> None:
     settings = Settings.model_validate_json(SETTINGS.read_text(encoding="utf-8"))
     catalog = load_catalog()
     tokenizer = decision_tokenizer(download()[1])
-    model = _model(settings)
+    model = load_model(settings)
     lines = load_test()
     intents = offered(catalog)
     logits = decision_logits(model, lines, intents, catalog, tokenizer)
@@ -154,13 +154,13 @@ def main() -> None:
         before_temperature=scored(logits, lines, intents, UNCALIBRATED),
         below=Below(FIXED_HEAD, _fixed_head(lines)),
     )
-    sections = guard_note(settings) + bar_section(check(items, _baselines(lines)))
+    sections = guard_note(settings) + bar_section(check(items, baselines(lines)))
     sections += node_section(model, tokenizer)
     REPORT.write_text(text + "\n".join(sections) + "\n", encoding="utf-8")
     print(f"scored {len(items)} test lines; see {REPORT}")
 
 
-def _model(settings: Settings) -> DecisionModel:
+def load_model(settings: Settings) -> DecisionModel:
     """The settings' checkpoint, refused unless its bytes match, blended if the settings say so."""
     result = DecisionRun.model_validate_json(
         (RUNS_DIR / settings.run / RESULT).read_text(encoding="utf-8")
@@ -172,7 +172,7 @@ def _model(settings: Settings) -> DecisionModel:
     return model
 
 
-def _baselines(lines: Sequence[Record]) -> dict[str, list[Scored]]:
+def baselines(lines: Sequence[Record]) -> dict[str, list[Scored]]:
     tfidf_settings, tfidf = rung.load(TFIDF)
     encoder_settings, encoder = rung.load(ENCODER)
     zero = zero_shot.Settings.model_validate_json(zero_shot.SETTINGS.read_text("utf-8"))
