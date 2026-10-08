@@ -5,4 +5,4 @@ talking to me"). A small on-device decision model reads the complaint and the ph
 fixed catalog, and deterministic code performs it and checks that it worked.
 
 - Plan and philosophy: [docs/plan.md](docs/plan.md)
-- Current milestone: [docs/m1-spec.md](docs/m1-spec.md), the executor spike
+- Current milestone: [docs/m9-spec.md](docs/m9-spec.md), the write-up
