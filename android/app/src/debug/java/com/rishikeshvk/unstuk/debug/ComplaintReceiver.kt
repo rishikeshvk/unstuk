@@ -34,22 +34,26 @@ class ComplaintReceiver : BroadcastReceiver() {
         val pending = goAsync()
         CoroutineScope(Dispatchers.Default).launch {
             try {
-                val flow = ComplaintFlow(app)
-                var reply = flow.start(complaint, trialId)
-                if (reply is Reply.Clarify && choose != null) reply = flow.choose(choose, trialId)
-                reply = when {
-                    reply is Reply.Run -> flow.run(
-                        reply.intent.id,
-                        reply.fix.id,
-                        reply.confidence,
-                        trialId
-                    )
-                    reply is Reply.Confirm && confirm ->
-                        flow.run(reply.intent.id, reply.fix.id, reply.confidence, trialId)
-                    else -> reply
+                // Each broadcast loads the model afresh; closing frees its session.
+                ComplaintFlow(app).use { flow ->
+                    var reply = flow.start(complaint, trialId)
+                    if (reply is Reply.Clarify && choose != null) {
+                        reply = flow.choose(choose, trialId)
+                    }
+                    reply = when {
+                        reply is Reply.Run -> flow.run(
+                            reply.intent.id,
+                            reply.fix.id,
+                            reply.confidence,
+                            trialId
+                        )
+                        reply is Reply.Confirm && confirm ->
+                            flow.run(reply.intent.id, reply.fix.id, reply.confidence, trialId)
+                        else -> reply
+                    }
+                    Tracer(TraceWriter(File(app.filesDir, "traces")), trialId, "complaint")
+                        .step("result", reply.traceName)
                 }
-                Tracer(TraceWriter(File(app.filesDir, "traces")), trialId, "complaint")
-                    .step("result", reply.traceName)
             } catch (e: IllegalArgumentException) {
                 Log.w(TAG, "Complaint $trialId rejected", e)
             } finally {
