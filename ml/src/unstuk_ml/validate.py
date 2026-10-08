@@ -22,6 +22,8 @@ TEST_DIR = "test"
 CLEAN_DIR = "clean"
 # Node-label questions have their own shape, checked by node_labels.NodeQuestion.
 NODES_DIR = "nodes"
+# Failure codes for test lines, checked by failures.Failure.
+FAILURES_DIR = "failures"
 
 
 @dataclass(frozen=True)
@@ -68,7 +70,12 @@ def validate(data_dir: Path, catalog: Catalog) -> list[Problem]:
 
 def _data_files(data_dir: Path) -> Iterator[Path]:
     for path in sorted(data_dir.rglob("*.jsonl")):
-        if path.relative_to(data_dir).parts[0] not in (REAL_DIR, CLEAN_DIR, NODES_DIR):
+        if path.relative_to(data_dir).parts[0] not in (
+            REAL_DIR,
+            CLEAN_DIR,
+            NODES_DIR,
+            FAILURES_DIR,
+        ):
             yield path
 
 

@@ -1,0 +1,57 @@
+{"id": "test-chatgpt-a-033", "cause": "held_out", "note": "cant_hear_call named as talkback_on"}
+{"id": "test-chatgpt-a-035", "cause": "held_out", "note": "cant_hear_call declined"}
+{"id": "test-chatgpt-a-073", "cause": "debatable_label", "note": "'can hardly make out what is on the screen' fits small text as well as a dim screen"}
+{"id": "test-chatgpt-b-004", "cause": "collision", "note": "the person's eyes, not the screen"}
+{"id": "test-chatgpt-b-005", "cause": "collision", "note": "a shirt's colours"}
+{"id": "test-chatgpt-b-006", "cause": "collision", "note": "a watch, not the phone"}
+{"id": "test-chatgpt-b-015", "cause": "debatable_label", "note": "rotation that's unwanted is fixed by the same switch as rotation that's missing"}
+{"id": "test-chatgpt-b-018", "cause": "lexical_pull", "note": "an alarm 'ringing' read as the ringer"}
+{"id": "test-chatgpt-b-021", "cause": "lexical_pull", "note": "a mobile plan; 'mobile' and 'data' read as network settings"}
+{"id": "test-chatgpt-b-034", "cause": "lexical_pull", "note": "a phone problem outside the catalog; 'freezes' read as the screen going off"}
+{"id": "test-chatgpt-b-040", "cause": "lexical_pull", "note": "slow apps are outside the catalog; 'taking too long' read as the screen timeout"}
+{"id": "test-chatgpt-b-081", "cause": "held_out", "note": "wrong_time named as no_internet"}
+{"id": "test-claude-blind-008", "cause": "lexical_pull", "note": "'mobile data' and 'no connection' outweighed 'house connection shows full bars'"}
+{"id": "test-claude-blind-017", "cause": "held_out", "note": "cant_hear_call named as talkback_on"}
+{"id": "test-claude-blind-048", "cause": "held_out", "note": "screen_wont_rotate named as screen_turns_off_fast"}
+{"id": "test-claude-blind-066", "cause": "held_out", "note": "wrong_time declined"}
+{"id": "test-claude-blind-067", "cause": "held_out", "note": "wrong_time named as screen_wont_rotate"}
+{"id": "test-gemini-a-008", "cause": "needs_state", "note": "pages won't open: Wi-Fi or mobile data is the phone's to say"}
+{"id": "test-gemini-a-015", "cause": "wording", "note": "'cnnectd to home but nt wroking'"}
+{"id": "test-gemini-a-016", "cause": "needs_state", "note": "'the full symbol' could be Wi-Fi or signal bars"}
+{"id": "test-gemini-a-020", "cause": "needs_state", "note": "'I don't pick up' doesn't say why; the ringer mode would"}
+{"id": "test-gemini-a-024", "cause": "wording", "note": "'nobdy can rch me it doesnt snd': four typos in seven words"}
+{"id": "test-gemini-a-027", "cause": "lexical_pull", "note": "'missed alerts' named notifications in a story about a missed caller"}
+{"id": "test-gemini-a-028", "cause": "lexical_pull", "note": "'no alerts' named notifications; the line is about calls"}
+{"id": "test-gemini-a-030", "cause": "held_out", "note": "cant_hear_call declined"}
+{"id": "test-gemini-a-032", "cause": "held_out", "note": "cant_hear_call declined"}
+{"id": "test-gemini-a-034", "cause": "held_out", "note": "cant_hear_call; 'mic' pulled it to permissions"}
+{"id": "test-gemini-a-038", "cause": "held_out", "note": "cant_hear_call declined"}
+{"id": "test-gemini-a-047", "cause": "lexical_pull", "note": "'calls ring normally' named ringing despite the negation"}
+{"id": "test-gemini-a-051", "cause": "lexical_pull", "note": "TalkBack's 'green square' read as a colour problem"}
+{"id": "test-gemini-a-064", "cause": "wording", "note": "'negtive' for inverted colours, misspelt"}
+{"id": "test-gemini-a-065", "cause": "lexical_pull", "note": "'dull' read as dim; 'without any shade' is the grayscale clue"}
+{"id": "test-gemini-a-071", "cause": "wording", "note": "'the lighting on the glass' for screen brightness"}
+{"id": "test-gemini-a-072", "cause": "wording", "note": "'the backlight drops to zero'"}
+{"id": "test-gemini-a-074", "cause": "wording", "note": "'lit keeps going awy': 'lit' for light"}
+{"id": "test-gemini-a-081", "cause": "wording", "note": "'the glass shuts down' for the screen timeout"}
+{"id": "test-gemini-a-086", "cause": "collision", "note": "a timeout problem told as a cooking story"}
+{"id": "test-gemini-a-087", "cause": "lexical_pull", "note": "'not out of battery' declined: battery is out of scope, and the negation was missed"}
+{"id": "test-gemini-a-090", "cause": "held_out", "note": "screen_wont_rotate named as text_too_small"}
+{"id": "test-gemini-a-093", "cause": "held_out", "note": "screen_wont_rotate named as text_too_small"}
+{"id": "test-gemini-a-101", "cause": "wording", "note": "'the writing is completely microscopic'"}
+{"id": "test-gemini-a-106", "cause": "collision", "note": "small text told as a story about failing eyesight"}
+{"id": "test-gemini-a-114", "cause": "wording", "note": "'wirles speker': two typos in the words that name the device"}
+{"id": "test-gemini-a-126", "cause": "collision", "note": "a permission problem told as a cab-booking story; 'book a cab' is a stock out-of-scope line"}
+{"id": "test-gemini-a-130", "cause": "held_out", "note": "wrong_time declined"}
+{"id": "test-gemini-a-131", "cause": "held_out", "note": "wrong_time named as notifications_missing"}
+{"id": "test-gemini-a-133", "cause": "held_out", "note": "wrong_time declined"}
+{"id": "test-gemini-a-134", "cause": "held_out", "note": "wrong_time declined"}
+{"id": "test-gemini-a-136", "cause": "held_out", "note": "wrong_time declined"}
+{"id": "test-gemini-a-142", "cause": "wording", "note": "'wipe the memory of my home routers and mobile carriers'"}
+{"id": "test-gemini-a-146", "cause": "wording", "note": "'restore all my signal data to factory defaults'"}
+{"id": "test-gemini-b-008", "cause": "collision", "note": "an 'internet friend'"}
+{"id": "test-gemini-b-016", "cause": "lexical_pull", "note": "an alarm 'ringing' read as the ringer"}
+{"id": "test-gemini-b-018", "cause": "debatable_label", "note": "rotation that's unwanted is fixed by the same switch as rotation that's missing"}
+{"id": "test-gemini-b-022", "cause": "lexical_pull", "note": "caller tunes are a carrier service; 'caller' and 'playing' read as call audio"}
+{"id": "test-gemini-b-082", "cause": "wording", "note": "two problems, declined on the same 'microscopic' as test-gemini-a-101"}
+{"id": "test-gemini-topup-027", "cause": "lexical_pull", "note": "a phone question outside the catalog; 'private' and 'gallery' read as permissions"}

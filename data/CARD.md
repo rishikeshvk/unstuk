@@ -21,6 +21,7 @@ To teach a small on-device model to map a non-technical person's phone complaint
 | `nodes/` | "Which item on the screen is the {target}?" questions | 828 train, 132 dev; 10 test from the Moto's screens |
 | `real/` | Real user messages (M8 sittings): gitignored, never committed, never read by Claude, deleted after the write-up | 0 committed |
 | `field/` | The M8 symptom cards: 40 stories plus 3 prompts for problems people really had | 43 |
+| `failures/` | The shipped int8 graph's test mistakes, each with one cause (M9) | 57 |
 
 Each complaint is one JSON line: `id`, `text`, `labels` (intent IDs from `catalog/intents.json` or `out_of_scope`),
 `tags` (test slices, `vague`), `source`, `generator`, `batch`, and for generated lines the writer `persona`

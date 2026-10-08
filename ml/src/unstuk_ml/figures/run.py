@@ -11,7 +11,15 @@ import matplotlib.pyplot as plt
 
 from unstuk_ml.decision_graph import FLOAT_GRAPH
 from unstuk_ml.encoder_rung import ENCODER
-from unstuk_ml.figures import gate_outcomes, ladder, reliability, size_waterfall, style
+from unstuk_ml.failures import load_failures
+from unstuk_ml.figures import (
+    failure_causes,
+    gate_outcomes,
+    ladder,
+    reliability,
+    size_waterfall,
+    style,
+)
 from unstuk_ml.fine_tuning import RUNS_DIR
 from unstuk_ml.quantized_rung import SETTINGS, Settings
 from unstuk_ml.tfidf_rung import TFIDF
@@ -56,6 +64,7 @@ def main() -> None:
             ]
         ),
         "gate.svg": gate_outcomes.draw(scores[SHIPS]),
+        "failures.svg": failure_causes.draw(load_failures(scores[SHIPS])),
     }
     for name, figure in drawn.items():
         print(f"wrote {style.save(figure, name)}")

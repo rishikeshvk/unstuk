@@ -105,7 +105,7 @@ def test_held_out_intents_are_allowed_only_in_the_test_set(tmp_path: Path) -> No
     ]
 
 
-@pytest.mark.parametrize("folder", ["real", "clean", "nodes"])
+@pytest.mark.parametrize("folder", ["real", "clean", "nodes", "failures"])
 def test_skips_real_messages_and_derived_clean_data(tmp_path: Path, folder: str) -> None:
     write(tmp_path / folder / "a.jsonl", "anything at all")
 
