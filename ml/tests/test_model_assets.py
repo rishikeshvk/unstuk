@@ -37,6 +37,7 @@ def settings(graph: Path) -> Settings:
         choice_temperature=0.9,
         noul_temperature=1.5,
         lines={},
+        retuned={},
         automatic_wrong=0.0,
         clear_clarified=0.0,
         vague_handled=0.0,

@@ -16,7 +16,7 @@ from tokenizers import Tokenizer
 from unstuk_ml.catalog import Catalog
 from unstuk_ml.decision_batch import encode
 from unstuk_ml.decision_graph import INPUTS
-from unstuk_ml.decision_scoring import BATCH_SIZE, Logits
+from unstuk_ml.decision_scoring import Logits
 from unstuk_ml.record import Record
 from unstuk_ml.training_examples import render_state
 
@@ -36,8 +36,10 @@ class GraphDecider:
     ) -> tuple[NDArray[np.float32], NDArray[np.float32]]:
         """Each text's unit vector and Noul logit; a pair is a complaint and its state."""
         vectors, noul = [], []
-        for start in range(0, len(inputs), BATCH_SIZE):
-            encoded = encode(self._tokenizer, inputs[start : start + BATCH_SIZE])
+        # One at a time, as the app runs it: int8 activations are scaled by their whole batch,
+        # padding included, so a batched answer depends on its batchmates.
+        for one in inputs:
+            encoded = encode(self._tokenizer, [one])
             feed = {name: getattr(encoded, name).numpy() for name in INPUTS}
             vector, logit = self._session.run(None, feed)
             vectors.append(vector)

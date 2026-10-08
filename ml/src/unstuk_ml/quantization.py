@@ -1,8 +1,10 @@
-"""int8 for the shipped graph, and the dev check it must pass (M7 spec sections 2 and 3).
+"""8-bit weights for the shipped graph, and the dev check it must pass (M7 spec sections 2 and 3).
 
-Dynamic quantization stores weights as int8, one scale per output channel, and quantizes
-activations per call, so no calibration data is needed. The check compares the int8 model with
-M6's float model on dev, each under its own temperatures, by thresholds written before any run.
+Dynamic quantization stores weights in 8 bits, one scale per output channel, and quantizes
+activations per call, so no calibration data is needed. Weights are uint8 (U8U8): x86 without VNNI
+can saturate uint8 x int8 products where ARM doesn't, and U8U8 is exact on both (spec correction).
+The check compares the quantized model with M6's float model on dev, each under its own
+temperatures, by thresholds written before any run.
 """
 
 from collections.abc import Callable, Sequence
@@ -34,7 +36,7 @@ def quantize(float_graph: Path, int8_graph: Path, ops: Sequence[str]) -> None:
         int8_graph,
         op_types_to_quantize=list(ops),
         per_channel=True,
-        weight_type=QuantType.QInt8,
+        weight_type=QuantType.QUInt8,
     )
 
 

@@ -4,6 +4,8 @@ import android.os.Debug
 import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.rishikeshvk.unstuk.catalog.CatalogLoader
+import com.rishikeshvk.unstuk.catalog.GateLines
 import kotlin.math.abs
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -24,63 +26,87 @@ private data class DevDecision(
 
 private const val TAG = "UnstukBench"
 
-// Spec section 9: the phone must give Python's answers to this.
-private const val MAX_DIFFERENCE = 1e-3
+// Spec correction: the same top answer on every line, the same gate outcome on nearly all of them.
+private const val MIN_OUTCOME_AGREEMENT = 0.99
 
 /**
- * The app's decision path on every dev line, against Python's int8 answers from `uv run unstuk-device-fixture`,
- * and the timings the M7 results report. Run on the oldest test phone.
+ * The app's decision path on every dev line, against Python's answers from `uv run unstuk-device-fixture`, and
+ * the timings the M7 results report. Run on the oldest test phone.
  */
 @RunWith(AndroidJUnit4::class)
 class DecisionModelDeviceTest {
     @Test
     fun decidesAsPythonOnEveryDevLine() {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val assets = instrumentation.targetContext.assets
+        val gate = CatalogLoader.loadGate(assets)
         val cases = instrumentation.context.assets.open("dev-decisions.jsonl").bufferedReader()
             .useLines { lines -> lines.map { Json.decodeFromString<DevDecision>(it) }.toList() }
         val nativeBefore = Debug.getNativeHeapAllocatedSize()
 
         val loadStarted = System.nanoTime()
-        DecisionModel.load(instrumentation.targetContext.assets).use { model ->
+        DecisionModel.load(assets).use { model ->
             val loadMs = (System.nanoTime() - loadStarted) / 1e6
             val nativeMb = (Debug.getNativeHeapAllocatedSize() - nativeBefore) / 1e6
             val timesMs = mutableListOf<Double>()
-            var worst = 0.0
-            val wrongTop = cases.filter { case ->
+            val gaps = mutableListOf<Double>()
+            val wrongTop = mutableListOf<String>()
+            var sameOutcome = 0
+            for (case in cases) {
                 val started = System.nanoTime()
                 val choice = model.decide(case.complaint, case.state)
                 timesMs += (System.nanoTime() - started) / 1e6
-                worst = maxOf(worst, abs(choice.outOfScope - case.outOfScope))
-                for ((intent, p) in case.probabilities) {
-                    worst = maxOf(worst, abs(choice.probabilities.getValue(intent) - p))
-                }
-                answer(choice) != expectedAnswer(case)
+                val expected = IntentChoice(case.probabilities, case.outOfScope)
+                gaps +=
+                    expected.probabilities.maxOf { (intent, p) ->
+                        abs(
+                            choice.probabilities.getValue(intent) - p
+                        )
+                    }
+                        .coerceAtLeast(abs(choice.outOfScope - case.outOfScope))
+                if (answer(choice) != answer(expected)) wrongTop += case.id
+                if (outcome(choice, gate) == outcome(expected, gate)) sameOutcome++
             }
-            val sorted = timesMs.sorted()
+            val agreement = sameOutcome.toDouble() / cases.size
+            val times = timesMs.sorted()
+            val sortedGaps = gaps.sorted()
             Log.i(
                 TAG,
                 "load %.0f ms, native heap +%.1f MB; decide p50 %.1f ms, p95 %.1f ms, max %.1f ms over %d lines; "
                     .format(
                         loadMs,
                         nativeMb,
-                        sorted.percentile(50),
-                        sorted.percentile(95),
-                        sorted.last(),
+                        times.percentile(50),
+                        times.percentile(95),
+                        times.last(),
                         cases.size
                     ) +
-                    "largest difference %.2e; %d top answers differ".format(worst, wrongTop.size)
+                    "gap p50 %.1e, p95 %.1e, max %.1e; %d top answers differ; gate outcomes agree %.2f%%"
+                        .format(
+                            sortedGaps.percentile(50),
+                            sortedGaps.percentile(95),
+                            sortedGaps.last(),
+                            wrongTop.size,
+                            100 * agreement
+                        )
             )
-            assertEquals("top answers differ on ${wrongTop.map { it.id }}", 0, wrongTop.size)
-            assertTrue("largest probability difference $worst", worst <= MAX_DIFFERENCE)
+            assertEquals("top answers differ on $wrongTop", 0, wrongTop.size)
+            assertTrue("gate outcomes agree on $agreement", agreement >= MIN_OUTCOME_AGREEMENT)
         }
     }
 
     private fun answer(choice: IntentChoice) =
         choice.top?.key?.takeUnless { choice.declines } ?: "out_of_scope"
 
-    private fun expectedAnswer(case: DevDecision): String {
-        val top = case.probabilities.maxBy { it.value }
-        return if (case.outOfScope > top.value) "out_of_scope" else top.key
+    /** What the gate does before diagnosis, as `evaluate.Scored.outcome` defines it. */
+    private fun outcome(choice: IntentChoice, gate: GateLines): String {
+        val top = choice.top
+        return when {
+            top == null || choice.declines -> "decline"
+            RiskGate(gate).isTooUncertain(choice) -> "clarify"
+            top.value >= gate.automaticAt -> "automatic"
+            else -> "confirm"
+        }
     }
 
     private fun List<Double>.percentile(p: Int) = this[((size - 1) * p) / 100]

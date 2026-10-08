@@ -2,11 +2,11 @@
 
 Tries run in the spec's order and stop at the first that passes the dev check: every weight in
 int8, then the embedding tables left in float. Temperatures are refitted for the int8 graph, and
-M6's rule re-tunes the gate's lines on its dev scores, since the app ships this graph.
+M6's rule re-tunes the gate's lines on its dev scores, reported only: the app keeps M6's lines
+(spec correction).
 """
 
 import argparse
-import json
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
@@ -22,7 +22,7 @@ from unstuk_ml.decision_batch import decision_tokenizer
 from unstuk_ml.decision_graph import FLOAT_GRAPH, scale
 from unstuk_ml.decision_scoring import Temperatures, fit_temperatures, scored
 from unstuk_ml.encoder import download
-from unstuk_ml.evaluate import GATE_FILE, Scored, load_gate
+from unstuk_ml.evaluate import Scored, load_gate
 from unstuk_ml.fine_tuning import RUNS_DIR, sha256, source_commit
 from unstuk_ml.folds import trained_intents
 from unstuk_ml.gate_tuning import tune
@@ -60,13 +60,16 @@ class Settings(BaseModel):
     graph: str
     graph_sha256: str
     ops: list[str]
-    """The ops whose weights are int8."""
+    """The ops whose weights are 8-bit."""
     scale: float
     choice_temperature: float
     noul_temperature: float
     lines: dict[str, float]
-    """Re-tuned on the int8 graph's dev scores, as written to `catalog/gate.json`."""
+    """The gate's lines the graph ships with: M6's, from `catalog/gate.json`."""
+    retuned: dict[str, float]
+    """What M6's rule picks on this graph's dev scores; reported, not applied."""
     automatic_wrong: float
+    """This and the next two are under the re-tuned lines."""
     clear_clarified: float
     vague_handled: float
     commit: str
@@ -126,7 +129,8 @@ def choose() -> Settings:
                 scale=factor,
                 choice_temperature=int8.temperatures.choice,
                 noul_temperature=int8.temperatures.noul,
-                lines=asdict(tuning.lines),
+                lines=asdict(gate),
+                retuned=asdict(tuning.lines),
                 automatic_wrong=tuning.automatic_wrong,
                 clear_clarified=tuning.clear_clarified,
                 vague_handled=tuning.vague_handled,
@@ -139,7 +143,6 @@ def choose() -> Settings:
 
 def write(settings: Settings) -> None:
     SETTINGS.write_text(settings.model_dump_json(indent=2) + "\n", encoding="utf-8")
-    GATE_FILE.write_text(json.dumps(settings.lines, indent=2) + "\n", encoding="utf-8")
 
 
 def main() -> None:
@@ -148,7 +151,7 @@ def main() -> None:
     _print_tries(settings.tries)
     print(
         f"chose {settings.graph}: temperatures {settings.choice_temperature:.4f} (Choice), "
-        f"{settings.noul_temperature:.4f} (Noul); gate lines {settings.lines}"
+        f"{settings.noul_temperature:.4f} (Noul); M6's rule would pick {settings.retuned}"
     )
     write(settings)
 
