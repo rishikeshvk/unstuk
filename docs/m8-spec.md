@@ -1,6 +1,6 @@
 # M8 spec: Real messages
 
-2026-10-08 · Status: **draft.** Background: [plan.md](plan.md), roadmap step 8, and [m7-results.md](m7-results.md).
+2026-10-08 · Status: **approved; tools built, sittings pending.** Background: [plan.md](plan.md), roadmap step 8, and [m7-results.md](m7-results.md).
 
 M8 answers one question: **on complaints written by real people, does the shipped int8 model still beat the
 baselines?** Invariant 10 makes that the condition for shipping it. Every number so far comes from the proxy test
@@ -60,7 +60,8 @@ This settles plan.md's open question, moved here from M3.
   counts, not text, and the committed report holds aggregates only and quotes no message. That way no real
   message reaches any external service.
 - **Deletion:** a participant's lines are removed on request, at any time. Everything in `data/real/` is deleted
-  once the M9 write-up is done.
+  once the M9 write-up is done, along with the embeddings the baselines cache in `ml/cache/` (gitignored, vectors
+  keyed by a hash, with no text).
 
 ## 4. Labelling
 
@@ -107,6 +108,16 @@ This settles plan.md's open question, moved here from M3.
 | `unstuk-real-label` | The blind, resumable labelling loop. It appends to `data/real/labels.jsonl` |
 | `unstuk-freeze data/real` | Locks both files (M3's freeze) |
 | `unstuk-real-test` | Scores once and writes `ml/reports/real.md`, with aggregates only |
+
+**Order of work:** `unstuk-real-sheet` for each participant, then the sitting, then `unstuk-real-import`,
+`unstuk-real-label`, `unstuk-freeze data/real` and `unstuk-real-test`. The relabelling (`unstuk-real-label
+--again`) runs a week after the freeze.
+
+**Dry run (2026-10-08).** The whole path ran in a scratch folder on 5 made-up participants built from proxy test
+lines, with no real messages. Sheets, import, labels, freeze and scoring all worked, and the report quoted no text.
+Confident and wrong failed its row there: 4.9% for the model against TF-IDF's 2.0%. TF-IDF is scored with M2's
+placeholder lines (`evaluate.M2_GATE`), as in M5 to M7. The lines repeat proxy test lines, so this says nothing
+about real messages, but it is the row to watch.
 
 ## Scope
 
