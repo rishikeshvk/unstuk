@@ -28,7 +28,7 @@ from unstuk_ml.zero_shot import ZERO_SHOT
 
 APK = (
     Path(__file__).resolve().parents[4]
-    / "android/app/build/outputs/apk/release/app-release-unsigned.apk"
+    / "android/app/build/outputs/apk/release/app-release.apk"
 )
 SHIPS = "int8"
 # The bar names the baseline that set each row by its report's title.
