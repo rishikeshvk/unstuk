@@ -126,6 +126,11 @@ model. On dev, its Choice head names never-trained intents about as well as the 
 A new intent therefore ships with training lines, not option text alone. See the
 [M5 spec](m5-spec.md), section 3.
 
+**Correction (2026-10-08): compress and calibrate.** int8 moves from M6 to M7, which quantizes the ONNX graph that
+ships and re-checks calibration there, rather than a PyTorch model that never ships. Distillation is dropped: M5's
+model is already at 2.8% ECE. M6 becomes "calibrate and gate": a Brier term, soft targets for vague lines, one
+out-of-fold try at out of scope, and the gate's thresholds tuned on dev. See the [M6 spec](m6-spec.md).
+
 **Why not a small LLM?** Even at 100 MB, 0.5B-class models (\~300 MB+ at 4-bit) don't fit. FunctionGemma 270M is the closest generative option for phone actions, but it maps explicit commands ("turn on the flashlight") rather than symptoms, and at 270M parameters it is likely past the budget. Gemini Nano is used only as an optional System 2 where the phone has it.
 
 ## Size budget
@@ -206,8 +211,8 @@ Build the riskiest, non-ML part first, so the model never waits on an executor t
 3. **Data (1–2 weeks).** Seed phrasings, LLM-generated synthetic set, real user test set.
 4. **Baseline (2–3 days).** fastText-style classifier, evaluated on the real set. This is the bar.
 5. **Encoder + heads (1–2 weeks).** Train the encoder backbone with NanoJev-style Choice, Noul and Score heads on Colab; train the fixed-head classifier baseline alongside.
-6. **Compress + calibrate (1 week).** Brier / proper-scoring training (RLCD-lite), temperature scaling, int8 quantization; optional distillation from an open System One teacher.
-7. **On-device inference (1–2 weeks).** ONNX Runtime or LiteRT on device behind a Kotlin decide(state, questions) API; node matching and guide cards go through the same API. A hand-written forward pass is a stretch goal.
+6. **Calibrate + gate (1 week).** Brier / proper-scoring training (RLCD-lite), temperature scaling, soft targets for vague lines, the gate's thresholds. (int8 moved to M7, distillation dropped: see the correction of 2026-10-08.)
+7. **On-device inference (1–2 weeks).** int8 quantization with a calibration re-check, ONNX Runtime or LiteRT on device behind a Kotlin decide(state, questions) API; node matching and guide cards go through the same API. A hand-written forward pass is a stretch goal.
 8. **Field test (2 weeks).** Install on test users' phones; log decisions locally; measure the MVP metrics.
 9. **Portfolio write-up.** Size waterfall, calibration plots, baseline comparison, failure analysis.
 
