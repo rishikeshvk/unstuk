@@ -248,7 +248,8 @@ Eight recent developments shaped the plan above; the biggest change is copying t
 **Open questions.**
 - *Answered (2026-10-03):* test targets are a Pixel emulator and a Moto Edge 30 (Android 14); see the M1 spec.
 - *Answered (2026-10-04):* a low-risk fix below the confidence threshold is confirmed with the user, not run
-  automatically. The threshold value is set in the M2 spec and tuned in M6.
+  automatically. The threshold value is set in the M2 spec and tuned in M6. *Tuned (2026-10-08):* automatic at
+  0.75, clarify below 0.7, in `catalog/gate.json`; see [M6 results](m6-results.md).
 - *Answered (2026-10-04):* the app's look and UX are set before M3: the "calm core, expressive surface" design
   in [design-spec.md](design-spec.md), with the Unknot logo and one screen per reply.
 - *Settle in the M8 spec (moved from M3, 2026-10-05):* consent and storage rules for real user messages. M3 uses

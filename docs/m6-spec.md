@@ -1,6 +1,6 @@
 # M6 spec: Calibrate and gate
 
-2026-10-08 · Status: **in progress.** Background: [plan.md](plan.md), roadmap step 6, and
+2026-10-08 · Status: **done.** Results: [m6-results.md](m6-results.md). Background: [plan.md](plan.md), roadmap step 6, and
 [m5-results.md](m5-results.md).
 
 M6 answers one question: **does a decision model trained with a proper-scoring loss and soft targets for vague
