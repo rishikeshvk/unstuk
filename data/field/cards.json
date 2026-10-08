@@ -27,7 +27,7 @@
   {"id": "perm-2", "about": "app_permission", "story": "The maps app keeps saying it can't tell where you are, even though you're standing on a main road."},
   {"id": "time-1", "about": "wrong_time", "story": "The clock on your phone is an hour behind, and you turned up late because of it."},
   {"id": "time-2", "about": "wrong_time", "story": "Websites show a warning that your connection isn't private, and the phone says today's date is in 2019."},
-  {"id": "reset-1", "about": "reset_network", "story": "Wi-Fi, mobile data and Bluetooth all keep failing. A friend says the phone should forget all its connections and start afresh."},
+  {"id": "reset-1", "about": "reset_network", "story": "Wi-Fi, mobile data, even calls keep dropping. A friend says the phone should forget all its connections and start afresh."},
   {"id": "reset-2", "about": "reset_network", "story": "The man at the mobile shop said the phone's saved network settings are messed up and need to be wiped clean."},
   {"id": "oos-battery", "about": "out_of_scope", "story": "Your phone was fully charged in the morning and is nearly dead by lunchtime."},
   {"id": "oos-slow", "about": "out_of_scope", "story": "Apps take ages to open, and the phone freezes for a few seconds every time you type."},
