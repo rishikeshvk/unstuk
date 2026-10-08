@@ -45,6 +45,7 @@ unstuk-oof-gate = "unstuk_ml.oof_gate:main"
 unstuk-calibrated = "unstuk_ml.calibrated_rung:main"
 unstuk-calibrated-test = "unstuk_ml.calibrated_test:main"
 unstuk-export = "unstuk_ml.export:main"
+unstuk-quantize = "unstuk_ml.quantized_rung:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
