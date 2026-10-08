@@ -1,23 +1,29 @@
 {
   "run": "cosine-lr5e-05-typos-state-vague-brier1",
   "float_sha256": "775b3c64d149e94c467fb7cc44198de93199614f620f80b899082157f4460e47",
-  "graph": "decision.int8-matmul.onnx",
-  "graph_sha256": "dbfec62fd18a0a4ae24ac91800d03f20aeb7efa3a777e3e27ec9b7aba4d1c528",
+  "graph": "decision.int8.onnx",
+  "graph_sha256": "e3a739784daf247e7e4bd7167847e6ea276534eea7f24b56bda7f51e5a1586a4",
   "ops": [
-    "MatMul"
+    "MatMul",
+    "Gather"
   ],
   "scale": 22.361774444580078,
-  "choice_temperature": 0.8171,
-  "noul_temperature": 1.5208,
+  "choice_temperature": 0.8405,
+  "noul_temperature": 1.4864,
   "lines": {
-    "automatic_at": 0.6,
-    "clarify_below": 0.6,
-    "clarify_margin": 0.35
+    "automatic_at": 0.75,
+    "clarify_below": 0.7,
+    "clarify_margin": 0.0
   },
-  "automatic_wrong": 0.019329896907216496,
-  "clear_clarified": 0.014230271668822769,
-  "vague_handled": 0.3877551020408163,
-  "commit": "6985ab3e2fa79c7776d563fb6be7e0213cd7d1e3",
+  "retuned": {
+    "automatic_at": 0.65,
+    "clarify_below": 0.3,
+    "clarify_margin": 0.4
+  },
+  "automatic_wrong": 0.01935483870967742,
+  "clear_clarified": 0.01034928848641656,
+  "vague_handled": 0.3673469387755102,
+  "commit": "c0a2160598ae58c8345d9ae0c54a895b69381679",
   "tries": [
     {
       "graph": "decision.int8.onnx",
@@ -25,23 +31,11 @@
         "MatMul",
         "Gather"
       ],
-      "megabytes": 34.952227,
-      "top_agreement": 0.9886363636363636,
-      "macro_f1_change": -0.0009471258086795054,
-      "ece_change": -0.00220366554313749,
+      "megabytes": 34.97292,
+      "top_agreement": 0.993006993006993,
+      "macro_f1_change": -0.0007170118219860244,
+      "ece_change": -0.001491077291517949,
       "outcome_agreement": 0.9816433566433567,
-      "passes": false
-    },
-    {
-      "graph": "decision.int8-matmul.onnx",
-      "ops": [
-        "MatMul"
-      ],
-      "megabytes": 70.704639,
-      "top_agreement": 0.9938811188811189,
-      "macro_f1_change": 0.0006365447511097466,
-      "ece_change": -0.00033552981541052577,
-      "outcome_agreement": 0.9842657342657343,
       "passes": true
     }
   ]
