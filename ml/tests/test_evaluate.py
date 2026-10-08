@@ -9,6 +9,7 @@ from unstuk_ml.evaluate import (
     beats,
     bootstrap,
     brier_score,
+    calibration_bins,
     changed,
     confident_and_wrong,
     expected_calibration_error,
@@ -196,3 +197,17 @@ def test_strata_keep_each_group_s_count_in_every_resample() -> None:
 def test_strata_need_one_label_per_line() -> None:
     with pytest.raises(ValueError, match="one stratum per line"):
         bootstrap(ALL, accuracy, strata=["P01"])
+
+
+def test_calibration_bins_group_lines_by_confidence() -> None:
+    gate = GateLines(automatic_at=0.75, clarify_below=0.7, clarify_margin=0.0)
+    items = [
+        Scored(make("a", "no net"), {"no_internet": 0.95}, gate),
+        Scored(make("b", "no net"), {"phone_not_ringing": 0.91}, gate),
+        Scored(make("c", "no net"), {"no_internet": 0.55}, gate),
+    ]
+
+    found = calibration_bins(items)
+
+    assert [(b.low, b.count, b.accuracy) for b in found] == [(0.5, 1, 1.0), (0.9, 2, 0.5)]
+    assert expected_calibration_error(items) == pytest.approx((0.45 + 2 * 0.43) / 3)

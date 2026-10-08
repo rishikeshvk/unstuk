@@ -131,19 +131,39 @@ def held_out_accuracy(items: Sequence[Scored]) -> float:
     return accuracy([s for s in items if s.record.labels[0] in HELD_OUT])
 
 
-def expected_calibration_error(items: Sequence[Scored]) -> float:
-    """Average gap between confidence and accuracy, weighted by how many lines fall in each bin."""
+@dataclass(frozen=True)
+class CalibrationBin:
+    low: float
+    confidence: float
+    """The mean probability of the top answer in the bin."""
+    accuracy: float
+    count: int
+
+
+def calibration_bins(items: Sequence[Scored]) -> list[CalibrationBin]:
+    """Answered clear lines by the top answer's probability, in `BINS` equal bins; empty ones left
+    out."""
     answered = [s for s in items if not s.vague and s.probabilities]
-    if not answered:
-        return float("nan")
-    gap = 0.0
+    found = []
     for b in range(BINS):
         low, high = b / BINS, (b + 1) / BINS
         in_bin = [s for s in answered if low < s.top[1] <= high or (b == 0 and s.top[1] == 0)]
         if in_bin:
             confidence = sum(s.top[1] for s in in_bin) / len(in_bin)
-            gap += len(in_bin) * abs(confidence - _share(s.correct for s in in_bin))
-    return gap / len(answered)
+            accuracy = _share(s.correct for s in in_bin)
+            found.append(CalibrationBin(low, confidence, accuracy, len(in_bin)))
+    return found
+
+
+def expected_calibration_error(items: Sequence[Scored]) -> float:
+    """Average gap between confidence and accuracy, weighted by how many lines fall in each bin."""
+    found = calibration_bins(items)
+    if not found:
+        return float("nan")
+    gap = 0.0
+    for b in found:
+        gap += b.count * abs(b.confidence - b.accuracy)
+    return gap / sum(b.count for b in found)
 
 
 def brier_score(items: Sequence[Scored]) -> float:

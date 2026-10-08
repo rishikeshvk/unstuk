@@ -21,3 +21,13 @@ files under `ml/`, `catalog/`, `data/clean`, `data/state`, `data/nodes` and `dat
 `data/real` never leave this machine. Each run writes `result.json` (per-epoch dev metrics, the chosen epoch, the
 checkpoint's sha256 and the commit) and `model.pt` to `ml/runs/<run name>/`, which is gitignored. The session is
 stopped when the run ends or fails.
+
+## The write-up's figures (M9)
+
+```sh
+uv run unstuk-writeup-scores   # re-score each frozen decider on the test, check it against its report, cache
+uv run unstuk-figures          # draw docs/figures/*.svg from the cache, the graphs and the release APK
+```
+
+Neither chooses anything: the scores must print as the results docs printed them, or nothing is cached. See the
+[M9 spec](../docs/m9-spec.md).
