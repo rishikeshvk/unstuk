@@ -152,7 +152,7 @@ def main() -> None:
     lines = load_test()
     intents = offered(catalog)
 
-    model = _model(settings)
+    model = calibrated_model(settings)
     logits = decision_logits(model, lines, intents, catalog, tokenizer)
     if settings.gate is not None:
         logits = TwoFeatureGate(**settings.gate).apply(logits)
@@ -185,7 +185,7 @@ def main() -> None:
     print(f"scored {len(items)} test lines; see {REPORT}")
 
 
-def _model(settings: Settings) -> DecisionModel:
+def calibrated_model(settings: Settings) -> DecisionModel:
     """The settings' checkpoint, refused unless its bytes match."""
     result = DecisionRun.model_validate_json(
         (RUNS_DIR / settings.run / RESULT).read_text(encoding="utf-8")
