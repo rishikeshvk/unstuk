@@ -1,7 +1,7 @@
 # M5 spec: Encoder and decision heads
 
-2026-10-05 · Status: **approved, in progress.** Background: [plan.md](plan.md), roadmap step 5, and
-[m4-results.md](m4-results.md).
+2026-10-05 · Status: **done.** Results: [m5-results.md](m5-results.md). Background: [plan.md](plan.md), roadmap
+step 5, and [m4-results.md](m4-results.md).
 
 M5 answers one question: **does a fine-tuned encoder that chooses among option texts clear the M4 bar on the frozen
 proxy test, metric by metric, while still naming intents it was never trained on?**
