@@ -31,6 +31,8 @@ android/app/src/main/assets/model/*
 !android/app/src/main/assets/model/model.json
 # Written by `unstuk-token-fixture`: Python's ids for the Kotlin tokenizer's parity test.
 android/app/src/test/resources/wordpiece.jsonl
+# Written by `unstuk-device-fixture`: Python's int8 answers on dev, for the on-device parity test.
+android/app/src/androidTest/assets/dev-decisions.jsonl
 *.tflite
 ml/runs/
 ml/checkpoints/
