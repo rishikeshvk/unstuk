@@ -1,6 +1,6 @@
 # M7 spec: On-device inference
 
-2026-10-08 · Status: **proposed.** Background: [plan.md](plan.md), roadmap step 7, and
+2026-10-08 · Status: **approved.** Background: [plan.md](plan.md), roadmap step 7, and
 [m6-results.md](m6-results.md).
 
 M7 answers one question: **does the int8 model, running on the phone, decide like M6's float model, at a size and
