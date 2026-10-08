@@ -4,6 +4,7 @@ import android.app.NotificationManager
 import com.rishikeshvk.unstuk.action.ActionOutcome
 import com.rishikeshvk.unstuk.catalog.CatalogTestFiles
 import com.rishikeshvk.unstuk.decide.IntentChoice
+import com.rishikeshvk.unstuk.decide.RiskGate
 import com.rishikeshvk.unstuk.state.fineDeviceState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -11,7 +12,7 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class TriageTest {
-    private val triage = Triage(CatalogTestFiles.catalog)
+    private val triage = Triage(CatalogTestFiles.catalog, RiskGate(CatalogTestFiles.gate))
 
     @Test
     fun `nothing matched declines`() {

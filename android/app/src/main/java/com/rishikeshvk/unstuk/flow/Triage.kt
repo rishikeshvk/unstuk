@@ -11,12 +11,12 @@ import com.rishikeshvk.unstuk.state.DeviceState
 private const val CLARIFY_CHOICES = 3
 
 /** Turns a decision and a snapshot into a reply: decline, clarify, or diagnose and pass the fix through the gate. */
-class Triage(private val catalog: Catalog, private val gate: RiskGate = RiskGate()) {
+class Triage(private val catalog: Catalog, private val gate: RiskGate) {
     private val diagnoser = Diagnoser(catalog)
 
     fun triage(choice: IntentChoice, state: DeviceState): Reply {
         val top = choice.top ?: return Reply.Decline
-        if (gate.isTooUncertain(top.value)) {
+        if (gate.isTooUncertain(choice)) {
             return Reply.Clarify(choice.leaders(CLARIFY_CHOICES).map(catalog::intent))
         }
         return forIntent(top.key, top.value, state)

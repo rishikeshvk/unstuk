@@ -15,6 +15,8 @@ object CatalogTestFiles {
         CatalogLoader.parseKeywords(text(CatalogLoader.KEYWORDS))
     }
 
+    val gate: GateLines by lazy { CatalogLoader.parseGate(text(CatalogLoader.GATE)) }
+
     /** IDs that data refers to, by kind; see `ids.lock`. */
     val idsLock: Map<String, List<String>> by lazy { Json.decodeFromString(text("ids.lock")) }
 

@@ -2,6 +2,8 @@ import pytest
 from records import make
 
 from unstuk_ml.evaluate import (
+    M2_GATE,
+    GateLines,
     Scored,
     accuracy,
     beats,
@@ -10,6 +12,7 @@ from unstuk_ml.evaluate import (
     confident_and_wrong,
     expected_calibration_error,
     in_scope_accuracy,
+    load_gate,
     macro_f1,
     out_of_scope_precision,
     out_of_scope_recall,
@@ -142,3 +145,30 @@ def test_changed_lists_mistakes_fixed_and_introduced() -> None:
     assert [(g, s, len(lines)) for g, s, lines in introduced] == [
         ("no_internet", "screen_too_dim", 5)
     ]
+
+
+def test_a_close_runner_up_is_clarified_under_a_margin() -> None:
+    split = {"phone_not_ringing": 0.55, "notifications_missing": 0.4, "out_of_scope": 0.05}
+    line = make("f", "no sound", "phone_not_ringing")
+    margin = GateLines(automatic_at=0.8, clarify_below=0.5, clarify_margin=0.2)
+
+    assert Scored(line, split).outcome == "confirm"
+    assert Scored(line, split, margin).outcome == "clarify"
+    assert Scored(line, {"phone_not_ringing": 0.9, "out_of_scope": 0.1}, margin).outcome == (
+        "automatic"
+    )
+
+
+def test_out_of_scope_is_never_the_runner_up() -> None:
+    line = make("g", "no net")
+    margin = GateLines(automatic_at=0.8, clarify_below=0.5, clarify_margin=0.2)
+
+    assert Scored(line, {"no_internet": 0.55, "out_of_scope": 0.45}, margin).outcome == "confirm"
+
+
+def test_the_catalogs_gate_loads_with_its_lines_in_order() -> None:
+    gate = load_gate()
+
+    assert 0 < gate.clarify_below <= gate.automatic_at <= 1
+    assert gate.clarify_margin >= 0
+    assert GateLines(automatic_at=0.8, clarify_below=0.5, clarify_margin=0.0) == M2_GATE

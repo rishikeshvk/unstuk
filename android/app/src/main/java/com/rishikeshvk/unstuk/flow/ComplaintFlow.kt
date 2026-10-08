@@ -3,6 +3,7 @@ package com.rishikeshvk.unstuk.flow
 import android.content.Context
 import com.rishikeshvk.unstuk.catalog.CatalogLoader
 import com.rishikeshvk.unstuk.decide.KeywordMatcher
+import com.rishikeshvk.unstuk.decide.RiskGate
 import com.rishikeshvk.unstuk.fix.FixRunner
 import com.rishikeshvk.unstuk.state.DeviceStateReader
 import com.rishikeshvk.unstuk.trace.TraceWriter
@@ -18,7 +19,7 @@ private const val TRACE_ACTION = "complaint"
 class ComplaintFlow(context: Context) {
     private val catalog = CatalogLoader.load(context.assets)
     private val matcher = KeywordMatcher(CatalogLoader.loadKeywords(context.assets))
-    private val triage = Triage(catalog)
+    private val triage = Triage(catalog, RiskGate(CatalogLoader.loadGate(context.assets)))
     private val reader = DeviceStateReader(context)
     private val runner = FixRunner(context)
     private val traces = TraceWriter(File(context.filesDir, "traces"))

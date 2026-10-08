@@ -1,30 +1,51 @@
 """Scores a decider on the proxy test set with the metrics fixed in M3 spec section 10.
 
 A prediction is a probability per label; empty means the decider declined. The risk gate's
-thresholds (`decide/RiskGate.kt`) turn it into what the app would do: the safety numbers count that.
+lines turn it into what the app would do: the safety numbers count that.
 """
 
+import json
 import random
 from collections import Counter
 from collections.abc import Callable, Iterable, Iterator, Sequence
 from dataclasses import dataclass
+from pathlib import Path
 
 from sklearn.metrics import f1_score
 
+from unstuk_ml.catalog import CATALOG_DIR
 from unstuk_ml.labels import HELD_OUT, OUT_OF_SCOPE, VAGUE
 from unstuk_ml.record import Record
 
-CLARIFY_BELOW = 0.5
-AUTOMATIC_AT = 0.8
+GATE_FILE = CATALOG_DIR / "gate.json"
 BINS = 10
 RESAMPLES = 1000
 SEED = 19
 
 
 @dataclass(frozen=True)
+class GateLines:
+    """The risk gate's lines on the top intent's probability, as the app reads them."""
+
+    automatic_at: float
+    clarify_below: float
+    clarify_margin: float
+    """Clarify when the top two intents are closer than this, however sure the top one is."""
+
+
+# The placeholder lines M3 to M5 were scored with, kept so their reports reproduce.
+M2_GATE = GateLines(automatic_at=0.8, clarify_below=0.5, clarify_margin=0.0)
+
+
+def load_gate(path: Path = GATE_FILE) -> GateLines:
+    return GateLines(**json.loads(path.read_text(encoding="utf-8")))
+
+
+@dataclass(frozen=True)
 class Scored:
     record: Record
     probabilities: dict[str, float]
+    gate: GateLines = M2_GATE
 
     @property
     def top(self) -> tuple[str, float]:
@@ -48,9 +69,17 @@ class Scored:
         label, p = self.top
         if not self.probabilities or label == OUT_OF_SCOPE:
             return "decline"
-        if p < CLARIFY_BELOW:
+        if p < self.gate.clarify_below or p - self._runner_up < self.gate.clarify_margin:
             return "clarify"
-        return "automatic" if p >= AUTOMATIC_AT else "confirm"
+        return "automatic" if p >= self.gate.automatic_at else "confirm"
+
+    @property
+    def _runner_up(self) -> float:
+        """The second most likely intent's probability; out of scope is not an intent."""
+        intents = sorted(
+            (p for label, p in self.probabilities.items() if label != OUT_OF_SCOPE), reverse=True
+        )
+        return intents[1] if len(intents) > 1 else 0.0
 
 
 Metric = Callable[[Sequence[Scored]], float]

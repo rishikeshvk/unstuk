@@ -1,6 +1,8 @@
 package com.rishikeshvk.unstuk.decide
 
+import com.rishikeshvk.unstuk.catalog.CatalogTestFiles
 import com.rishikeshvk.unstuk.catalog.FixEntry
+import com.rishikeshvk.unstuk.catalog.GateLines
 import com.rishikeshvk.unstuk.catalog.Risk
 import com.rishikeshvk.unstuk.catalog.Rung
 import org.junit.Assert.assertEquals
@@ -9,7 +11,8 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class RiskGateTest {
-    private val gate = RiskGate(autoThreshold = 0.8, clarifyBelow = 0.5)
+    private val gate =
+        RiskGate(GateLines(automaticAt = 0.8, clarifyBelow = 0.5, clarifyMargin = 0.2))
 
     private fun fix(risk: Risk, rungs: List<Rung> = listOf(Rung.DIRECT, Rung.GUIDED)) = FixEntry(
         id = "f",
@@ -47,7 +50,20 @@ class RiskGateTest {
 
     @Test
     fun `too uncertain below the clarify line`() {
-        assertTrue(gate.isTooUncertain(0.49))
-        assertFalse(gate.isTooUncertain(0.5))
+        assertTrue(gate.isTooUncertain(IntentChoice(mapOf("a" to 0.49))))
+        assertFalse(gate.isTooUncertain(IntentChoice(mapOf("a" to 0.5))))
+    }
+
+    @Test
+    fun `too uncertain when a second intent is within the margin`() {
+        assertTrue(gate.isTooUncertain(IntentChoice(mapOf("a" to 0.55, "b" to 0.4))))
+        assertFalse(gate.isTooUncertain(IntentChoice(mapOf("a" to 0.75, "b" to 0.2))))
+    }
+
+    @Test
+    fun `the catalog's gate keeps its lines in order`() {
+        val lines = CatalogTestFiles.gate
+        assertTrue(lines.clarifyBelow in 0.0..lines.automaticAt)
+        assertTrue(lines.automaticAt <= 1.0 && lines.clarifyMargin >= 0.0)
     }
 }
