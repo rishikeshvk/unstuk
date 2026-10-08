@@ -131,6 +131,11 @@ ships and re-checks calibration there, rather than a PyTorch model that never sh
 model is already at 2.8% ECE. M6 becomes "calibrate and gate": a Brier term, soft targets for vague lines, one
 out-of-fold try at out of scope, and the gate's thresholds tuned on dev. See the [M6 spec](m6-spec.md).
 
+**Correction (2026-10-08): field test.** M8 is a lean field test: participants type complaints for symptom
+cards and a few problems they really had, on their own phones, with no app installed and no two-week log. Two
+weeks of real use would give a few dozen messages, not 150. Fix success and latency stay M7's numbers from the
+Moto. See the [M8 spec](m8-spec.md).
+
 **Why not a small LLM?** Even at 100 MB, 0.5B-class models (\~300 MB+ at 4-bit) don't fit. FunctionGemma 270M is the closest generative option for phone actions, but it maps explicit commands ("turn on the flashlight") rather than symptoms, and at 270M parameters it is likely past the budget. Gemini Nano is used only as an optional System 2 where the phone has it.
 
 ## Size budget
@@ -252,8 +257,9 @@ Eight recent developments shaped the plan above; the biggest change is copying t
   0.75, clarify below 0.7, in `catalog/gate.json`; see [M6 results](m6-results.md).
 - *Answered (2026-10-04):* the app's look and UX are set before M3: the "calm core, expressive surface" design
   in [design-spec.md](design-spec.md), with the Unknot logo and one screen per reply.
-- *Settle in the M8 spec (moved from M3, 2026-10-05):* consent and storage rules for real user messages. M3 uses
-  a proxy test set, so real messages are first collected in the M8 field test.
+- *Answered (2026-10-08):* consent and storage rules for real user messages are in the
+  [M8 spec](m8-spec.md), section 3: spoken consent before the first card, no names, `data/real/` only, never read
+  by Claude, deleted after the write-up.
 - *Answered (2026-10-08):* the int8 model file reaches the APK through an export step, not Git LFS:
   `unstuk-export` writes it into the app's assets, still gitignored, and a committed manifest pins its sha256. See
   the [M7 spec](m7-spec.md), section 5.
