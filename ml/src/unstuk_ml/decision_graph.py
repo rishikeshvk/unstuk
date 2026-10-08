@@ -15,6 +15,7 @@ from unstuk_ml.decision_model import DecisionModel
 INPUTS = ("input_ids", "attention_mask", "token_type_ids")
 OUTPUTS = ("vector", "noul_logit")
 OPSET = 18
+FLOAT_GRAPH = "decision.float.onnx"
 
 
 class DecisionGraph(nn.Module):

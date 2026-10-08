@@ -26,6 +26,9 @@ __pycache__/
 
 # Models and training outputs
 *.onnx
+# Written by `unstuk-export assets`; only the manifest that pins them is committed.
+android/app/src/main/assets/model/*
+!android/app/src/main/assets/model/model.json
 *.tflite
 ml/runs/
 ml/checkpoints/

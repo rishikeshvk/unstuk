@@ -1,0 +1,28 @@
+{
+  "graph_sha256": "dbfec62fd18a0a4ae24ac91800d03f20aeb7efa3a777e3e27ec9b7aba4d1c528",
+  "options_sha256": "73c2acfb2610a75b2c726b9bef728ca7fe71538175c03626a51a7a76e7252ec6",
+  "vocab_sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+  "catalog_sha256": "180e58508654f9fdef46b00824b7934b28dbeb0e7815b50c50cbcf0c3a3c39b3",
+  "intents": [
+    "no_internet",
+    "wifi_no_load",
+    "phone_not_ringing",
+    "cant_hear_call",
+    "notifications_missing",
+    "talkback_on",
+    "colours_wrong",
+    "screen_too_dim",
+    "screen_turns_off_fast",
+    "screen_wont_rotate",
+    "text_too_small",
+    "bluetooth_earphones",
+    "app_permission",
+    "wrong_time",
+    "reset_network"
+  ],
+  "dimensions": 384,
+  "scale": 22.361774444580078,
+  "choice_temperature": 0.8171,
+  "noul_temperature": 1.5208,
+  "max_tokens": 128
+}

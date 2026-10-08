@@ -19,11 +19,10 @@ from unstuk_ml.calibrated_rung import Settings as M6Settings
 from unstuk_ml.calibrated_test import calibrated_model
 from unstuk_ml.catalog import load_catalog
 from unstuk_ml.decision_batch import decision_tokenizer
-from unstuk_ml.decision_graph import scale
+from unstuk_ml.decision_graph import FLOAT_GRAPH, scale
 from unstuk_ml.decision_scoring import Temperatures, fit_temperatures, scored
 from unstuk_ml.encoder import download
 from unstuk_ml.evaluate import GATE_FILE, Scored, load_gate
-from unstuk_ml.export import FLOAT_GRAPH
 from unstuk_ml.fine_tuning import RUNS_DIR, sha256, source_commit
 from unstuk_ml.folds import trained_intents
 from unstuk_ml.gate_tuning import tune
@@ -79,7 +78,7 @@ def choose() -> Settings:
     directory = RUNS_DIR / m6.run
     float_graph = directory / FLOAT_GRAPH
     if not float_graph.exists():
-        raise SystemExit(f"{float_graph} is missing; run `uv run unstuk-export` first")
+        raise SystemExit(f"{float_graph} is missing; run `uv run unstuk-export graph` first")
     catalog = load_catalog()
     intents = trained_intents(catalog)
     tokenizer = decision_tokenizer(download()[1])
