@@ -19,7 +19,7 @@ class Record(BaseModel):
     text: str = Field(min_length=1)
     labels: list[str] = Field(min_length=1)
     tags: list[str] = []
-    source: Literal["seed", "generated", "handwritten", "mobile_actions"]
+    source: Literal["seed", "generated", "handwritten", "mobile_actions", "real"]
     generator: str = Field(min_length=1)
     batch: str = Field(min_length=1)
     persona: dict[str, str] | None = None
