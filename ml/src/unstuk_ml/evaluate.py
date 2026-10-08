@@ -146,6 +146,18 @@ def expected_calibration_error(items: Sequence[Scored]) -> float:
     return gap / len(answered)
 
 
+def brier_score(items: Sequence[Scored]) -> float:
+    """Mean squared distance between the probabilities and the first label, on clear lines; a
+    decline puts nothing on any label."""
+    clear = [s for s in items if not s.vague]
+    total = 0.0
+    for item in clear:
+        gold = item.record.labels[0]
+        total += sum((p - (label == gold)) ** 2 for label, p in item.probabilities.items())
+        total += 0.0 if gold in item.probabilities else 1.0
+    return total / len(clear)
+
+
 def bootstrap(items: Sequence[Scored], metric: Metric, seed: int = SEED) -> tuple[float, float]:
     """A 95% interval: the metric on 1,000 resamples of the lines, with replacement."""
     values = (metric([items[i] for i in drawn]) for drawn in _resamples(len(items), seed))

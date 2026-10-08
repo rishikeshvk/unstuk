@@ -8,6 +8,7 @@ from unstuk_ml.evaluate import (
     accuracy,
     beats,
     bootstrap,
+    brier_score,
     changed,
     confident_and_wrong,
     expected_calibration_error,
@@ -172,3 +173,10 @@ def test_the_catalogs_gate_loads_with_its_lines_in_order() -> None:
     assert 0 < gate.clarify_below <= gate.automatic_at <= 1
     assert gate.clarify_margin >= 0
     assert GateLines(automatic_at=0.8, clarify_below=0.5, clarify_margin=0.0) == M2_GATE
+
+
+def test_brier_is_zero_when_sure_and_right_and_counts_a_decline_as_missing() -> None:
+    assert brier_score([RIGHT]) == 0
+    assert brier_score([WRONG_SURE]) == 2
+    assert brier_score([DECLINED_OOS]) == 1
+    assert brier_score([UNSURE]) == pytest.approx(0.6**2 + 0.6**2)

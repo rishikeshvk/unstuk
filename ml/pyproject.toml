@@ -42,6 +42,7 @@ unstuk-state-check = "unstuk_ml.state_check:main"
 unstuk-decision-test = "unstuk_ml.decision_test:main"
 unstuk-vague-slice = "unstuk_ml.vague_slice:main"
 unstuk-oof-gate = "unstuk_ml.oof_gate:main"
+unstuk-calibrated = "unstuk_ml.calibrated_rung:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
