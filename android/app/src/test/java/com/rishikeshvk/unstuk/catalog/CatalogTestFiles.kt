@@ -11,10 +11,6 @@ object CatalogTestFiles {
         CatalogLoader.parse(text(CatalogLoader.INTENTS), text(CatalogLoader.FIXES))
     }
 
-    val keywords: Map<String, List<String>> by lazy {
-        CatalogLoader.parseKeywords(text(CatalogLoader.KEYWORDS))
-    }
-
     val gate: GateLines by lazy { CatalogLoader.parseGate(text(CatalogLoader.GATE)) }
 
     /** IDs that data refers to, by kind; see `ids.lock`. */

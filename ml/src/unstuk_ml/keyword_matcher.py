@@ -1,7 +1,7 @@
-"""M2's keyword matcher, ported line for line from `decide/KeywordMatcher.kt` to score it here.
+"""M2's keyword matcher, ported line for line from the app's `KeywordMatcher.kt` to score it here.
 
-A shared fixture (`android/app/src/test/resources/keyword-parity.json`) is checked by both test
-suites, so the two implementations can't drift apart unnoticed.
+The app decided with it until M7. Its parity fixture (`tests/keyword-parity.json`) was checked by
+both test suites while both existed, and still pins this port's behaviour.
 """
 
 import json
