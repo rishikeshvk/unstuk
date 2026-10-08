@@ -24,15 +24,21 @@ come; the write-up has a section for them, marked pending until `ml/reports/real
 
 ## 2. Test scores for the figures
 
-`unstuk-writeup-scores` scores the 602 frozen test lines with each decider, one line at a time as the app runs,
-and caches per-line results (ids and probabilities, no text) in `ml/cache/writeup/`, which is gitignored.
+`unstuk-writeup-scores` scores the 602 frozen test lines with each decider, as its own report scored it, and
+caches per-line results (ids and probabilities, no text) in `ml/cache/writeup/`, which is gitignored.
 
 | Decider | Loaded by | Settings |
 | --- | --- | --- |
-| Keyword, TF-IDF + LR, frozen bge-small + LR, zero-shot | `decision_test.baselines` | M4's, under M2's placeholder lines |
-| Fine-tuned + linear head, decision model | `decision_test` | M5's |
-| Calibrated float model | `calibrated_test` | M6's |
-| **int8 graph (ships)** | `graph_scoring.GraphDecider` | `ml/settings/quantized.json` |
+| Keyword | `keyword_matcher.load_matcher` | M2's, under M2's placeholder lines |
+| TF-IDF + LR, frozen bge-small + LR, zero-shot | `decision_test.baselines` | M4's, under M2's placeholder lines |
+| M6's float graph | `graph_scoring.GraphDecider` | M6's temperatures and lines, as M7 scored it |
+| **int8 graph (ships)** | `quantized_test.load_shipped` | `ml/settings/quantized.json` |
+
+**Correction (2026-10-08), before any figure:** M5's decision model and its fine-tuned linear head can't be
+re-scored. Their checkpoints are no longer on this machine (only `result.json` is), and the Colab sessions that
+trained them are gone. They stay in the write-up's tables from [m5-results.md](m5-results.md), but not in the
+figures. *Rejected:* retraining them on Colab. Training isn't bit-exact, so the sha256 check would refuse the
+new weights, and they'd no longer be the models M5 reported.
 
 Before writing, it checks in-scope accuracy, confident and wrong and ECE against each decider's results table,
 to the table's precision, and fails on any mismatch.
@@ -48,7 +54,7 @@ dependency group, so training and the app's tools don't carry it.
 | Figure | Shows |
 | --- | --- |
 | `size-waterfall.svg` | The float graph, int8's saving, then ONNX Runtime, dex and assets adding up to the release APK, against the 60 MB target and the 100 MB budget. Sizes are measured from the graph files and the APK's zip entries |
-| `ladder.svg` | Every decider from keyword to int8 on the bar's rows (in-scope accuracy, confident and wrong, out-of-scope recall, held-out intents), as points with 95% bootstrap intervals |
+| `ladder.svg` | The six deciders of section 2, keyword to int8, on the bar's rows (in-scope accuracy, confident and wrong, out-of-scope recall, held-out intents), as points with 95% bootstrap intervals |
 | `reliability.svg` | Reliability diagram (10 bins) for the int8 graph against zero-shot (the best-calibrated baseline) and TF-IDF, with how many lines fall in each bin |
 | `gate.svg` | Where the int8 graph's test lines land: automatic, confirm, clarify or decline, for in-scope, out-of-scope and vague lines |
 | `failures.svg` | The int8 graph's test mistakes by cause (section 4) |

@@ -53,6 +53,7 @@ unstuk-real-sheet = "unstuk_ml.sitting:main_sheet"
 unstuk-real-import = "unstuk_ml.sitting:main_import"
 unstuk-real-label = "unstuk_ml.real_labels:main"
 unstuk-real-test = "unstuk_ml.real_test:main"
+unstuk-writeup-scores = "unstuk_ml.writeup_scores:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
