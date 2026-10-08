@@ -180,3 +180,19 @@ def test_brier_is_zero_when_sure_and_right_and_counts_a_decline_as_missing() -> 
     assert brier_score([WRONG_SURE]) == 2
     assert brier_score([DECLINED_OOS]) == 1
     assert brier_score([UNSURE]) == pytest.approx(0.6**2 + 0.6**2)
+
+
+def test_strata_keep_each_group_s_count_in_every_resample() -> None:
+    # One person always right, one always wrong: resampled within each, accuracy can't move.
+    items = [Scored(make(f"r{n}", "no net"), {"no_internet": 1.0}) for n in range(5)]
+    items += [Scored(make(f"w{n}", "no net"), {"colours_wrong": 1.0}) for n in range(5)]
+    strata = ["P01"] * 5 + ["P02"] * 5
+
+    assert bootstrap(items, accuracy, strata=strata) == (0.5, 0.5)
+    low, high = bootstrap(items, accuracy)
+    assert low < 0.5 < high
+
+
+def test_strata_need_one_label_per_line() -> None:
+    with pytest.raises(ValueError, match="one stratum per line"):
+        bootstrap(ALL, accuracy, strata=["P01"])

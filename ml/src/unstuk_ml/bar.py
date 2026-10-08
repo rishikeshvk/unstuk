@@ -70,7 +70,11 @@ class BarRow:
         return high >= 0 if self.requirement.higher_is_better else low <= 0
 
 
-def check(decider: Sequence[Scored], baselines: Mapping[str, Sequence[Scored]]) -> list[BarRow]:
+def check(
+    decider: Sequence[Scored],
+    baselines: Mapping[str, Sequence[Scored]],
+    strata: Sequence[str] | None = None,
+) -> list[BarRow]:
     """Every requirement, against the baseline that sets it, scored on the same lines."""
     rows = []
     for requirement in BAR:
@@ -80,7 +84,7 @@ def check(decider: Sequence[Scored], baselines: Mapping[str, Sequence[Scored]]) 
                 requirement=requirement,
                 bar=requirement.metric(base),
                 value=requirement.metric(decider),
-                interval=paired_bootstrap(base, decider, requirement.metric),
+                interval=paired_bootstrap(base, decider, requirement.metric, strata=strata),
             )
         )
     return rows

@@ -158,9 +158,14 @@ def brier_score(items: Sequence[Scored]) -> float:
     return total / len(clear)
 
 
-def bootstrap(items: Sequence[Scored], metric: Metric, seed: int = SEED) -> tuple[float, float]:
-    """A 95% interval: the metric on 1,000 resamples of the lines, with replacement."""
-    values = (metric([items[i] for i in drawn]) for drawn in _resamples(len(items), seed))
+def bootstrap(
+    items: Sequence[Scored], metric: Metric, seed: int = SEED, strata: Sequence[str] | None = None
+) -> tuple[float, float]:
+    """A 95% interval: the metric on 1,000 resamples of the lines, with replacement.
+
+    With strata, lines are resampled within each stratum, so every stratum keeps its count.
+    """
+    values = (metric([items[i] for i in drawn]) for drawn in _resamples(len(items), seed, strata))
     return _interval(values)
 
 
@@ -170,13 +175,17 @@ def share_interval(flags: Sequence[bool], seed: int = SEED) -> tuple[float, floa
 
 
 def paired_bootstrap(
-    base: Sequence[Scored], challenger: Sequence[Scored], metric: Metric, seed: int = SEED
+    base: Sequence[Scored],
+    challenger: Sequence[Scored],
+    metric: Metric,
+    seed: int = SEED,
+    strata: Sequence[str] | None = None,
 ) -> tuple[float, float]:
     """A 95% interval on challenger minus base, both scored on the same resampled lines."""
     _require_pairs(base, challenger)
     differences = (
         metric([challenger[i] for i in drawn]) - metric([base[i] for i in drawn])
-        for drawn in _resamples(len(base), seed)
+        for drawn in _resamples(len(base), seed, strata)
     )
     return _interval(differences)
 
@@ -190,11 +199,18 @@ def beats(base: Sequence[Scored], challenger: Sequence[Scored]) -> bool:
     )
 
 
-def _resamples(n: int, seed: int) -> Iterator[list[int]]:
+def _resamples(n: int, seed: int, strata: Sequence[str] | None = None) -> Iterator[list[int]]:
     # Drawing indices uses the same random numbers as drawing the items themselves did.
     rng = random.Random(seed)
+    if strata is None:
+        for _ in range(RESAMPLES):
+            yield rng.choices(range(n), k=n)
+        return
+    if len(strata) != n:
+        raise ValueError("one stratum per line")
+    groups = [[i for i in range(n) if strata[i] == s] for s in sorted(set(strata))]
     for _ in range(RESAMPLES):
-        yield rng.choices(range(n), k=n)
+        yield [i for group in groups for i in rng.choices(group, k=len(group))]
 
 
 def _interval(values: Iterable[float]) -> tuple[float, float]:

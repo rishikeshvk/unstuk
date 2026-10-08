@@ -118,23 +118,32 @@ def sizes_section(settings: Settings, float_graph: Path) -> list[str]:
     ]
 
 
-def main() -> None:
-    argparse.ArgumentParser(description=__doc__).parse_args()
+def load_shipped() -> tuple[Settings, GateLines, GraphDecider]:
+    """The int8 graph the app ships, refused unless gate.json and the graph's bytes match it."""
     settings = Settings.model_validate_json(SETTINGS.read_text(encoding="utf-8"))
-    m6 = M6Settings.model_validate_json(M6_SETTINGS.read_text(encoding="utf-8"))
     gate = load_gate()
     if GateLines(**settings.lines) != gate:
         raise ValueError("catalog/gate.json differs from the chosen settings; run the chooser")
-    directory = RUNS_DIR / settings.run
-    float_graph, graph = directory / FLOAT_GRAPH, directory / settings.graph
-    if (sha256(float_graph), sha256(graph)) != (settings.float_sha256, settings.graph_sha256):
-        raise ValueError("a graph differs from the one the settings name; run the export again")
+    graph = RUNS_DIR / settings.run / settings.graph
+    if sha256(graph) != settings.graph_sha256:
+        raise ValueError("the graph differs from the one the settings name; run the export again")
+    tokenizer = decision_tokenizer(download()[1])
+    return settings, gate, GraphDecider(graph, tokenizer, settings.scale)
+
+
+def main() -> None:
+    argparse.ArgumentParser(description=__doc__).parse_args()
+    settings, gate, decider = load_shipped()
+    m6 = M6Settings.model_validate_json(M6_SETTINGS.read_text(encoding="utf-8"))
+    float_graph = RUNS_DIR / settings.run / FLOAT_GRAPH
+    if sha256(float_graph) != settings.float_sha256:
+        raise ValueError("the float graph differs from the one the settings name")
     catalog = load_catalog()
     tokenizer = decision_tokenizer(download()[1])
     lines = load_test()
     intents = offered(catalog)
 
-    logits = GraphDecider(graph, tokenizer, settings.scale).logits(lines, intents, catalog)
+    logits = decider.logits(lines, intents, catalog)
     temperatures = Temperatures(settings.choice_temperature, settings.noul_temperature)
     items = [replace(s, gate=gate) for s in scored(logits, lines, intents, temperatures)]
     raw = [replace(s, gate=gate) for s in scored(logits, lines, intents, UNCALIBRATED)]
