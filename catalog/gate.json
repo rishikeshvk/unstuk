@@ -1,5 +1,5 @@
 {
-  "automatic_at": 0.8,
-  "clarify_below": 0.5,
+  "automatic_at": 0.75,
+  "clarify_below": 0.7,
   "clarify_margin": 0.0
 }

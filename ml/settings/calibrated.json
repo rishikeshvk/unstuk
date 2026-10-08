@@ -1,0 +1,113 @@
+{
+  "run": "cosine-lr5e-05-typos-state-vague-brier1",
+  "epoch": 5,
+  "checkpoint_sha256": "c8d66d0d3c42a3cbaec1c85f19768925a853f0f080b98bb05b839d76d1401a93",
+  "commit": "cf5f6a50695b9883f64d748225631d24e6c0e2b4",
+  "choice_temperature": 0.8672,
+  "out_of_scope": "noul",
+  "noul_temperature": 1.5141,
+  "gate": null,
+  "lines": {
+    "automatic_at": 0.75,
+    "clarify_below": 0.7,
+    "clarify_margin": 0.0
+  },
+  "automatic_wrong": 0.016927083333333332,
+  "clear_clarified": 0.009055627425614488,
+  "vague_handled": 0.3673469387755102,
+  "weights": [
+    {
+      "run": "cosine-lr5e-05-typos-state-vague",
+      "brier_weight": 0.0,
+      "epoch": 4,
+      "dev_macro_f1": 0.9752680069998635,
+      "dev_log_loss": 0.08890629504330583,
+      "dev_brier": 0.040513038382514806,
+      "eligible": true
+    },
+    {
+      "run": "cosine-lr5e-05-typos-state-vague-brier0.5",
+      "brier_weight": 0.5,
+      "epoch": 5,
+      "dev_macro_f1": 0.9777991219103555,
+      "dev_log_loss": 0.08156256687029818,
+      "dev_brier": 0.038229472182818997,
+      "eligible": true
+    },
+    {
+      "run": "cosine-lr5e-05-typos-state-vague-brier1",
+      "brier_weight": 1.0,
+      "epoch": 5,
+      "dev_macro_f1": 0.9791117455846028,
+      "dev_log_loss": 0.07729981172779524,
+      "dev_brier": 0.03686848640571231,
+      "eligible": true
+    }
+  ],
+  "guards": [
+    {
+      "run": "cosine-lr5e-05-typos-state",
+      "unseen_declined": [
+        0.3229571984435798,
+        0.14785992217898833,
+        0.14671814671814673
+      ],
+      "unseen_accuracy": [
+        0.603112840466926,
+        0.7042801556420234,
+        0.5791505791505791
+      ],
+      "noul_recall": 0.9596273291925466,
+      "gate_recall": 0.937888198757764,
+      "passes": false
+    },
+    {
+      "run": "cosine-lr5e-05-typos-state-vague",
+      "unseen_declined": [
+        0.26459143968871596,
+        0.05058365758754864,
+        0.16216216216216217
+      ],
+      "unseen_accuracy": [
+        0.6108949416342413,
+        0.8054474708171206,
+        0.5328185328185329
+      ],
+      "noul_recall": 0.9409937888198758,
+      "gate_recall": 0.9316770186335404,
+      "passes": false
+    },
+    {
+      "run": "cosine-lr5e-05-typos-state-vague-brier0.5",
+      "unseen_declined": [
+        0.2140077821011673,
+        0.08171206225680934,
+        0.15444015444015444
+      ],
+      "unseen_accuracy": [
+        0.688715953307393,
+        0.7704280155642024,
+        0.5328185328185329
+      ],
+      "noul_recall": 0.9472049689440993,
+      "gate_recall": 0.922360248447205,
+      "passes": false
+    },
+    {
+      "run": "cosine-lr5e-05-typos-state-vague-brier1",
+      "unseen_declined": [
+        0.17120622568093385,
+        0.08171206225680934,
+        0.19305019305019305
+      ],
+      "unseen_accuracy": [
+        0.6653696498054474,
+        0.8093385214007782,
+        0.5173745173745173
+      ],
+      "noul_recall": 0.9472049689440993,
+      "gate_recall": 0.9254658385093167,
+      "passes": false
+    }
+  ]
+}
