@@ -16,6 +16,7 @@ from unstuk_ml.decision_batch import MAX_TOKENS
 from unstuk_ml.fine_tuning import sha256
 from unstuk_ml.graph_scoring import GraphDecider
 from unstuk_ml.quantized_rung import Settings
+from unstuk_ml.state_slice import excluded_checks
 
 ASSETS = (
     Path(__file__).resolve().parents[3] / "android" / "app" / "src" / "main" / "assets" / "model"
@@ -31,6 +32,9 @@ class Manifest(BaseModel):
     """Of `catalog/intents.json`, whose option texts the vectors encode."""
     intents: list[str]
     """The intents in the order of their vectors in `options.bin`."""
+    state_checks: list[str]
+    """The checks training showed the model, sorted as its state text lists them; never a held-out
+    intent's, which the model must not learn from (AGENTS.md invariant 9)."""
     dimensions: int
     scale: float
     choice_temperature: float
@@ -58,6 +62,7 @@ def write_assets(
         vocab_sha256=sha256(assets / VOCAB),
         catalog_sha256=sha256(CATALOG_DIR / "intents.json"),
         intents=intents,
+        state_checks=sorted(catalog.checks - excluded_checks(catalog)),
         dimensions=int(vectors.shape[1]),
         scale=settings.scale,
         choice_temperature=settings.choice_temperature,

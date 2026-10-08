@@ -56,6 +56,8 @@ def test_the_manifest_pins_every_file_it_names(tmp_path: Path, tokenizer: Tokeni
     assert manifest.options_sha256 == sha256(assets / OPTIONS)
     assert manifest.vocab_sha256 == sha256(assets / VOCAB)
     assert manifest.intents == list(CATALOG.intents)
+    assert "always" not in manifest.state_checks
+    assert manifest.state_checks == sorted(manifest.state_checks)
 
 
 def test_option_vectors_are_the_graphs_own_in_intent_order(

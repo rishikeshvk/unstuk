@@ -20,6 +20,23 @@
     "wrong_time",
     "reset_network"
   ],
+  "state_checks": [
+    "airplane_on",
+    "bluetooth_off",
+    "brightness_low",
+    "data_saver_on",
+    "dnd_on",
+    "greyscale_on",
+    "inversion_on",
+    "offline_mobile_data_off",
+    "offline_wifi_off",
+    "private_dns_hostname",
+    "ring_volume_zero",
+    "ringer_not_normal",
+    "talkback_on",
+    "text_not_enlarged",
+    "timeout_short"
+  ],
   "dimensions": 384,
   "scale": 22.361774444580078,
   "choice_temperature": 0.8171,
