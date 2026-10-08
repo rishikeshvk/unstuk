@@ -27,15 +27,23 @@ intents with recall at the edge of the bar, and the gate's placeholder threshold
 Dev has no vague lines and train has three, so nothing can be tuned for them, and the model never sees what
 "several readings" looks like.
 
-- **Prompt:** `data/prompts/vague-v1.md` shows the catalog's option texts and guide §8, and asks for complaints
-  that a careful reader could not settle on one problem, each with its 2–3 plausible labels. It is run in a chat
-  app over a few batches across the diversity grid (`unstuk-plan-batches`). The sheets are committed as returned
-  and imported with `unstuk-import-sheet`.
-- **Size:** about 150 lines for train and 60 for dev, split by batch so that one batch's style never lands on
-  both sides.
-- **Leakage:** lines within 0.8 similarity of a test line are dropped (`duplicates.leaking`, the M3 threshold).
-  The test is read for nothing else.
-- **Held-out intents** never appear as a label (invariant 9). A line whose readings include one is dropped.
+- **Writers:** fourteen fresh agents with no project context, one writer persona per batch from the diversity grid
+  ([`data/vague/plan.json`](../data/vague/plan.json)), as in M3. Each reads only its rendered
+  [prompt](../data/vague/prompts/vague-v1.md) and makes one tool call: the Write of its own 30-line sheet. Each
+  line's header lists the two or three intents it could mean. The sheets are committed as returned.
+- **Blind check:** a fresh agent labels the 420 texts by the guide in shuffled order, with keys that hide the batch
+  (`unstuk-vague-slice ../data/vague blind`). A line is kept only if it shares at least two readings with the
+  labeller, and its labels become those shared readings. It is vague by two independent judgements, as the state
+  slice's texts were. The first seven batches kept 102 of 210 lines (73 train, 29 dev), short of the aim of
+  about 150 and 60, so seven more batches from the same prompt, with new grid cells, were added before anything
+  was trained. One labeller then labelled all 420 texts.
+- **Split:** `vague-06`, `-07`, `-13` and `-14` go to dev and the other ten batches to train, split by batch so that
+  one writer's style never lands on both sides. The output is `data/vague/train.jsonl` and `dev.jsonl`. The slice
+  lives outside `data/raw/`, so `unstuk-clean` leaves M5's split unchanged.
+- **Leakage:** lines within 0.8 similarity of a test line are dropped (`duplicates.leaking`, the M3 threshold),
+  and so are exact duplicates. The test is read for nothing else.
+- **Held-out intents** never appear as a label (invariant 9). A line whose writer named one is dropped, and the
+  blind labeller's readings count only where the writer gave them too.
 
 ## 2. The loss
 
@@ -129,7 +137,7 @@ One commit each, or a few where a step is large. Each step ends with a short "wh
 
 1. **This spec**, and a plan.md correction for int8 and distillation.
    *Learn:* why calibration comes before thresholds.
-2. **Vague data:** prompt, sheets, import, leakage check, train and dev split.
+2. **Vague data:** prompt, sheets, blind check, leakage check, train and dev split.
    *Learn:* why a model can't learn "be unsure" from data that never shows it.
 3. **The loss:** Brier terms and soft vague targets, with CPU tests.
    *Learn:* proper scoring rules, and why cross-entropy alone drifts overconfident.

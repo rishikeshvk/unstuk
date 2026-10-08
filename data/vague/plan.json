@@ -1,0 +1,100 @@
+{
+  "vague-01": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "question",
+    "typos": "none"
+  },
+  "vague-02": {
+    "age": "senior",
+    "comfort": "low",
+    "variety": "british",
+    "style": "frustrated",
+    "typos": "some"
+  },
+  "vague-03": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "story",
+    "typos": "many"
+  },
+  "vague-04": {
+    "age": "senior",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "plain",
+    "typos": "some"
+  },
+  "vague-05": {
+    "age": "adult",
+    "comfort": "low",
+    "variety": "british",
+    "style": "dictated",
+    "typos": "none"
+  },
+  "vague-06": {
+    "age": "adult",
+    "comfort": "medium",
+    "variety": "second_language",
+    "style": "plain",
+    "typos": "none"
+  },
+  "vague-07": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "terse",
+    "typos": "many"
+  },
+  "vague-08": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "question",
+    "typos": "some"
+  },
+  "vague-09": {
+    "age": "senior",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "terse",
+    "typos": "none"
+  },
+  "vague-10": {
+    "age": "teen",
+    "comfort": "low",
+    "variety": "second_language",
+    "style": "plain",
+    "typos": "none"
+  },
+  "vague-11": {
+    "age": "senior",
+    "comfort": "low",
+    "variety": "indian",
+    "style": "story",
+    "typos": "many"
+  },
+  "vague-12": {
+    "age": "teen",
+    "comfort": "medium",
+    "variety": "british",
+    "style": "plain",
+    "typos": "none"
+  },
+  "vague-13": {
+    "age": "adult",
+    "comfort": "low",
+    "variety": "british",
+    "style": "dictated",
+    "typos": "some"
+  },
+  "vague-14": {
+    "age": "adult",
+    "comfort": "medium",
+    "variety": "american",
+    "style": "frustrated",
+    "typos": "many"
+  }
+}

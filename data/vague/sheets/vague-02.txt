@@ -1,0 +1,60 @@
+## no_internet, wifi_no_load
+The internet has gone off this phone. My grandson set it all up at Christmas and now nothing comes up when I press the Google. I am fed up with it.
+## phone_not_ringing, notifications_missing
+I never know when anybody is trying to get hold of me. My daughter says she has rung and sent messages all week and the phone just sat there quiet as a mouse on the table.
+## screen_too_dim, screen_turns_off_fast
+The screen keeps going dark on me when I'm reading the paper on it. Very irritating, I have to keep starting again.
+## colours_wrong, screen_too_dim
+Everything on the screen looks dull and murky since yesterday, I can hardly make out my photographs.
+## text_too_small, screen_too_dim
+I cant read a thing on this phone any more. I've tried both pairs of glasses and it makes no differance.
+## talkback_on, colours_wrong, text_too_small
+Somebody fiddled with my phone at the church coffee morning and now it's all wrong, nothing is how it was. Please put it back.
+## no_internet, notifications_missing
+My WhatsApp messages aren't coming through at all. Joan says she has sent me several and I've not had one of them.
+## wifi_no_load, reset_network
+The wifi says its connected but nothing will load. Do I need to put the phones network back to how it was when I bought it? I don't want to lose anything.
+## app_permission, no_internet
+The map won't show where I am, it just sits there with the little circle going round and round. I'm meant to be meeting my friend in town.
+## bluetooth_earphones, phone_not_ringing
+The phone doesn't make any noise when people ring now. I wonder if it's still going to the car because my son had it hooked up to it.
+## text_too_small, screen_turns_off_fast, screen_too_dim
+I can't get through reading my emails on this phone, it's hopeless. By the time I've found my place I've lost it again.
+## talkback_on, colours_wrong
+I think my phone has gone into some sort of special mode for blind people. I am not blind and I want it normal.
+## phone_not_ringing, notifications_missing
+I've missed the surgery ringing me AND I never knew about the reminder for my appointment. This phone is letting me down badly.
+## no_internet, wifi_no_load, reset_network
+Nothing on the internet works. My neighbour told me to reset the network thing but I'm frightened I'll break it, can you do it for me or is it something else?
+## screen_too_dim, colours_wrong
+The screen goes a horrible gloomy colour in the evenings and I can barely see what I'm doing.
+## text_too_small, colours_wrong
+Since that update I can hardly see the words on the screen, they look all faint and washed out.
+## bluetooth_earphones, no_internet
+My watch has stopped getting my messages from the phone. It used to buzz on my wrist and now nothing.
+## no_internet, wifi_no_load
+BBC iPlayer won't play anything at all, I just get a message saying something went wrong. I've paid my licence fee!
+## phone_not_ringing, bluetooth_earphones
+When people call me I hear nothing at all, it's as if the calls go off somewhere else. What has happened?
+## screen_turns_off_fast, screen_too_dim
+Watching my programmes on the phone the picture keeps fading away on its own. Most anoying.
+## app_permission, no_internet
+I cant do the video calls with my grandson on Facebook any more, it just won't go. It worked fine last Sunday.
+## reset_network, no_internet
+Can you reset the internet on this phone please. Nothing works and I've had enough of it.
+## text_too_small, colours_wrong
+I tried to make the phone easier on my eyes from the settings and now I can't see anything properly at all.
+## screen_too_dim, text_too_small
+I'm squinting all the time at this phone, it's giving me headaches. It never used to be this bad.
+## no_internet, notifications_missing
+My emails have stopped comming in. I'm waiting on an important one from the bank.
+## bluetooth_earphones, phone_not_ringing
+My watch doesn't buzz when somebody rings me any more and I keep missing them. I'm in the garden a lot.
+## app_permission, bluetooth_earphones
+The little ear things my son gave me won't work for the video call with the doctor. They can't hear a word I say.
+## talkback_on, text_too_small
+The phone has gone peculiar since I pressed something by accident. Everything is different and I can't get on with it.
+## app_permission, notifications_missing, no_internet
+The pharmacy app isn't working properly anymore, it doesn't do what it did before. I need my prescription sorting.
+## wifi_no_load, app_permission
+The weather app just says it can't find anything. The wifi sign is showing at the top so I don't know what it wants from me.

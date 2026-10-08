@@ -40,6 +40,7 @@ unstuk-decision = "unstuk_ml.decision_rung:main"
 unstuk-option-wordings = "unstuk_ml.option_wordings:main"
 unstuk-state-check = "unstuk_ml.state_check:main"
 unstuk-decision-test = "unstuk_ml.decision_test:main"
+unstuk-vague-slice = "unstuk_ml.vague_slice:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]

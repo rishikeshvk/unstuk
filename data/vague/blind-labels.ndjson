@@ -1,0 +1,420 @@
+{"key": "v001", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v002", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v003", "labels": ["text_too_small", "screen_turns_off_fast"], "vague": true, "rule": "§8"}
+{"key": "v004", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v005", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v006", "labels": ["no_internet", "reset_network"], "vague": true, "rule": "§8"}
+{"key": "v007", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v008", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v009", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v010", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v011", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v012", "labels": ["no_internet"], "vague": false, "rule": "§5"}
+{"key": "v013", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v014", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v015", "labels": ["colours_wrong", "text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v016", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v017", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v018", "labels": ["text_too_small", "screen_too_dim", "screen_turns_off_fast"], "vague": true, "rule": "§8"}
+{"key": "v019", "labels": ["bluetooth_earphones", "cant_hear_call", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v020", "labels": ["no_internet"], "vague": false, "rule": "§5"}
+{"key": "v021", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v022", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v023", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v024", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v025", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v026", "labels": ["colours_wrong", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v027", "labels": ["colours_wrong", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v028", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v029", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v030", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v031", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v032", "labels": ["out_of_scope"], "vague": false, "rule": "§7"}
+{"key": "v033", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v034", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v035", "labels": ["phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v036", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v037", "labels": ["text_too_small", "screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v038", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v039", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v040", "labels": ["no_internet", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v041", "labels": ["out_of_scope"], "vague": false, "rule": "§7"}
+{"key": "v042", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v043", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v044", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v045", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v046", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v047", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v048", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v049", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v050", "labels": ["screen_turns_off_fast", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v051", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v052", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v053", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v054", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v055", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v056", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v057", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v058", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v059", "labels": ["wifi_no_load", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v060", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v061", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v062", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v063", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v064", "labels": ["screen_too_dim"], "vague": false, "rule": "§5"}
+{"key": "v065", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v066", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v067", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v068", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v069", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v070", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v071", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v072", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v073", "labels": ["talkback_on", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v074", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v075", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v076", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v077", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v078", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v079", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v080", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v081", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v082", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v083", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v084", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v085", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v086", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v087", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v088", "labels": ["colours_wrong", "text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v089", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v090", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v091", "labels": ["app_permission", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v092", "labels": ["bluetooth_earphones", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v093", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v094", "labels": ["out_of_scope"], "vague": false, "rule": "§7"}
+{"key": "v095", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v096", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v097", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v098", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v099", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v100", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v101", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v102", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v103", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v104", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v105", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v106", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v107", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v108", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v109", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v110", "labels": ["phone_not_ringing", "app_permission"], "vague": false, "rule": "§2"}
+{"key": "v111", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v112", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v113", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v114", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v115", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v116", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v117", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v118", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v119", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v120", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v121", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v122", "labels": ["text_too_small", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v123", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v124", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v125", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v126", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v127", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v128", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v129", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v130", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v131", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v132", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v133", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v134", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v135", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v136", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v137", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v138", "labels": ["screen_too_dim"], "vague": false, "rule": "§5"}
+{"key": "v139", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v140", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v141", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v142", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v143", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v144", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v145", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v146", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v147", "labels": ["talkback_on"], "vague": false, "rule": "§4"}
+{"key": "v148", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v149", "labels": ["no_internet", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v150", "labels": ["talkback_on", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v151", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v152", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v153", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v154", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v155", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v156", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v157", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v158", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v159", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v160", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v161", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v162", "labels": ["notifications_missing", "phone_not_ringing", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v163", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v164", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v165", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v166", "labels": ["text_too_small", "screen_turns_off_fast"], "vague": true, "rule": "§8"}
+{"key": "v167", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v168", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v169", "labels": ["notifications_missing", "phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v170", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v171", "labels": ["colours_wrong", "text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v172", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v173", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v174", "labels": ["no_internet", "phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v175", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v176", "labels": ["phone_not_ringing", "no_internet", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v177", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v178", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v179", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v180", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v181", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v182", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v183", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v184", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v185", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v186", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v187", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v188", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v189", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v190", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v191", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v192", "labels": ["bluetooth_earphones", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v193", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v194", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v195", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v196", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v197", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v198", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v199", "labels": ["wifi_no_load", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v200", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v201", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v202", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v203", "labels": ["talkback_on"], "vague": false, "rule": "§4"}
+{"key": "v204", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v205", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v206", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v207", "labels": ["talkback_on", "screen_turns_off_fast"], "vague": false, "rule": "§2"}
+{"key": "v208", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v209", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v210", "labels": ["wifi_no_load", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v211", "labels": ["talkback_on"], "vague": false, "rule": "§4"}
+{"key": "v212", "labels": ["reset_network", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v213", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v214", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v215", "labels": ["no_internet", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v216", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v217", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v218", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v219", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v220", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v221", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v222", "labels": ["bluetooth_earphones", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v223", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v224", "labels": ["no_internet"], "vague": false, "rule": "§5"}
+{"key": "v225", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v226", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v227", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v228", "labels": ["no_internet"], "vague": false, "rule": "§9"}
+{"key": "v229", "labels": ["out_of_scope"], "vague": false, "rule": "§4"}
+{"key": "v230", "labels": ["no_internet"], "vague": false, "rule": "§9"}
+{"key": "v231", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v232", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v233", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v234", "labels": ["app_permission", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v235", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v236", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v237", "labels": ["app_permission", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v238", "labels": ["colours_wrong", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v239", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v240", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v241", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v242", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v243", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v244", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v245", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v246", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v247", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v248", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v249", "labels": ["screen_too_dim", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v250", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v251", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v252", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": false, "rule": "§2"}
+{"key": "v253", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v254", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v255", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v256", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v257", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v258", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v259", "labels": ["talkback_on", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v260", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v261", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v262", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v263", "labels": ["app_permission", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v264", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v265", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v266", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v267", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v268", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v269", "labels": ["phone_not_ringing", "cant_hear_call", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v270", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v271", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v272", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v273", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v274", "labels": ["cant_hear_call", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v275", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v276", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v277", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v278", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v279", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v280", "labels": ["notifications_missing", "phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v281", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v282", "labels": ["wifi_no_load"], "vague": false, "rule": "§5"}
+{"key": "v283", "labels": ["reset_network", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v284", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v285", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v286", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v287", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v288", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v289", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v290", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v291", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v292", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v293", "labels": ["out_of_scope"], "vague": false, "rule": "§7"}
+{"key": "v294", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v295", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v296", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v297", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v298", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v299", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v300", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v301", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v302", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v303", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v304", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v305", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v306", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v307", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v308", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v309", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v310", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v311", "labels": ["screen_too_dim", "colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v312", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v313", "labels": ["out_of_scope"], "vague": false, "rule": "§7"}
+{"key": "v314", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v315", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v316", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v317", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v318", "labels": ["phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v319", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v320", "labels": ["app_permission", "no_internet"], "vague": false, "rule": "§2"}
+{"key": "v321", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v322", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v323", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v324", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v325", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v326", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v327", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v328", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v329", "labels": ["no_internet", "reset_network"], "vague": true, "rule": "§8"}
+{"key": "v330", "labels": ["phone_not_ringing", "cant_hear_call"], "vague": true, "rule": "§8"}
+{"key": "v331", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v332", "labels": ["colours_wrong", "text_too_small", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v333", "labels": ["text_too_small"], "vague": false, "rule": "§4"}
+{"key": "v334", "labels": ["no_internet", "wifi_no_load"], "vague": true, "rule": "§8"}
+{"key": "v335", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v336", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v337", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v338", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v339", "labels": ["notifications_missing", "phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v340", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v341", "labels": ["no_internet", "reset_network"], "vague": true, "rule": "§8"}
+{"key": "v342", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v343", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v344", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v345", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v346", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v347", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v348", "labels": ["colours_wrong", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v349", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v350", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v351", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v352", "labels": ["wifi_no_load", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v353", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v354", "labels": ["no_internet", "screen_turns_off_fast"], "vague": true, "rule": "§8"}
+{"key": "v355", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v356", "labels": ["notifications_missing", "no_internet"], "vague": true, "rule": "§8"}
+{"key": "v357", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v358", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v359", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v360", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v361", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v362", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v363", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v364", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v365", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v366", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v367", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v368", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v369", "labels": ["colours_wrong", "talkback_on"], "vague": true, "rule": "§8"}
+{"key": "v370", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v371", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v372", "labels": ["no_internet", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v373", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v374", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v375", "labels": ["talkback_on"], "vague": false, "rule": "§4"}
+{"key": "v376", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v377", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v378", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v379", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v380", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v381", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v382", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v383", "labels": ["bluetooth_earphones", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v384", "labels": ["bluetooth_earphones"], "vague": false, "rule": "§4"}
+{"key": "v385", "labels": ["no_internet"], "vague": false, "rule": "§5"}
+{"key": "v386", "labels": ["notifications_missing"], "vague": false, "rule": "§4"}
+{"key": "v387", "labels": ["screen_too_dim"], "vague": false, "rule": "§5"}
+{"key": "v388", "labels": ["phone_not_ringing", "notifications_missing"], "vague": true, "rule": "§8"}
+{"key": "v389", "labels": ["notifications_missing", "phone_not_ringing"], "vague": true, "rule": "§8"}
+{"key": "v390", "labels": ["colours_wrong", "text_too_small"], "vague": true, "rule": "§8"}
+{"key": "v391", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v392", "labels": ["phone_not_ringing", "notifications_missing"], "vague": false, "rule": "§5"}
+{"key": "v393", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v394", "labels": ["screen_turns_off_fast", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v395", "labels": ["colours_wrong"], "vague": false, "rule": "§5"}
+{"key": "v396", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v397", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v398", "labels": ["text_too_small", "screen_too_dim"], "vague": false, "rule": "§2"}
+{"key": "v399", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v400", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v401", "labels": ["phone_not_ringing"], "vague": false, "rule": "§4"}
+{"key": "v402", "labels": ["text_too_small", "screen_too_dim"], "vague": true, "rule": "§8"}
+{"key": "v403", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v404", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v405", "labels": ["reset_network"], "vague": false, "rule": "§4"}
+{"key": "v406", "labels": ["screen_turns_off_fast"], "vague": false, "rule": "§4"}
+{"key": "v407", "labels": ["app_permission", "bluetooth_earphones"], "vague": true, "rule": "§8"}
+{"key": "v408", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v409", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v410", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v411", "labels": ["notifications_missing", "phone_not_ringing"], "vague": false, "rule": "§5"}
+{"key": "v412", "labels": ["no_internet"], "vague": false, "rule": "§4"}
+{"key": "v413", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v414", "labels": ["screen_too_dim"], "vague": false, "rule": "§4"}
+{"key": "v415", "labels": ["text_too_small", "talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v416", "labels": ["no_internet", "app_permission"], "vague": true, "rule": "§8"}
+{"key": "v417", "labels": ["talkback_on", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v418", "labels": ["app_permission"], "vague": false, "rule": "§4"}
+{"key": "v419", "labels": ["screen_too_dim", "colours_wrong"], "vague": true, "rule": "§8"}
+{"key": "v420", "labels": ["reset_network"], "vague": false, "rule": "§4"}

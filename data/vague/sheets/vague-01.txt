@@ -1,0 +1,60 @@
+## no_internet, wifi_no_load
+Why is Instagram not opening on my phone since morning? It just keeps on loading only.
+## phone_not_ringing, notifications_missing
+Why am I not getting to know when my friends message or call me? I see everything only when I pick up the phone myself.
+## screen_too_dim, screen_turns_off_fast
+Why does my screen keep going dark when I am reading my notes for exams?
+## screen_too_dim, colours_wrong
+Why is my phone screen looking so dull suddenly? Even my selfies are looking bad on it, what happened?
+## text_too_small, screen_too_dim
+Why can't I see anything properly on my phone? I have to bring it so close to my face, is something wrong?
+## bluetooth_earphones, app_permission
+Why are my friends not able to hear me on the Discord call? Yesterday itself it was working fine.
+## no_internet, notifications_missing
+Why am I not getting any WhatsApp messages from yesterday? My friends are saying they sent so many in the class group.
+## wifi_no_load, reset_network
+Will resetting the network help? YouTube is not playing even on our home Wi-Fi, what should I do?
+## no_internet, reset_network
+How do I fix the network thing on my phone? I pressed some buttons by mistake and now nothing online is working.
+## bluetooth_earphones, phone_not_ringing
+Why is there no sound coming when somebody calls me? I was using my earbuds before, does that have something to do with it?
+## app_permission, no_internet
+Why is Google Maps not showing where I am? I have to reach my friend's house for project work and I don't know the way.
+## app_permission, notifications_missing
+Why is Snapchat alone not working properly on my phone? Other apps are fine only.
+## talkback_on, colours_wrong, text_too_small
+Why is my phone behaving so strange after my small brother played with it? It is not at all like normal now.
+## screen_too_dim, screen_turns_off_fast
+Why does my screen become all dark in the middle of watching videos? I have to keep touching it, it's very irritating.
+## talkback_on, text_too_small
+Why has my phone become so hard to use after the update? I can't even open my apps easily now.
+## colours_wrong, text_too_small
+Why is my home screen looking so weird now? The icons are all looking different from before.
+## no_internet, wifi_no_load, reset_network
+Why is internet not coming on my phone? Should I reset something or what?
+## phone_not_ringing, notifications_missing
+Why has my phone become so quiet these days? Calls, messages, nothing is making any sound.
+## bluetooth_earphones, no_internet, wifi_no_load
+Why is my phone not connecting to anything? I tried so many times and it is still not happening.
+## app_permission, bluetooth_earphones
+Why is my voice not coming in the Instagram voice note? I had my earbuds on while recording, is that the problem?
+## screen_turns_off_fast, text_too_small
+Why is reading PDFs on my phone so difficult? I am never able to finish even one page of my chemistry notes properly.
+## colours_wrong, screen_too_dim
+Why does my screen go all dark and dull at night? In the daytime it looks okay only.
+## wifi_no_load, notifications_missing
+Why do my messages come so late when I am at home on the Wi-Fi?
+## wifi_no_load, app_permission
+Why is Google Meet not working for my online class? The Wi-Fi symbol is showing full, then also my teacher is saying she can't see me properly.
+## reset_network, bluetooth_earphones
+How do I reset all the connection things on my phone? My earbuds and all are giving so much trouble.
+## notifications_missing, no_internet, wifi_no_load
+Why is my phone not showing any new messages? Even my Instagram feed is stuck on old posts from yesterday.
+## screen_too_dim, text_too_small, colours_wrong
+Why is it so hard to see things on my phone when I am outside? Can you tell me what to change?
+## phone_not_ringing, notifications_missing, no_internet
+Why didn't my phone tell me when my friend called on WhatsApp? I saw it only much later and she got angry with me.
+## screen_too_dim, screen_turns_off_fast
+Why does my screen keep going off while I am watching cricket highlights?
+## bluetooth_earphones, notifications_missing
+Why is my smartwatch not showing anything from my phone anymore? Earlier it used to buzz for every message.

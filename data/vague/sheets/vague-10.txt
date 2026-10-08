@@ -1,0 +1,60 @@
+## no_internet, wifi_no_load
+I cannot watch videos on my phone. They just keep loading and nothing comes.
+## phone_not_ringing, notifications_missing
+My friends say they call me and text me but my phone is quiet. I only see it later.
+## screen_too_dim, colours_wrong
+My screen looks strange today. Very dark, I cannot see my photos good.
+## screen_too_dim, screen_turns_off_fast
+When I read my book on the phone the screen goes dark. Very annoying.
+## text_too_small, screen_too_dim
+I cannot read the words on my phone anymore. It is hard for my eyes.
+## talkback_on, colours_wrong
+My cousin changed something for helping the eyes and now my phone is not normal.
+## bluetooth_earphones, app_permission
+I want to talk to my friend in the game with my voice but it doesn't work.
+## app_permission, no_internet
+The map app does not show where I am.
+## wifi_no_load, reset_network
+At home the wifi is connected but nothing opens. Maybe I need to make the internet settings new?
+## no_internet, reset_network
+My internet is broken on my phone. Can you fix all the internet things from the start?
+## no_internet, notifications_missing
+My messages from friends don't come to me. Later they all come together.
+## notifications_missing, app_permission, no_internet
+Snapchat is not working like for my friends. Something is missing.
+## screen_turns_off_fast, screen_too_dim
+When I watch videos the screen becomes black.
+## colours_wrong, text_too_small, screen_too_dim
+Everything on my screen looks different from yesterday.
+## bluetooth_earphones, notifications_missing
+My watch doesn't buzz anymore when my friends message me.
+## no_internet, wifi_no_load
+YouTube and TikTok don't load, only the circle going round and round.
+## wifi_no_load, notifications_missing
+At home my messages come very late. Outside it is ok.
+## phone_not_ringing, notifications_missing
+My phone is too quiet. I miss everything from my friends.
+## colours_wrong, text_too_small, screen_too_dim
+The screen is hard to read for me since yesterday. Everything looks bad.
+## bluetooth_earphones, app_permission
+I want to use my earbuds to talk in Discord but my friends cannot hear me.
+## reset_network, bluetooth_earphones
+Can you reset everything about connections? My earbuds don't work.
+## screen_too_dim, screen_turns_off_fast
+My phone goes black when I do homework on it.
+## app_permission, no_internet
+The video call app doesn't work. I cannot call my friend with video.
+## phone_not_ringing, notifications_missing
+My phone doesn't make sounds anymore.
+## no_internet, wifi_no_load, reset_network
+Internet is not working. Please make it like new.
+## colours_wrong, screen_too_dim
+My screen looks like an old TV, not bright, not nice.
+## no_internet, notifications_missing
+I don't get any email or messages on my phone today.
+## notifications_missing, app_permission, no_internet
+My school app does not work like it works for my classmates.
+## wifi_no_load, reset_network
+Wifi says connected but no websites open. Should I reset something?
+## phone_not_ringing, notifications_missing
+I don't know when people want me. My phone never tells me.

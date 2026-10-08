@@ -17,6 +17,7 @@ To teach a small on-device model to map a non-technical person's phone complaint
 | `clean/` | The cleaned pool, split by batch: `train.jsonl`, `dev.jsonl`; plus review decisions, blind labels and the audit sample | 5,833 train, 1,095 dev |
 | `test/` | The frozen proxy test set (`test.lock`) | 602 |
 | `state/` | Complaints the words can't settle, paired with device states | 117 train, 47 test records |
+| `vague/` | Complaints that could mean two or three problems, kept only where a blind labeller agreed (M6) | 135 train, 49 dev |
 | `nodes/` | "Which item on the screen is the {target}?" questions | 828 train, 132 dev; 10 test from the Moto's screens |
 | `real/` | Real user messages: gitignored, never committed, empty in M3 | 0 |
 

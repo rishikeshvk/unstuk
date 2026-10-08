@@ -1,0 +1,60 @@
+## phone_not_ringing, notifications_missing
+my phone has gone really quiet lately i keep finding things on it hours later that i never knew had come in and my husband says hes been trying to get hold of me all afternoon
+## no_internet, wifi_no_load
+the internet has gone on my phone i cant get the news up or anything and i havent touched nothing
+## screen_too_dim, colours_wrong
+the screen looks all dull and murky today like the colour has been drained out of it i can barely see the photos of the kids
+## screen_too_dim, screen_turns_off_fast
+the screen keeps going dark on me when im trying to read a recipe and i have to keep pokeing it with my floury fingers
+## text_too_small, screen_too_dim
+i cant read my phone anymore i have to squint at it all the time even with my glasses on
+## app_permission, no_internet
+google maps wont find where i am and wont load the route its just sat there spinning round and round
+## bluetooth_earphones, phone_not_ringing
+when people ring me i dont hear a thing but my earbuds are in the drawer so i dont know where the sound is going
+## talkback_on, text_too_small, colours_wrong
+my daughter was playing with the accesibility bit in settings and now the phone is all different and i dont know how to put it back
+## no_internet, notifications_missing, app_permission
+what's app isnt working properly on mine since this morning
+## reset_network, wifi_no_load
+can you reset the wifi thing on my phone it says its connected but nothing comes up
+## bluetooth_earphones, app_permission
+on my teams calls at work nobody can hear me talking ive tried twice now and its so embarassing
+## phone_not_ringing, notifications_missing
+i never know when anybody is trying to contact me the phone just doesnt make a sound anymore
+## screen_turns_off_fast, screen_too_dim
+watching videos on youtube the screen goes all dark half way through and its doing my head in
+## text_too_small, colours_wrong
+i cant make out whats on the screen properly its hard to read the words everythings gone a bit funny looking
+## phone_not_ringing, notifications_missing, bluetooth_earphones
+my phones gone completly silent no beeps no ringing nothing ive checked the volume and it seems up
+## no_internet, wifi_no_load, reset_network
+the internet keeps not working at home and my mate said i need to reset something on the phone but i dont know what
+## app_permission, bluetooth_earphones
+my voice isnt coming through on messenger when i video call my sister she just sees my mouth moving
+## screen_too_dim, colours_wrong
+at night the screen goes all dark and yellowy by itself and i dont know why it keeps doing it
+## notifications_missing, no_internet
+my emails and messeges are only coming through in a big lump when i get home they dont come in when im out and about
+## app_permission, no_internet
+the wether app keeps saying it cant find me and it just shows a blank page
+## text_too_small, talkback_on
+my phones got very hard to use i cant read it properly and touching things doesnt open them like it used to
+## bluetooth_earphones, phone_not_ringing, notifications_missing
+since i got my new watch i keep missing stuff on the phone i thought it was meant to help
+## screen_turns_off_fast, screen_too_dim
+the screen fades out on me when im looking at the bus times and by the time i get it back the bus has gone
+## no_internet, wifi_no_load
+the bbc iplayer wont work on my phone it just says theres a problem and to try again later
+## colours_wrong, text_too_small, screen_too_dim
+the screen is really hard on my eyes now i cant see things on it like i used to
+## reset_network, no_internet
+i want to reset all the internet stuff on my phone back to how it was when i got it because nothing goes online
+## notifications_missing, phone_not_ringing
+my mum says she texted and rang but i didnt recieve nothing till the next day nothing went off at all
+## app_permission, bluetooth_earphones
+the voice notes on whatsapp are not recording me it just comes out silent when i send them
+## screen_too_dim, text_too_small
+everythings so hard to see on my phone i have to hold it right up to my face to definately know what im pressing
+## talkback_on, colours_wrong
+my phone has gone into some weird mode and i dont know how to get it out of it

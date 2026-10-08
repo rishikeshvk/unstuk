@@ -1,0 +1,60 @@
+## no_internet, wifi_no_load
+my internet has stopped working on the phone since this morning and I don't know what I've done the kids said it's something to do with the box but I wouldn't know
+## phone_not_ringing, notifications_missing
+my phone has gone all quiet nothing makes a noise anymore and I keep missing things from my sister
+## screen_too_dim, screen_turns_off_fast
+the screen keeps going dark on me when I'm trying to read recipes and I have to keep poking it with my floury fingers
+## colours_wrong, screen_too_dim
+the screen looks all dull and washed out today it's like someone's put a grey film over it
+## talkback_on, colours_wrong, text_too_small
+my brother was fiddling with the settings for people with bad eyes and now my phone is just not normal can you put it back how it was
+## app_permission, no_internet
+the maps won't find where I am or show me anything I was trying to get to the hospital car park and it just sat there
+## notifications_missing, no_internet
+I'm not getting my what's up messages until hours later my friend said she sent loads yesterday and I only got them this morning
+## reset_network, no_internet, wifi_no_load
+can you do the thing where you reset the internet on the phone the man in the shop said that would sort it out
+## bluetooth_earphones, app_permission
+I can't talk to anyone on the zoom with my headphones in they just can't hear me at all
+## bluetooth_earphones, phone_not_ringing
+ever since I got the little ear pods I never hear the phone go off and I keep missing my mum
+## screen_too_dim, text_too_small
+I can't see the phone properly anymore I have to hold it right up to my face and squint
+## text_too_small, colours_wrong, screen_too_dim
+everything on the screen is hard to make out it's giving me a headache trying to read the messages
+## no_internet, wifi_no_load
+none of the apps will load at home the little wheel just goes round and round and the weather up won't come up either
+## app_permission, wifi_no_load
+I had a video call with the doctor and it wouldn't show my face it just said something went wrong and then the page went blank I'm at home on the Wi-Fi
+## notifications_missing, phone_not_ringing, bluetooth_earphones
+I never know when anyone's trying to get hold of me now the phone used to beep and buzz and now nothing since I had the car thing put in
+## screen_turns_off_fast, screen_too_dim
+when I'm watching the cooking videos on YouTube the screen goes darker and darker and then it's gone
+## talkback_on, colours_wrong
+I held the two buttons on the side down to turn the sound up and now the phone's gone completely strange I don't know what's happened to it
+## no_internet, notifications_missing
+my emails aren't coming through on the phone anymore I have to go on the computer to see them
+## app_permission, bluetooth_earphones
+I can't do the voice notes on WhatsApp with my wireless headphones when I hold the button down nobody hears anything
+## phone_not_ringing, notifications_missing
+the phone doesn't tell me when things come in anymore I only find out when I pick it up and have a look
+## screen_too_dim, colours_wrong
+the screen's gone a funny yellowy dark colour in the evenings and I can't see what I'm doing
+## wifi_no_load, reset_network
+it says I'm on the Wi-Fi but nothing works I think I need to reset it all can you do that for me
+## app_permission, no_internet
+the weather app keeps saying it doesn't know where I am and won't show me anything for today
+## screen_turns_off_fast, text_too_small, screen_too_dim
+I can't get on with reading my book on the phone anymore it's just a nightmare I end up giving up after a page
+## bluetooth_earphones, no_internet
+the music has stopped playing in the car on the way to work I don't know if it's the phone or the car
+## phone_not_ringing, no_internet
+people keep saying they've been trying to ring me on WhatsApp and I never get it the phone just sits there
+## colours_wrong, text_too_small
+the pictures and writing look all wrong on the phone since the update I can't tell what anything is
+## no_internet, wifi_no_load, reset_network
+the internet is broken on the phone at home but the laptop is fine so it must be the phone can you sort it
+## text_too_small, talkback_on, screen_too_dim
+my eyes aren't great and the phone has been impossible to use since my daughter set it up for me
+## notifications_missing, no_internet, wifi_no_load
+my banking app isn't sending me the codes and nothing seems to come through when I'm at home

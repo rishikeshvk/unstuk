@@ -1,0 +1,60 @@
+## phone_not_ringing, notifications_missing
+my grandson went to bangalore last week for job and he is calling and mesaging me daily he said. but i am not getting any sound from the phone only. when i see later so many things are there, what to do
+## no_internet, wifi_no_load
+yesterday the cable man came to fix tv box and he touched the router also. from morning my whatsapp is not going and photos not loading. youtube also showing round round only
+## screen_too_dim, colours_wrong
+i was sitting in verandah reading news on the phone. suddenly the screen became all grey and dull dull, not bright like before. very hard to see anything
+## text_too_small, screen_too_dim
+my specs broke so i am using the old pair now. cannot read anything on phone properly, very dificult to see. kindly make it so i can see
+## screen_too_dim, screen_turns_off_fast
+i read bhagavad gita on the phone every morning after bath. but in middle the screen is going dark and i have to touch again and again. it was not like this before
+## bluetooth_earphones, phone_not_ringing
+my daughter gave me those small ear peices without wire for my walking. today when call came i didnt hear anything in the ear peices or from phone also. she says she called 3 times
+## app_permission, no_internet, wifi_no_load
+doctor told me to send report photo in the hospital app. app is opening but not doing anything, just white page and photo not going. i tried 3 times, my hands are paining
+## notifications_missing, no_internet
+my sister in kerala sends good morning mesages daily, we are doing this for years. now they are coming only in evening all together. is something wrong in my phone
+## colours_wrong, talkback_on, text_too_small
+neighbour child was playing games on my phone in the afternoon. after that phone is behaving very strange, everything is different. dont know what he pressed, he ran away
+## no_internet, wifi_no_load, reset_network
+net is not coming since morning, i could not see my bank balance. son says on phone do some network seting reset or something, i dont know these things. please do the needful
+## colours_wrong, text_too_small
+phone did some update last night by itself. now everything on screen looking different and i am not able to read what is writen properly. it looks strange to me
+## bluetooth_earphones, app_permission
+every sunday i do video call to my son in america with the earphones he sent. today he is saying papa we cannot hear you at all. i was talking loudly also
+## screen_too_dim, screen_turns_off_fast
+i like to watch cooking videos on youtube in afternoon when wife is sleeping. but now i cant see it properly, screen is not staying. very irritating
+## app_permission, wifi_no_load
+we got new broadband conection at home last week, the boy fitted it. now google map is not showing where i am, the blue dot not coming. i want to go to my friends house
+## notifications_missing, phone_not_ringing
+bank people said they sent otp and also called me. but phone was quiet only, i was sitting next to it whole time watching serial. now they are saying come to branch
+## screen_too_dim, text_too_small
+in evening time when i take phone to check mesages i am straining my eyes too much. my eyes are old but before it was ok. now everything hard to make out
+## no_internet, notifications_missing
+daughter in law says she sent photos of the baby on whatsapp in morning. i am not getting anything, sometimes when i open whatsapp it comes slowly slowly. i want to see my grandchild
+## bluetooth_earphones, wifi_no_load
+bought a speaker to play bhajans in pooja room. the music app is open but nothing is playing on the speaker. shop man said it will work easily, but no
+## talkback_on, screen_turns_off_fast
+when i try to open whatsapp it is not opening on first touch. by the time i try again the screen has gone black. i am getting tired of this phone
+## colours_wrong, screen_too_dim
+eye doctor put drops yesterday so first i thought it is my eyes problem. but today also phone looks like old photo, no brightnes no colour. my wifes phone is looking fine
+## reset_network, wifi_no_load
+the wifi name is showing on top and it says conected also but nothing is coming. my friend in the park said you have to reset all the network things. can you do that for me
+## app_permission, bluetooth_earphones
+i am doing online yoga class on zoom with my ear buds. teacher is saying aunty your voice is not coming. other people she can hear fine
+## bluetooth_earphones, notifications_missing
+my son gave me smart watch for birthday so i can see mesages on my hand. for some days it is not showing any mesages, only time it shows. i have to take out phone from bag every time
+## no_internet, wifi_no_load
+we went to my brother house in pune for a marriage and there i put their wifi. now we came back home and phone is not opening any website or youtube. at home it was working before
+## phone_not_ringing, notifications_missing
+temple bell is very loud near my house so few days back i changed something in phone sound. now i am not knowing when anybody is contacting me. everything i see only later
+## screen_too_dim, screen_turns_off_fast, colours_wrong
+battery was low so i pressed some battery saving thing my son showed me once. now screen is behaving funny. i dont like it, i want it like before
+## app_permission, no_internet
+i want to show my face to granddaughter on whatsapp video call. call is going but she says nani i cannot see you, only black. then call is cutting also
+## text_too_small, colours_wrong, screen_too_dim
+in the bank they told me to do upi something on the phone. i cannot see what is written at all, everything is pale and tiny. i gave up and came home
+## no_internet, notifications_missing, phone_not_ringing
+my phone has become very quiet since two days. nobody is reaching me, no calls no whatsapp, my cousin came home to check if i am alive. what happened to it
+## reset_network, bluetooth_earphones
+my car is not taking my phone anymore, before it was playing songs. mechanic said just reset the network setting, it will clear all. is it safe to do, please do it
