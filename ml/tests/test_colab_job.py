@@ -7,6 +7,7 @@ import pytest
 from unstuk_ml.colab_job import (
     ColabRun,
     bundle,
+    calibrated_grid,
     decision_run,
     fixed_head_grid,
     pending,
@@ -94,6 +95,19 @@ def test_the_fixed_head_grid_trains_each_point_into_its_own_run() -> None:
         "fixed-head-lr5e-05-typos",
     ]
     assert "'unstuk-fixed-head', 'train', '--learning-rate', '2e-05'" in run_code(runs[0])
+
+
+def test_the_calibrated_grid_trains_each_brier_weight_on_all_data_and_three_folds() -> None:
+    names = [r.name for r in calibrated_grid()]
+
+    assert names[:4] == [
+        "cosine-lr5e-05-typos-state-vague",
+        "cosine-lr5e-05-typos-state-vague-fold0",
+        "cosine-lr5e-05-typos-state-vague-fold1",
+        "cosine-lr5e-05-typos-state-vague-fold2",
+    ]
+    assert names[4] == "cosine-lr5e-05-typos-state-vague-brier0.5"
+    assert len(names) == len(set(names)) == 12
 
 
 def test_runs_whose_results_came_back_are_not_trained_again(tmp_path: Path) -> None:
