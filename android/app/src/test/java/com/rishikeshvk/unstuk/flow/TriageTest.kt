@@ -12,7 +12,11 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class TriageTest {
-    private val triage = Triage(CatalogTestFiles.catalog, RiskGate(CatalogTestFiles.gate))
+    private val gate = CatalogTestFiles.gate
+    private val triage = Triage(CatalogTestFiles.catalog, RiskGate(gate))
+
+    // Sure enough not to ask which issue it is, not sure enough to act alone, wherever the lines are tuned.
+    private val unsure = (gate.clarifyBelow + gate.automaticAt) / 2
 
     @Test
     fun `nothing matched declines`() {
@@ -49,7 +53,7 @@ class TriageTest {
     @Test
     fun `a low-risk fix below the threshold asks first`() {
         val reply = triage.triage(
-            IntentChoice(mapOf("no_internet" to 0.6, "wrong_time" to 0.4)),
+            IntentChoice(mapOf("no_internet" to unsure, "wrong_time" to 1 - unsure)),
             fineDeviceState.copy(airplaneModeOn = true)
         )
         assertEquals("airplane_off", (reply as Reply.Confirm).fix.id)
@@ -100,7 +104,7 @@ class TriageTest {
     @Test
     fun `a diagnosed reply shows every real check, found or fine`() {
         val reply = triage.triage(
-            IntentChoice(mapOf("phone_not_ringing" to 0.6, "cant_hear_call" to 0.4)),
+            IntentChoice(mapOf("phone_not_ringing" to unsure, "cant_hear_call" to 1 - unsure)),
             fineDeviceState.copy(
                 interruptionFilter = NotificationManager.INTERRUPTION_FILTER_PRIORITY
             )
