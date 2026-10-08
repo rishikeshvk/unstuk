@@ -134,6 +134,34 @@ Against M6's float model, both with their own temperatures, on dev:
 | 6 | Node matching through the model | Left out: the API supports it, selectors stay | Wiring it now: string matching beat frozen similarity on dev (90.9% against 82.6%), and the test has 10 node questions |
 | 7 | The keyword matcher | Deleted from the app | Kept as a fallback: two decision paths, one uncalibrated, for a model that ships inside the APK |
 
+## Correction (2026-10-08): one line at a time, and U8U8
+
+Written after the first phone run and before anything below was rerun.
+
+The phone disagreed with Python on 8 of 1,144 dev lines, by up to 0.48 in probability. Two causes:
+
+- **Batching.** Dynamic int8 scales each activation by its whole batch, padding included, so a line's answer
+  depended on the 63 lines scored beside it. The app decides one complaint at a time. Section 3's dev check and
+  section 4's test score measured batched answers the app never gives. Scored one line at a time, the graph that
+  passed (99.39% top-1 agreement) agrees with float on 98.78%.
+- **The CPU.** This machine (AVX2, no VNNI) runs uint8 × int8 products through an instruction that can
+  saturate; the phone's ARM CPU doesn't. With uint8 weights (U8U8), both compute the integer products exactly.
+
+So, replacing sections 2 to 4 and 9 where they differ:
+
+1. **Scoring:** every graph, float and int8, encodes one text at a time, as the app does, in the dev check, the
+   option vectors, the test and the phone fixture.
+2. **Weights:** uint8 per channel (U8U8) instead of int8. Section 3's tries, thresholds and stop rule are
+   rerun unchanged: every weight first, then the embedding tables in float, then fp16.
+3. **The gate's lines:** `catalog/gate.json` keeps M6's lines, as decided after the first test scoring. M6's
+   rule still runs on the new graph's dev scores and is reported, not applied.
+4. **The test is scored a second time**, against M6's float model by section 4's pre-registered rows. The first
+   scoring stays committed and both are listed in the results.
+5. **The phone check:** activations are still rounded to int8 per call, so small float differences between CPUs
+   can flip a rounding step; 1e-3 on every probability can't hold. The phone must give the same top answer on
+   every dev line and the same gate outcome on at least 99% of them; the probability gap is reported as a median
+   and 95th percentile.
+
 ## 11. Not in M7
 
 - Node matching and guide cards through the model. Guides are chosen by the diagnoser, not asked of the model.
