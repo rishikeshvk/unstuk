@@ -1,8 +1,29 @@
 # Unstuk
 
-An offline Android app that fixes a non-technical user's phone from a plain complaint ("internet not working", "phone is
-talking to me"). A small on-device decision model reads the complaint and the phone's state, picks one fix from a
-fixed catalog, and deterministic code performs it and checks that it worked.
+An offline Android app that fixes a non-technical user's phone from a plain complaint ("phone doesn't ring", "phone
+is talking to me"). A 35 MB on-device decision model reads the complaint and the phone's state and picks one fix
+from a fixed catalog. Deterministic code then performs the fix and checks that it worked. The model decides; code
+acts.
+
+<p>
+<img src="docs/figures/screens/fixed.png" width="24%" alt="A fix run and checked">
+<img src="docs/figures/screens/confirm.png" width="24%" alt="A fix that asks first">
+<img src="docs/figures/screens/clarify.png" width="24%" alt="A clarifying question">
+<img src="docs/figures/screens/decline.png" width="24%" alt="A polite decline">
+</p>
+
+- **89.3%** of in-scope complaints mapped to the right problem on a frozen, LLM-written test set, against 73.9% for
+  the best baseline. A fix runs by itself for the wrong problem on 3.0% of lines, and calibration error is 3.6%.
+- **9.6 ms** per decision on a Moto Edge 30, with an int8 bge-small graph through ONNX Runtime. The release APK
+  is 71.4 MB, and the app has no `INTERNET` permission.
+- **0 false successes** in every on-device run: no fix is reported until a fresh read of the phone confirms it.
+
+Real users' messages (M8) are still to come; the model ships only if it beats the baselines on them too.
+
+**Read the write-up: [docs/writeup.md](docs/writeup.md).** It covers the size waterfall, calibration, the baseline
+comparison and where the model fails.
 
 - Plan and philosophy: [docs/plan.md](docs/plan.md)
-- Current milestone: [docs/m9-spec.md](docs/m9-spec.md), the write-up
+- Milestones: `docs/mN-spec.md`, `docs/mN-results.md` and a plain-words `docs/mN-summary.md` for M1 to M9
+- Code: `android/` (Kotlin, Compose, the accessibility executor), `ml/` (Python: data, baselines, training,
+  export), `catalog/` (the problems, fixes and risk tiers both sides read)

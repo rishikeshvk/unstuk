@@ -1,6 +1,7 @@
 # M9 spec: The write-up
 
-2026-10-08 · Status: **approved.** Background: [plan.md](plan.md), roadmap step 9, and every results doc from
+2026-10-08 · Status: **done; the M8 section is pending.** Write-up: [writeup.md](writeup.md). Summary:
+[m9-summary.md](m9-summary.md). Background: [plan.md](plan.md), roadmap step 9, and every results doc from
 [m1-results.md](m1-results.md) to [m7-results.md](m7-results.md).
 
 M9 answers one question: **what did it take to put a calibrated decision model on a phone, and where does it
