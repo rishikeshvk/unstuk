@@ -2,8 +2,9 @@ package com.rishikeshvk.unstuk.flow
 
 import android.content.Context
 import com.rishikeshvk.unstuk.catalog.CatalogLoader
-import com.rishikeshvk.unstuk.decide.KeywordMatcher
+import com.rishikeshvk.unstuk.decide.DecisionModel
 import com.rishikeshvk.unstuk.decide.RiskGate
+import com.rishikeshvk.unstuk.decide.StateText
 import com.rishikeshvk.unstuk.fix.FixRunner
 import com.rishikeshvk.unstuk.state.DeviceStateReader
 import com.rishikeshvk.unstuk.trace.TraceWriter
@@ -16,25 +17,39 @@ private const val TRACE_ACTION = "complaint"
  * The pipeline from a complaint to a reply: decide, gate, diagnose, run, verify. Every stage writes a trace line
  * under the conversation's trial id; the complaint text itself is never written (it may be a real user's).
  */
-class ComplaintFlow(context: Context) {
+class ComplaintFlow(context: Context) : AutoCloseable {
     private val catalog = CatalogLoader.load(context.assets)
-    private val matcher = KeywordMatcher(CatalogLoader.loadKeywords(context.assets))
+    private val assets = context.assets
+
+    // Loaded on first use, which [warmUp] brings forward to app start; a complaint before then waits for it.
+    private val loading = lazy { DecisionModel.load(assets) }
+    private val model by loading
+    private val stateText by lazy { StateText(catalog, model.manifest.stateChecks) }
     private val triage = Triage(catalog, RiskGate(CatalogLoader.loadGate(context.assets)))
     private val reader = DeviceStateReader(context)
     private val runner = FixRunner(context)
     private val traces = TraceWriter(File(context.filesDir, "traces"))
 
+    /** Slow: call it once, off the main thread. */
+    fun warmUp() {
+        stateText
+    }
+
     fun start(complaint: String, trialId: String): Reply {
         val tracer = tracer(trialId)
-        val choice = matcher.choose(complaint)
+        val state = reader.read()
+        val text = stateText.render(state)
+        val started = System.nanoTime()
+        val choice = model.decide(complaint, text)
+        val millis = (System.nanoTime() - started) / 1_000_000
         tracer.step(
             "decide",
-            choice.top?.key ?: "none",
-            detail = choice.probabilities.entries.joinToString {
-                "${it.key}=${"%.2f".format(it.value)}"
-            }
+            choice.top?.key?.takeUnless { choice.declines } ?: "out_of_scope",
+            detail = (choice.probabilities + ("out_of_scope" to choice.outOfScope)).entries
+                .sortedByDescending { it.value }
+                .joinToString { "${it.key}=${"%.2f".format(it.value)}" } + "; ${millis}ms"
         )
-        return traced(triage.triage(choice, reader.read()), tracer)
+        return traced(triage.triage(choice, state), tracer)
     }
 
     /** The user answered a clarifying question, so the intent is theirs, not a guess. */
@@ -77,6 +92,10 @@ class ComplaintFlow(context: Context) {
         is Reply.Fixed -> fix.id + (next?.let { " next=${it.traceName}" } ?: "")
         is Reply.AlreadyFine -> fix.id
         Reply.NeedsUnlock, Reply.Decline -> null
+    }
+
+    override fun close() {
+        if (loading.isInitialized()) model.close()
     }
 
     companion object {

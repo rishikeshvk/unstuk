@@ -72,6 +72,12 @@ class HelpViewModel(app: Application) : AndroidViewModel(app) {
     var state by mutableStateOf(HelpState(theme = themes.load()))
         private set
 
+    init {
+        viewModelScope.launch(Dispatchers.Default) { flow.warmUp() }
+    }
+
+    override fun onCleared() = flow.close()
+
     fun intentsIn(area: Area): List<IntentEntry> = catalog.intents.filter { it.area == area }
 
     fun updateComplaint(text: String) {

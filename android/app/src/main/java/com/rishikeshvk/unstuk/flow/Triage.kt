@@ -15,7 +15,8 @@ class Triage(private val catalog: Catalog, private val gate: RiskGate) {
     private val diagnoser = Diagnoser(catalog)
 
     fun triage(choice: IntentChoice, state: DeviceState): Reply {
-        val top = choice.top ?: return Reply.Decline
+        val top = choice.top
+        if (top == null || choice.declines) return Reply.Decline
         if (gate.isTooUncertain(choice)) {
             return Reply.Clarify(choice.leaders(CLARIFY_CHOICES).map(catalog::intent))
         }

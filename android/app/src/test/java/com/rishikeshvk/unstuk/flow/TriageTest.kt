@@ -24,6 +24,12 @@ class TriageTest {
     }
 
     @Test
+    fun `out of scope likelier than any intent declines`() {
+        val choice = IntentChoice(mapOf("no_internet" to 0.3), outOfScope = 0.7)
+        assertTrue(triage.triage(choice, fineDeviceState) is Reply.Decline)
+    }
+
+    @Test
     fun `a split decision asks which issue it is, best first`() {
         val reply = triage.triage(
             IntentChoice(
