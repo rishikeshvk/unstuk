@@ -93,6 +93,11 @@ run and verified, a confirm, a clarifying question and a decline. None of them t
 data, because the Moto is the development machine's internet connection. They are saved, reduced, to
 `docs/figures/screens/`.
 
+**Note (2026-10-08):** on the phone the state text moves the model's confidence, so two complaints picked on the
+laptop landed elsewhere ("the screen looks strange" asked a question instead of confirming). Candidates were tried
+through the debug receiver, which reports the reply without the UI, and the script keeps the ones checked on the
+Moto. The confirm band is 0.70 to 0.75; "my phone is too quiet", at 0.71, lands in it.
+
 ## 6. The write-up
 
 `docs/writeup.md`, for a reader who knows some ML and no Android, in about 2,000 words:
