@@ -254,6 +254,7 @@ Eight recent developments shaped the plan above; the biggest change is copying t
   in [design-spec.md](design-spec.md), with the Unknot logo and one screen per reply.
 - *Settle in the M8 spec (moved from M3, 2026-10-05):* consent and storage rules for real user messages. M3 uses
   a proxy test set, so real messages are first collected in the M8 field test.
-- *Settle in the M7 spec:* how the int8 model file reaches the APK (Git LFS or a build step). Until then `*.onnx` is
-  gitignored.
+- *Answered (2026-10-08):* the int8 model file reaches the APK through an export step, not Git LFS:
+  `unstuk-export` writes it into the app's assets, still gitignored, and a committed manifest pins its sha256. See
+  the [M7 spec](m7-spec.md), section 5.
 - *Open:* voice or Hinglish in v2?
