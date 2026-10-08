@@ -109,6 +109,20 @@ def test_a_line_with_two_problems_has_two_answers() -> None:
     }
 
 
+def test_only_a_vague_line_spreads_its_target_over_its_readings() -> None:
+    readings = ["phone_not_ringing", "notifications_missing"]
+    vague, multi = draw(
+        [
+            make("a", "no sound", labels=readings, tags=["vague"]),
+            make("b", "silent and no alerts", labels=readings),
+        ]
+    )
+
+    assert vague.spread
+    assert len(vague.answers) == 2
+    assert not multi.spread
+
+
 def test_options_are_drawn_again_each_epoch_and_repeat_for_the_same_epoch() -> None:
     assert draw(number=0) == draw(number=0)
     assert [e.options for e in draw(number=0)] != [e.options for e in draw(number=1)]

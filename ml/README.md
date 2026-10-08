@@ -17,7 +17,7 @@ uv run unstuk-colab-train decision --head attention --learning-rate 5e-5 --state
 ```
 
 `unstuk-colab-train` needs the `colab` CLI signed in (`colab sessions` should answer). It ships only committed
-files under `ml/`, `catalog/`, `data/clean`, `data/state` and `data/nodes`, so commit first; `data/test` and
+files under `ml/`, `catalog/`, `data/clean`, `data/state`, `data/nodes` and `data/vague`, so commit first; `data/test` and
 `data/real` never leave this machine. Each run writes `result.json` (per-epoch dev metrics, the chosen epoch, the
 checkpoint's sha256 and the commit) and `model.pt` to `ml/runs/<run name>/`, which is gitignored. The session is
 stopped when the run ends or fails.

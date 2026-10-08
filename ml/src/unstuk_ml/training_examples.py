@@ -10,7 +10,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 
 from unstuk_ml.catalog import Catalog
-from unstuk_ml.labels import OUT_OF_SCOPE
+from unstuk_ml.labels import OUT_OF_SCOPE, VAGUE
 from unstuk_ml.node_labels import NodeQuestion
 from unstuk_ml.record import Record
 from unstuk_ml.state_slice import excluded_checks
@@ -34,6 +34,8 @@ class Example:
     """Indices of the correct options; empty out of scope, where the Choice loss is masked."""
     out_of_scope: bool | None
     """The Noul target; None for node questions, which don't ask it."""
+    spread: bool = False
+    """A vague line: the Choice target is spread evenly over the answers, not summed (M6)."""
 
 
 def render_state(checks: Sequence[str], catalog: Catalog) -> str:
@@ -102,6 +104,7 @@ def _line_example(
         ),
         answers=frozenset(n for n, i in enumerate(chosen) if i in record.labels),
         out_of_scope=out_of_scope,
+        spread=VAGUE in record.tags and not out_of_scope,
     )
 
 

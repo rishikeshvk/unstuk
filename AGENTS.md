@@ -36,7 +36,7 @@ Directories are created by the milestone that first needs them.
 - `catalog/`: intents, option texts, playbooks and risk tiers. (M2)
 - `ml/`: Python 3.12 with uv for data, baselines, training, evaluation and ONNX export. Training runs on Colab,
   since this machine has no GPU, through the `colab` CLI (google-colab-cli; the colab-operator skill drives it).
-  Only code, the catalog and `data/clean`, `data/state` and `data/nodes` go to the VM. (M3+)
+  Only code, the catalog and `data/clean`, `data/state`, `data/nodes` and `data/vague` go to the VM. (M3+)
 - `data/`: seed phrasings (committed) and `data/real/` (gitignored, never committed).
 - `docs/`: plan, milestone specs and research notes.
 

@@ -57,6 +57,10 @@ class RunConfig(BaseModel):
     """With `none_fits`: Noul reads only how the options fit, never the complaint (round 7)."""
     frozen_layers: int = 0
     """Backbone layers kept as pre-trained, from the bottom, with the embeddings when above 0."""
+    vague: bool = False
+    """Train on the vague slice too, with soft Choice targets (M6)."""
+    brier_weight: float = 0.0
+    """λ: how much of each head's Brier score is added to its log-loss (M6)."""
     epochs: int = 6
     batch_size: int = 32
     seed: int = 7
@@ -75,6 +79,8 @@ class RunConfig(BaseModel):
         parts += ["typos"] * self.typos + ["wordings"] * self.wordings + ["state"] * self.state
         parts += ["nonefits"] * self.none_fits + ["fitonly"] * self.fit_only
         parts += [f"frozen{self.frozen_layers}"] if self.frozen_layers else []
+        parts += ["vague"] * self.vague
+        parts += [f"brier{self.brier_weight:g}"] if self.brier_weight else []
         parts += [f"fold{self.fold}"] if self.fold is not None else []
         parts += [f"limit{self.limit}"] if self.limit is not None else []
         return "-".join(parts)
@@ -97,10 +103,17 @@ class Data:
     node_dev: list[NodeQuestion]
 
 
-def load_data(limit: int | None = None) -> Data:
-    """Lines from `data/clean` and the state slice, and node questions; never `data/test`."""
+def load_data(limit: int | None = None, vague: bool = False) -> Data:
+    """Lines from `data/clean` and the state slice, and node questions; never `data/test`.
+
+    Dev stays `data/clean`'s alone: the epoch rule reads its macro-F1, which vague lines don't count
+    in, and the gate's thresholds are tuned on the vague slice's dev separately.
+    """
+    vague_train = read_records(DEFAULT_DATA_DIR / "vague" / "train.jsonl") if vague else []
     data = Data(
-        train=rung.read_clean("train") + read_records(DEFAULT_DATA_DIR / "state" / "train.jsonl"),
+        train=rung.read_clean("train")
+        + read_records(DEFAULT_DATA_DIR / "state" / "train.jsonl")
+        + vague_train,
         nodes=read_questions(DEFAULT_DATA_DIR / "nodes" / "train.jsonl"),
         dev=rung.read_clean("dev"),
         node_dev=read_questions(DEFAULT_DATA_DIR / "nodes" / "dev.jsonl"),
@@ -174,7 +187,7 @@ def train(
         seed=config.seed,
         steps_per_epoch=steps_per_epoch(len(records) + len(data.nodes), config.batch_size),
         batches=batches,
-        loss=lambda batch: decision_loss(model(batch), batch),
+        loss=lambda batch: decision_loss(model(batch), batch, config.brier_weight),
         check=check,
     )
     return fine_tune(training, device)
@@ -187,7 +200,8 @@ def run(config: RunConfig, out: Path) -> DecisionRun:
     freeze_lower(backbone, config.frozen_layers)
     model = DecisionModel(backbone, config.head, noul_input(config))
     tokenizer = decision_tokenizer(download()[1])
-    epochs, weights = train(config, load_data(config.limit), model, tokenizer, device)
+    data = load_data(config.limit, config.vague)
+    epochs, weights = train(config, data, model, tokenizer, device)
     return save_run(out / config.name, config, epochs, weights, device)
 
 
@@ -201,6 +215,8 @@ def add_run_arguments(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--fit-only", action="store_true")
     parser.add_argument("--fold", type=int)
     parser.add_argument("--frozen-layers", type=int, default=0)
+    parser.add_argument("--vague", action="store_true")
+    parser.add_argument("--brier-weight", type=float, default=0.0)
     parser.add_argument("--epochs", type=int, default=RunConfig.model_fields["epochs"].default)
     parser.add_argument("--limit", type=int, help="first N lines and questions, for a smoke run")
 
@@ -216,6 +232,8 @@ def config_from(args: argparse.Namespace) -> RunConfig:
         fit_only=args.fit_only,
         fold=args.fold,
         frozen_layers=args.frozen_layers,
+        vague=args.vague,
+        brier_weight=args.brier_weight,
         epochs=args.epochs,
         limit=args.limit,
     )
@@ -230,6 +248,8 @@ def run_arguments(config: RunConfig) -> list[str]:
     arguments += ["--epochs", str(config.epochs)]
     arguments += ["--fold", str(config.fold)] if config.fold is not None else []
     arguments += ["--frozen-layers", str(config.frozen_layers)] if config.frozen_layers else []
+    arguments += ["--vague"] * config.vague
+    arguments += ["--brier-weight", repr(config.brier_weight)] if config.brier_weight else []
     arguments += ["--limit", str(config.limit)] if config.limit is not None else []
     return arguments
 

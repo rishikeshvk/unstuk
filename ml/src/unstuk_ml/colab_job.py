@@ -20,7 +20,7 @@ from unstuk_ml.fixed_head_rung import GRID as FIXED_HEAD_GRID
 
 SESSION = "unstuk-m5"
 GPU = "T4"
-SHIPPED = ("ml", "catalog", "data/clean", "data/state", "data/nodes")
+SHIPPED = ("ml", "catalog", "data/clean", "data/state", "data/nodes", "data/vague")
 NEVER_SHIPPED = ("data/test/", "data/real/")
 REMOTE_ROOT = "/content/unstuk"
 REMOTE_BUNDLE = "/content/unstuk.tar.gz"

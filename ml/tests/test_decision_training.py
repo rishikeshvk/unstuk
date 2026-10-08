@@ -109,6 +109,9 @@ def test_the_same_config_trains_the_same_on_cpu(tokenizer: Tokenizer) -> None:
         RunConfig(
             head="cosine", learning_rate=5e-6, typos=True, state=True, none_fits=True, fit_only=True
         ),
+        RunConfig(
+            head="cosine", learning_rate=5e-5, typos=True, state=True, vague=True, brier_weight=0.5
+        ),
     ],
 )
 def test_a_config_survives_the_command_line(run: RunConfig) -> None:
