@@ -29,6 +29,8 @@ __pycache__/
 # Written by `unstuk-export assets`; only the manifest that pins them is committed.
 android/app/src/main/assets/model/*
 !android/app/src/main/assets/model/model.json
+# Written by `unstuk-token-fixture`: Python's ids for the Kotlin tokenizer's parity test.
+android/app/src/test/resources/wordpiece.jsonl
 *.tflite
 ml/runs/
 ml/checkpoints/

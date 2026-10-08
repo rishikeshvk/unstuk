@@ -47,6 +47,7 @@ unstuk-calibrated-test = "unstuk_ml.calibrated_test:main"
 unstuk-export = "unstuk_ml.export:main"
 unstuk-quantize = "unstuk_ml.quantized_rung:main"
 unstuk-quantized-test = "unstuk_ml.quantized_test:main"
+unstuk-token-fixture = "unstuk_ml.token_fixture:main"
 
 [build-system]
 requires = ["uv_build>=0.8.17,<0.9.0"]
