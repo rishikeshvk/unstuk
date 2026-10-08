@@ -28,8 +28,21 @@ android {
         ndk { abiFilters += "arm64-v8a" }
     }
 
+    signingConfigs {
+        // Read from ~/.gradle/gradle.properties so the key and its passwords can't be committed from this repo.
+        create("release") {
+            fun releaseProperty(name: String) =
+                providers.gradleProperty("unstuk.release.$name").orNull
+            storeFile = releaseProperty("storeFile")?.let(::file)
+            storePassword = releaseProperty("storePassword")
+            keyAlias = releaseProperty("keyAlias")
+            keyPassword = releaseProperty("keyPassword")
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             optimization {
                 enable = true
                 packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")

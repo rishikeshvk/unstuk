@@ -27,3 +27,7 @@ comparison and where the model fails.
 - Milestones: `docs/mN-spec.md`, `docs/mN-results.md` and a plain-words `docs/mN-summary.md` for M1 to M9
 - Code: `android/` (Kotlin, Compose, the accessibility executor), `ml/` (Python: data, baselines, training,
   export), `catalog/` (the problems, fixes and risk tiers both sides read)
+
+**Release builds** are signed with a key kept outside the repo. Set `unstuk.release.storeFile`, `storePassword`,
+`keyAlias` and `keyPassword` in `~/.gradle/gradle.properties`, then run `./gradlew assembleRelease` in `android/`.
+Without them the release build fails, and debug builds are unaffected.
