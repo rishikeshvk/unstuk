@@ -1,3 +1,4 @@
+import com.android.build.api.artifact.SingleArtifact
 import groovy.json.JsonSlurper
 import java.io.OutputStream
 import java.security.DigestInputStream
@@ -143,3 +144,37 @@ val checkModelAssets = tasks.register<CheckModelAssets>("checkModelAssets") {
 }
 
 tasks.named("preBuild") { dependsOn(checkModelAssets) }
+
+/** Fails any variant whose merged manifest asks for the network, whichever library added it (invariant 4). */
+abstract class CheckNoInternet : DefaultTask() {
+    @get:InputFile
+    @get:PathSensitive(PathSensitivity.NONE)
+    abstract val manifest: RegularFileProperty
+
+    @get:OutputFile
+    abstract val stamp: RegularFileProperty
+
+    @TaskAction
+    fun check() {
+        if (manifest.get().asFile.readText().contains("\"android.permission.INTERNET\"")) {
+            throw GradleException(
+                "The merged manifest asks for INTERNET. Find the library in the manifest-merger " +
+                    "blame report and remove it with tools:node=\"remove\"."
+            )
+        }
+        stamp.get().asFile.writeText("no INTERNET")
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        val name = variant.name.replaceFirstChar(Char::uppercase)
+        val check = tasks.register<CheckNoInternet>("checkNoInternet$name") {
+            stamp = layout.buildDirectory.file("checkNoInternet/${variant.name}/stamp")
+        }
+        variant.artifacts
+            .use(check)
+            .wiredWith(CheckNoInternet::manifest)
+            .toListenTo(SingleArtifact.MERGED_MANIFEST)
+    }
+}

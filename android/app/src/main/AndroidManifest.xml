@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.QUERY_ADVANCED_PROTECTION_MODE" />
+    <!-- ONNX Runtime's library manifest asks for it; inference is local and the app stays offline (invariant 4). -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
     <!-- Granted by the user in Settings (special app access), not at install. -->
     <uses-permission
         android:name="android.permission.WRITE_SETTINGS"
