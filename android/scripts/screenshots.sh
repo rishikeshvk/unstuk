@@ -42,7 +42,7 @@ shoot() {
     tap 'class="android.widget.EditText"'
     # input text ends a word at each space, so spaces are sent as %s.
     sh_adb input text "${complaint// /%s}"
-    sh_adb input keyevent BACK
+    hide_keyboard
     tap 'text="Help me"'
     sleep "$wait_s"
     adb exec-out screencap -p >"$out_dir/$name.full.png"

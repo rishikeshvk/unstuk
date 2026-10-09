@@ -45,9 +45,42 @@ ensure_ready() {
     sh_adb appops set "$PKG" WRITE_SETTINGS allow
 }
 
+# uiautomator gives up when the screen never goes idle (the home screen's hint types forever) and leaves the
+# previous dump in place, so the old file is removed first and the dump retried until it succeeds. It also
+# suspends every other accessibility service while it reads, Unstuk's included, so wait for that to come back.
+dump_screen() {
+    local was_bound=false
+    service_bound && was_bound=true
+    for _ in $(seq 1 20); do
+        sh_adb rm -f /sdcard/ui.xml
+        if adb shell uiautomator dump /sdcard/ui.xml 2>&1 | grep -q 'dumped to'; then
+            "$was_bound" || return 0
+            await_service
+            return
+        fi
+        sleep 0.25
+    done
+    echo "uiautomator could not read the screen." >&2
+    return 1
+}
+
+await_service() {
+    for _ in $(seq 1 20); do
+        service_bound && return 0
+        sleep 0.25
+    done
+    echo "Unstuk accessibility service did not bind again after a screen read." >&2
+    return 1
+}
+
 # The centre of the first on-screen node whose attributes match <pattern>, as "x y".
 centre_of() {
-    sh_adb uiautomator dump /sdcard/ui.xml >/dev/null
+    dump_screen || return 1
+    centre_in_dump "$1"
+}
+
+# As centre_of, but from the last dump, for several lookups on one screen read.
+centre_in_dump() {
     sh_adb cat /sdcard/ui.xml | grep -oE '<node [^>]*>' | grep -E "$1" | head -1 |
         sed -nE 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]".*/\1 \2 \3 \4/p' |
         awk '{ print int(($1 + $3) / 2), int(($2 + $4) / 2) }'
@@ -55,10 +88,33 @@ centre_of() {
 
 tap() {
     local point
-    point=$(centre_of "$1")
+    # With pipefail, no match fails centre_of, which would end the script before the message below.
+    point=$(centre_of "$1" || true)
     [ -n "$point" ] || { echo "Nothing on screen matches $1." >&2; exit 1; }
     # shellcheck disable=SC2086 # x and y are separate arguments
     sh_adb input tap $point
+}
+
+# Taps read the screen once, so they must wait until the keyboard is gone and the layout has stopped moving.
+hide_keyboard() {
+    sh_adb input keyevent BACK
+    local ime
+    for _ in $(seq 1 20); do
+        ime=$(sh_adb dumpsys input_method)
+        grep -q 'mInputShown=false' <<<"$ime" && break
+        sleep 0.25
+    done
+    sleep 0.5
+}
+
+# Waits up to <seconds> for a node whose text is exactly <text>.
+await_text() {
+    local deadline=$((SECONDS + $2))
+    while [ "$SECONDS" -lt "$deadline" ]; do
+        [ -n "$(centre_of "text=\"$1\"")" ] && return 0
+        sleep 0.5
+    done
+    return 1
 }
 
 stream_volume() { sh_adb cmd media_session volume --stream "$1" --get | sed -nE 's/.*volume is ([0-9]+).*/\1/p'; }
