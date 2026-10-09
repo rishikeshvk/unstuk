@@ -28,7 +28,9 @@ among options it was given, with a probability.
 Two constraints shaped everything else:
 
 - **Offline.** Someone whose internet is broken is exactly who needs help, so the app has no `INTERNET`
-  permission at all.
+  permission at all. ONNX Runtime's library manifest asked for it, and until the first signed build it was
+  merged in unnoticed. The app's manifest now removes it, and the build fails if any variant's merged manifest
+  asks for it again.
 - **Calibrated.** The model's probability decides whether the app acts alone, asks first, asks a question or
   declines. A model that is 99% sure and wrong would change a setting the user never asked about, so the
   confidence has to mean what it says.
