@@ -1,5 +1,5 @@
-# Device helpers shared by trials.sh and e2e.sh: adb access, readiness, and per-fix ways to break a setting
-# over adb and to read it back independently of the app. Source it; it does nothing on its own.
+# Device helpers shared by the scripts here: adb access, readiness, tapping on-screen text, and per-fix ways to
+# break a setting over adb and to read it back independently of the app. Source it; it does nothing on its own.
 
 PKG=com.rishikeshvk.unstuk
 SERVICE=$PKG/.a11y.UnstukService
@@ -43,6 +43,22 @@ ensure_ready() {
     }
     sh_adb cmd notification allow_dnd "$PKG"
     sh_adb appops set "$PKG" WRITE_SETTINGS allow
+}
+
+# The centre of the first on-screen node whose attributes match <pattern>, as "x y".
+centre_of() {
+    sh_adb uiautomator dump /sdcard/ui.xml >/dev/null
+    sh_adb cat /sdcard/ui.xml | grep -oE '<node [^>]*>' | grep -E "$1" | head -1 |
+        sed -nE 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]".*/\1 \2 \3 \4/p' |
+        awk '{ print int(($1 + $3) / 2), int(($2 + $4) / 2) }'
+}
+
+tap() {
+    local point
+    point=$(centre_of "$1")
+    [ -n "$point" ] || { echo "Nothing on screen matches $1." >&2; exit 1; }
+    # shellcheck disable=SC2086 # x and y are separate arguments
+    sh_adb input tap $point
 }
 
 stream_volume() { sh_adb cmd media_session volume --stream "$1" --get | sed -nE 's/.*volume is ([0-9]+).*/\1/p'; }

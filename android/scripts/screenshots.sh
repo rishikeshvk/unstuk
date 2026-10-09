@@ -32,22 +32,6 @@ restore() {
     sh_adb settings put global animator_duration_scale "$animator"
 }
 
-# The centre of the first on-screen node whose attributes match <pattern>, as "x y".
-centre_of() {
-    sh_adb uiautomator dump /sdcard/ui.xml >/dev/null
-    sh_adb cat /sdcard/ui.xml | grep -oE '<node [^>]*>' | grep -E "$1" | head -1 |
-        sed -nE 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]".*/\1 \2 \3 \4/p' |
-        awk '{ print int(($1 + $3) / 2), int(($2 + $4) / 2) }'
-}
-
-tap() {
-    local point
-    point=$(centre_of "$1")
-    [ -n "$point" ] || { echo "Nothing on screen matches $1." >&2; exit 1; }
-    # shellcheck disable=SC2086 # x and y are separate arguments
-    sh_adb input tap $point
-}
-
 shoot() {
     local name broken complaint wait_s
     IFS='|' read -r name broken complaint wait_s <<<"$1"
