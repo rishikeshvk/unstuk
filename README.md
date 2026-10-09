@@ -30,4 +30,6 @@ comparison and where the model fails.
 
 **Release builds** are signed with a key kept outside the repo. Set `unstuk.release.storeFile`, `storePassword`,
 `keyAlias` and `keyPassword` in `~/.gradle/gradle.properties`, then run `./gradlew assembleRelease` in `android/`.
-Without them the release build fails, and debug builds are unaffected.
+Without them the release build fails, and debug builds are unaffected. Before sharing an APK, run
+`android/scripts/release-smoke.sh` with a phone attached: it installs the release build and checks launch, the
+model and one fix on each automated rung.
