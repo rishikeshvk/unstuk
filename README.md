@@ -21,8 +21,8 @@ acts.
 Real users' messages (M8) are still to come; the model ships only if it beats the baselines on them too.
 
 **Try it:** a signed preview APK for Android 10+ is on the [Releases](https://github.com/rishikeshvk/unstuk/releases)
-page. Because it's sideloaded, Android blocks its accessibility service at first: open App info → ⋮ → Allow
-restricted settings, then turn on Unstuk under Accessibility.
+page. On Android 13+, a sideloaded app's accessibility service is blocked at first: try to turn Unstuk on under
+Accessibility once, then open App info → ⋮ → Allow restricted settings and turn it on again.
 
 **Read the write-up: [docs/writeup.md](docs/writeup.md).** It covers the size waterfall, calibration, the baseline
 comparison and where the model fails.
