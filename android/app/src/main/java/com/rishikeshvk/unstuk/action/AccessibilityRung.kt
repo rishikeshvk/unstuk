@@ -50,16 +50,16 @@ class AccessibilityRung(
             if (tile != null) {
                 tracer.step("find_tile", "found", tile.strategy)
                 val outcome = clickAndWait(tile.node, target, quickSettings, reached, tracer)
-                quickSettings.close()
-                tracer.step("close_shade", "done")
+                tracer.step("close_shade", if (quickSettings.close()) "closed" else "still_open")
                 return outcome
             }
             tracer.step("find_tile", "not_found")
-            quickSettings.close()
+            tracer.step("close_shade", if (quickSettings.close()) "closed" else "still_open")
         } else {
             tracer.step("find_tile", "no_tile")
             // The shade may already be open, and it would cover the Settings screen.
-            QuickSettings(service, selectors.quickSettings, finder).close()
+            val closed = QuickSettings(service, selectors.quickSettings, finder).close()
+            tracer.step("close_shade", if (closed) "closed" else "still_open")
         }
 
         if (settingsScreen ==

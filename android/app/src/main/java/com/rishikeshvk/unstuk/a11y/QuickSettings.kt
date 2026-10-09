@@ -15,8 +15,10 @@ import kotlinx.coroutines.delay
 private val OPEN_TIMEOUT = 5.seconds
 private val PAGE_SETTLE = 600.milliseconds
 private val DIALOG_TIMEOUT = 3.seconds
+private val CLOSE_TIMEOUT = 1.seconds
 
 private const val MAX_PAGES = 8
+private const val CLOSE_ATTEMPTS = 3
 
 class QuickSettings(
     private val service: AccessibilityService,
@@ -75,13 +77,27 @@ class QuickSettings(
         return true
     }
 
-    fun close() {
-        val action = if (Build.VERSION.SDK_INT >= 31) {
+    /** Closes the shade and reads the screen again to confirm it; returns whether it closed. */
+    suspend fun close(): Boolean {
+        val back = AccessibilityService.GLOBAL_ACTION_BACK
+        val dismiss = if (Build.VERSION.SDK_INT >= 31) {
             AccessibilityService.GLOBAL_ACTION_DISMISS_NOTIFICATION_SHADE
         } else {
-            AccessibilityService.GLOBAL_ACTION_BACK
+            back
         }
-        service.performGlobalAction(action)
+        // With animations off, the Moto's SystemUI ignores the dismiss; BACK steps the shade down instead.
+        val actions = listOf(dismiss) + List(CLOSE_ATTEMPTS - 1) { back }
+        for (action in actions) {
+            service.performGlobalAction(action)
+            if (finder.await(CLOSE_TIMEOUT) { shadeGone() } != null) return true
+        }
+        return false
+    }
+
+    // The pager going away isn't enough: the notification list can stay open, holding focus.
+    private fun shadeGone(): Unit? {
+        val focused = service.windows.firstOrNull { it.isFocused }?.root?.packageName
+        return if (focused == selectors.packageName) null else Unit
     }
 
     private suspend fun scrollPager(action: AccessibilityAction): Boolean {
