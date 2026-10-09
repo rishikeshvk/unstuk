@@ -5,6 +5,8 @@ is talking to me"). A 35 MB on-device decision model reads the complaint and the
 from a fixed catalog. Deterministic code then performs the fix and checks that it worked. The model decides; code
 acts.
 
+https://github.com/user-attachments/assets/602edbc6-e0a0-4e1c-9cd4-244e2fa8eeb2
+
 <p>
 <img src="docs/figures/screens/fixed.png" width="24%" alt="A fix run and checked">
 <img src="docs/figures/screens/confirm.png" width="24%" alt="A fix that asks first">
