@@ -46,3 +46,13 @@ A shorter version, without the tables, is on [rishikeshvk.com](https://rishikesh
 Without them the release build fails, and debug builds are unaffected. Before sharing an APK, run
 `android/scripts/release-smoke.sh` with a phone attached: it installs the release build and checks launch, the
 model and one fix on each automated rung.
+
+## How it was built
+
+In milestones, each with a spec agreed before any code and a results doc after it: the executor first, then the
+catalog and rules, the data, baselines, the decision model, calibration, on-device inference and the write-up. Real
+messages (M8) are the one still open. It was built with Claude Code, working from `AGENTS.md` and a plan-first loop.
+
+## License
+
+[MIT](LICENSE).
