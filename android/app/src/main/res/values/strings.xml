@@ -102,6 +102,11 @@
     <string name="access_on">On</string>
     <string name="access_allow">Allow</string>
     <string name="access_offline">Works offline. Nothing leaves your phone.</string>
+    <string name="access_restricted_title">Android said “Restricted setting”?</string>
+    <string name="access_restricted_body">It does that for apps from outside an app store, until you allow it.</string>
+    <string name="access_restricted_step_menu">Open app info below, tap ⋮ at the top right, then Allow restricted settings.</string>
+    <string name="access_restricted_step_again">Come back and tap Allow again, then turn on Unstuk.</string>
+    <string name="access_restricted_open">Open app info</string>
 
     <string name="open_settings_screen">Settings</string>
     <string name="settings_title">Settings</string>

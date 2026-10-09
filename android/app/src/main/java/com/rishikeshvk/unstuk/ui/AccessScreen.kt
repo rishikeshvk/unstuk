@@ -1,6 +1,7 @@
 package com.rishikeshvk.unstuk.ui
 
 import android.content.Intent
+import android.os.Build
 import android.provider.Settings
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -19,6 +20,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -37,6 +42,7 @@ import com.rishikeshvk.unstuk.ui.components.ScreenScaffold
 @Composable
 fun AccessScreen(status: AccessStatus, onBack: () -> Unit) {
     val context = LocalContext.current
+    var serviceAttempted by rememberSaveable { mutableStateOf(false) }
     fun open(intent: Intent) = context.startActivity(intent)
     ScreenScaffold(
         topBar = { BackTopBar(onBack) },
@@ -65,7 +71,24 @@ fun AccessScreen(status: AccessStatus, onBack: () -> Unit) {
             R.string.access_service_title,
             R.string.access_service_body,
             status.service
-        ) { open(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)) }
+        ) {
+            serviceAttempted = true
+            open(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+        }
+        // Back here with the service still off after a try: on Android 13+ a sideloaded app is likely blocked.
+        val stillOff = serviceAttempted && !status.service
+        if (stillOff && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            RestrictedSettingsHelp(
+                onOpenAppInfo = {
+                    open(
+                        Intent(
+                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            "package:${context.packageName}".toUri()
+                        )
+                    )
+                }
+            )
+        }
         GrantRow(
             R.drawable.ic_moon,
             R.string.access_policy_title,

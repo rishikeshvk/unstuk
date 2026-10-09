@@ -1,10 +1,13 @@
 package com.rishikeshvk.unstuk.ui.preview
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.rishikeshvk.unstuk.catalog.Area
 import com.rishikeshvk.unstuk.catalog.Cause
 import com.rishikeshvk.unstuk.catalog.FixEntry
@@ -16,6 +19,7 @@ import com.rishikeshvk.unstuk.flow.FixStep
 import com.rishikeshvk.unstuk.flow.Reply
 import com.rishikeshvk.unstuk.ui.AccessStatus
 import com.rishikeshvk.unstuk.ui.HomeScreen
+import com.rishikeshvk.unstuk.ui.RestrictedSettingsHelp
 import com.rishikeshvk.unstuk.ui.SettingsScreen
 import com.rishikeshvk.unstuk.ui.reply.ReplyActions
 import com.rishikeshvk.unstuk.ui.reply.ReplyScreen
@@ -158,4 +162,10 @@ private fun SettingsPreview() = Framed {
         onBack = {},
         onDebug = {}
     )
+}
+
+@ScreenPreviews
+@Composable
+private fun RestrictedSettingsHelpPreview() = Framed {
+    RestrictedSettingsHelp(onOpenAppInfo = {}, modifier = Modifier.padding(20.dp))
 }
