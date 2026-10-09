@@ -15,7 +15,7 @@ acts.
 - **89.3%** of in-scope complaints mapped to the right problem on a frozen, LLM-written test set, against 73.9% for
   the best baseline. A fix runs by itself for the wrong problem on 3.0% of lines, and calibration error is 3.6%.
 - **9.6 ms** per decision on a Moto Edge 30, with an int8 bge-small graph through ONNX Runtime. The release APK
-  is 71.4 MB, and the app has no `INTERNET` permission.
+  is 70.8 MB, and the app has no `INTERNET` permission.
 - **0 false successes** in every on-device run: no fix is reported until a fresh read of the phone confirms it.
 
 Real users' messages (M8) are still to come; the model ships only if it beats the baselines on them too.

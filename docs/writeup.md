@@ -168,7 +168,7 @@ the tuned lines would have asked about 35.7%.
 | Measure (Moto Edge 30, Android 14) | Value |
 | --- | --- |
 | Model, int8 (every MatMul and Gather in 8 bits) | 35.0 MB, from 134.4 MB in float |
-| Release APK | 71.4 MB: model 35.0, ONNX Runtime 33.0, dex 2.9 |
+| Release APK | 70.8 MB: model 35.0, ONNX Runtime 33.0, dex 2.2 |
 | Model load | 375 ms, in the background at launch |
 | One decision | 9.6 ms median, 18.0 ms at the 95th percentile |
 | Same top answer as Python, all 1,144 dev lines | 1,144 |

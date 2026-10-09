@@ -81,24 +81,24 @@ z
    <g id="patch_7">
     <path d="M 288.254418 130.637347 
 L 319.433132 130.637347 
-L 319.433132 126.786491 
-L 288.254418 126.786491 
+L 319.433132 127.676128 
+L 288.254418 127.676128 
 z
 " clip-path="url(#p663a06c11d)" style="fill: #d35a2e"/>
    </g>
    <g id="patch_8">
-    <path d="M 343.930693 126.786491 
-L 375.109407 126.786491 
-L 375.109407 126.041299 
-L 343.930693 126.041299 
+    <path d="M 343.930693 127.676128 
+L 375.109407 127.676128 
+L 375.109407 126.922687 
+L 343.930693 126.922687 
 z
 " clip-path="url(#p663a06c11d)" style="fill: #d35a2e"/>
    </g>
    <g id="patch_9">
     <path d="M 399.606968 220.762359 
 L 430.785682 220.762359 
-L 430.785682 126.041299 
-L 399.606968 126.041299 
+L 430.785682 126.922687 
+L 399.606968 126.922687 
 z
 " clip-path="url(#p663a06c11d)" style="fill: #1f1b2e"/>
    </g>
@@ -265,13 +265,13 @@ L 449.0475 220.762359
     <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #4a4458" x="248.1675" y="125.475238" transform="rotate(-0 248.1675 125.475238)">+33.0</text>
    </g>
    <g id="text_21">
-    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #4a4458" x="303.843775" y="121.624382" transform="rotate(-0 303.843775 121.624382)">+2.9</text>
+    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #4a4458" x="303.843775" y="122.514018" transform="rotate(-0 303.843775 122.514018)">+2.2</text>
    </g>
    <g id="text_22">
-    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #4a4458" x="359.52005" y="120.879189" transform="rotate(-0 359.52005 120.879189)">+0.6</text>
+    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #4a4458" x="359.52005" y="121.760577" transform="rotate(-0 359.52005 121.760577)">+0.6</text>
    </g>
    <g id="text_23">
-    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f1b2e" x="415.196325" y="120.879189" transform="rotate(-0 415.196325 120.879189)">71.4</text>
+    <text style="font-size: 9px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1f1b2e" x="415.196325" y="121.760577" transform="rotate(-0 415.196325 121.760577)">70.8</text>
    </g>
    <g id="text_24">
     <text style="font-size: 8.5px; font-family: 'Inter', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #4a4458" x="444.250649" y="143.405473" transform="rotate(-0 444.250649 143.405473)">60 MB target</text>
