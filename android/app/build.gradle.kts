@@ -21,8 +21,8 @@ android {
         applicationId = "com.rishikeshvk.unstuk"
         minSdk = 29
         targetSdk = 37
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // ONNX Runtime's native library is the largest thing after the model; phones in scope are arm64.
