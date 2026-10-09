@@ -34,6 +34,7 @@ accessibility service. Installing from a computer works: `adb install unstuk-0.1
 
 **Read the write-up: [docs/writeup.md](docs/writeup.md).** It covers the size waterfall, calibration, the baseline
 comparison and where the model fails.
+A shorter version, without the tables, is on [rishikeshvk.com](https://rishikeshvk.com/projects/unstuk/).
 
 - Plan and philosophy: [docs/plan.md](docs/plan.md)
 - Milestones: `docs/mN-spec.md`, `docs/mN-results.md` and a plain-words `docs/mN-summary.md` for M1 to M9
