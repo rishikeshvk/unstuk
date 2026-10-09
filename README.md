@@ -26,6 +26,11 @@ Real users' messages (M8) are still to come; the model ships only if it beats th
 page. On Android 13+, a sideloaded app's accessibility service is blocked at first: try to turn Unstuk on under
 Accessibility once, then open App info → ⋮ → Allow restricted settings and turn it on again.
 
+In India and other regions where Google Play Protect runs [enhanced fraud
+protection](https://developers.google.com/android/play-protect/warning-dev-guidance), installing the APK from a
+browser, messaging app or file manager is blocked ("App blocked to protect your device"), because Unstuk uses an
+accessibility service. Installing from a computer works: `adb install unstuk-0.1.0-preview.apk`.
+
 **Read the write-up: [docs/writeup.md](docs/writeup.md).** It covers the size waterfall, calibration, the baseline
 comparison and where the model fails.
 
